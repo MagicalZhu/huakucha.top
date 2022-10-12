@@ -1,24 +1,40 @@
 <script setup lang="ts">
-// https://github.com/vueuse/head
-// you can use this to manipulate the document head in any components,
-// they will be rendered correctly in the html results with vite-ssg
+import { isClient } from "@renovamen/utils";
+
 useHead({
-  title: 'Vitesse',
+  title: "Xiaohan Zou",
   meta: [
-    { name: 'description', content: 'Opinionated Vite Starter Template' },
+    { name: "description", content: "A dragon lost in human world." },
     {
-      name: 'theme-color',
-      content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
-    },
-  ],
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
-    },
-  ],
-})
+      name: "theme-color",
+      content: computed(() => (isDark.value ? "#374151" : "#ffffff"))
+    }
+  ]
+});
+
+
+// Scroll to top after route change
+const route = useRoute();
+
+watch(
+  () => route.path,
+  () => isClient && window.scrollTo({ top: 0 })
+);
+
+const router = useRouter()
+const routes = router.getRoutes()
+const {addRouteMeta, getRouteMetas} = useConfigStore()
+
+if(routes.length > 0) {
+  routes.forEach((route:any) => {
+    if (route.meta.layout && route.meta.layout === 'post') {
+      addRouteMeta(route.meta)
+    }
+  })
+}
+
+console.log(getRouteMetas())
+
 </script>
 
 <template>

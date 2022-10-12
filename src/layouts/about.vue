@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="about">
     <RouterView />
   </Layout>
 </template>

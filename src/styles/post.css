@@ -1,0 +1,56 @@
+.post a.header-anchor {
+  @apply float-left opacity-0 text-c no-underline;
+  margin-top: 0.1em;
+  margin-left: -1.3em;
+  font-size: 0.75em;
+}
+
+.post h2:hover .header-anchor,
+.post h2:focus .header-anchor,
+.post h3:hover .header-anchor,
+.post h3:focus .header-anchor,
+.post h4:hover .header-anchor,
+.post h4:focus .header-anchor,
+.post h5:hover .header-anchor,
+.post h5:focus .header-anchor,
+.post h6:hover .header-anchor,
+.post h6:focus .header-anchor {
+  @apply opacity-50;
+}
+
+@media (max-width: 640px) {
+  .post a.header-anchor {
+    @apply hidden;
+  }
+}
+
+.table-of-contents {
+  @apply fixed w-45 top-20 pt-18 pr-5.5 right-0 bottom-0 overflow-y-auto overflow-x-hidden text-right text-ellipsis hidden;
+  font-size: 0.8em;
+}
+
+.toc-open .table-of-contents {
+  @apply block;
+}
+
+.table-of-contents ul {
+  @apply !list-none !m-0;
+}
+
+.table-of-contents ul > li > a {
+  @apply text-c;
+}
+
+.table-of-contents > ul > li::before {
+  @apply content-[#] opacity-60 mr-1;
+}
+
+.table-of-contents > ul > li > ul > li {
+  @apply opacity-60;
+}
+
+@media (max-width: 1100px) {
+  .table-of-contents {
+    @apply top-0 bg-c border-l border-c shadow;
+  }
+}

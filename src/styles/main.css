@@ -1,29 +1,23 @@
-@import './markdown.css';
+@import "./markdown.css";
+@import "./about.css";
+@import "./post.css";
+@import "./fonts.css";
 
 html,
 body,
 #app {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  @apply h-full m-0 p-0;
 }
 
 html.dark {
-  background: #121212;
+  @apply bg-gray-700;
   color-scheme: dark;
 }
 
 #nprogress {
-  pointer-events: none;
+  @apply pointer-events-none;
 }
 
 #nprogress .bar {
-  background: rgb(13,148,136);
-  opacity: 0.75;
-  position: fixed;
-  z-index: 1031;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
+  @apply fixed opacity-75 top-0 left-0 w-full h-0.5 z-50 bg-brand;
 }

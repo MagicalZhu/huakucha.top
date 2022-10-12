@@ -1,0 +1,28 @@
+.about .prose thead {
+  @apply hidden;
+}
+
+.about .prose tbody {
+  @apply w-full block;
+}
+
+.about .prose tr {
+  @apply flex border-t border-c-dark;
+}
+
+.about .prose td,
+.about .prose th {
+  @apply py-2 px-0.5;
+}
+
+.about .prose td p {
+  @apply m-0;
+}
+
+.about .prose td:first-child {
+  @apply flex-1;
+}
+
+.about .prose td:last-child {
+  @apply text-right w-22;
+}

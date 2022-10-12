@@ -1,28 +1,68 @@
 .prose pre:not(.shiki) {
-  padding: 0;
+  @apply p-0;
 }
 
 .prose .shiki {
-  font-family: 'DM Mono', monospace;
-  font-size: 1.2em;
+  font-family: "DM Mono", monospace;
+  font-size: 1.15em;
   line-height: 1.4;
 }
 
 .prose img {
-  width: 100%;
+  @apply w-full;
+}
+
+.prose p {
+  line-height: 1.55 !important;
+}
+
+.prose ul,
+.prose li p {
+  @apply !m-0;
+}
+
+.prose a {
+  @apply no-underline hover:underline text-c-active;
+}
+
+main:not(.post) a.header-anchor {
+  @apply hidden;
+}
+
+.shiki-light,
+.shiki-dark {
+  @apply !bg-transparent border px-5 py-4;
 }
 
 .shiki-light {
-  background: #f8f8f8 !important;
+  @apply border-gray-300;
 }
+
 .shiki-dark {
-  background: #0e0e0e !important;
+  @apply border-gray-500;
 }
 
 html.dark .shiki-light {
-  display: none;
+  @apply hidden;
 }
 
 html:not(.dark) .shiki-dark {
+  @apply hidden;
+}
+
+
+.prose .table-of-contents {
+  position: fixed;
+  top: 5rem;
+  right: 0rem;
+  bottom: 0rem;
   display: none;
+  width: 15%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding-top: 4.5rem;
+  padding-right: 1.375rem;
+  text-align: inherit;
+  font-size: 0.8em;
 }

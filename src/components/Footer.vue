@@ -3,6 +3,6 @@
 </script>
 
 <template>
-  <footer font="ui" text="sm center c-lighter" m="t-20" v-html="getThemeConfig().siteFooter.cop">
+  <footer font="ui" text="sm center c-lighter" m="t-20" v-html="getThemeConfig().footer.cop">
   </footer>
 </template>

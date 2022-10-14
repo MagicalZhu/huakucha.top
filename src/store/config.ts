@@ -1,5 +1,6 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { ThemeConfig } from '~/config/themeConfig'
+import {siteConfig} from 'siteConfig'
 
 export const useConfigStore = defineStore('config', () => {
   // state
@@ -13,7 +14,7 @@ export const useConfigStore = defineStore('config', () => {
   function getRouteMetas() {
     return metas.value
   }
-  function getThemeConfig():any {
+  function getThemeConfig():siteConfig {
     return themeConfig.value
   }
 

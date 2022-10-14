@@ -1,11 +1,14 @@
-export const ThemeConfig = {
-  siteNav: {
+import {siteConfig} from 'siteConfig'
+
+
+export const ThemeConfig:siteConfig = {
+  nav: {
     nutShellContent: 'hi@huakucha'
   },
-  siteFooter: {
+  footer: {
     cop: '© YuLiang Zhu 2022 <br />A dragon lost in human world'
   },
-  siteToc: {
-    hiddenDeault: false
+  toc: {
+    hiddenDeafult: false
   }
 }

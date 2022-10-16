@@ -49,6 +49,9 @@ declare module 'siteConfig' {
   }
 }
 
+/**
+ * 标签详细
+ */
 interface tagDetail {
   path: string,
   date?: string,
@@ -60,6 +63,34 @@ interface tagDetail {
 }
 declare module 'tagConfig' {
   export interface tagConfig {
+    /**
+     * propName: The name of the tag
+     * tagDetail: tag detail
+     */
     [propsName:string]: tagDetail[]
+  }
+}
+
+
+/**
+ * 类别详细
+ */
+interface categoryDetail {
+  path: string,
+  date?: string,
+  frontmatter: {
+    title: string,
+    categories: string[] | string
+    author?: string
+  }
+}
+
+declare module 'categoryConfig' {
+  export interface categoryConfig {
+    /**
+     * propName: The name of the category
+     * categoryDetail: category detail
+     */
+    [propsName:string]: categoryDetail[]
   }
 }

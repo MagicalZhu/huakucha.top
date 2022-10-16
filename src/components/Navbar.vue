@@ -11,15 +11,19 @@
     ]"
   >
     <router-link class="font-bold" un-text="c-light hover:c-dark" to="/">
-      <span text="lg">hi@huakucha</span>
+      <span text="lg">{{navConfig.nutShellContent}}</span>
       <div i-fa6-solid:angle-right class="prompt inline-block" />
       <span class="blink">_</span>
     </router-link>
     <nav class="flex space-x-4">
-      <router-link to="/projects" title="Projects" class="nav-item">
+      <router-link to="/about" title="About" class="nav-item">
+        <div i-majesticons:paper-fold-text-line class="md:hidden" />
+        <span class="lt-md:hidden">About</span>
+      </router-link>
+      <!-- <router-link to="/projects" title="Projects" class="nav-item">
         <div i-ph:rocket-launch-duotone class="md:hidden" />
         <span class="lt-md:hidden">Projects</span>
-      </router-link>
+      </router-link> -->
 
       <router-link to="/posts" title="Blog" class="nav-item">
         <div i-majesticons:paper-fold-text-line class="md:hidden" />
@@ -42,6 +46,8 @@
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
 import { toggleDark } from "~/composables/dark";
+
+const navConfig = useConfigStore().getThemeConfig().nav
 
 const navbar = ref<HTMLElement | null>(null);
 const isFixed = ref(false);

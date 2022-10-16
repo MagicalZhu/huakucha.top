@@ -5,7 +5,7 @@ export const ThemeConfig:siteConfig = {
   authorName: '花裤衩',
   showProject: true,
   nav: {
-    nutShellContent: 'hi@huakucha'
+    nutShellContent: 'hi@YuLiang'
   },
   footer: {
     copyright: '© YuLiang Zhu 2022 <br />A dragon lost in human world'

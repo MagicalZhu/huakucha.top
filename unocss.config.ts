@@ -30,7 +30,7 @@ export default defineConfig({
   ],
   theme: {
     fontFamily: {
-      sans: `"Source Code Pro", system-ui, -apple-system, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif`
+      sans: `Roboto, "Source Code Pro", system-ui, -apple-system, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif`
     },
     boxShadow: {
       nav: "0 1px 8px 0 rgba(27, 35, 47, .1)"
@@ -39,7 +39,7 @@ export default defineConfig({
       brand: "#1772d0"
     },
     maxWidth: {
-      content: "85ch"
+      content: "90ch"
     }
   },
   presets: [

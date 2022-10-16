@@ -1,4 +1,5 @@
 <template>
+  <h1 class="font-600 text-c-dark pb-4">Blogs</h1>
   <template v-for="key in Object.keys(blogMap)" :key="key">
     <h3>{{ key }}</h3>
     <div

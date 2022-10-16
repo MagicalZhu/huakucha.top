@@ -2,6 +2,7 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 import { ThemeConfig } from '~/config/themeConfig'
 import {siteConfig} from 'siteConfig'
 import {tagConfig} from 'tagConfig'
+import {categoryConfig} from 'categoryConfig'
 
 export const useConfigStore = defineStore('config', () => {
   // state
@@ -53,11 +54,45 @@ export const useConfigStore = defineStore('config', () => {
     return tagMap
   }
 
+  function getCategories() {
+    const categoryMap:categoryConfig = {}
+    metas.forEach((meta) => {
+      // has categories
+      if (meta.frontmatter && meta.frontmatter.categories) {
+        const putCategoryMeta = (categoryKey:string, routePath: string,frontmatter:any, publishDate?:string ) => {
+          if(!categoryMap[categoryKey]) {
+            categoryMap[categoryKey] = []
+          }
+          categoryMap[categoryKey].push({
+            path: routePath,
+            date:publishDate,
+            frontmatter: {
+              categories: frontmatter.categories,
+              title: frontmatter.title
+            }
+          })
+        }
+        // Categories Array
+        if (Array.isArray(meta.frontmatter.categories) && meta.frontmatter.categories.length > 0) {
+          meta.frontmatter.categories.forEach((category: string) => {
+            putCategoryMeta(category, meta.path, meta.frontmatter, meta.date)
+          })
+        }
+        // Categories String
+        if (typeof meta.frontmatter.categories === 'string') {
+          putCategoryMeta(meta.frontmatter.categories, meta.path, meta.frontmatter,meta.date)
+        }
+      }
+    })
+    return categoryMap
+  }
+
   return {
     addRouteMeta,
     getRouteMetas,
     getThemeConfig,
-    getTags
+    getTags,
+    getCategories
   }
 })
 

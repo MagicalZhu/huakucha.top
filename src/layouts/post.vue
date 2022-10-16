@@ -92,12 +92,13 @@ onMounted(() => {
 
   useEventListener(window, "hashchange", navigate);
   useEventListener(content.value!, "click", handleAnchors, { passive: false });
-
   navigate();
   setTimeout(navigate, 500);
 });
 
-const isTocOpen = ref(true);
+const toc = useConfigStore().getThemeConfig().toc
+
+const isTocOpen = ref(toc.isTocOpen);
 const isToc = ref(true);
 
 onMounted(() => {

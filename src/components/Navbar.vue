@@ -25,6 +25,10 @@
         <div i-majesticons:paper-fold-text-line class="md:hidden" />
         <span class="lt-md:hidden">Blog</span>
       </router-link>
+      <router-link to="/tags" title="Tags" class="nav-item">
+        <div i-majesticons:paper-fold-text-line class="md:hidden" />
+        <span class="lt-md:hidden">Tags</span>
+      </router-link>
 
       <button nav-item title="Toggle dark" @click="toggleDark()">
         <div i="carbon-sun dark:carbon-moon" />

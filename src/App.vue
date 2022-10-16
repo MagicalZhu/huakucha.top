@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
+const {addRouteMeta, getThemeConfig} = useConfigStore()
+
 
 useHead({
-  title: "Xiaohan Zou",
+  title: getThemeConfig().authorName,
   meta: [
     { name: "description", content: "A dragon lost in human world." },
     {
@@ -23,7 +25,7 @@ watch(
 
 const router = useRouter()
 const routes = router.getRoutes()
-const {addRouteMeta, getRouteMetas} = useConfigStore()
+
 
 if(routes.length > 0) {
   routes.forEach((route:any) => {
@@ -32,8 +34,6 @@ if(routes.length > 0) {
     }
   })
 }
-
-console.log(getRouteMetas())
 
 </script>
 

@@ -21,7 +21,7 @@ interface Blog {
 
 
 interface Toc {
-  hiddenDeafult?: boolean
+  isTocOpen?: boolean
 }
 
 
@@ -46,5 +46,20 @@ declare module 'siteConfig' {
     footer:Footer,
     toc: Toc,
     blog: Blog
+  }
+}
+
+interface tagDetail {
+  path: string,
+  date?: string,
+  frontmatter: {
+    title: string,
+    tags: string[] | string
+    author?: string
+  }
+}
+declare module 'tagConfig' {
+  export interface tagConfig {
+    [propsName:string]: tagDetail[]
   }
 }

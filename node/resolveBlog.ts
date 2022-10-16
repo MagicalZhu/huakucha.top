@@ -13,6 +13,7 @@ export const resolveBlogFile = (route: any) => {
   const { content, data } = matter(md)
 
   route.meta = Object.assign(route.meta || {}, {
+    path:route.path,
     frontmatter: data,
     layout: 'post',
     date: route.path.substring(7, 17),

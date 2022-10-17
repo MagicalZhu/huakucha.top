@@ -16,7 +16,7 @@ export const resolveBlogFile = (route: any) => {
     path:route.path,
     frontmatter: data,
     layout: 'post',
-    date: route.path.substring(7, 17),
+    date: dayjs(data.date).format('YYYY-MM-DD'),
     readingTime: readingTime(content),
   })
 

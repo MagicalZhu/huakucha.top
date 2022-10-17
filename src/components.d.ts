@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BlogList: typeof import('./components/BlogList.vue')['default']
+    CategoryList: typeof import('./components/CategoryList.vue')['default']
     FlipImage: typeof import('./components/FlipImage.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Layout: typeof import('./components/Layout.vue')['default']
@@ -19,6 +20,5 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TagList: typeof import('./components/TagList.vue')['default']
-    Tags: typeof import('./components/TagList.vue')['default']
   }
 }

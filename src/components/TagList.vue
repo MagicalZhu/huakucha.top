@@ -2,11 +2,9 @@
   import {tagConfig} from 'tagConfig'
   import { computed } from "vue";
 
-  const {getTags, getRouteMetas} = useConfigStore()
+  const {getTags} = useConfigStore()
   // 获取 Tag 元数据
   const tagsMetaInfo: tagConfig  = getTags()
-
-  console.log(getRouteMetas())
 
   // 选中的标签
   let selectTag = $ref('')
@@ -59,8 +57,6 @@
 
 </template>
 
-color: #666;
-transition: border 0.3s ease, color 0.3s ease;
 
 <style type="text/css" scoped>
   .tags {

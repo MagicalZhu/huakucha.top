@@ -1,6 +1,9 @@
 <div flex items-end justify-between>
   <div>
-    <h1>Hi There! 👋</h1>
+    <h1>
+      YuLiang Zhu
+      <span text-sm opacity-50>朱玉良</span>
+    </h1>
     <span opacity-50>Hi there</span>
     <Links :links="frontmatter.socials" class="mt-4"/>
   </div>

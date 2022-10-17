@@ -25,9 +25,9 @@ type Blog = {
   path: string;
   title: string;
   date: string;
-};
+}
 
-const router = useRouter();
+const router = useRouter()
 
 const blogs: Blog[] = router
   .getRoutes()
@@ -39,12 +39,12 @@ const blogs: Blog[] = router
       date: i.meta.date
     })
   )
-  .sort((a: Blog, b: Blog) => dayjs(b.date).unix() - dayjs(a.date).unix());
+  .sort((a: Blog, b: Blog) => dayjs(b.date).unix() - dayjs(a.date).unix())
 
-const blogMap: Record<string, Blog[]> = {};
+const blogMap: Record<string, Blog[]> = {}
 
 for (const b of blogs) {
-  const y = b.date.substring(0, 4);
-  blogMap[y] ? blogMap[y].push(b) : (blogMap[y] = [b]);
+  const y = b.date.substring(0, 4)
+  blogMap[y] ? blogMap[y].push(b) : (blogMap[y] = [b])
 }
 </script>

@@ -29,9 +29,13 @@
         <div i-majesticons:paper-fold-text-line class="md:hidden" />
         <span class="lt-md:hidden">Blog</span>
       </router-link>
-      <router-link to="/tags" title="Tags" class="nav-item">
+      <router-link to="/categories" title="Category" class="nav-item">
         <div i-majesticons:paper-fold-text-line class="md:hidden" />
-        <span class="lt-md:hidden">Tags</span>
+        <span class="lt-md:hidden">Category</span>
+      </router-link>
+      <router-link to="/tags" title="Tag" class="nav-item">
+        <div i-majesticons:paper-fold-text-line class="md:hidden" />
+        <span class="lt-md:hidden">Tag</span>
       </router-link>
 
       <button nav-item title="Toggle dark" @click="toggleDark()">

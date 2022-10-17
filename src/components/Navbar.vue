@@ -17,7 +17,7 @@
     </router-link>
     <nav class="flex space-x-4">
       <router-link to="/about" title="About" class="nav-item">
-        <div i-majesticons:paper-fold-text-line class="md:hidden" />
+        <div i-carbon:user-profile class="md:hidden" />
         <span class="lt-md:hidden">About</span>
       </router-link>
       <!-- <router-link to="/projects" title="Projects" class="nav-item">
@@ -30,11 +30,11 @@
         <span class="lt-md:hidden">Blog</span>
       </router-link>
       <router-link to="/categories" title="Category" class="nav-item">
-        <div i-majesticons:paper-fold-text-line class="md:hidden" />
+        <div i-carbon:folder class="md:hidden" />
         <span class="lt-md:hidden">Category</span>
       </router-link>
       <router-link to="/tags" title="Tag" class="nav-item">
-        <div i-majesticons:paper-fold-text-line class="md:hidden" />
+        <div i-carbon:tag-group class="md:hidden" />
         <span class="lt-md:hidden">Tag</span>
       </router-link>
 

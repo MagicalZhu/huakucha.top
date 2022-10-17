@@ -1,6 +1,7 @@
 <script setup lang="ts">
-  import {tagConfig} from 'tagConfig'
-  import { computed } from "vue";
+  import { tagConfig } from 'tagConfig'
+  import { computed } from "vue"
+  // import { getPage } from '~/utils/page'
 
   const {getTags} = useConfigStore()
   // 获取 Tag 元数据
@@ -20,6 +21,7 @@
   const toggleTag = (tag:string) => {
     selectTag = tag
   }
+
 </script>
 
 <template>

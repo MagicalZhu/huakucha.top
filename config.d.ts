@@ -16,9 +16,17 @@ interface Footer {
 }
 
 interface Blog {
-  pageSize: number,
+  perDisplaSize: number,
 }
 
+interface Category {
+  perDisplaSize: number,
+}
+
+
+interface Tag {
+  perDisplaSize: number,
+}
 
 interface Toc {
   isTocOpen?: boolean
@@ -42,10 +50,12 @@ declare module 'siteConfig' {
     showProject?: boolean,
     projects?: Project[],
     socialList?: Social[]
+    toc: Toc
+    blog: Blog
+    category: Category,
+    tag: Tag,
     nav: Nav,
     footer:Footer,
-    toc: Toc,
-    blog: Blog
   }
 }
 

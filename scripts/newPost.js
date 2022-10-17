@@ -48,13 +48,13 @@ const askQuestions = () => {
         "Spring", "Java", "JavaScript", "Vue", "React", "杂谈", "SpringCloud",
         "SpringBoot"
       ],
-       pageSize: 3
-    }, 
+      pageSize: 5
+    },
     {
       name: "CATEGORY",
       type: "input",
       message: "What is the category of the file?"
-    }, 
+    },
     // {
     //   name: "DATE",
     //   type: "date",
@@ -86,7 +86,7 @@ return `---
   tags:
 ${getTags(tags)}
   date: ${dayjs().format('YYYY-MM-DD HH:mm:ss') }
-  category: ${category}
+  categories: ${category}
 ---
   `
 }

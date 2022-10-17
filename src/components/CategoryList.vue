@@ -1,49 +1,49 @@
 <script setup lang="ts">
-  import {tagConfig} from 'tagConfig'
+  import { categoryConfig } from 'categoryConfig'
   import { computed } from "vue";
 
-  const {getTags} = useConfigStore()
-  // 获取 Tag 元数据
-  const tagsMetaInfo: tagConfig  = getTags()
+  const {getCategories} = useConfigStore()
+  // 获取 Category 元数据
+  const categoryMap: categoryConfig  = getCategories()
 
   // 选中的标签
-  let selectTag = $ref('')
+  let selectCategory = $ref('')
 
   // 获取所有的 tag,并且默认选中第一个
-  const tagData:any = computed(() => {
-    const keys = Object.keys(tagsMetaInfo)
-    selectTag = keys[0]
+  const categoryData:any = computed(() => {
+    const keys = Object.keys(categoryMap)
+    selectCategory = keys[0]
     return keys
   })
 
   // 切换选中的标签
-  const toggleTag = (tag:string) => {
-    selectTag = tag
+  const toggleCategory = (category:string) => {
+    selectCategory = category
   }
 </script>
 
 <template>
-  <h1 class="font-600 text-c-dark pb-4">Tags</h1>
+  <h1 class="font-600 text-c-dark pb-4">Categories</h1>
   <div class="flex flex-wrap  space-x-6 mt-4 pb-6 justify-start tags">
     <span class="text-gray-400 font-light  hover:text-c-dark
                 transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110
                 cursor-pointer text-base leading-4 display-inline-block
                 "
-          v-for="tagName in tagData"
-          :class="{ activetag: selectTag === tagName }"
-          @click="toggleTag(tagName)">
-      {{tagName}}
+          v-for="categoryName in categoryData"
+          :class="{ activetag: selectCategory === categoryName }"
+          @click="toggleCategory(categoryName)">
+      {{categoryName}}
       <span class="tagsCount text-indigo-600">
-        {{tagsMetaInfo[tagName].length}}
+        {{categoryMap[categoryName].length}}
       </span>
     </span>
   </div>
-  <h4 class="hstack space-x-6 text-c-light hover:text-c-dark" v-show="selectTag">
-    <div i-carbon:tag-group />
-    <span class="ml-3">{{ selectTag }}</span>
+  <h4 class="hstack space-x-6 text-c-light hover:text-c-dark" v-show="selectCategory">
+    <div i-carbon:folder />
+    <span class="ml-3">{{ selectCategory }}</span>
   </h4>
   <div
-      v-for="(item, index) in tagsMetaInfo[selectTag]"
+      v-for="(item, index) in categoryMap[selectCategory]"
       :key="index"
       class="my-1 mx-0.5 flex"
     >

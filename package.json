@@ -15,6 +15,7 @@
     "trailingComma": "none"
   },
   "dependencies": {
+    "@giscus/vue": "^2.2.0",
     "@types/lodash": "^4.14.186",
     "@unocss/reset": "^0.45.26",
     "@vueuse/core": "^9.1.0",

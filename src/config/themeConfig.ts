@@ -4,6 +4,22 @@ import {siteConfig} from 'siteConfig'
 export const ThemeConfig:siteConfig = {
   authorName: '花裤衩',
   showProject: true,
+  comments: {
+    isOpen: true,
+    config: {
+      id: 'comments',
+      repo: 'MagicalZhu/vitesseDoc',
+      repoId: "R_kgDOH2ZKnw",
+      category: 'blog',
+      categoryId: 'DIC_kwDOH2ZKn84CSHLe',
+      mapping: "pathname",
+      reactionsEnabled: "1",
+      inputPosition: "top",
+      theme: 'light',
+      lang: "zh-CN",
+      loading: "lazy"
+    }
+  },
   nav: {
     nutShellContent: 'hi@YuLiang'
   },
@@ -14,13 +30,13 @@ export const ThemeConfig:siteConfig = {
     isTocOpen: true,
   },
   tag: {
-    perDisplaySize: 1,
+    perDisplaSize: 1,
   },
   category: {
-    perDisplaySize: 5
+    perDisplaSize: 5
   },
   blog: {
-    perDisplaySize: 5,
-    rencentSize: 8
+    perDisplaSize: 1,
+    rencentSize: 5
   }
 }

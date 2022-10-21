@@ -9,9 +9,9 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BlogList: typeof import('./components/BlogList.vue')['default']
     CategoryList: typeof import('./components/CategoryList.vue')['default']
+    Comment: typeof import('./components/Comment.vue')['default']
     FlipImage: typeof import('./components/FlipImage.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
-    Giscus: typeof import('@giscus/vue')['default']
     Layout: typeof import('./components/Layout.vue')['default']
     Links: typeof import('./components/Links.vue')['default']
     Navbar: typeof import('./components/Navbar.vue')['default']

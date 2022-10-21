@@ -40,12 +40,17 @@ interface Project {
   category: string
 }
 
+
 /**
  * @description theme perference config
  */
 declare module 'siteConfig' {
   export interface siteConfig {
     authorName: string,
+    comments: {
+      isOpen: boolean,
+      config: import('@giscus/vue').GiscusProps
+    }
     // default: false
     showProject?: boolean,
     projects?: Project[],

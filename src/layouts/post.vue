@@ -15,6 +15,7 @@
 
     <article ref="content" :class="isTocOpen && 'toc-open'">
       <RouterView />
+      <Comment/>
     </article>
     <div
       v-if="prevBlog || nextBlog"
@@ -32,24 +33,13 @@
       </span>
     </div>
   </Layout>
-  <Giscus
-    id='comments'
-    repo="MagicalZhu/vitesseDoc"
-    repoId="R_kgDOH2ZKnw"
-    category='blog'
-    categoryId='DIC_kwDOH2ZKn84CSHLe'
-    mapping="pathname"
-    reactionsEnabled="1"
-    inputPosition="top"
-    theme='light'
-    lang="zh-CN"
-    loading="lazy">
-  </Giscus>
 </template>
 
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
 import { formatDate } from "~/utils";
+
+
 
 const router = useRouter();
 

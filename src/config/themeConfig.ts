@@ -14,12 +14,13 @@ export const ThemeConfig:siteConfig = {
     isTocOpen: true,
   },
   tag: {
-    perDisplaSize: 1,
+    perDisplaySize: 1,
   },
   category: {
-    perDisplaSize: 5
+    perDisplaySize: 5
   },
   blog: {
-    perDisplaSize: 5
+    perDisplaySize: 5,
+    rencentSize: 8
   }
 }

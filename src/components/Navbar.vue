@@ -16,27 +16,31 @@
       <span class="blink">_</span>
     </router-link>
     <nav class="flex space-x-4">
-      <router-link to="/about" title="About" class="nav-item">
+      <router-link to="/about" :title="$t('theme.nav.About')" class="nav-item">
         <div i-carbon:user-profile class="md:hidden" />
-        <span class="lt-md:hidden">About</span>
+        <span class="lt-md:hidden">{{$t('theme.nav.About')}}</span>
       </router-link>
       <!-- <router-link to="/projects" title="Projects" class="nav-item">
         <div i-ph:rocket-launch-duotone class="md:hidden" />
         <span class="lt-md:hidden">Projects</span>
       </router-link> -->
 
-      <router-link to="/posts" title="Blog" class="nav-item">
+      <router-link to="/posts" :title="$t('theme.nav.Blog')" class="nav-item">
         <div i-majesticons:paper-fold-text-line class="md:hidden" />
-        <span class="lt-md:hidden">Blog</span>
+        <span class="lt-md:hidden">{{$t('theme.nav.Blog')}}</span>
       </router-link>
-      <router-link to="/categories" title="Category" class="nav-item">
+      <router-link to="/categories" :title="$t('theme.nav.Category')" class="nav-item">
         <div i-carbon:folder class="md:hidden" />
-        <span class="lt-md:hidden">Category</span>
+        <span class="lt-md:hidden">{{$t('theme.nav.Category')}}</span>
       </router-link>
-      <router-link to="/tags" title="Tag" class="nav-item">
+      <router-link to="/tags" :title="$t('theme.nav.Tag')" class="nav-item">
         <div i-carbon:tag-group class="md:hidden" />
-        <span class="lt-md:hidden">Tag</span>
+        <span class="lt-md:hidden">{{$t('theme.nav.Tag')}}</span>
       </router-link>
+
+      <button nav-item title="Toggle Language" @click="toggleLanguage()">
+        <div i-carbon-language />
+      </button>
 
       <button nav-item title="Toggle dark" @click="toggleDark()">
         <div i="carbon-sun dark:carbon-moon" />
@@ -50,6 +54,13 @@
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
 import { toggleDark } from "~/composables/dark";
+
+const { availableLocales, locale } = useI18n()
+
+const toggleLanguage = () => {
+  const locales = availableLocales
+  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+}
 
 const navConfig = useConfigStore().getThemeConfig().nav
 

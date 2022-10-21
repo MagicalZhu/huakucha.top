@@ -1,8 +1,8 @@
 
 /**
- * use iconify
+ * theme perference type
  */
-interface Social {
+ interface Social {
   url: string,
   icon: string
 }
@@ -17,6 +17,8 @@ interface Footer {
 
 interface Blog {
   perDisplaSize: number,
+  // 最近发布文章
+  rencentSize: number
 }
 
 interface Category {
@@ -32,17 +34,15 @@ interface Toc {
   isTocOpen?: boolean
 }
 
-
-/**
- * use iconify
- */
 interface Project {
   projectName: string,
   icon: string,
   category: string
 }
 
-
+/**
+ * @description theme perference config
+ */
 declare module 'siteConfig' {
   export interface siteConfig {
     authorName: string,
@@ -60,47 +60,25 @@ declare module 'siteConfig' {
 }
 
 /**
- * 标签详细
+ * 标签/类别详细
  */
-interface tagDetail {
-  path: string,
-  date?: string,
-  frontmatter: {
-    title: string,
-    tags: string[] | string
-    author?: string
-  }
-}
-declare module 'tagConfig' {
-  export interface tagConfig {
-    /**
-     * propName: The name of the tag
-     * tagDetail: tag detail
-     */
-    [propsName:string]: tagDetail[]
-  }
-}
-
-
-/**
- * 类别详细
- */
-interface categoryDetail {
+interface detail {
   path: string,
   date?: string,
   frontmatter: {
     title: string,
     categories: string[] | string
+    tags: string[] | string
     author?: string
   }
 }
-
-declare module 'categoryConfig' {
-  export interface categoryConfig {
+declare module 'detailConfig' {
+  export interface detailConfig {
     /**
-     * propName: The name of the category
-     * categoryDetail: category detail
+     * propName: The name of the tag
+     * tagDetail: tag detail
      */
-    [propsName:string]: categoryDetail[]
+    [propsName:string]: detail[]
   }
 }
+

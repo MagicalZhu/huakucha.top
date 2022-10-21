@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import { tagConfig } from 'tagConfig'
+  import { detailConfig } from 'detailConfig'
   import { computed } from "vue"
   // import { getPage } from '~/utils/page'
 
-  const {getTags} = useConfigStore()
+  const {getFunc} = useConfigStore()
   // 获取 Tag 元数据
-  const tagsMetaInfo: tagConfig  = getTags()
+  const tagsMetaInfo: detailConfig  = getFunc('tags')
 
   // 选中的标签
   let selectTag = $ref('')

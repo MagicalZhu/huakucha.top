@@ -1,8 +1,9 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { ThemeConfig } from '~/config/themeConfig'
 import {siteConfig} from 'siteConfig'
-import {tagConfig} from 'tagConfig'
-import {categoryConfig} from 'categoryConfig'
+import {detailConfig} from 'detailConfig'
+
+type queryType = 'tags' | 'categories'
 
 export const useConfigStore = defineStore('config', () => {
   // state
@@ -21,78 +22,44 @@ export const useConfigStore = defineStore('config', () => {
     return themeConfig
   }
 
-  function getTags () {
-    const tagMap:tagConfig = {}
+  function getFunc(queryType: queryType) {
+    const resultMap:detailConfig= {}
+
     metas.forEach((meta) => {
-      // has Tags
-      if (meta.frontmatter && meta.frontmatter.tags) {
-        const putTagMeta = (tagKey:string, routePath: string,frontmatter:any, publishDate?:string ) => {
-          if(!tagMap[tagKey]) {
-            tagMap[tagKey] = []
+      if (meta.frontmatter && meta.frontmatter[queryType]) {
+        const putMeta = (key:string, routePath: string,frontmatter:any, publishDate?:string ) => {
+          if(!resultMap[key]) {
+            resultMap[key] = []
           }
-          tagMap[tagKey].push({
+          resultMap[key].push({
             path: routePath,
             date:publishDate,
             frontmatter: {
+              categories: frontmatter.categories,
               tags: frontmatter.tags,
               title: frontmatter.title
             }
           })
         }
-        // Tags Array
-        if (Array.isArray(meta.frontmatter.tags) && meta.frontmatter.tags.length > 0) {
-          meta.frontmatter.tags.forEach((tag: string) => {
-            putTagMeta(tag, meta.path, meta.frontmatter, meta.date)
+        if (Array.isArray(meta.frontmatter[queryType]) && meta.frontmatter[queryType].length > 0) {
+          meta.frontmatter[queryType].forEach((ele: string) => {
+            putMeta(ele, meta.path, meta.frontmatter, meta.date)
           })
         }
-        // Tags String
-        if (typeof meta.frontmatter.tags === 'string') {
-          putTagMeta(meta.frontmatter.tags, meta.path, meta.frontmatter,meta.date)
+        if (typeof meta.frontmatter[queryType] === 'string') {
+          putMeta(meta.frontmatter[queryType], meta.path, meta.frontmatter,meta.date)
         }
       }
     })
-    return tagMap
+    return resultMap
   }
 
-  function getCategories() {
-    const categoryMap:categoryConfig = {}
-    metas.forEach((meta) => {
-      // has categories
-      if (meta.frontmatter && meta.frontmatter.categories) {
-        const putCategoryMeta = (categoryKey:string, routePath: string,frontmatter:any, publishDate?:string ) => {
-          if(!categoryMap[categoryKey]) {
-            categoryMap[categoryKey] = []
-          }
-          categoryMap[categoryKey].push({
-            path: routePath,
-            date:publishDate,
-            frontmatter: {
-              categories: frontmatter.categories,
-              title: frontmatter.title
-            }
-          })
-        }
-        // Categories Array
-        if (Array.isArray(meta.frontmatter.categories) && meta.frontmatter.categories.length > 0) {
-          meta.frontmatter.categories.forEach((category: string) => {
-            putCategoryMeta(category, meta.path, meta.frontmatter, meta.date)
-          })
-        }
-        // Categories String
-        if (typeof meta.frontmatter.categories === 'string') {
-          putCategoryMeta(meta.frontmatter.categories, meta.path, meta.frontmatter,meta.date)
-        }
-      }
-    })
-    return categoryMap
-  }
 
   return {
     addRouteMeta,
     getRouteMetas,
     getThemeConfig,
-    getTags,
-    getCategories
+    getFunc
   }
 })
 

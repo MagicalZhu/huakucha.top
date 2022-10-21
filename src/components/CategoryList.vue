@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import { categoryConfig } from 'categoryConfig'
+  import { detailConfig } from 'detailConfig'
   import { computed } from "vue";
 
-  const {getCategories} = useConfigStore()
+  const {getFunc} = useConfigStore()
   // 获取 Category 元数据
-  const categoryMap: categoryConfig  = getCategories()
+  const categoryMap: detailConfig  = getFunc('categories')
 
   // 选中的标签
   let selectCategory = $ref('')

@@ -1,11 +1,8 @@
 <script setup lang="ts">
-  import { detailConfig } from 'detailConfig'
-  import { computed } from "vue"
-  // import { getPage } from '~/utils/page'
+  import { getPageCount,getPage } from '~/utils/page'
 
-  const {getFunc} = useConfigStore()
-  // 获取 Tag 元数据
-  const tagsMetaInfo: detailConfig  = getFunc('tags')
+  const { getFunc } = useConfigStore()
+  const tagsMetaInfo = getFunc('tags')
 
   // 选中的标签
   let selectTag = $ref('')
@@ -17,15 +14,33 @@
     return keys
   })
 
+  // 获取页数
+  const pageCount = computed<number>(() => {
+    return getPageCount(tagsMetaInfo[selectTag], 'tag')
+  })
+
+  const pageNum = $ref(1)
+
+  const prev = computed(() => {
+    return pageNum > 1
+  })
+
+  const next = computed(() => {
+    return pageNum < pageCount.value
+  })
+
   // 切换选中的标签
   const toggleTag = (tag:string) => {
     selectTag = tag
   }
 
+  const contentData = computed(() => {
+    return getPage(tagsMetaInfo[selectTag], pageNum, 'tag')
+  })
+
 </script>
 
 <template>
-  <h1 class="font-600 text-c-dark pb-4">Tags</h1>
   <div class="flex flex-wrap  space-x-6 mt-4 pb-6 justify-start tags">
     <span class="text-gray-400 font-light  hover:text-c-dark
                 transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110
@@ -40,12 +55,12 @@
       </span>
     </span>
   </div>
-  <h4 class="hstack space-x-6 text-c-light hover:text-c-dark" v-show="selectTag">
+  <h4 class="hstack space-x-2 text-c-light hover:text-c-dark" v-show="selectTag">
     <div i-carbon:tag-group />
     <span class="ml-3">{{ selectTag }}</span>
   </h4>
   <div
-      v-for="(item, index) in tagsMetaInfo[selectTag]"
+      v-for="(item, index) in contentData"
       :key="index"
       class="my-1 mx-0.5 flex"
     >
@@ -55,7 +70,31 @@
     <div class="leading-6 opacity-50 text-sm mr-2 mb-4">
       {{ item.date }}
     </div>
+  </div>
+  <div class='mt-60 ml-10 mr-10'>
+    <div class='prose prose-lg m-auto'>
+      <!-- page -->
+      <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
+                    relative inline-flex text-base font-medium"
+              v-if="prev"
+              @click="--pageNum">
+        <div>
+          <span i-carbon:chevron-left class="text-sm"></span>
+          <span class="ml-1 pr-2">{{$t('theme.blog.prev')}}</span>
+        </div>
+      </button>
+
+      <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
+                    relative inline-flex text-base font-medium float-right"
+              v-if="next"
+              @click="++pageNum">
+        <div>
+          <span class="ml-1 pr-2">{{$t('theme.blog.next')}}</span>
+          <span i-carbon:chevron-right class="text-sm"></span>
+        </div>
+      </button>
     </div>
+  </div>
 
 </template>
 

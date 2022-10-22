@@ -4,6 +4,9 @@ import matter from 'gray-matter'
 import dayjs from 'dayjs'
 import { readingTime } from '.'
 
+/**
+ * 解析博客文件,将博客的布局系统设置为 post, 并且将博客元数据写入 route.meta 中
+ */
 export const resolveBlogFile = (route: any) => {
   if (!route.path.startsWith('/posts') || route.path === '/posts')
     return
@@ -17,12 +20,14 @@ export const resolveBlogFile = (route: any) => {
     frontmatter: data,
     layout: 'post',
     date: dayjs(data.date).format('YYYY-MM-DD'),
-    readingTime: readingTime(content),
+    readingTime: readingTime(content)
   })
-
   return route
 }
 
+/**
+ * 构建博客的链表(按文件的 date 排序)
+ */
 export const resolveBlogList = (routes: any[]) => {
   const blogs = routes
     .filter((item: any) => item.meta?.layout === 'post')
@@ -41,7 +46,6 @@ export const resolveBlogList = (routes: any[]) => {
       prev: i < blogs.length ? blogs[i + 1] : null,
       next: i > 0 ? blogs[i - 1] : null,
     }
-
     return item
   })
 }

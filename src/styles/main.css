@@ -10,7 +10,7 @@ body,
 }
 
 html.dark {
-  @apply bg-gray-700;
+  @apply bg-dark-300;
   color-scheme: dark;
 }
 

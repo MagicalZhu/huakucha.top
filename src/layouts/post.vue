@@ -1,3 +1,7 @@
+<!--
+  layout for blog content: 组织博客文章内容的 layout
+
+-->
 <template>
   <Layout class="post">
     <template v-if="isToc" #navbar>
@@ -8,15 +12,15 @@
 
     <div class="prose-lg mt-6 mb-8 mx-auto">
       <h1 class="text-4xl font-bold">{{ title }}</h1>
-      <p class="opacity-50 mt-2">
-        {{ formatDate(date) }} · {{ readingTime }} min
+      <p class="opacity-50 mt-6 ml-2 text-base">
+        {{ formatDate(date) }} · {{ readingTime }} {{$t('theme.blog.timeUnit')}}
       </p>
     </div>
 
     <article ref="content" :class="isTocOpen && 'toc-open'">
       <RouterView />
-      <Comment/>
     </article>
+    <Comment/>
     <div
       v-if="prevBlog || nextBlog"
       class="prose-lg mx-auto grid md:grid-cols-2 pt-4 mt-16 border-t border-c"
@@ -38,7 +42,6 @@
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
 import { formatDate } from "~/utils";
-
 
 
 const router = useRouter();

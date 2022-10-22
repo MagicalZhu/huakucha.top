@@ -2,13 +2,13 @@
 /**
  * theme perference type
  */
- interface Social {
+interface Social {
   url: string,
   icon: string
 }
 
 interface Nav {
-  nutShellContent?: string
+  shell?: string
 }
 
 interface Footer {
@@ -16,18 +16,18 @@ interface Footer {
 }
 
 interface Blog {
-  perDisplaSize: number,
+  perPageSize: number,
   // 最近发布文章
   rencentSize: number
 }
 
 interface Category {
-  perDisplaSize: number,
+  perPageSize: number,
 }
 
 
 interface Tag {
-  perDisplaSize: number,
+  perPageSize: number,
 }
 
 interface Toc {
@@ -77,12 +77,8 @@ interface detail {
     author?: string
   }
 }
-declare module 'detailConfig' {
-  export interface detailConfig {
-    /**
-     * propName: The name of the tag
-     * tagDetail: tag detail
-     */
+declare module 'archiveConfig' {
+  export interface archiveConfig {
     [propsName:string]: detail[]
   }
 }

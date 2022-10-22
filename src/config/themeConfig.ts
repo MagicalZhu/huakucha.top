@@ -9,19 +9,18 @@ export const ThemeConfig:siteConfig = {
     config: {
       id: 'comments',
       repo: 'MagicalZhu/vitesseDoc',
-      repoId: "R_kgDOH2ZKnw",
+      repoId: 'R_kgDOH2ZKnw',
       category: 'blog',
       categoryId: 'DIC_kwDOH2ZKn84CSHLe',
       mapping: "pathname",
-      reactionsEnabled: "1",
-      inputPosition: "top",
-      theme: 'light',
-      lang: "zh-CN",
-      loading: "lazy"
+      reactionsEnabled: '1',
+      inputPosition: 'top',
+      lang: 'zh-CN',
+      loading: 'lazy'
     }
   },
   nav: {
-    nutShellContent: 'hi@YuLiang'
+    shell: 'Hi@YuLiang'
   },
   footer: {
     copyright: '© YuLiang Zhu 2022 <br />A dragon lost in human world'
@@ -30,13 +29,13 @@ export const ThemeConfig:siteConfig = {
     isTocOpen: true,
   },
   tag: {
-    perDisplaSize: 1,
+    perPageSize: 8,
   },
   category: {
-    perDisplaSize: 5
+    perPageSize: 5
   },
   blog: {
-    perDisplaSize: 1,
+    perPageSize: 1,
     rencentSize: 5
   }
 }

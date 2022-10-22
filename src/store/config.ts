@@ -1,7 +1,7 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { ThemeConfig } from '~/config/themeConfig'
-import {siteConfig} from 'siteConfig'
-import {detailConfig} from 'detailConfig'
+import { siteConfig } from 'siteConfig'
+import { archiveConfig } from 'archiveConfig'
 
 type queryType = 'tags' | 'categories'
 
@@ -9,6 +9,7 @@ export const useConfigStore = defineStore('config', () => {
   // state
   const metas = $ref(new Array<any>())
   const themeConfig = $ref(ThemeConfig)
+
 
   // getters
   function addRouteMeta(tag: any) {
@@ -23,7 +24,7 @@ export const useConfigStore = defineStore('config', () => {
   }
 
   function getFunc(queryType: queryType) {
-    const resultMap:detailConfig= {}
+    const resultMap:archiveConfig= {}
 
     metas.forEach((meta) => {
       if (meta.frontmatter && meta.frontmatter[queryType]) {
@@ -65,4 +66,4 @@ export const useConfigStore = defineStore('config', () => {
 
 
 if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useConfigStore, import.meta.hot))

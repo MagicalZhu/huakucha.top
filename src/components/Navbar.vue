@@ -11,15 +11,17 @@
     ]"
   >
     <router-link class="font-bold" un-text="c-light hover:c-dark" to="/">
-      <span text="lg">{{navConfig.nutShellContent}}</span>
+      <span class="font-500">{{navConfig.shell}}</span>
       <div i-fa6-solid:angle-right class="prompt inline-block" />
       <span class="blink">_</span>
     </router-link>
+
     <nav class="flex space-x-4">
       <router-link to="/about" :title="$t('theme.nav.About')" class="nav-item">
         <div i-carbon:user-profile class="md:hidden" />
         <span class="lt-md:hidden">{{$t('theme.nav.About')}}</span>
       </router-link>
+
       <!-- <router-link to="/projects" title="Projects" class="nav-item">
         <div i-ph:rocket-launch-duotone class="md:hidden" />
         <span class="lt-md:hidden">Projects</span>
@@ -29,17 +31,19 @@
         <div i-majesticons:paper-fold-text-line class="md:hidden" />
         <span class="lt-md:hidden">{{$t('theme.nav.Blog')}}</span>
       </router-link>
+
       <router-link to="/categories" :title="$t('theme.nav.Category')" class="nav-item">
         <div i-carbon:folder class="md:hidden" />
         <span class="lt-md:hidden">{{$t('theme.nav.Category')}}</span>
       </router-link>
+
       <router-link to="/tags" :title="$t('theme.nav.Tag')" class="nav-item">
         <div i-carbon:tag-group class="md:hidden" />
         <span class="lt-md:hidden">{{$t('theme.nav.Tag')}}</span>
       </router-link>
 
       <button nav-item title="Toggle Language" @click="toggleLanguage()">
-        <div i-carbon-language />
+        <div i-ion:language-outline />
       </button>
 
       <button nav-item title="Toggle dark" @click="toggleDark()">

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import { detailConfig } from 'detailConfig'
+  import { archiveConfig } from 'archiveConfig'
   import { computed } from "vue";
 
   const {getFunc} = useConfigStore()
   // 获取 Category 元数据
-  const categoryMap: detailConfig  = getFunc('categories')
+  const categoryMap: archiveConfig  = getFunc('categories')
 
   // 选中的标签
   let selectCategory = $ref('')
@@ -23,7 +23,6 @@
 </script>
 
 <template>
-  <h1 class="font-600 text-c-dark pb-4">Categories</h1>
   <div class="flex flex-wrap  space-x-6 mt-4 pb-6 justify-start tags">
     <span class="text-gray-400 font-light  hover:text-c-dark
                 transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110
@@ -38,9 +37,10 @@
       </span>
     </span>
   </div>
-  <h4 class="hstack space-x-6 text-c-light hover:text-c-dark" v-show="selectCategory">
-    <div i-carbon:folder />
-    <span class="ml-3">{{ selectCategory }}</span>
+  <h4 class="hstack space-x-2 text-c-light hover:text-c-dark text-base" v-show="selectCategory">
+    <div i-carbon:folder >
+    </div>
+    <span>{{ selectCategory }}</span>
   </h4>
   <div
       v-for="(item, index) in categoryMap[selectCategory]"

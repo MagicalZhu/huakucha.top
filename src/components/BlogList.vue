@@ -15,6 +15,7 @@ defineProps<{
 </script>
 
 <template>
+  <!-- key is  year string -->
   <div v-for="key in Object.keys(blogData)" :key="key">
     <h3>{{ key }}</h3>
     <div

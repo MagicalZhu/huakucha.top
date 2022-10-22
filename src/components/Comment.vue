@@ -1,22 +1,27 @@
-<script setup lang="ts">
-import Giscus from '@giscus/vue'
-const CommentConfig = useConfigStore().getThemeConfig().comments
-</script>
 
+<!-- Comment Component -->
 <template>
   <div class="prose-lg mt-6 mb-8 mx-auto">
-  <Giscus v-show="CommentConfig.isOpen"
+  <giscus-widget v-show="CommentConfig.isOpen"
       :id="CommentConfig.config.id"
       :repo="CommentConfig.config.repo"
       :repoId="CommentConfig.config.repoId"
       :category='CommentConfig.config.category'
       :categoryId='CommentConfig.config.categoryId'
       :mapping="CommentConfig.config.mapping"
-      :reactionsEnabled="CommentConfig.config.reactionsEnabled"
       :inputPosition="CommentConfig.config.inputPosition"
-      :theme='CommentConfig.config.theme'
-      :lang="CommentConfig.config.lang"
+      :theme='theme'
+      :lang="locale"
       :loading="CommentConfig.config.loading">
-    </Giscus>
+    </giscus-widget>
   </div>
 </template>
+<script setup>
+import 'giscus'
+const CommentConfig = useConfigStore().getThemeConfig().comments
+const theme = computed(() => {
+  return isDark.value ? 'dark' : 'light'
+})
+const { locale } = useI18n()
+
+</script>

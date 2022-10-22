@@ -2,7 +2,7 @@
 title: New homepage
 tags:
   - Spring
-categories: Spring编程
+categories: Java编程
 date: '2022-05-20'
 ---
 

@@ -15,7 +15,6 @@
     "trailingComma": "none"
   },
   "dependencies": {
-    "@giscus/vue": "^2.2.0",
     "@types/lodash": "^4.14.186",
     "@unocss/reset": "^0.45.26",
     "@vueuse/core": "^9.1.0",
@@ -23,6 +22,7 @@
     "chalk": "^5.1.2",
     "dayjs": "^1.11.5",
     "figlet": "^1.5.2",
+    "giscus": "^1.2.0",
     "inquirer": "^9.1.3",
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",

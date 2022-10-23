@@ -6,7 +6,6 @@ categories: Java编程
 date: '2022-05-20'
 ---
 
-`im`
 
 It seems that I always spend a lot of time on building my homepage.
 
@@ -23,7 +22,5 @@ I want my homepage to be more "research" and "serious". My [old homepage](https:
 
 I don't want to modify my blog theme directly since I still love its style and it already has a certain number of users. Thus I wrote a new one.
 
-
----
 
 Anyway, this is site is still WIP, hoping to see what it will eventually become.

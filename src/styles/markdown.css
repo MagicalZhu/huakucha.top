@@ -8,6 +8,14 @@
   line-height: 1.4;
 }
 
+
+.prose code:before {
+  content: ''
+}
+.prose code:after {
+  content: ''
+}
+
 .prose img {
   @apply w-full;
 }

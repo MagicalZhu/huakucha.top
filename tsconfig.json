@@ -21,7 +21,9 @@
       "vite-plugin-vue-layouts/client"
     ],
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "markdown-it-sup": ["./node_modules/@akiravoid/markdown-it-sup"],
+      "markdown-it-mark": ["./node_modules/@akiravoid/markdown-it-mark"]
     }
   },
   "exclude": ["dist", "node_modules"]

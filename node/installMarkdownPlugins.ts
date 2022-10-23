@@ -5,6 +5,11 @@ import TOC from 'markdown-it-table-of-contents'
 import anchor from 'markdown-it-anchor'
 import type MarkdownIt from 'markdown-it'
 import { slugify } from '@renovamen/utils'
+import sup from 'markdown-it-sup'
+import mkcontainer from 'markdown-it-container'
+import mark from 'markdown-it-mark'
+
+
 
 export const installMarkdownPlugins = (md: MarkdownIt) => {
   /**
@@ -14,8 +19,22 @@ export const installMarkdownPlugins = (md: MarkdownIt) => {
     theme: {
       light: 'vitesse-light',
       dark: 'vitesse-dark',
-    },
+    }
   })
+
+  // 上标
+  md.use(sup)
+
+  /**
+   * @see {@link https://github.com/markdown-it/markdown-it-container}
+   * 自定义代码块
+   */
+  md.use(mkcontainer)
+
+  /**
+   * mark标记
+   */
+  md.use(mark)
 
   md.use(anchor, {
     slugify,

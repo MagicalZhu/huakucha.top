@@ -6,6 +6,8 @@ categories: Java编程
 date: '2022-05-20'
 ---
 
+`im`
+
 It seems that I always spend a lot of time on building my homepage.
 
 My first homepage (or blog) was built with [Jekyll](https://jekyllrb.com/) in 2018. I wrote a [theme](https://github.com/Renovamen/jekyll-theme-gungnir) named Gungnir for it, since I found out none of the existing Jekyll themes are good enough for me. At that time, I knew almost nothing about FE and struggled a lot with JavaScript, CSS and the [Liquid](https://shopify.github.io/liquid/) templating language, leading to messy code that is difficult to maintain. In 2020, I migrated [Gungnir](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0) to [VuePress](https://vuepress.vuejs.org), a more powerful static website generator. And last year, I rewrote the [theme](https://github.com/Renovamen/vuepress-theme-gungnir) in [VuePress 2](https://v2.vuepress.vuejs.org) to take advantage of Vue 3 and Vite, which is still actively maintained.

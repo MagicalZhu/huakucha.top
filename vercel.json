@@ -1,8 +1,13 @@
 {
 	"rewrites": [
 		{
-			"source": "/posts", 
-			"destination": "/posts" 
+			"source": "/:path*", 
+			"destination": "/index.html" 
 		}
-	]
+	],
+	"build": {
+		"env": {
+		  "ENABLE_VC_BUILD": "1"
+		}
+	  }
 }

@@ -7,7 +7,7 @@
       <Navbar>
         <slot name="navbar"/>
       </Navbar>
-      <router-view :blogData="blogMap"/>
+      <router-view/>
     </div>
     <div className='py-2 flex flex-center justify-center' >
       <button className="bg-white border-gray-300 text-gray-500

@@ -1,16 +1,7 @@
 <script setup lang="ts">
 import { formatDate } from "~/utils"
-
-type Blog = {
-  path: string;
-  title: string;
-  date: string;
-}
-
-defineProps<{
-  blogData: Record<string, Blog[]>
-}>()
-
+import {getBlogs} from '~/utils/index'
+const blogData = computed(() => getBlogs())
 
 </script>
 

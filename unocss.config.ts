@@ -9,6 +9,7 @@ import {
   transformerVariantGroup
 } from "unocss";
 
+
 export default defineConfig({
   shortcuts: [
     ["flex-center", "flex items-center justify-center"],
@@ -42,6 +43,23 @@ export default defineConfig({
   },
   presets: [
     presetUno(),
+    /**
+     * @see https://windicss.org/posts/v30.html#attributify-mode
+     * example 
+     * <button class="bg-blue-400 hover:bg-blue-500 text-sm text-white font-mono font-light py-2 px-4 rounded border-2 
+     *                border-blue-200 dark:bg-blue-500 dark:hover:bg-blue-600">
+     *   Button
+     * </button>
+     *  equals t0
+     *  <button 
+     *       bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600"
+     *       text="sm white"
+     *       font="mono light"
+     *       p="y-2 x-4"
+     *       border="2 rounded blue-200">
+     *       Button
+     *   </button>
+     */
     presetAttributify(),
     presetWebFonts({
       fonts: {

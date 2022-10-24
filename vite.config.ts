@@ -120,7 +120,6 @@ export default defineConfig({
      * @see https://github.com/antfu/vite-plugin-inspect
      */
     Inspect(),
-    vercel(),
   ],
 
 

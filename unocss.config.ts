@@ -30,9 +30,6 @@ export default defineConfig({
     ["prose-lg", "lg:text-lg max-w-content"],
   ],
   theme: {
-    fontFamily: {
-      sans: `Roboto, "Source Code Pro", system-ui, -apple-system, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif`
-    },
     boxShadow: {
       nav: "0 1px 8px 0 rgba(27, 35, 47, .1)"
     },

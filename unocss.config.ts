@@ -37,7 +37,7 @@ export default defineConfig({
       brand: "#1772d0"
     },
     maxWidth: {
-      content: "120ch"
+      content: "100ch"
     }
   },
   presets: [

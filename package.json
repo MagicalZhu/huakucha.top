@@ -35,7 +35,6 @@
     "nprogress": "^0.2.0",
     "pinia": "^2.0.17",
     "prettier": "^2.7.1",
-    "vite-plugin-vercel": "^0.0.0-alpha.0",
     "vue": "^3.2.37",
     "vue-demi": "^0.13.6",
     "vue-i18n": "^9.2.2",

@@ -16,7 +16,7 @@ socials:
     <div class="w-48 h-48 rounded-full mb-6 bg-red-100">
       <img src="/img/log.png" class="w-full p-2 h-full object-contain"/>
     </div>
-    <h1 class="text-2xl font-bold text-center mb-4">
+    <h1 class="text-3xl font-bold text-center mb-4">
       Hey 👋 I'm YuLiang Zhu
     </h1>
     <div class="text-5xl md:text-6xl font-bold text-center max-w-3xl mb-4 relative">

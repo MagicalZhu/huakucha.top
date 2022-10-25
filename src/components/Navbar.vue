@@ -12,9 +12,9 @@
   >
     <router-link class="font-bold" un-text="c-light hover:c-dark" to="/">
       <span class="font-500">{{navConfig.shell}}</span>
-      <div i-fa6-solid:angle-right 
-           class="inline-block" 
-           text="xs"/>
+      <div i-fa6-solid:angle-right
+          class="inline-block"
+          text="xs"/>
       <span class="blink">_</span>
     </router-link>
 

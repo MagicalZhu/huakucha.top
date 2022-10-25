@@ -19,10 +19,3 @@
     <Footer />
   </main>
 </template>
-
-<script setup lang='ts'>
-
-import {getBlogs} from '~/utils/index'
-const blogMap = computed(() => getBlogs())
-
-</script>

@@ -44,8 +44,7 @@
   <div class="flex flex-wrap  space-x-6 mt-4 pb-6 justify-start tags">
     <span class="text-gray-400 font-light  hover:text-c-dark
                 transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110
-                cursor-pointer text-base leading-4 display-inline-block
-                "
+                cursor-pointer text-base leading-4 display-inline-block font-mono"
           v-for="tagName in tagData"
           :class="{ activetag: selectTag === tagName }"
           @click="toggleTag(tagName)">
@@ -57,23 +56,25 @@
   </div>
   <h4 class="hstack space-x-2 text-c-light hover:text-c-dark" v-show="selectTag">
     <div i-carbon:tag-group />
-    <span class="ml-3">{{ selectTag }}</span>
+    <span class="ml-3 font-mono">{{ selectTag }}</span>
   </h4>
   <div
       v-for="(item, index) in contentData"
       :key="index"
       class="my-1 mx-0.5 flex"
     >
-    <router-link class="flex-1 !text-c" :to="item.path">
+    <router-link class="flex-1 !text-c font-mono" 
+                :to="item.path"
+                 style="text-decoration: none;">
       {{ item.frontmatter.title }}
     </router-link>
     <div class="leading-6 opacity-50 text-sm mr-2 mb-4">
       {{ item.date }}
     </div>
   </div>
+  <!-- page -->
   <div class='mt-60 ml-10 mr-10'>
     <div class='prose prose-lg m-auto'>
-      <!-- page -->
       <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
                     relative inline-flex text-base font-medium"
               v-if="prev"

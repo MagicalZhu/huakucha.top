@@ -5,7 +5,7 @@
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --host",
-    "write post": "node ./scripts/newPost.js",
+    "newPost": "node ./scripts/newPost.js",
     "lint": "eslint --ext .js,.ts,.vue .",
     "serve": "vite preview --port 8000 --host",
     "typecheck": "vue-tsc --noEmit",

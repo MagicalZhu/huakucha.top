@@ -31,3 +31,13 @@ html.dark {
     opacity: 0;
   }
 }
+
+.blink {
+  animation: blinker 1.5s none infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

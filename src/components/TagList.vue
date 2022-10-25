@@ -72,9 +72,9 @@
       {{ item.date }}
     </div>
   </div>
+  <!-- page -->
   <div class='mt-60 ml-10 mr-10'>
     <div class='prose prose-lg m-auto'>
-      <!-- page -->
       <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
                     relative inline-flex text-base font-medium"
               v-if="prev"

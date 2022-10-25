@@ -12,7 +12,9 @@
   >
     <router-link class="font-bold" un-text="c-light hover:c-dark" to="/">
       <span class="font-500">{{navConfig.shell}}</span>
-      <div i-fa6-solid:angle-right class="prompt inline-block" />
+      <div i-fa6-solid:angle-right 
+           class="inline-block" 
+           text="xs"/>
       <span class="blink">_</span>
     </router-link>
 
@@ -89,20 +91,3 @@ if (isClient) {
   });
 }
 </script>
-
-<style scoped>
-.prompt {
-  vertical-align: -0.2em;
-  font-size: 0.85em;
-}
-
-.blink {
-  animation: blinker 1.5s none infinite;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-</style>

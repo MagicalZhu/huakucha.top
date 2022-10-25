@@ -7,13 +7,16 @@
       <Navbar>
         <slot name="navbar"/>
       </Navbar>
-      <router-view/>
+      <router-view :blogMap="blogMap"/>
     </div>
     <div className='py-2 flex flex-center justify-center' >
-      <button className="bg-white border-gray-300 text-gray-500
-                  hover:bg-blue-200 relative inline-flex px-4 py-2
-                  text-sm font-medium">
-        More →
+      <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
+                    relative inline-flex text-base font-medium
+                    dark:bg-gray-5 dark:border-gray-300">
+        <div>
+          <span class="ml-1 pr-2">More</span>
+          <span i-carbon:chevron-right class="text-sm"></span>
+        </div>
       </button>
     </div>
     <Footer />

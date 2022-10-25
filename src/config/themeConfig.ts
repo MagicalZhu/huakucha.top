@@ -23,7 +23,7 @@ export const ThemeConfig:siteConfig = {
     shell: 'Hi@YuLiang'
   },
   footer: {
-    copyright: '© YuLiang Zhu 2022 <br />A dragon lost in human world'
+    copyright: '© YuLiang Zhu 2022-Present <br />A Dragon Lost In Human World'
   },
   toc: {
     isTocOpen: true,

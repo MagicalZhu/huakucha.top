@@ -1,23 +1,20 @@
 <script setup lang="ts">
 import { formatDate } from "~/utils"
-import {BlogType as Blog} from 'internal'
-
-defineProps<{
-  blogMap: Record<string, Blog[]>
-}>()
+import {getBlogs} from '~/utils/index'
+const blogData = computed(() => getBlogs())
 
 </script>
 
 <template>
   <!-- key is  year string -->
-  <div v-for="key in Object.keys(blogMap)" :key="key">
+  <div v-for="key in Object.keys(blogData)" :key="key">
     <div class="relative h20 pointer-events-none">
       <span text="8em"
             class="absolute left--3rem bottom--1rem font-bold op10">
         {{key}}
       </span>
     </div>
-    <div v-for="blogItem in blogMap[key]"
+    <div v-for="blogItem in blogData[key]"
          :key="blogItem.path"
          class="flex"
          items="center"

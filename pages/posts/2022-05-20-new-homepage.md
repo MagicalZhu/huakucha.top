@@ -6,6 +6,12 @@ categories: Java编程
 date: '2022-05-20'
 ---
 
+```java {1}
+public static void main(String[] args) {
+  System.out.println('123')
+}
+```
+
 
 It seems that I always spend a lot of time on building my homepage.
 

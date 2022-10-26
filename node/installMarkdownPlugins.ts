@@ -10,7 +10,6 @@ import mkcontainer from 'markdown-it-container'
 import mark from 'markdown-it-mark'
 
 
-
 export const installMarkdownPlugins = (md: MarkdownIt) => {
   /**
    * @see https://prismjs.com/
@@ -30,6 +29,11 @@ export const installMarkdownPlugins = (md: MarkdownIt) => {
    * 自定义代码块
    */
   md.use(mkcontainer)
+
+  /**
+   * 代码高亮
+   */
+  // md.use(prism);
 
   /**
    * mark标记

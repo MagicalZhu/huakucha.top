@@ -1,10 +1,9 @@
 <script setup lang="ts">
   import { getPageCount,getPage } from '~/utils/page'
-  import { archiveConfig } from 'archiveConfig'
 
   const {getFunc} = useConfigStore()
   // 获取 Category 元数据
-  const categoryMetaInfo: archiveConfig  = getFunc('categories')
+  const categoryMetaInfo = getFunc('categories')
 
   // 选中的标签
   let selectCategory = $ref('')
@@ -45,21 +44,19 @@
 </script>
 
 <template>
-  <div class="flex flex-wrap  space-x-6 mt-4 pb-6 justify-start tags">
-    <span class="text-gray-400 font-light  hover:text-c-dark
-                transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110
-                cursor-pointer text-base leading-4 display-inline-block font-mono
-                "
+  <div class="tagout">
+    <span class="tagContent"
           v-for="categoryName in categoryData"
           :class="{ activetag: selectCategory === categoryName }"
           @click="toggleCategory(categoryName)">
       {{categoryName}}
-      <span class="tagsCount text-indigo-600">
+      <span class="tagsCount">
         {{categoryMetaInfo[categoryName].length}}
       </span>
     </span>
   </div>
-  <h4 class="hstack space-x-2 text-c-light hover:text-c-dark text-base font-mono" v-show="selectCategory">
+  <h4 class="hstack space-x-2 text-c-light hover:text-c-dark text-base font-mono"
+      v-show="selectCategory">
     <div i-carbon:folder >
     </div>
     <span>{{ selectCategory }}</span>
@@ -72,15 +69,14 @@
     <router-link class="flex-1 !text-c font-mono" :to="item.path" style="text-decoration: none;">
       {{ item.frontmatter.title }}
     </router-link>
-    <div class="leading-6 opacity-50 text-sm mr-2 mb-4">
+    <div class="leading-6 opacity-50 text-sm mr-2 mb-4 font-mono">
       {{ item.date }}
     </div>
   </div>
   <!-- page -->
   <div class='mt-60 ml-10 mr-10'>
     <div class='prose prose-lg m-auto'>
-      <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
-                    relative inline-flex text-base font-medium"
+      <button class="btnPrevNext"
               v-if="prev"
               @click="--pageNum">
         <div>
@@ -89,8 +85,7 @@
         </div>
       </button>
 
-      <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
-                    relative inline-flex text-base font-medium float-right"
+      <button class="btnPrevNext float-right"
               v-if="next"
               @click="++pageNum">
         <div>
@@ -103,29 +98,29 @@
 </template>
 
 
-<style type="text/css" scoped>
-  .tags {
-    border-bottom: 1px dashed #c7c7c7;
+<style scoped>
+  .tagout {
+    @apply flex flex-wrap  space-x-4 mt-4 pb-5 justify-start;
+    @apply border-b-2 border-dashed  border-gray-300 dark:border-gray-500
   }
+
+  .tagContent {
+    @apply text-base text-gray-400  dark:text-gray-300 font-light  hover:text-c-dark font-mono;
+    @apply transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110;
+    @apply cursor-pointer  leading-4 display-inline-block ;
+  }
+
   .tagsCount {
-    position: relative;
-    top: -8px;
-    font-size: 12px !important;
+    @apply relative text-base -top-2 -left-1;
+    @apply text-indigo-600 dark:text-green-5
   }
   .activetag {
-    color:#111827;
+    @apply text-dark dark:text-blue-4 font-500;
   }
-  .article {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 10px;
-    color: rgba(156, 163, 175, 1);
-    transition: border 0.3s ease, color 0.3s ease;
+
+  .btnPrevNext {
+    @apply bg-dark border-gray-300 text-white rounded-xl py-2 px-3 relative inline-flex text-base font-medium
   }
-  .article:hover {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 1)
-  }
+
 </style>
 

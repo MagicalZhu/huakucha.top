@@ -12,8 +12,15 @@
 
     <div class="prose-lg mt-6 mb-8 mx-auto">
       <h1 class="text-4xl font-bold">{{ title }}</h1>
-      <p class="opacity-50 mt-6 ml-2 text-base">
-        {{ formatDate(date) }} · {{ readingTime }} {{$t('theme.blog.timeUnit')}}
+      <p class="mt-6 ml-2 text-base">
+        <span opacity-50>
+          {{ formatDate(date) }}
+        </span>
+
+        <span class="readingTime">
+           <div i-carbon:time class="mr-1" />
+          {{ readingTime }} {{$t('theme.blog.timeUnit')}}
+        </span>
       </p>
     </div>
 
@@ -130,5 +137,10 @@ onMounted(() => {
 }
 .next a::after {
   content: " →";
+}
+
+.readingTime {
+  @apply bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-1.5 py-1.2 rounded-1.8 ml-1.5;
+  @apply dark:bg-blue-200 dark:text-blue-800
 }
 </style>

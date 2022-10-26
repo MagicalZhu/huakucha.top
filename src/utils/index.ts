@@ -9,7 +9,7 @@ export function formatDate(date: string | Date, year = true) {
  * @description 获取所有的博客信息
  * TODO 移动到全局变量
  */
-export function getBlogs() {
+export function getBlogs():Blog[] {
   const router = useRouter()
   const blogs: Blog[] = router
     .getRoutes()
@@ -22,12 +22,5 @@ export function getBlogs() {
       })
     )
     .sort((a: Blog, b: Blog) => dayjs(b.date).unix() - dayjs(a.date).unix())
-
-  const blogMap: Record<string, Blog[]> = $ref({})
-
-  for (const ele of blogs) {
-    const dateStr = ele.date.substring(0, 4)
-    blogMap[dateStr] ? blogMap[dateStr].push(ele) : (blogMap[dateStr] = [ele])
-  }
-  return blogMap
+  return blogs
 }

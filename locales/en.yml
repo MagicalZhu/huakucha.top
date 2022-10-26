@@ -1,8 +1,9 @@
 theme:
-  blog:
-    recent: Recent Posts
+  page:
     prev: Prev
     next: Next
+  blog:
+    recent: Recent Posts
     timeUnit: min
   nav:
     About: About

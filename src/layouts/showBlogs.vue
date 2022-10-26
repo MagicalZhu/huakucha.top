@@ -9,13 +9,6 @@
       </Navbar>
       <router-view/>
     </div>
-    <div className='py-2 flex flex-center justify-center' >
-      <button className="bg-white border-gray-300 text-gray-500
-                  hover:bg-blue-200 relative inline-flex px-4 py-2
-                  text-sm font-medium">
-        More →
-      </button>
-    </div>
     <Footer />
   </main>
 </template>

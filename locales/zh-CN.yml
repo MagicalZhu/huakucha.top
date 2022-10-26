@@ -1,8 +1,9 @@
 theme:
-  blog:
-    recent: '最新发布'
+  page:
     prev: 上一页
     next: 下一页
+  blog:
+    recent: '最新发布'
     timeUnit: 分钟
   nav:
     About: 关于

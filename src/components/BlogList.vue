@@ -1,59 +1,52 @@
 <script setup lang="ts">
-import { formatDate } from "~/utils"
-import keys from 'lodash/keys'
-import {getBlogs} from '~/utils/index'
-// import {getPageCount, getPage} from '~/utils/page'
-// import { BlogType as Blog } from "internal";
+  import { formatDate } from "~/utils"
+  import {getBlogs} from '~/utils/index'
+  import {getPageCount, getPage} from '~/utils/page'
+  import { BlogType as Blog } from "internal";
 
-// the meta info for the blog
-const blogMetaInfo = computed(() => getBlogs())
+  // all blogs
+  const blogMetaInfo = computed(() => getBlogs())
 
-// get allYears from the blog data
-const allYears = computed(() => {
-  return keys(blogMetaInfo.value)
-})
+  // calculate the page number for the blog
+  const pageCount = computed<number>(() => {
+    return getPageCount(blogMetaInfo.value, 'blog')
+  })
 
-// const allBlogs = computed(() => {
-//   let blogs:Blog[] = []
-//   keys(blogMetaInfo.value).forEach((key) => {
-//     blogs = blogs.concat(blogMetaInfo.value[key])
-//   })
-//   return blogs
-// })
+  const pageNum = $ref(1)
 
-// // calculate the page number for the blog
-// const pageCount = computed<number>(() => {
-//   return getPageCount(allBlogs.value, 'blog')
-// })
-// const pageNum = $ref(1)
+  const prev = computed(() => {
+    return pageNum > 1
+  })
 
-// // define prev flag
-// const prev = computed(() => {
-//   return pageNum > 1
-// })
+  const next = computed(() => {
+    return pageNum < pageCount.value
+  })
 
-// // define nect flag
-// const next = computed(() => {
-//   return pageNum < pageCount.value
-// })
+  const contentData = computed(() => {
+    const blogMap: Record<string, Blog[]> = $ref({})
+    const pageData = getPage(blogMetaInfo.value, pageNum, 'blog')
+    for (const ele of pageData) {
+      const dateStr = ele.date.substring(0, 4)
+      blogMap[dateStr] ? blogMap[dateStr].push(ele) : (blogMap[dateStr] = [ele])
+    }
+    return blogMap
+  })
 
-
-// const contentData = computed(() => {
-//   return getPage(allBlogs.value, pageNum, 'blog')
-// })
+ 
+  console.error(contentData.value['2022'])
 
 </script>
 
 <template>
   <!-- key is  year string -->
-<div v-for="key in allYears" :key="key">
+  <div v-for="key in Object.keys(contentData)" :key="key">
     <div class="relative h20 pointer-events-none">
       <span text="8em"
             class="absolute left-6 bottom-1 font-bold op10">
         {{key}}
       </span>
     </div>
-    <div v-for="blogItem in blogMetaInfo[key]"
+    <div v-for="blogItem in contentData[key]"
         :key="blogItem.path"
         class="flex"
         items="center"
@@ -69,6 +62,30 @@ const allYears = computed(() => {
                   style="text-decoration: none;">
         {{ blogItem.title }}
       </router-link>
+    </div>
+  </div>
+  <!-- page -->
+  <div class='mt-60 ml-10 mr-10'>
+    <div class='prose prose-lg m-auto'>
+      <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
+                    relative inline-flex text-base font-medium"
+              v-if="prev"
+              @click="--pageNum">
+        <div>
+          <span i-carbon:chevron-left class="text-sm"></span>
+          <span class="ml-1 pr-2">{{$t('theme.page.prev')}}</span>
+        </div>
+      </button>
+
+      <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
+                    relative inline-flex text-base font-medium float-right"
+              v-if="next"
+              @click="++pageNum">
+        <div>
+          <span class="ml-1 pr-2">{{$t('theme.page.next')}}</span>
+          <span i-carbon:chevron-right class="text-sm"></span>
+        </div>
+      </button>
     </div>
   </div>
 </template>

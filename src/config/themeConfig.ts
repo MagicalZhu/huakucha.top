@@ -1,6 +1,8 @@
 import {siteConfig} from 'siteConfig'
 
-
+/**
+ * 站点配置信息
+ */
 export const ThemeConfig:siteConfig = {
   authorName: '花裤衩',
   showProject: true,
@@ -35,7 +37,7 @@ export const ThemeConfig:siteConfig = {
     perPageSize: 5
   },
   blog: {
-    perPageSize: 1,
+    perPageSize: 10,
     rencentSize: 5
   }
 }

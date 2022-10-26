@@ -14,7 +14,7 @@ socials:
 <main class="flex-1 mx-4 md:mx-12 lg:mx-24 mt-8 sm:mt-16">
   <section class="p-4 flex flex-col items-center">
     <div class="w-48 h-48 rounded-full mb-6 bg-red-100">
-      <img src="/img/log.png" class="w-full p-2 h-full object-contain"/>
+      <img src="/img/logo.png" class="w-full p-2 h-full object-contain"/>
     </div>
     <h1 class="text-3xl font-bold text-center mb-4">
       Hey 👋 I'm YuLiang Zhu

@@ -85,7 +85,7 @@
               @click="--pageNum">
         <div>
           <span i-carbon:chevron-left class="text-sm"></span>
-          <span class="ml-1 pr-2">{{$t('theme.blog.prev')}}</span>
+          <span class="ml-1 pr-2">{{$t('theme.page.prev')}}</span>
         </div>
       </button>
 
@@ -94,7 +94,7 @@
               v-if="next"
               @click="++pageNum">
         <div>
-          <span class="ml-1 pr-2">{{$t('theme.blog.next')}}</span>
+          <span class="ml-1 pr-2">{{$t('theme.page.next')}}</span>
           <span i-carbon:chevron-right class="text-sm"></span>
         </div>
       </button>

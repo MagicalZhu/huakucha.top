@@ -8,6 +8,8 @@ import { slugify } from '@renovamen/utils'
 import sup from 'markdown-it-sup'
 import mkcontainer from 'markdown-it-container'
 import mark from 'markdown-it-mark'
+// import prism from 'markdown-it-prism'
+
 
 
 export const installMarkdownPlugins = (md: MarkdownIt) => {

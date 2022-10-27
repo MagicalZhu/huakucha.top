@@ -1,0 +1,83 @@
+.prose ol[type="A"] {
+    --list-counter-style: upper-alpha;
+  }
+  .prose ol[type="a"] {
+    --list-counter-style: lower-alpha;
+  }
+  .prose ol[type="A s"] {
+    --list-counter-style: upper-alpha;
+  }
+  .prose ol[type="a s"] {
+    --list-counter-style: lower-alpha;
+  }
+  .prose ol[type="I"] {
+    --list-counter-style: upper-roman;
+  }
+  .prose ol[type="i"] {
+    --list-counter-style: lower-roman;
+  }
+  .prose ol[type="I s"] {
+    --list-counter-style: upper-roman;
+  }
+  .prose ol[type="i s"] {
+    --list-counter-style: lower-roman;
+  }
+  .prose ol[type="1"] {
+    --list-counter-style: decimal;
+  }
+  .prose ol > li {
+    position: relative;
+    padding-left: 1em;
+  }
+  .prose ol > li::before {
+    content: counter(list-item, var(--list-counter-style, decimal)) ".";
+    position: absolute;
+    font-weight: 400;
+    color: #6b7280;
+    left: 2px;
+  }
+  
+  .prose ul > li {
+    position: relative;
+    padding-left: 1em;
+  }
+  .prose ul > li::before {
+    content: "";
+    position: absolute;
+    background-color: #d1d5db;
+    border-radius: 50%;
+    width: 0.375em;
+    height: 0.375em;
+    top: calc(0.875em - 0.1875em);
+    left: 0.25em;
+  }
+  
+  .prose ol {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    list-style-type: none;
+  }
+  .prose ul {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    list-style-type: none;
+  }
+  .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  .prose > ul > li p {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+  .prose > ol > li > *:first-child {
+    margin-top: 1.25em;
+  }
+  .prose > ol > li > *:last-child {
+    margin-bottom: 1.25em;
+  }
+  .prose ul ul, .prose ul ol, .prose ol ul, .prose ol ol {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+  

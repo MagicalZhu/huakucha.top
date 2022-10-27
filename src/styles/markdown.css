@@ -2,21 +2,40 @@
   @apply p-0;
 }
 
+/*
+  code font style
+*/
 .prose .shiki {
   font-family: "DM Mono", monospace;
   font-size: 1.15em;
   line-height: 1.4;
 }
 
+/*
+  pre code style
+*/
+.prose pre {
+  color: #e5e7eb;
+  overflow-x: auto;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 1em;
+}
 
+/*
+  code display
+*/
 .prose code:before {
   content: ''
 }
+
 .prose code:after {
   content: ''
 }
 
-
+/*
+  code line number
+*/
 .prose pre.shiki {
   counter-reset: step;
   counter-increment: step 0;
@@ -32,6 +51,8 @@
   color: rgba(115,138,148,.4)
 }
 
+
+
 .prose img {
   @apply w-full;
 }
@@ -45,6 +66,9 @@
   @apply !m-0;
 }
 
+/*
+  code a link
+*/
 .prose a  {
   @apply underline-offset-5 underline-blue decoration-2 underline-dotted  text-c-active;
 }
@@ -55,26 +79,38 @@ main:not(.post) a.header-anchor {
 
 .shiki-light,
 .shiki-dark {
-  @apply !bg-transparent border px-5 py-4;
+  @apply !bg-transparent border border-2;
 }
 
+
+/*
+  the border color for the dark or light theme 
+*/
 .shiki-light {
   @apply border-gray-300;
 }
 
 .shiki-dark {
-  @apply border-gray-500;
+  @apply border-gray-600;
 }
 
+/*
+  hidden the light theme while the theme is dark
+*/
 html.dark .shiki-light {
   @apply hidden;
 }
 
+/*
+  hidden the dark theme while the theme is light
+*/
 html:not(.dark) .shiki-dark {
   @apply hidden;
 }
 
-
+/*
+  markdown table of contents
+*/
 .prose .table-of-contents {
   position: fixed;
   top: 5rem;
@@ -88,10 +124,45 @@ html:not(.dark) .shiki-dark {
   padding-top: 4.5rem;
   padding-right: 1.375rem;
   text-align: inherit;
-  font-size: 0.8em;
+  font-size: 14px;
 }
 
-
+/*
+  a link for the table of contents
+*/
 .prose .table-of-contents a {
   @apply no-underline;
+}
+
+/*
+  markdowm table
+*/
+.prose table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.prose thead {
+  color: #111827;
+  font-weight: 600;
+  border-width: 1px;
+  border-bottom-color: #d1d5db;
+}
+.prose thead th {
+  vertical-align: bottom;
+  padding-right: 0.5714286em;
+  padding-bottom: 0.5714286em;
+  padding-left: 0.5714286em;
+}
+.prose tbody tr {
+  border-width: 1px;
+  border-bottom-color: #e5e7eb;
+}
+.prose tbody td {
+  vertical-align: top;
+  padding: 1em;
 }

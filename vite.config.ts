@@ -95,14 +95,12 @@ export default defineConfig({
      * @see https://markdown-it.github.io/markdown-it/
      */
     Markdown({
+      // wrapperComponent: 'post',
+      headEnabled: true,
       markdownItOptions: {
-        xhtmlOut:     true,        // 使用 '/' 来闭合单标签 （比如 <br />）。
-        linkify:      false,        // 将类似 URL 的文本自动转换为链接。
-        html: true,
-        typographer: true,
+        quotes: '""\'\'',
       },
       wrapperClasses: 'prose prose-lg m-auto text-left',
-      headEnabled: true,
       markdownItSetup: (md) => installMarkdownPlugins(md)
     }),
 

@@ -2,6 +2,7 @@
 @import "./prose.css";
 @import "./about.css";
 @import "./post.css";
+/* @import "../theme/prism-material-light.css"; */
 
 html,
 body,

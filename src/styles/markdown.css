@@ -51,6 +51,12 @@
   color: rgba(115,138,148,.4)
 }
 
+/*
+  remove last line
+*/
+.prose pre.shiki code > :last-child {
+  @apply: display-none;
+}
 
 
 .prose img {
@@ -84,7 +90,7 @@ main:not(.post) a.header-anchor {
 
 
 /*
-  the border color for the dark or light theme 
+  the border color for the dark or light theme
 */
 .shiki-light {
   @apply border-gray-300;
@@ -126,6 +132,7 @@ html:not(.dark) .shiki-dark {
   text-align: inherit;
   font-size: 14px;
 }
+
 
 /*
   a link for the table of contents

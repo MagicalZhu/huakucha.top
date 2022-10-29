@@ -6,7 +6,8 @@ categories: Java编程
 date: '2022-05-20'
 ---
 
-```java {1}
+
+```java
 public static void main(String[] args) {
   System.out.println('123')
 }

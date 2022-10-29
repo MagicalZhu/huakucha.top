@@ -32,9 +32,6 @@
     return blogMap
   })
 
- 
-  console.error(contentData.value['2022'])
-
 </script>
 
 <template>

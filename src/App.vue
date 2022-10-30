@@ -24,6 +24,7 @@ watch(
 );
 
 const router = useRouter()
+
 const routes = router.getRoutes()
 
 

@@ -6,6 +6,7 @@ import figlet from 'figlet'
 import fs from 'fs'
 import path from 'path'
 import dayjs from 'dayjs'
+import fse from 'fs-extra'
 
 
 const init = () => {
@@ -101,7 +102,7 @@ const createFile = (rootPath, filename, title, tags, category) => {
   }
   const mkPath = path.join(process.cwd(), 'pages', rootPath || 'posts' )
   if (!fs.existsSync(mkPath)) {
-    fs.mkdirSync(mkPath)
+    fse.mkdirpSync(mkPath)
   }
   const fileName = path.join(mkPath, `${filename}.md`)
   fs.writeFileSync(fileName, markdownTemplate(filename, title, tags, category))

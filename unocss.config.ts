@@ -30,7 +30,7 @@ export default defineConfig({
       "btn",
       "hstack space-x-1 rounded transition-colors decoration-none text-sm !text-c bg-gray-100/90 dark:bg-gray-50/10 hover:(!bg-gray-500 !text-white !no-underline)"
     ],
-    ["prose-lg", "lg:text-lg max-w-content"],
+    ["prose-lg", "max-w-content"],
   ],
   theme: {
     boxShadow: {

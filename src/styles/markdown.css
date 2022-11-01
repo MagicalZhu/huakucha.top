@@ -26,11 +26,22 @@
   code display
 */
 .prose code:before {
-  content: ''
+  @apply font-800 mr-2 text-dark;
+  content: '';
 }
 
-.prose code:after {
-  content: ''
+.prose code:after{
+  @apply font-800 ml-2 text-dark;
+  content: '';
+}
+
+.prose code:not(pre.shiki code) {
+  @apply font-500 py-1;
+  white-space: normal;
+  border-radius: 4px;
+  color: #e3112d;
+  background-color: #f1f1f1;
+  transition: color .5s,background-color .5s;
 }
 
 /*
@@ -41,7 +52,7 @@
   counter-increment: step 0;
 }
 
-.prose code span.line::before {
+.prose code span.line:before {
   content: counter(step);
   counter-increment: step;
   width: 1rem;
@@ -57,6 +68,17 @@
 .prose pre.shiki code > :last-child {
   @apply: display-none;
 }
+.prose pre.shiki code {
+  white-space: pre;
+}
+
+.prose pre code:before {
+  content: none;
+}
+
+.prose pre code:after {
+  content: none;
+}
 
 
 .prose img {
@@ -64,12 +86,13 @@
 }
 
 .prose p {
-  line-height: 1.55 !important;
+  @apply my-2;
+  line-height: 2 !important;
 }
 
 .prose ul,
 .prose li p {
-  @apply !m-0;
+   @apply my-2;
 }
 
 /*
@@ -172,4 +195,11 @@ html:not(.dark) .shiki-dark {
 .prose tbody td {
   vertical-align: top;
   padding: 1em;
+}
+
+
+.prose blockquote {
+  @apply pl-4 pt-2px pb-2px  border-l-6px text-base not-italic rounded;
+  @apply border-gray-300 dark:border-gray-500;
+  @apply bg-gray-50 dark:bg-gray-800
 }

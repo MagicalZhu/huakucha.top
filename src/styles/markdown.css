@@ -40,7 +40,7 @@
   white-space: normal;
   border-radius: 4px;
   color: #e3112d;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
   transition: color .5s,background-color .5s;
 }
 
@@ -70,6 +70,7 @@
 }
 .prose pre.shiki code {
   white-space: pre;
+  background-color: unset;
 }
 
 .prose pre code:before {

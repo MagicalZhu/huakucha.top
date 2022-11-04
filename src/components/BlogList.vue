@@ -39,7 +39,7 @@
   <div v-for="key in Object.keys(contentData)" :key="key">
     <div class="relative h20 pointer-events-none">
       <span text="8em"
-            class="absolute left-6 bottom-1 font-bold op10">
+            class="absolute left-6 bottom-1 font-bold op10 top-1">
         {{key}}
       </span>
     </div>

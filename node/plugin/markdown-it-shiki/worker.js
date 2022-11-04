@@ -22,9 +22,12 @@ async function handler(command, options, extOptions) {
       // pre / code / line / token are available here
       elements: {
         pre({ className, style, children }) {
-          return `<pre class="${ className }" style="${ style }">${ children }</pre>`
+          const startHtml = `<pre class="${className}" style="${style}">`
+          const codeLangHtml = `<span class="codelang">${renderLang}</span>`
+          const endHtml = `${children }</pre>`
+          return `${startHtml}${codeLangHtml}${endHtml}`
         },
-        // customize line to add highlight lines
+        // customize line to add highlighpot lines
         line({ className, index, children }) {
           if (extOptions && extOptions.highlines && extOptions.highlines.includes(index + 1)) {
             return `<span class="${ className } ${extOptions.highlighLineClass || 'highlighted-line' }">${ children }</span>`

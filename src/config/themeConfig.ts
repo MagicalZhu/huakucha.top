@@ -28,7 +28,7 @@ export const ThemeConfig:siteConfig = {
     copyright: '© YuLiang Zhu 2022-Present <br />A Dragon Lost In Human World'
   },
   toc: {
-    isTocOpen: true,
+    isTocOpen: false,
   },
   tag: {
     perPageSize: 8,

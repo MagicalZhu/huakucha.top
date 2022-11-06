@@ -7,7 +7,7 @@
 */
 .prose .shiki {
   font-family: "DM Mono", monospace;
-  font-size: 1.1em;
+  font-size: 1.3em;
   line-height: 1.4;
 }
 
@@ -81,9 +81,6 @@
   content: none;
 }
 
-.prose .codelang {
-  @apply float-right text-gray-300 dark:text-gray-500;
-}
 
 .prose img {
   @apply w-full;

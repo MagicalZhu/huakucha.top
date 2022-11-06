@@ -28,6 +28,11 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => tag.startsWith('copy')
+        }
+      }
     }),
 
     /**

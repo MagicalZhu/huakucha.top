@@ -23,9 +23,9 @@ async function handler(command, options, extOptions) {
       elements: {
         pre({ className, style, children }) {
           const startHtml = `<pre class="${className}" style="${style}">`
-          const codeLangHtml = `<span class="codelang">${renderLang}</span>`
+          const copyButton = `<copy-code lang="${renderLang}"></copy-code>`
           const endHtml = `${children }</pre>`
-          return `${startHtml}${codeLangHtml}${endHtml}`
+          return `${startHtml}${copyButton}${endHtml}`
         },
         // customize line to add highlighpot lines
         line({ className, index, children }) {

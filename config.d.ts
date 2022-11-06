@@ -18,7 +18,8 @@ interface Footer {
 interface Blog {
   perPageSize: number,
   // 最近发布文章
-  rencentSize: number
+  rencentSize: number,
+  showNextOrPrev?: boolean
 }
 
 interface Category {

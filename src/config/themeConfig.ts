@@ -38,6 +38,7 @@ export const ThemeConfig:siteConfig = {
   },
   blog: {
     perPageSize: 10,
-    rencentSize: 5
+    rencentSize: 5,
+    showNextOrPrev: false
   }
 }

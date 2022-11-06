@@ -18,7 +18,7 @@
         </span>
 
         <span class="readingTime">
-           <div i-carbon:time class="mr-1" />
+          <div i-carbon:time class="mr-1" />
           {{ readingTime }} {{$t('theme.blog.timeUnit')}}
         </span>
       </p>
@@ -29,7 +29,7 @@
     </article>
     <Comment/>
     <div
-      v-if="prevBlog || nextBlog"
+      v-if="blogConfig &&(prevBlog || nextBlog)"
       class="prose-lg mx-auto grid md:grid-cols-2 pt-4 mt-16 border-t border-c"
     >
       <span class="prev">
@@ -50,7 +50,7 @@
 import { isClient } from "@renovamen/utils";
 import { formatDate } from "~/utils";
 
-
+const blogConfig = useConfigStore().getThemeConfig().blog.showNextOrPrev
 const router = useRouter();
 
 const meta = computed(() => router.currentRoute.value.meta);

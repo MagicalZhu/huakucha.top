@@ -121,9 +121,9 @@ const MarkdownItShiki: MarkdownIt.PluginWithOptions<Options> = (markdownit, opti
     }
     if (darkModeThemes) {
       const dark =  highlightCode(code, lang, darkModeThemes.dark, extOptions)
-        .replace('<pre class="shiki"', '<pre class="shiki shiki-dark"')
+        .replace('<pre class="shiki"', '<pre class="shiki shiki-dark" id="codeDark"')
       const light = highlightCode(code, lang || 'text', darkModeThemes.light, extOptions)
-        .replace('<pre class="shiki"', '<pre class="shiki shiki-light"')
+        .replace('<pre class="shiki"', '<pre class="shiki shiki-light" id="codeLight"')
       return `<div class="shiki-container">${dark}${light}</div>`
     }
     else {

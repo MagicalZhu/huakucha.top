@@ -23,6 +23,7 @@
     "@vueuse/core": "^9.1.0",
     "@vueuse/head": "^0.7.9",
     "chalk": "^5.1.2",
+    "clipboard": "^2.0.11",
     "critters": "^0.0.16",
     "dayjs": "^1.11.5",
     "figlet": "^1.5.2",

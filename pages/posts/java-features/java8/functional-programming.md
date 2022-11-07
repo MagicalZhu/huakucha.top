@@ -39,3 +39,4 @@
       // 然而, 如果对参数有任何修改，则不能使用方法引用，则需要完整地使用lambda表达式:
       list.forEach((String s) -> System.out.println("*" + s + "*"));
     ```
+

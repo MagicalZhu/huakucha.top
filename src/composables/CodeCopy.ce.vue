@@ -1,19 +1,7 @@
-<script setup>
-  import {defineProps} from 'vue'
-  defineProps({
-    lang: String
-  })
-  const copyMsg = $ref('copy')
-  const doCopy = () => {
-    copyMsg = 'copied'
-    setTimeout(() => {
-      copyMsg =  'copy'
-    }, 5000)
-  }
-</script>
 <template>
   <div>
-    <span  class="copyBtn" @click="doCopy">
+    //TODO add slot?
+    <span  class="copyBtn" @click="copy" ref="copyButton" data-clipboard-text="test">
       {{copyMsg}}
     </span>
     <span class="codeLang">
@@ -21,6 +9,40 @@
     </span>
   </div>
 </template>
+
+<script>
+import Clipboard from 'clipboard'
+  export default {
+    props: {
+      lang: String
+    },
+    data() {
+      return {
+        copyMsg: 'copy',
+        clipboard: null
+      }
+    },
+    mounted() {
+      this.$nextTick(() => {
+        this.clipboard = new Clipboard(this.$refs['copyButton'])
+      })
+    },
+    methods: {
+      copy() {
+        const _this = this
+        this.clipboard = new Clipboard(this.$refs['copyButton'])
+        this.clipboard.on('success', (e) =>{
+          _this.copyMsg = 'copied'
+          setTimeout(() => {
+            _this.copyMsg =  'copy'
+          }, 2000)
+          e.clearSelection()
+          _this.clipboard.destroy()
+        })
+      }
+    }
+  }
+</script>
 
 <style scoped>
 .codeLang {

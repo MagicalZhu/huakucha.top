@@ -9,6 +9,8 @@ import { slugify } from '@renovamen/utils'
 import sup from 'markdown-it-sup'
 import mkcontainer from 'markdown-it-container'
 import mark from 'markdown-it-mark'
+import uslug   from 'uslug'
+const uslugify = s => uslug(s)
 
 
 export const installMarkdownPlugins = async (md: MarkdownIt) => {
@@ -39,7 +41,7 @@ export const installMarkdownPlugins = async (md: MarkdownIt) => {
   md.use(mark)
 
   md.use(anchor, {
-    slugify,
+    slugify: uslugify,
     permalink: anchor.permalink.linkInsideHeader({
       symbol: '#',
       renderAttrs: () => ({ 'aria-hidden': 'true' }),

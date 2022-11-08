@@ -1,5 +1,5 @@
 .prose pre:not(.shiki) {
-  @apply p-0;
+  @apply p-0 m-0;
 }
 
 /*
@@ -7,7 +7,7 @@
 */
 .prose .shiki {
   font-family: "DM Mono", monospace;
-  font-size: 1.3em;
+  font-size: 1.25em;
   line-height: 1.4;
 }
 
@@ -36,11 +36,10 @@
 }
 
 .prose code:not(pre.shiki code) {
-  @apply py-1;
+  @apply py-4px rounded-md;
+  @apply text-red-600  bg-gray-100;
+  @apply dark:text-green-400  dark:bg-gray-800;
   white-space: normal;
-  border-radius: 4px;
-  color: #e3112d;
-  background-color: #f1f1f1;
   transition: color .5s,background-color .5s;
 }
 
@@ -203,4 +202,8 @@ html:not(.dark) .shiki-dark {
   @apply pl-4 pt-2px pb-2px  border-l-6px text-base not-italic rounded;
   @apply border-gray-300 dark:border-gray-500;
   @apply bg-gray-50 dark:bg-gray-800
+}
+
+.prose :where(ul > li):not(:where(.not-prose,.not-prose *)) ::marker {
+  color: rgba(209, 213, 219, 1) !important;
 }

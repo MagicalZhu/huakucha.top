@@ -1,6 +1,6 @@
 <template>
   <div>
-    //TODO add slot?
+    <!-- TODO add slot? -->
     <span  class="copyBtn" @click="copy" ref="copyButton" data-clipboard-text="test">
       {{copyMsg}}
     </span>

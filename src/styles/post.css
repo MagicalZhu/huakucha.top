@@ -18,6 +18,10 @@
   @apply opacity-50;
 }
 
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6{
+  @apply mt-8;
+}
+
 @media (max-width: 640px) {
   .post a.header-anchor {
     @apply hidden;

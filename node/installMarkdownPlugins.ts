@@ -5,12 +5,11 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import TOC from 'markdown-it-table-of-contents'
 import anchor from 'markdown-it-anchor'
 import type MarkdownIt from 'markdown-it'
-import { slugify } from '@renovamen/utils'
 import sup from 'markdown-it-sup'
 import mkcontainer from 'markdown-it-container'
 import mark from 'markdown-it-mark'
 import uslug from 'uslug'
-const uslugify = s => uslug(s)
+const uslugify = (s: string) => uslug(s)
 
 
 export const installMarkdownPlugins = async (md: MarkdownIt) => {
@@ -41,10 +40,10 @@ export const installMarkdownPlugins = async (md: MarkdownIt) => {
   md.use(mark)
 
   md.use(anchor, {
-    // slugify: uslugify,
-    permalink: anchor.permalink.linkInsideHeader({
-      symbol: '#',
-      renderAttrs: () => ({ 'aria-hidden': 'true' }),
+    slugify: uslugify,
+    permalink: anchor.permalink.ariaHidden({
+      placement: 'after',
+      symbol: '#'
     }),
   })
 
@@ -57,7 +56,9 @@ export const installMarkdownPlugins = async (md: MarkdownIt) => {
   })
 
   md.use(TOC, {
+    slugify: uslugify,
     includeLevel: [1, 2, 3, 4, 5, 6],
-    slugify,
+    containerClass: 'table-of-contents',
+    containerHeaderHtml: '<div class="containerHeader">CONTENTS</div>'
   })
 }

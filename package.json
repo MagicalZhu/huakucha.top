@@ -17,6 +17,7 @@
   "dependencies": {
     "@akiravoid/markdown-it-mark": "^1.0.2",
     "@akiravoid/markdown-it-sup": "^1.0.2",
+    "@renovamen/utils": "^0.1.0",
     "@types/lodash": "^4.14.186",
     "@types/markdown-it-container": "^2.0.5",
     "@types/uslug": "^1.0.1",
@@ -51,7 +52,6 @@
     "@iconify-json/carbon": "^1.1.7",
     "@iconify/json": "^2.1.119",
     "@intlify/vite-plugin-vue-i18n": "^6.0.0",
-    "@renovamen/utils": "^0.1.0",
     "@types/fs-extra": "^9.0.13",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",

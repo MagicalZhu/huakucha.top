@@ -33,7 +33,7 @@
     // ①.可以使用方法引用
     list.forEach(n -> System.out.println(n));   // 没有使用方法引用
     list.forEach(System.out::println);          // 等效于使用方法引用
-    
+
     // ②.不能使用方法引用 => 由于在方法的参数上进行了"相关操作",所以无法使用"方法引用"
     // 注意的是: 这里的参数类型 String 是可以省略的, 编译器可以从参数列表的类属性推测出来
     list.forEach((String s) -> System.out.println("*" + s + "*"));
@@ -42,12 +42,12 @@
 - Lambda表达式内部可以使用`静态、非静态和局部变量,` 这称为Lambda内的**变量捕获**
 - Lambda方法在编译器内部被翻译成私有方法，并派发 `invokedynamic` 字节码指令来进行调用
   - 可以使用JDK中的 javap 工具来反编译class文件。使用 `javap -p` 或 `javap -c -v` 命令来看一看Lambda表达式生成的字节码。大致应该长这样:
-  
+
     ```java
       private static java.lang.Object lambda$0(java.lang.String);
     ```
 - Lambda表达式有个限制, 那就是只能引用 `final` 或 `final 局部变量`，这就是说**不能在Lambda内部修改定义在域外的变量(如果仅仅是访问的话是可以的)**
-  
+
   ```java
     List<Integer> primes = Arrays.asList(new Integer[] { 2, 3, 5, 7 });
     int factor = 2;
@@ -82,7 +82,7 @@ Lambda表达式依据**求值的时机**,可以分为下面两种方式:
    // collect操作会终止 Stream流,并且返回结果
    List<Person> list2 = lists.stream().filter(f -> f.getName().equals("p1"))
                                       .collect(Collectors.toList());
-   ``` 
+   ```
 
 在Lambda表达式中,最为理想的方式就是**形成一个惰性求值的链,最后用一个及早求值的操作返回想要的结果**
 
@@ -136,7 +136,7 @@ new Thread(() -> System.out.println("do Something...")).start();
 // forEach
 List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
 features.forEach(n -> System.out.println(n));
- 
+
 // 使用Java 8的方法引用更方便，方法引用由::双冒号操作符表示
 features.forEach(System.out::println);
 ```

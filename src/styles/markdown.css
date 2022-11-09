@@ -156,6 +156,14 @@ html:not(.dark) .shiki-dark {
   font-size: 14px;
 }
 
+.prose .table-of-contents  a:active {
+  @apply: text-blue;
+}
+
+
+.prose .containerHeader {
+  @apply text-gray-300 ml-10 mb-2;
+}
 
 /*
   a link for the table of contents

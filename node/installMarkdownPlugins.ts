@@ -41,6 +41,7 @@ export const installMarkdownPlugins = async (md: MarkdownIt) => {
   md.use(mark)
 
   md.use(anchor, {
+    // slugify: uslugify,
     permalink: anchor.permalink.linkInsideHeader({
       symbol: '#',
       renderAttrs: () => ({ 'aria-hidden': 'true' }),

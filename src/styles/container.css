@@ -1,0 +1,88 @@
+
+.custom-block {
+  @apply border-2 rounded-md font-mono text-base p-15px;
+  line-height: 24px;
+}
+
+.custom-block.info {
+  border-color: var(--vb-custom-block-info-border);
+  color: var(--vb-custom-block-info-text);
+  background-color: var(--vb-custom-block-info-bg);
+}
+
+.custom-block.info code {
+  background-color: var(--vb-custom-block-info-code-bg);
+}
+
+.custom-block.tip {
+  border-color: var(--vb-custom-block-tip-border);
+  color: var(--vb-custom-block-tip-text);
+  background-color: var(--vb-custom-block-tip-bg);
+}
+
+.custom-block.tip code {
+  background-color: var(--vb-custom-block-tip-code-bg);
+}
+
+.custom-block.warning {
+  border-color: var(--vb-custom-block-warning-border);
+  color: var(--vb-custom-block-warning-text);
+  background-color: var(--vb-custom-block-warning-bg);
+}
+
+.custom-block.warning code {
+  background-color: var(--vb-custom-block-warning-code-bg);
+}
+
+.custom-block.danger {
+  border-color: var(--vb-custom-block-danger-border);
+  color: var(--vb-custom-block-danger-text);
+  background-color: var(--vb-custom-block-danger-bg);
+}
+
+.custom-block.danger code {
+  background-color: var(--vb-custom-block-danger-code-bg);
+}
+
+.custom-block.details {
+  border-color: var(--vb-custom-block-details-border);
+  color: var(--vb-custom-block-details-text);
+  background-color: var(--vb-custom-block-details-bg);
+}
+
+.custom-block.details code {
+  background-color: var(--vb-custom-block-details-code-bg);
+}
+
+.custom-block-title {
+  font-weight: 700;
+  @apply ml-3.5 align-middle;
+}
+
+.custom-block p + p {
+  margin: 8px 0;
+}
+
+.custom-block.details summary {
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.custom-block.details summary + p {
+  margin: 8px 0;
+}
+
+.custom-block a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: opacity 0.25s;
+}
+
+.custom-block a:hover {
+  opacity: 0.6;
+}
+
+.custom-block code {
+  font-size: var(--vb-custom-block-code-font-size);
+}

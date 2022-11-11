@@ -105,7 +105,7 @@ export default defineConfig({
       markdownItOptions: {
         quotes: '""\'\'',
       },
-      wrapperClasses: 'prose prose-lg m-auto text-left',
+      wrapperClasses: 'prose prose-lg mx-auto text-left',
       markdownItSetup: (md) => installMarkdownPlugins(md)
     }),
 

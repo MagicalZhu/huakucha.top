@@ -1,0 +1,408 @@
+/**
+ * Colors Base(vitepress)
+ *
+ * These are the pure base color presets. Most of the time, you should not be
+ * using these colors directly in the theme but rather use "Colors Theme"
+ * instead because those are "Theme (light or dark)" dependant.
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-c-white: #ffffff;
+  --vb-c-white-soft: #f9f9f9;
+  --vb-c-white-mute: #f1f1f1;
+
+  --vb-c-black: #1a1a1a;
+  --vb-c-black-pure: #000000;
+  --vb-c-black-soft: #242424;
+  --vb-c-black-mute: #2f2f2f;
+
+  --vb-c-gray: #8e8e8e;
+  --vb-c-gray-light-1: #aeaeae;
+  --vb-c-gray-light-2: #c7c7c7;
+  --vb-c-gray-light-3: #d1d1d1;
+  --vb-c-gray-light-4: #e5e5e5;
+  --vb-c-gray-light-5: #f2f2f2;
+  --vb-c-gray-dark-1: #636363;
+  --vb-c-gray-dark-2: #484848;
+  --vb-c-gray-dark-3: #3a3a3a;
+  --vb-c-gray-dark-4: #282828;
+  --vb-c-gray-dark-5: #202020;
+
+  --vb-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vb-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vb-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vb-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vb-c-text-light-1: var(--vb-c-indigo);
+  --vb-c-text-light-2: rgba(60, 60, 60, 0.7);
+  --vb-c-text-light-3: rgba(60, 60, 60, 0.33);
+  --vb-c-text-light-4: rgba(60, 60, 60, 0.18);
+
+  --vb-c-text-dark-1: rgba(255, 255, 255, 0.87);
+  --vb-c-text-dark-2: rgba(235, 235, 235, 0.6);
+  --vb-c-text-dark-3: rgba(235, 235, 235, 0.38);
+  --vb-c-text-dark-4: rgba(235, 235, 235, 0.18);
+
+  --vb-c-indigo: #213547;
+  --vb-c-indigo-soft: #476582;
+  --vb-c-indigo-light: #aac8e4;
+  --vb-c-indigo-lighter: #c9def1;
+  --vb-c-indigo-dark: #1d2f3f;
+  --vb-c-indigo-darker: #14212e;
+
+  --vb-c-green: #42b883;
+  --vb-c-green-light: #42d392;
+  --vb-c-green-lighter: #35eb9a;
+  --vb-c-green-dark: #33a06f;
+  --vb-c-green-darker: #155f3e;
+  --vb-c-green-dimm-1: rgba(66, 184, 131, 0.5);
+  --vb-c-green-dimm-2: rgba(66, 184, 131, 0.25);
+  --vb-c-green-dimm-3: rgba(66, 184, 131, 0.05);
+
+  --vb-c-yellow: #ffc517;
+  --vb-c-yellow-light: #fcd253;
+  --vb-c-yellow-lighter: #fcfc7c;
+  --vb-c-yellow-dark: #e0ad15;
+  --vb-c-yellow-darker: #ad850e;
+  --vb-c-yellow-dimm-1: rgba(255, 197, 23, 0.5);
+  --vb-c-yellow-dimm-2: rgba(255, 197, 23, 0.25);
+  --vb-c-yellow-dimm-3: rgba(255, 197, 23, 0.05);
+
+  --vb-c-red: #ed3c50;
+  --vb-c-red-light: #f54e82;
+  --vb-c-red-lighter: #fd1d7c;
+  --vb-c-red-dark: #cd2d3f;
+  --vb-c-red-darker: #ab2131;
+  --vb-c-red-dimm-1: rgba(237, 60, 80, 0.5);
+  --vb-c-red-dimm-2: rgba(237, 60, 80, 0.25);
+  --vb-c-red-dimm-3: rgba(237, 60, 80, 0.05);
+}
+
+/**
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-c-bg: var(--vb-c-white);
+  --vb-c-bg-soft: var(--vb-c-white-soft);
+  --vb-c-bg-mute: var(--vb-c-white-mute);
+  --vb-c-bg-alt: var(--vb-c-white-soft);
+
+  --vb-c-divider: var(--vb-c-divider-light-1);
+  --vb-c-divider-light: var(--vb-c-divider-light-2);
+
+  --vb-c-divider-inverse: var(--vb-c-divider-dark-1);
+  --vb-c-divider-inverse-light: var(--vb-c-divider-dark-2);
+
+  --vb-c-text-1: var(--vb-c-text-light-1);
+  --vb-c-text-2: var(--vb-c-text-light-2);
+  --vb-c-text-3: var(--vb-c-text-light-3);
+  --vb-c-text-4: var(--vb-c-text-light-4);
+
+  --vb-c-text-inverse-1: var(--vb-c-text-dark-1);
+  --vb-c-text-inverse-2: var(--vb-c-text-dark-2);
+  --vb-c-text-inverse-3: var(--vb-c-text-dark-3);
+  --vb-c-text-inverse-4: var(--vb-c-text-dark-4);
+
+  --vb-c-text-code: var(--vb-c-indigo-soft);
+
+  --vb-c-brand: var(--vb-c-green);
+  --vb-c-brand-light: var(--vb-c-green-light);
+  --vb-c-brand-lighter: var(--vb-c-green-lighter);
+  --vb-c-brand-dark: var(--vb-c-green-dark);
+  --vb-c-brand-darker: var(--vb-c-green-darker);
+
+  --vb-c-sponsor: #fd1d7c;
+}
+
+.dark {
+  --vb-c-bg: var(--vb-c-black-soft);
+  --vb-c-bg-soft: var(--vb-c-black-mute);
+  --vb-c-bg-mute: var(--vb-c-gray-dark-3);
+  --vb-c-bg-alt: var(--vb-c-black);
+
+  --vb-c-divider: var(--vb-c-divider-dark-1);
+  --vb-c-divider-light: var(--vb-c-divider-dark-2);
+
+  --vb-c-divider-inverse: var(--vb-c-divider-light-1);
+  --vb-c-divider-inverse-light: var(--vb-c-divider-light-2);
+
+  --vb-c-text-1: var(--vb-c-text-dark-1);
+  --vb-c-text-2: var(--vb-c-text-dark-2);
+  --vb-c-text-3: var(--vb-c-text-dark-3);
+  --vb-c-text-4: var(--vb-c-text-dark-4);
+
+  --vb-c-text-inverse-1: var(--vb-c-text-light-1);
+  --vb-c-text-inverse-2: var(--vb-c-text-light-2);
+  --vb-c-text-inverse-3: var(--vb-c-text-light-3);
+  --vb-c-text-inverse-4: var(--vb-c-text-light-4);
+
+  --vb-c-text-code: var(--vb-c-indigo-lighter);
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-font-family-base: 'Inter var experimental', 'Inter var', 'Inter',
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Helvetica, Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --vb-font-family-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/**
+ * Shadows
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --vb-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07);
+  --vb-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --vb-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12);
+  --vb-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+/**
+ * Z-indexes
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-z-index-local-nav: 10;
+  --vb-z-index-nav: 20;
+  --vb-z-index-layout-top: 30;
+  --vb-z-index-backdrop: 40;
+  --vb-z-index-sidebar: 50;
+  --vb-z-index-footer: 60;
+}
+
+/**
+ * Icons
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-icon-copy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E");
+  --vb-icon-copied: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E");
+}
+
+/**
+ * Layouts
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-layout-max-width: 1440px;
+}
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-code-line-height: 1.7;
+  --vb-code-font-size: 0.875em;
+
+  --vb-code-block-color: var(--vb-c-text-dark-1);
+  --vb-code-block-bg: #292d3e;
+
+  --vb-code-line-highlight-color: rgba(0, 0, 0, 0.5);
+  --vb-code-line-number-color: var(--vb-c-text-dark-3);
+
+  --vb-code-line-diff-add-color: rgba(125, 191, 123, 0.1);
+  --vb-code-line-diff-add-symbol-color: rgba(125, 191, 123, 0.5);
+
+  --vb-code-line-diff-remove-color: rgba(255, 128, 128, 0.05);
+  --vb-code-line-diff-remove-symbol-color: rgba(255, 128, 128, 0.5);
+
+  --vb-code-line-error-color: var(--vb-c-red-dimm-2);
+  --vb-code-line-warning-color: var(--vb-c-yellow-dimm-2);
+
+  --vb-code-copy-code-hover-bg: rgba(255, 255, 255, 0.05);
+  --vb-code-copy-code-active-text: var(--vb-c-text-dark-2);
+}
+
+.dark {
+  --vb-code-block-bg: var(--vb-c-bg-alt);
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-button-brand-border: var(--vb-c-brand-light);
+  --vb-button-brand-text: var(--vb-c-text-dark-1);
+  --vb-button-brand-bg: var(--vb-c-brand);
+  --vb-button-brand-hover-border: var(--vb-c-brand-light);
+  --vb-button-brand-hover-text: var(--vb-c-text-dark-1);
+  --vb-button-brand-hover-bg: var(--vb-c-brand-light);
+  --vb-button-brand-active-border: var(--vb-c-brand-light);
+  --vb-button-brand-active-text: var(--vb-c-text-dark-1);
+  --vb-button-brand-active-bg: var(--vb-button-brand-bg);
+
+  --vb-button-alt-border: var(--vb-c-gray-light-3);
+  --vb-button-alt-text: var(--vb-c-text-light-1);
+  --vb-button-alt-bg: var(--vb-c-gray-light-5);
+  --vb-button-alt-hover-border: var(--vb-c-gray-light-3);
+  --vb-button-alt-hover-text: var(--vb-c-text-light-1);
+  --vb-button-alt-hover-bg: var(--vb-c-gray-light-4);
+  --vb-button-alt-active-border: var(--vb-c-gray-light-3);
+  --vb-button-alt-active-text: var(--vb-c-text-light-1);
+  --vb-button-alt-active-bg: var(--vb-c-gray-light-3);
+
+  --vb-button-sponsor-border: var(--vb-c-gray-light-3);
+  --vb-button-sponsor-text: var(--vb-c-text-light-2);
+  --vb-button-sponsor-bg: transparent;
+  --vb-button-sponsor-hover-border: var(--vb-c-sponsor);
+  --vb-button-sponsor-hover-text: var(--vb-c-sponsor);
+  --vb-button-sponsor-hover-bg: transparent;
+  --vb-button-sponsor-active-border: var(--vb-c-sponsor);
+  --vb-button-sponsor-active-text: var(--vb-c-sponsor);
+  --vb-button-sponsor-active-bg: transparent;
+}
+
+.dark {
+  --vb-button-brand-border: var(--vb-c-brand-light);
+  --vb-button-brand-text: var(--vb-c-text-dark-1);
+  --vb-button-brand-bg: var(--vb-c-brand-dark);
+  --vb-button-brand-hover-border: var(--vb-c-brand-lighter);
+  --vb-button-brand-hover-text: var(--vb-c-text-dark-1);
+  --vb-button-brand-hover-bg: var(--vb-c-brand);
+  --vb-button-brand-active-border: var(--vb-c-brand-lighter);
+  --vb-button-brand-active-text: var(--vb-c-text-dark-1);
+  --vb-button-brand-active-bg: var(--vb-button-brand-bg);
+
+  --vb-button-alt-border: var(--vb-c-gray-dark-2);
+  --vb-button-alt-text: var(--vb-c-text-dark-1);
+  --vb-button-alt-bg: var(--vb-c-bg-mute);
+  --vb-button-alt-hover-border: var(--vb-c-gray-dark-2);
+  --vb-button-alt-hover-text: var(--vb-c-text-dark-1);
+  --vb-button-alt-hover-bg: var(--vb-c-gray-dark-2);
+  --vb-button-alt-active-border: var(--vb-c-gray-dark-2);
+  --vb-button-alt-active-text: var(--vb-c-text-dark-1);
+  --vb-button-alt-active-bg: var(--vb-button-alt-bg);
+
+  --vb-button-sponsor-border: var(--vb-c-gray-dark-1);
+  --vb-button-sponsor-text: var(--vb-c-text-dark-2);
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-custom-block-code-font-size: 13px;
+
+  --vb-custom-block-info-border: var(--vb-c-divider-light);
+  --vb-custom-block-info-text: var(--vb-c-text-2);
+  --vb-custom-block-info-bg: var(--vb-c-white-soft);
+  --vb-custom-block-info-code-bg: var(--vb-c-gray-light-4);
+
+  --vb-custom-block-tip-border: var(--vb-c-green-dimm-1);
+  --vb-custom-block-tip-text: var(--vb-c-green-darker);
+  --vb-custom-block-tip-bg: var(--vb-c-green-dimm-3);
+  --vb-custom-block-tip-code-bg: var(--vb-custom-block-tip-bg);
+
+  --vb-custom-block-warning-border: var(--vb-c-yellow-dimm-1);
+  --vb-custom-block-warning-text: var(--vb-c-yellow-darker);
+  --vb-custom-block-warning-bg: var(--vb-c-yellow-dimm-3);
+  --vb-custom-block-warning-code-bg: var(--vb-custom-block-warning-bg);
+
+  --vb-custom-block-danger-border: var(--vb-c-red-dimm-1);
+  --vb-custom-block-danger-text: var(--vb-c-red-darker);
+  --vb-custom-block-danger-bg: var(--vb-c-red-dimm-3);
+  --vb-custom-block-danger-code-bg: var(--vb-custom-block-danger-bg);
+
+  --vb-custom-block-details-border: var(--vb-custom-block-info-border);
+  --vb-custom-block-details-text: var(--vb-custom-block-info-text);
+  --vb-custom-block-details-bg: var(--vb-custom-block-info-bg);
+  --vb-custom-block-details-code-bg: var(--vb-custom-block-details-bg);
+}
+
+.dark {
+  --vb-custom-block-info-border: var(--vb-c-divider-light);
+  --vb-custom-block-info-bg: var(--vb-c-black-mute);
+  --vb-custom-block-info-code-bg: var(--vb-c-gray-dark-4);
+
+  --vb-custom-block-tip-border: var(--vb-c-green-dimm-2);
+  --vb-custom-block-tip-text: var(--vb-c-green-light);
+
+  --vb-custom-block-warning-border: var(--vb-c-yellow-dimm-2);
+  --vb-custom-block-warning-text: var(--vb-c-yellow-light);
+
+  --vb-custom-block-danger-border: var(--vb-c-red-dimm-2);
+  --vb-custom-block-danger-text: var(--vb-c-red-light);
+}
+
+/**
+ * Component: Nav
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-nav-height: var(--vb-nav-height-mobile);
+  --vb-nav-height-mobile: 56px;
+  --vb-nav-height-desktop: 72px;
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vb-nav-height: var(--vb-nav-height-desktop);
+  }
+}
+
+/**
+ * Component: Sidebar
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-sidebar-width: 272px;
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-home-hero-name-color: var(--vb-c-brand);
+  --vb-home-hero-name-background: transparent;
+
+  --vb-home-hero-image-background-image: none;
+  --vb-home-hero-image-filter: none;
+}
+
+/**
+ * Component: Badge
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vb-badge-info-border: var(--vb-c-divider-light);
+  --vb-badge-info-text: var(--vb-c-text-2);
+  --vb-badge-info-bg: var(--vb-c-white-soft);
+
+  --vb-badge-tip-border: var(--vb-c-green-dimm-1);
+  --vb-badge-tip-text: var(--vb-c-green-darker);
+  --vb-badge-tip-bg: var(--vb-c-green-dimm-3);
+
+  --vb-badge-warning-border: var(--vb-c-yellow-dimm-1);
+  --vb-badge-warning-text: var(--vb-c-yellow-darker);
+  --vb-badge-warning-bg: var(--vb-c-yellow-dimm-3);
+
+  --vb-badge-danger-border: var(--vb-c-red-dimm-1);
+  --vb-badge-danger-text: var(--vb-c-red-darker);
+  --vb-badge-danger-bg: var(--vb-c-red-dimm-3);
+}
+
+.dark {
+  --vb-badge-info-border: var(--vb-c-divider-light);
+  --vb-badge-info-bg: var(--vb-c-black-mute);
+
+  --vb-badge-tip-border: var(--vb-c-green-dimm-2);
+  --vb-badge-tip-text: var(--vb-c-green-light);
+
+  --vb-badge-warning-border: var(--vb-c-yellow-dimm-2);
+  --vb-badge-warning-text: var(--vb-c-yellow-light);
+
+  --vb-badge-danger-border: var(--vb-c-red-dimm-2);
+  --vb-badge-danger-text: var(--vb-c-red-light);
+}

@@ -132,7 +132,7 @@ new Thread(() -> System.out.println("do Something...")).start();
 
 ## forEach
 
-```java
+```js
 // forEach
 List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
 features.forEach(n -> System.out.println(n));
@@ -143,3 +143,8 @@ features.forEach(System.out::println);
 
 ## 方法引用
 ### 构造引用
+
+
+::: danger
+This is an `info` box.
+:::

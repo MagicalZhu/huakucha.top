@@ -109,6 +109,7 @@ const MarkdownItShiki: MarkdownIt.PluginWithOptions<Options> = (markdownit, opti
     return _.uniq(lineData)
   }
 
+
   markdownit.options.highlight = (code, lang,attr) => {
     let extOptions:extOptions = {}
     if (highlighLineClass) { extOptions.highlighLineClass =  highlighLineClass }
@@ -121,9 +122,9 @@ const MarkdownItShiki: MarkdownIt.PluginWithOptions<Options> = (markdownit, opti
     }
     if (darkModeThemes) {
       const dark =  highlightCode(code, lang, darkModeThemes.dark, extOptions)
-        .replace('<pre class="shiki"', '<pre class="shiki shiki-dark" id="codeDark"')
+        .replace('<pre class="shiki"', '<pre class="shiki shiki-dark"')
       const light = highlightCode(code, lang || 'text', darkModeThemes.light, extOptions)
-        .replace('<pre class="shiki"', '<pre class="shiki shiki-light" id="codeLight"')
+        .replace('<pre class="shiki"', '<pre class="shiki shiki-light"')
       return `<div class="shiki-container">${dark}${light}</div>`
     }
     else {

@@ -71,8 +71,8 @@ const toggleLanguage = () => {
 const navConfig = useConfigStore().getThemeConfig().nav
 
 const navbar = ref<HTMLElement | null>(null);
-const isFixed = ref(false);
-const isVisible = ref(false);
+const isFixed = ref(true);
+const isVisible = ref(true);
 
 if (isClient) {
   const { y, directions } = useScroll(document);
@@ -80,11 +80,11 @@ if (isClient) {
     if (directions.top) {
       if (y.value > 0 && isFixed.value) isVisible.value = true;
       else {
-        isVisible.value = false;
-        isFixed.value = false;
+        isVisible.value = true;
+        isFixed.value = true;
       }
     } else if (directions.bottom) {
-      isVisible.value = false;
+      isVisible.value = true;
       if (navbar.value && y.value > navbar.value!.offsetHeight)
         isFixed.value = true;
     }

@@ -1,14 +1,14 @@
 import Shiki from './plugin/markdown-it-shiki'
-// import Shiki from 'markdown-it-shiki'
 import LinkAttributes from 'markdown-it-link-attributes'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 import anchor from 'markdown-it-anchor'
 import type MarkdownIt from 'markdown-it'
 import sup from 'markdown-it-sup'
-import mkcontainer from 'markdown-it-container'
 import mark from 'markdown-it-mark'
 import uslug from 'uslug'
+import { containerPlugin } from './markdown-plugin/container'
+// import { preWrapperPlugin } from './markdown-plugin/preWrapper'
 const uslugify = (s: string) => uslug(s)
 
 
@@ -32,7 +32,7 @@ export const installMarkdownPlugins = async (md: MarkdownIt) => {
    * @see {@link https://github.com/markdown-it/markdown-it-container}
    * 自定义代码块
    */
-  md.use(mkcontainer)
+  md.use(containerPlugin)
 
   /**
    * mark标记

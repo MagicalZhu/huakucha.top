@@ -43,8 +43,8 @@
     <a
       href="/"
       class="font-mono no-underline opacity-50 hover:opacity-75">
-      <div i-fa6-solid:angle-right 
-           class="inline-block" 
+      <div i-fa6-solid:angle-right
+           class="inline-block"
            text="xs"/>
       <span class="blink">_</span>
       cd /Home

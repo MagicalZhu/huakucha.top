@@ -215,3 +215,5 @@ html:not(.dark) .shiki-dark {
 .prose :where(ul > li):not(:where(.not-prose,.not-prose *)) ::marker {
   color: rgba(209, 213, 219, 1) !important;
 }
+
+

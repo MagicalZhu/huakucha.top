@@ -1,6 +1,8 @@
 @import "./markdown.css";
 @import "./about.css";
 @import "./post.css";
+@import "./container.css";
+@import "./basic.css";
 /* @import "../theme/prism-material-light.css"; */
 
 html,

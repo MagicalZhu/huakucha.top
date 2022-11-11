@@ -71,6 +71,10 @@ export default defineConfig({
       },
     }),
     presetIcons({
+      cdn: 'https://esm.sh/',
+      collections: {
+        carbon: () => import('@iconify-json/carbon/icons.json').then(i => i.default as any),
+      },
       scale: 1.2,
       warn: true,
       extraProperties: {
@@ -83,5 +87,5 @@ export default defineConfig({
     presetTypography(),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
-  safelist: "prose prose-lg m-auto text-left".split(" ")
+  safelist: "prose prose-lg mx-auto text-left".split(" ")
 });

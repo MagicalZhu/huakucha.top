@@ -4,4 +4,10 @@ declare module 'internal' {
 		title: string
 		date: string
 	}
+	export interface Social {
+		icon: string;
+		link: string;
+		name?: string;
+		size?: string;
+	}
 }

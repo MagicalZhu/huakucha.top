@@ -1,4 +1,4 @@
-import Shiki from './plugin/markdown-it-shiki'
+import Shiki from './markdown-plugin/shiki'
 import LinkAttributes from 'markdown-it-link-attributes'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'

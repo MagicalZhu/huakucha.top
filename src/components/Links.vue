@@ -1,14 +1,8 @@
 <script setup lang="ts">
 import {isExternal} from "@renovamen/utils"
+import {Social} from "internal"
 
-type Item = {
-  icon: string;
-  link: string;
-  name?: string;
-  size?: string;
-};
-
-defineProps<{ links: Array<Item> }>();
+defineProps<{ links: Array<Social> }>();
 </script>
 
 

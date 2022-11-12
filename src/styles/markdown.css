@@ -216,4 +216,11 @@ html:not(.dark) .shiki-dark {
   color: rgba(209, 213, 219, 1) !important;
 }
 
-
+.prose h1 {
+  margin: 48px 0 16px;
+  border-bottom: 1px dashed  rgba(209, 213, 219, 1);
+  padding-bottom: 24px;
+  letter-spacing: -0.02em;
+  line-height: 32px;
+  font-size: 24px;
+}

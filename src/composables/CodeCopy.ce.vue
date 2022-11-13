@@ -5,10 +5,6 @@
       {{copyMsg}}
     </span>
     -->
-    <span i-carbon:idea hidden/>
-    <span i-carbon:information hidden/>
-    <span i-carbon:warning-alt hidden/>
-    <span i-carbon:fire hidden/>
     <span class="codeLang">
       {{lang}}
     </span>

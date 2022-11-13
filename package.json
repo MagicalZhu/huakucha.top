@@ -42,6 +42,7 @@
     "shiki": "^0.11.1",
     "shiki-processor": "^0.1.1",
     "synckit": "^0.8.4",
+    "tippy.js": "^6.3.7",
     "uslug": "^1.0.4",
     "vite-plugin-pages": "^0.27.1",
     "vue": "^3.2.37",

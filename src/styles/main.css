@@ -3,6 +3,9 @@
 @import "./post.css";
 @import "./container.css";
 @import "./basic.css";
+@import 'tippy.js/dist/tippy.css';
+@import 'tippy.js/dist/backdrop.css';
+@import 'tippy.js/animations/shift-away.css';
 /* @import "../theme/prism-material-light.css"; */
 
 html,

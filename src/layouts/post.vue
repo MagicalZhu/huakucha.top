@@ -44,6 +44,7 @@
       </span>
     </div>
   </Layout>
+  <ButtonNav></ButtonNav>
 </template>
 
 <script setup lang="ts">

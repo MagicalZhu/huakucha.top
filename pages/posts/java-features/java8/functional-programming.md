@@ -145,6 +145,6 @@ features.forEach(System.out::println);
 ### 构造引用
 
 
-::: danger
+::: tip
 This is an `info` box.
 :::

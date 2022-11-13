@@ -1,5 +1,7 @@
 <script lang="ts" setup>
+import tippy, {animateFill} from 'tippy.js';
 const { y } = useWindowScroll()
+
 
 let shown = $ref(false)
 watch(y, () => {
@@ -8,23 +10,45 @@ watch(y, () => {
 async function backToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
+
+
+onMounted(() => {
+  tippy('#goback', {
+    content: "返回顶部",
+    arrow: true,
+    placement: "left-start",
+    animateFill: true,
+    plugins: [animateFill]
+  });
+  tippy('#toggleDarkMode', {
+    content: "切换模式",
+    arrow: true,
+    placement: "left-start",
+    animateFill: true,
+    plugins: [animateFill]
+  });
+})
+
 </script>
 
 <template>
   <div class="footer-tools">
     <Transition name="page-fade">
       <div v-show="shown">
-        <button class="box icon-btn mx-2" @click="backToTop()">
+        <button class="box icon-btn mx-2" @click="backToTop()" id="goback">
           <div i="ri-arrow-up-line"></div>
         </button>
       </div>
     </Transition>
-    <div class="box icon-btn mx-2 dropdown dropdown--hoverable">
+    <!-- <div class="box icon-btn mx-2 dropdown dropdown--hoverable">
       <div i="ri-wechat-line"></div>
       <img src="/img/wx.png" alt="" class="dropdown__menu">
-    </div>
-    <button class="box icon-btn mx-2 !outline-none" @click="toggleDark()">
+    </div> -->
+    <button class="box icon-btn mx-2 !outline-none" @click="toggleDark()" id="toggleDarkMode">
       <div i="ri-sun-line dark:ri-moon-line"></div>
+    </button>
+    <button class="box icon-btn mx-2">
+      <div i-carbon:settings></div>
     </button>
   </div>
 </template>

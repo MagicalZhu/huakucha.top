@@ -12,13 +12,13 @@
 
     <div class="prose-lg mt-6 mb-8 mx-auto">
       <h1 class="text-4xl font-bold">{{ title }}</h1>
-      <p class="mt-6 ml-2 text-base">
-        <span opacity-50>
+      <p class="mt-6 ml-2">
+        <span class="intro">
+          <div i-carbon:user class="mr-1" v-if="blogConfig.author"/>
+          {{blogConfig.author}}
+          <div i-carbon:calendar class="mr-1" :class="[blogConfig.author && 'ml-4']"/>
           {{ formatDate(date) }}
-        </span>
-
-        <span class="readingTime">
-          <div i-carbon:time class="mr-1" />
+          <div i-carbon:time class="ml-4 mr-1" />
           {{ readingTime }} {{$t('theme.blog.timeUnit')}}
         </span>
       </p>
@@ -29,7 +29,7 @@
     </article>
     <Comment/>
     <div
-      v-if="blogConfig &&(prevBlog || nextBlog)"
+      v-if="blogConfig.showNextOrPrev &&(prevBlog || nextBlog)"
       class="prose-lg mx-auto grid md:grid-cols-2 pt-4 mt-16 border-t border-c"
     >
       <span class="prev">
@@ -51,7 +51,7 @@
 import { isClient } from "@renovamen/utils";
 import { formatDate } from "~/utils";
 
-const blogConfig = useConfigStore().getThemeConfig().blog.showNextOrPrev
+const blogConfig = useConfigStore().getThemeConfig().blog
 const router = useRouter();
 
 const meta = computed(() => router.currentRoute.value.meta);
@@ -140,8 +140,9 @@ onMounted(() => {
   content: " →";
 }
 
-.readingTime {
-  @apply bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-1.5 py-1.2 rounded-1.8 ml-1.5;
-  @apply dark:bg-blue-200 dark:text-blue-800
+.intro {
+  @apply opacity-50 text-base font-400 inline-flex items-center;
+  @apply text-gray-400;
+  @apply dark:text-blue-300
 }
 </style>

@@ -7,6 +7,9 @@ const {addRouteMeta, getThemeConfig} = useConfigStore()
 
 useHead({
   title: getThemeConfig().authorName,
+  link: [
+    {rel: 'icon', href: 'img/avatar.jpg'}
+  ],
   meta: [
     { name: "description", content: "A dragon lost in human world." },
     {

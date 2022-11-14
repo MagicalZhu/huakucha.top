@@ -1,12 +1,3 @@
-
-/**
- * theme perference type
- */
-interface Social {
-  url: string,
-  icon: string
-}
-
 interface Nav {
   shell?: string
 }
@@ -19,7 +10,8 @@ interface Blog {
   perPageSize: number,
   // 最近发布文章
   rencentSize: number,
-  showNextOrPrev?: boolean
+  showNextOrPrev?: boolean,
+  author?: string
 }
 
 interface Category {
@@ -52,10 +44,8 @@ declare module 'siteConfig' {
       isOpen: boolean,
       config: import('@giscus/vue').GiscusProps
     }
-    // default: false
     showProject?: boolean,
     projects?: Project[],
-    socialList?: Social[]
     toc: Toc
     blog: Blog
     category: Category,

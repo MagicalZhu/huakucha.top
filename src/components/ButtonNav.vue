@@ -47,6 +47,7 @@ onMounted(() => {
     <button class="box icon-btn mx-2 !outline-none" @click="toggleDark()" id="toggleDarkMode">
       <div i="ri-sun-line dark:ri-moon-line"></div>
     </button>
+
     <button class="box icon-btn mx-2">
       <div i-carbon:settings></div>
     </button>

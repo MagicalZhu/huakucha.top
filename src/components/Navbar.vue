@@ -44,9 +44,9 @@
         <span class="lt-md:hidden">{{$t('theme.nav.Tag')}}</span>
       </router-link>
 
-      <button nav-item title="Toggle Language" @click="toggleLanguage()">
+      <!-- <button nav-item title="Toggle Language" @click="toggleLanguage()">
         <div i-ion:language-outline />
-      </button>
+      </button> -->
 
       <button nav-item title="Toggle dark" @click="toggleDark()">
         <div i="carbon-sun dark:carbon-moon" />

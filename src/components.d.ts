@@ -25,7 +25,6 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     Section: typeof import('./components/Section.vue')['default']
     TagList: typeof import('./components/TagList.vue')['default']
-    Time: typeof import('./components/icons/Time.vue')['default']
     TimeIcon: typeof import('./components/icons/TimeIcon.vue')['default']
   }
 }

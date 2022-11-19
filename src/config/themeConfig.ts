@@ -21,6 +21,11 @@ export const ThemeConfig:siteConfig = {
       loading: 'lazy'
     }
   },
+  board: {
+    githubOwner: 'MagicalZhu',
+    repo: 'vitesseDoc',
+    auth:'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'
+  },
   nav: {
     shell: 'Hi@YuLiang'
   },

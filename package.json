@@ -17,6 +17,7 @@
   "dependencies": {
     "@akiravoid/markdown-it-mark": "^1.0.2",
     "@akiravoid/markdown-it-sup": "^1.0.2",
+    "@octokit/rest": "^19.0.5",
     "@renovamen/utils": "^0.1.0",
     "@types/lodash": "^4.14.186",
     "@types/markdown-it-container": "^2.0.5",
@@ -37,7 +38,6 @@
     "markdown-it-mark": "^3.0.1",
     "markdown-it-sup": "^1.0.0",
     "nprogress": "^0.2.0",
-    "octokit": "^2.0.10",
     "pinia": "^2.0.17",
     "prettier": "^2.7.1",
     "shiki": "^0.11.1",

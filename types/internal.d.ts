@@ -10,4 +10,13 @@ declare module 'internal' {
 		name?: string;
 		size?: string;
 	}
+  export interface Board {
+		boardContent: string;
+		time: string;
+		labels?: string[];
+    comments: number,
+    linkUrl: string,
+    author: string,
+    authorHome: string
+	}
 }

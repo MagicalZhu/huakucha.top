@@ -19,9 +19,9 @@
     </router-link>
 
     <nav class="flex space-x-4">
-      <router-link to="/about" :title="$t('theme.nav.About')" class="nav-item">
+      <router-link to="/talk" :title="$t('theme.nav.Talk')" class="nav-item">
         <div i-carbon:user-profile class="md:hidden" />
-        <span class="lt-md:hidden">{{$t('theme.nav.About')}}</span>
+        <span class="lt-md:hidden">{{$t('theme.nav.Talk')}}</span>
       </router-link>
 
       <!-- <router-link to="/projects" title="Projects" class="nav-item">
@@ -61,12 +61,12 @@
 import { isClient } from "@renovamen/utils";
 import { toggleDark } from "~/composables/dark";
 
-const { availableLocales, locale } = useI18n()
+// const { availableLocales, locale } = useI18n()
 
-const toggleLanguage = () => {
-  const locales = availableLocales
-  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-}
+// const toggleLanguage = () => {
+//   const locales = availableLocales
+//   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+// }
 
 const navConfig = useConfigStore().getThemeConfig().nav
 

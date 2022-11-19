@@ -6,7 +6,7 @@ theme:
     recent: Recent Posts
     timeUnit: min
   nav:
-    About: About
+    Talk: Talk
     Blog: Blog
     Category: Category
     Tag: Tag

@@ -30,7 +30,13 @@ interface Toc {
 interface Project {
   projectName: string,
   icon: string,
-  category: string
+  category: string,
+}
+
+interface Issues {
+  githubOwner: string,
+  repo: string,
+  auth?:string
 }
 
 
@@ -44,6 +50,7 @@ declare module 'siteConfig' {
       isOpen: boolean,
       config: import('@giscus/vue').GiscusProps
     }
+    board?: Issues,
     showProject?: boolean,
     projects?: Project[],
     toc: Toc

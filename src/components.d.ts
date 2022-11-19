@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     ButtonNav: typeof import('./components/ButtonNav.vue')['default']
     CategoryList: typeof import('./components/CategoryList.vue')['default']
     Comment: typeof import('./components/Comment.vue')['default']
+    Discussion: typeof import('./components/icons/Discussion.vue')['default']
     FlipImage: typeof import('./components/FlipImage.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Layout: typeof import('./components/Layout.vue')['default']
@@ -24,5 +25,7 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     Section: typeof import('./components/Section.vue')['default']
     TagList: typeof import('./components/TagList.vue')['default']
+    Time: typeof import('./components/icons/Time.vue')['default']
+    TimeIcon: typeof import('./components/icons/TimeIcon.vue')['default']
   }
 }

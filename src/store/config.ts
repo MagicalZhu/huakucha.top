@@ -10,7 +10,6 @@ export const useConfigStore = defineStore('config', () => {
   const metas = $ref(new Array<any>())
   const themeConfig = $ref(ThemeConfig)
 
-
   // getters
   function addRouteMeta(tag: any) {
     metas.push(tag)

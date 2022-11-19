@@ -6,7 +6,7 @@ theme:
     recent: '最新发布'
     timeUnit: 分钟
   nav:
-    About: 关于
+    Talk: 说说
     Blog: 博客
     Category: 类别
     Tag: 标签

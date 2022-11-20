@@ -11,6 +11,7 @@ declare module 'internal' {
 		size?: string;
 	}
   export interface Board {
+		title: string;
 		boardContent: string;
 		time: string;
 		labels?: string[];

@@ -8,6 +8,7 @@ const contentData: Ref<Board[]> = ref([])
 onBeforeMount(async () => {
   Array.from(await getIssuses()).forEach((item:any) => {
     contentData.value.push({
+        title: item.title,
         boardContent: item.body,
         author: item.user.login,
         time: item.updated_at,
@@ -33,7 +34,7 @@ onBeforeMount(async () => {
               <!-- title -->
               <h3 class="font-medium sm:text-lg">
                 <a :href="item.linkUrl" class="underline-blue decoration-2 underline-dotted underline-offset-4 no-underline" target="_blank">
-                  {{item.boardContent}}
+                  {{item.title}}
                 </a>
               </h3>
 

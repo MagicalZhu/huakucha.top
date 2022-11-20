@@ -27,17 +27,17 @@ onBeforeMount(async () => {
       </Navbar>
       <!-- issues -->
       <div prose prose-lg mx-auto text-left font-mono>
-        <article class="articleCard" v-for="item in contentData">
+        <article class="rounded-xl border-2 mb-4 mt-4 dark:border-gray-6" v-for="item in contentData">
           <div class="flex items-start">
             <div class="ml-4">
               <!-- title -->
               <h3 class="font-medium sm:text-lg">
-                <a :href="item.linkUrl" class="articleTitle" target="_blank">
+                <a :href="item.linkUrl" class="underline-blue decoration-2 underline-dotted underline-offset-4 no-underline" target="_blank">
                   {{item.boardContent}}
                 </a>
               </h3>
 
-              <p class="articleContent">
+              <p class="text-sm text-gray-700 line-clamp-2 dark:text-gray-500">
                 {{item.boardContent}}
               </p>
               <div class="mt-2 sm:flex sm:items-center sm:gap-2 min-w-full">
@@ -64,16 +64,3 @@ onBeforeMount(async () => {
     <Footer></Footer>
   </main>
 </template>
-
-<style scoped>
-  .articleCard {
-    @apply rounded-xl border-2 mb-4 mt-4 dark:border-gray-6;
-  }
-  .articleTitle {
-    @apply underline-blue decoration-2 underline-dotted underline-offset-4 no-underline;
-  }
-  .articleContent {
-    @apply text-sm text-gray-700 line-clamp-2 dark:text-gray-500 ;
-  }
-
-</style>

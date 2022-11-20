@@ -27,7 +27,7 @@ onBeforeMount(async () => {
         <slot name="navbar"></slot>
       </Navbar>
       <!-- issues -->
-      <div prose prose-lg mx-auto text-left font-mono>
+      <div prose prose-lg mx-auto text-left>
         <article class="rounded-xl border-2 mb-4 mt-4 dark:border-gray-6" v-for="item in contentData">
           <div class="flex items-start">
             <div class="ml-4">
@@ -51,8 +51,7 @@ onBeforeMount(async () => {
                   <p class="ml-1 text-xs">{{item.time.substring(0,10)}}</p>
                 </div>
                 <p class="hidden sm:block sm:text-xs sm:text-gray-500 ml-2">
-                  Posted by
-                  <a :href="item.authorHome" class="font-medium underline hover:text-gray-700" target="_blank">
+                  <a :href="item.authorHome" class="font-medium no-underline hover:text-gray-700" target="_blank">
                     {{item.author}}
                   </a>
                 </p>
@@ -62,6 +61,23 @@ onBeforeMount(async () => {
         </article>
       </div>
     </div>
-    <Footer></Footer>
+    <div class="flex flex-col items-center">
+      <button type="button" class="writeButton">
+        <!-- <span i-carbon:add-comment mr-3 text-xl></span> -->
+        Write
+      </button>
+    </div>
+    <Footer class="footerRe"></Footer>
   </main>
 </template>
+
+<style scoped>
+.footerRe {
+  margin-top: 2em !important;
+}
+.writeButton {
+  @apply text-white bg-dark-800 hover:bg-dark-400 focus:outline-none;
+  @apply font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center;
+}
+
+</style>

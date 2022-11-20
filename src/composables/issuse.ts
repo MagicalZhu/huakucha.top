@@ -10,7 +10,7 @@ const fetchConfig:UseFetchOptions  = {
       cancel()
     options.headers = {
       ...options.headers,
-      Authorization: `${authToken}`,
+      Authorization: `token${authToken}`,
     }
     return {
       options

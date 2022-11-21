@@ -1,23 +1,23 @@
 <script setup lang="ts">
 import {Board} from 'internal'
 import { Ref } from 'vue'
-// const getIssuses = async() => {
-//   return await useIssuses().then((res) => JSON.parse(res.json().data.value))
-// }
+const getIssuses = async() => {
+  return await useIssuses().then((res) => JSON.parse(res.json().data.value))
+}
 const contentData: Ref<Board[]> = ref([])
-// onBeforeMount(async () => {
-//   Array.from(await getIssuses()).forEach((item:any) => {
-//     contentData.value.push({
-//         title: item.title,
-//         boardContent: item.body,
-//         author: item.user.login,
-//         time: item.updated_at,
-//         comments: item.comments,
-//         linkUrl: item.html_url,
-//         authorHome: item.user.html_url
-//       })
-//     })
-// })
+onBeforeMount(async () => {
+  Array.from(await getIssuses()).forEach((item:any) => {
+    contentData.value.push({
+        title: item.title,
+        boardContent: item.body,
+        author: item.user.login,
+        time: item.updated_at,
+        comments: item.comments,
+        linkUrl: item.html_url,
+        authorHome: item.user.html_url
+      })
+    })
+})
 const boardConfig = computed(() => {
   return useConfigStore().getThemeConfig().board
 })

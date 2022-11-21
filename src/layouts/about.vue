@@ -11,5 +11,6 @@
     </div>
     <!-- <Links :links="socials" class="justify-center"/> -->
     <Footer></Footer>
+    <WelcomeMsg/>
   </main>
 </template>

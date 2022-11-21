@@ -85,6 +85,7 @@ const boardConfig = computed(() => {
   padding-bottom: 0.6em;
   padding-left: 1em;
   padding-right: 1em;
+  box-shadow: 0 0 5px 2px #d8d8d7;
 }
 
 </style>

@@ -6,11 +6,11 @@
   onMounted(() => {
     setTimeout(() => {
       toggleTip()
-    }, 3000)
+    }, 8000)
   })
 </script>
 <template>
-  <aside class="fixed bottom-4 right-4 z-50 flex items-center justify-center rounded-lg bg-black px-5 py-3 text-white"
+  <aside class="fixed top-15 right-4 z-50 flex items-center justify-center rounded-lg bg-black px-5 py-3 text-white"
         v-if="showTip">
     <a target="_blank"
       rel="noreferrer"
@@ -18,7 +18,7 @@
       Hey! Welcome to my home 👋
     </a>
 
-    <button class="ml-3 rounded bg-white/20 p-1 hover:bg-white/10" @click="toggleTip">
+    <button class="ml-3 rounded  p-1 hover:bg-white/20" @click="toggleTip">
       <span class="sr-only">Close</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -35,3 +35,6 @@
     </button>
   </aside>
 </template>
+
+<style scoped>
+</style>

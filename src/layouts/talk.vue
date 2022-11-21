@@ -1,23 +1,23 @@
 <script setup lang="ts">
 import {Board} from 'internal'
 import { Ref } from 'vue'
-const getIssuses = async() => {
-  return await useIssuses().then((res) => JSON.parse(res.json().data.value))
-}
+// const getIssuses = async() => {
+//   return await useIssuses().then((res) => JSON.parse(res.json().data.value))
+// }
 const contentData: Ref<Board[]> = ref([])
-onBeforeMount(async () => {
-  Array.from(await getIssuses()).forEach((item:any) => {
-    contentData.value.push({
-        title: item.title,
-        boardContent: item.body,
-        author: item.user.login,
-        time: item.updated_at,
-        comments: item.comments,
-        linkUrl: item.html_url,
-        authorHome: item.user.html_url
-      })
-    })
-})
+// onBeforeMount(async () => {
+//   Array.from(await getIssuses()).forEach((item:any) => {
+//     contentData.value.push({
+//         title: item.title,
+//         boardContent: item.body,
+//         author: item.user.login,
+//         time: item.updated_at,
+//         comments: item.comments,
+//         linkUrl: item.html_url,
+//         authorHome: item.user.html_url
+//       })
+//     })
+// })
 const boardConfig = computed(() => {
   return useConfigStore().getThemeConfig().board
 })
@@ -69,6 +69,7 @@ const boardConfig = computed(() => {
         New
       </button>
     </div>
+    <SendMessage/>
     <Footer class="footerRe"></Footer>
   </main>
 </template>
@@ -78,9 +79,13 @@ const boardConfig = computed(() => {
   margin-top: 2em !important;
 }
 .writeButton {
-  @apply text-dark p-4 m-6 fixed bottom-0 right-0 shadow-2xl bg-white rounded-full text-sm ;
-  @apply border border-transparent hover:bg-gray-50;
-  @apply dark:bg-dark-100 dark:border dark:border-dark-300 dark:hover:bg-dark-200;
+  /* common style */
+  @apply  p-4 m-6 fixed bottom-8 right-12 rounded-full text-sm border;
+  /* light mode */
+  @apply bg-white text-dark  hover:bg-gray-50 border-transparent ;
+  /* dark mode */
+  @apply dark:bg-yellow-400  dark:hover:bg-yellow-300 dark:border-none dark:shadow-none;
+
   padding-top: 0.6em;
   padding-bottom: 0.6em;
   padding-left: 1em;

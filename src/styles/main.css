@@ -50,6 +50,11 @@ html.dark {
   background: var(--c-scrollbar-hover);
 }
 
+::selection {
+  background-color: #cce2ff;
+  color: rgba(0,0,0,.87);
+}
+
 
 #nprogress {
   @apply pointer-events-none;

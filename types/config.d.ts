@@ -36,7 +36,8 @@ interface Project {
 interface Issues {
   githubOwner: string,
   repo: string,
-  auth?:string
+  auth?:string,
+  showTitle: boolean
 }
 
 

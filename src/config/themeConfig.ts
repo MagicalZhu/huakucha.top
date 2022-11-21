@@ -24,7 +24,8 @@ export const ThemeConfig:siteConfig = {
   board: {
     githubOwner: 'MagicalZhu',
     repo: 'vitesseDoc',
-    auth:'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'
+    auth:'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',
+    showTitle: false
   },
   nav: {
     shell: 'Hi@YuLiang'

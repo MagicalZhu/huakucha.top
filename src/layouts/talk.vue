@@ -18,6 +18,9 @@ onBeforeMount(async () => {
       })
     })
 })
+const boardConfig = computed(() => {
+  return useConfigStore().getThemeConfig().board
+})
 </script>
 
 <template>
@@ -29,17 +32,16 @@ onBeforeMount(async () => {
       <!-- issues -->
       <div prose prose-lg mx-auto text-left>
         <article class="rounded-xl border-2 mb-4 mt-4 dark:border-gray-6" v-for="item in contentData">
-          <div class="flex items-start">
+          <div class="flex items-start pt-2">
             <div class="ml-4">
               <!-- title -->
-              <h3 class="font-medium sm:text-lg">
+              <h3 class="font-medium sm:text-lg" v-if="boardConfig?.showTitle">
                 <a :href="item.linkUrl" class="underline-blue decoration-2 underline-dotted underline-offset-4 no-underline" target="_blank">
                   {{item.title}}
                 </a>
               </h3>
 
-              <p class="text-sm text-gray-700 line-clamp-2 dark:text-gray-500">
-                {{item.boardContent}}
+              <p class="text-sm text-gray-700 line-clamp-2 dark:text-gray-500" v-html="item.boardContent">
               </p>
               <div class="mt-2 sm:flex sm:items-center sm:gap-2 min-w-full">
                 <div class="flex items-center text-gray-500">
@@ -63,8 +65,8 @@ onBeforeMount(async () => {
     </div>
     <div class="flex flex-col items-center">
       <button type="button" class="writeButton">
-        <!-- <span i-carbon:add-comment mr-3 text-xl></span> -->
-        Write
+        <span i-carbon:add-alt mr-2></span>
+        New
       </button>
     </div>
     <Footer class="footerRe"></Footer>
@@ -76,8 +78,13 @@ onBeforeMount(async () => {
   margin-top: 2em !important;
 }
 .writeButton {
-  @apply text-white bg-dark-800 hover:bg-dark-400 focus:outline-none;
-  @apply font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center;
+  @apply text-dark p-4 m-6 fixed bottom-0 right-0 shadow-2xl bg-white rounded-full text-sm ;
+  @apply border border-transparent hover:bg-gray-50;
+  @apply dark:bg-dark-100 dark:border dark:border-dark-300 dark:hover:bg-dark-200;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 </style>

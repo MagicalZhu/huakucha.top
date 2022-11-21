@@ -1,9 +1,9 @@
-import {siteConfig} from 'siteConfig'
+import { siteConfig } from 'siteConfig'
 
 /**
  * 站点配置信息
  */
-export const ThemeConfig:siteConfig = {
+export const ThemeConfig: siteConfig = {
   authorName: '花裤衩',
   showProject: true,
   comments: {
@@ -24,7 +24,7 @@ export const ThemeConfig:siteConfig = {
   board: {
     githubOwner: 'MagicalZhu',
     repo: 'vitesseDoc',
-    auth:'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',
+    auth: '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',
     showTitle: false
   },
   nav: {

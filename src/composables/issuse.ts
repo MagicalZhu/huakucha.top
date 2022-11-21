@@ -10,7 +10,7 @@ const fetchConfig:UseFetchOptions  = {
       cancel()
     options.headers = {
       ...options.headers,
-      Authorization: `token${authToken}`,
+      Authorization: `token ${authToken}`,
     }
     return {
       options
@@ -24,4 +24,3 @@ export function useIssuses() {
   const time = new Date().getMilliseconds()
   return useFetch(`https://api.github.com/repos/${githubOwner}/${repo}/issues?t=${time}`, fetchConfig)
 }
-

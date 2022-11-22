@@ -27,7 +27,7 @@
 
     - 类似的: **如果一个方法接受声明于 `java.util.function` 包内的接口，例如 `Predicate、Function、Consumer 或 Supplier`，那么就可以向其传 Lambda表达式**
 
-- Lambda表达式中, **当且仅当该方法不修改Lambda表达式提供的参数时**还可以使用`方法引用`。但**如果对参数有任何修改,则不能使用方法引用,而需要完整的Lambda表达式**。
+- Lambda表达式中, **当且仅当该方法不修改Lambda表达式提供的参数时**还可以使用`方法引用`。但**如果对参数有任何修改,则不能使用方法引用,而需要完整的Lambda表达式**
 
   ```java
     // ①.可以使用方法引用
@@ -39,14 +39,14 @@
     list.forEach((String s) -> System.out.println("*" + s + "*"));
   ```
 
-- Lambda表达式内部可以使用`静态、非静态和局部变量,` 这称为Lambda内的**变量捕获**
+- Lambda表达式内部可以使用`静态、非静态变量和局部变量,` 这称为Lambda内的**变量捕获**
 - Lambda方法在编译器内部被翻译成私有方法，并派发 `invokedynamic` 字节码指令来进行调用
   - 可以使用JDK中的 javap 工具来反编译class文件。使用 `javap -p` 或 `javap -c -v` 命令来看一看Lambda表达式生成的字节码。大致应该长这样:
 
     ```java
       private static java.lang.Object lambda$0(java.lang.String);
     ```
-- Lambda表达式有个限制, 那就是只能引用 `final` 或 `final 局部变量`，这就是说**不能在Lambda内部修改定义在域外的变量(如果仅仅是访问的话是可以的)**
+- Lambda表达式有个限制, 那就是只能操作 `final` 或 `final 局部变量`，这就是说**不能在Lambda内部修改定义在域外的变量(如果仅仅是访问的话是可以的)**
 
   ```java
     List<Integer> primes = Arrays.asList(new Integer[] { 2, 3, 5, 7 });
@@ -95,7 +95,7 @@ Lambda表达式依据**求值的时机**,可以分为下面两种方式:
     List <Person> people = list.getStream.collect(Collectors.toList());
     ```
 2. `并行执行`
-    - 并行的方式,会将数组分成多个段, 其中每一段都在不同的线程中处理,然后将结果一起输出,这一点和 Hadoop 的 MapReduce 思想类似,都是将数据**化大为小,而后汇总**
+    - 并行的方式,会将数组分成多个段, 其中每一段都在`不同的线程`中处理,然后将结果一起输出,这一点和 Hadoop 的 MapReduce 思想类似,都是将数据**化大为小,而后汇总**
     ```java
     List <Person> people = list.getStream.parallel().collect(Collectors.toList());
     ```
@@ -142,9 +142,55 @@ features.forEach(System.out::println);
 ```
 
 ## 方法引用
+
+对于方法引用来说,可以简化Lambda表达式的书写,下面是常见的方法引用的使用(注:每种方法引用与具体函数式接口没有绑定关系,只是简单的介绍各个内置函数式接口)
+
+::: tip 说明
+需要保证引用方法的`参数列表、返回值类型`与我们当前所要实现的函数式接口方法的参数列表、返回值类型保持一致。
+:::
+
 ### 构造引用
 
+```java
+// Supplier 函数式接口普通写法
+Supplier<Person> s1 = () -> new Person();
 
-::: tip
-This is an `info` box.
-:::
+// 使用构造引用
+Supplier<Person> s2 = Person::new;
+
+/*
+ * Supplier 函数式接口的定义,定义了获取数据的接口,但是方法没有入参的函数
+ */
+@FunctionalInterface
+public interface Supplier<T> {
+  T get();
+}
+```
+
+### 对象::实例方法
+
+```java
+// Consumer 函数式接口,用于消费参数列表
+Consumer<String> con = (x) -> System.out.println(x);
+con.accept("hua");
+
+// Lambda 简写
+Consumer<Integer> con2 = System.out::println;
+Consumer<Integer> con3 = (x) -> System.out.println(x + 10);
+con2.andThen(con3).accept(10);  // out: 10,20
+
+/**
+ * Consumer 函数式接口的定义,定义了消费数据的接口,有入参但是没有返回值的函数
+ * 其中 andThen 可以将多个 Consumer 串联,最后通过 accept 依次执行每个 Consumer
+ */
+@FunctionalInterface
+public interface Consumer<T> {
+  void accept(T t);
+  default Consumer<T> andThen(Consumer<? super T> after) {
+    Objects.requireNonNull(after);
+    return (T t) -> { accept(t); after.accept(t); };
+  }
+}
+```
+
+### 类名::静态方法

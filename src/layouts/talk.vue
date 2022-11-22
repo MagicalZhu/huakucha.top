@@ -63,6 +63,7 @@ const boardConfig = computed(() => {
         </article>
       </div>
     </div>
+    <!--
     <div class="flex flex-col items-center">
       <button type="button" class="writeButton">
         <span i-carbon:add-alt mr-2></span>
@@ -70,6 +71,7 @@ const boardConfig = computed(() => {
       </button>
     </div>
     <SendMessage/>
+    -->
     <Footer class="footerRe"></Footer>
   </main>
 </template>

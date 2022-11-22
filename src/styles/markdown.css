@@ -224,3 +224,8 @@ html:not(.dark) .shiki-dark {
   line-height: 32px;
   font-size: 24px;
 }
+
+
+.prose span.line {
+  white-space: pre-wrap;
+}

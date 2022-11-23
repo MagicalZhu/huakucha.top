@@ -3,7 +3,7 @@
   tags:
     - Java
   date: 2022-11-01 14:39:27
-  categories: Java新特性
+  categories: Java8
 ---
 [[toc]]
 
@@ -132,7 +132,7 @@ new Thread(() -> System.out.println("do Something...")).start();
 
 ## forEach
 
-```js
+```java
 // forEach
 List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
 features.forEach(n -> System.out.println(n));
@@ -180,7 +180,7 @@ Consumer<Integer> con3 = (x) -> System.out.println(x + 10);
 con2.andThen(con3).accept(10);  // out: 10,20
 
 /**
- * Consumer 函数式接口的定义,定义了消费数据的接口,有入参但是没有返回值的函数
+ * Consumer 函数式接口的定义,定义了有入参但是没有返回值的函数(消费函数)
  * 其中 andThen 可以将多个 Consumer 串联,最后通过 accept 依次执行每个 Consumer
  */
 @FunctionalInterface
@@ -194,3 +194,237 @@ public interface Consumer<T> {
 ```
 
 ### 类名::静态方法
+
+```java
+/**
+ * 这里在Person中自定义了静态方法 void foo(String x) {...}
+ */
+// 函数式接口
+Consumer<String> con1 = (x) -> Person.foo(x);
+con1.accept("hua");
+
+// 类::静态方法引用
+Consumer<String> con2 = Person::foo;
+con2.accept("hua");
+```
+
+## Filter(Predicate)
+
+> 通过 Filter 和 Predicate 对数据进行过滤与断言匹配。同时可以通过 Predicate 的逻辑连接符对将多个 Predicate 连接
+
+```java
+
+List<String> data = Arrays.asList("A1", "A2", "A3","A11", "B1", "B2", "B11");
+// 定义断言
+Predicate<String> p1 = s -> s.startsWith("A");
+Predicate<String> p2 = s -> s.length() > 2;
+Predicate<String> pGroup = p1.and(p2);
+
+data.stream().filter(pGroup).forEach((name) -> {
+  System.out.println(name + " ");
+});  // out: A11
+
+/**
+ * Returns a stream consisting of the elements of this stream that match
+ * the given predicate.
+ */
+Stream<T> filter(Predicate<? super T> predicate);
+
+
+/**
+ * Predicate 函数式接口的定义,定义了判断类型的函数
+ */
+@FunctionalInterface
+public interface Predicate<T> {
+  /**
+   * Evaluates this predicate on the given argument.
+   */
+  boolean test(T t);
+
+  default Predicate<T> and(Predicate<? super T> other) {
+    Objects.requireNonNull(other);
+    return (t) -> test(t) && other.test(t);
+  }
+
+  default Predicate<T> negate() {
+    return (t) -> !test(t);
+  }
+
+  default Predicate<T> or(Predicate<? super T> other) {
+    Objects.requireNonNull(other);
+    return (t) -> test(t) || other.test(t);
+  }
+}
+```
+
+## Map&Reduce
+
+> Map 将集合类元素进行转换, Reduce 可以将所有值合并成一个
+
+```java
+
+/**
+ * 每个数据*2 后相加
+ */
+List<Integer> numbers = Arrays.asList(100, 200, 300, 400, 500);
+
+Function<Integer,Integer> addFn = (n) -> n * 2;
+Function<Integer,Integer> minusFn = (n) -> n - 1;
+Function<Integer,Integer> finalFn = addFn.andThen(minusFn);
+BinaryOperator<Integer> reduceFn = (m,n) -> m+n;
+
+Integer res = numbers.stream().map(finalFn).reduce(reduceFn).get();
+System.out.println(res);  // out:2995
+
+/**
+ * Function 函数式接口,定义了有入参和返回值的功能型函数
+ */
+@FunctionalInterface
+public interface Function<T, R> {
+  /**
+   * Applies this function to the given argument.
+   */
+  R apply(T t);
+}
+```
+
+## Collectors
+
+> 用于收集、转换流中的元素
+
+```java
+// 将字符串换成大写并用逗号链接起来
+List<String> G7 = Arrays.asList("USA", "Japan", "France", "Germany", "Italy", "U.K.","Canada");
+String G7Countries = G7.stream().map(x -> x.toUpperCase()).collect(Collectors.joining(", "));
+System.out.println(G7Countries);
+
+
+/*
+ * Collector 不是一个函数式接口
+ * @param <T> the type of input elements to the reduction operation
+ * @param <A> the mutable accumulation type of the reduction operation (often
+ *            hidden as an implementation detail)
+ * @param <R> the result type of the reduction operation
+ */
+public interface Collector<T, A, R> {
+```
+
+## flatMap
+
+> 将多个 Stream 连接成一个 Stream
+
+```java
+List<Integer> result= Stream.of(Arrays.asList(1,3),Arrays.asList(5,6))
+                            .flatMap(a->a.stream())
+                            .collect(Collectors.toList());
+```
+
+## distinct & count
+
+> 去重和计数
+
+```java
+List<Integer> numbers = Arrays.asList(1,3,3,4,2,4,7);
+List<Integer> distinctData = numbers.stream().distinct().collect(Collectors.toList());
+System.out.println(distinctData);   // out: [1, 3, 4, 2, 7]
+System.out.println(numbers.stream().distinct().count());    //out:5
+
+```
+
+## Match
+
+```java
+boolean anyStartsWithA = stringCollection
+        .stream()
+        .anyMatch((s) -> s.startsWith("a"));
+
+System.out.println(anyStartsWithA);      // true
+
+boolean allStartsWithA = tringCollection
+              .stream()
+              .allMatch((s) -> s.startsWith("a"));
+
+System.out.println(allStartsWithA);      // false
+
+boolean noneStartsWithZ = stringCollection
+        .stream()
+        .noneMatch((s) -> s.startsWith("z"));
+
+System.out.println(noneStartsWithZ);      // true
+```
+
+## peek
+
+> 利用 peek方法可以对流进行一些调试, 且peek方法可只包含一个空的方法体
+
+```java
+List<Person> lists = new ArrayList<Person>();
+lists.add(new Person(1, "p1"));
+lists.add(new Person(2, "p2"));
+lists.add(new Person(3, "k3"));
+lists.add(new Person(4, "k4"));
+System.out.println(lists);
+
+List<Person> list2 = lists.stream()
+				        .filter(f -> f.getName().startsWith("p"))
+                .peek(t -> {
+                    System.out.println(t.getName());
+                })
+                .collect(Collectors.toList());
+System.out.println(list2);
+```
+
+:::tip 说明
+从上面可以看出来,函数式接口是一种对函数的描述
+:::
+
+# FunctionalInterface
+
+函数式接口有下面的几个特点:
+
+1. interface做注解的注解类型，被定义成java语言规范
+2. 一个被它注解的接口只能有一个抽象方法，有两种例外
+   - 第一: 接口允许有实现的方法，这种实现的方法是用default关键字来标记的(java反射中java.lang.reflect.Method#isDefault()方法用来判断是否是default方法)
+   - 第二: 如果声明的方法和java.lang.Object中的某个方法一样，它可以不当做未实现的方法，不违背这个原则: 一个被它注解的接口只能有一个抽象方法, 比如:
+      ```java
+      public interface Comparator<T> {
+        int compare(T o1, T o2);
+        boolean equals(Object obj);
+      }
+      ```
+3. 如果一个类型被这个注解修饰，那么编译器会要求这个类型必须满足如下条件
+   - 这个类型必须是一个interface，而不是其他的注解类型、枚举enum或者类class
+   - 这个类型必须满足function interface的所有要求，如你个包含两个抽象方法的接口增加这个注解，会有编译错误。
+4. 编译器会自动把满足function interface要求的接口自动识别为function interface
+
+## 自定义函数接口
+
+```java
+@FunctionalInterface
+public interface MyFInterface<T,E,R> {
+  R consume(T t, E e) ;
+}
+
+/**
+ * 使用函数式接口
+ */
+MyFInterface<Integer, Integer, Integer> mfn = (x,y) -> {
+  int num = x+y *2;
+  return num;
+};
+Integer val = mfn.consume(100, 200);
+System.out.println(val);  // out:500
+
+```
+
+## 内置四大函数接口
+
+1. 消费型接口: `Consumer< T> void accept(T t)`, 定义了有参数,无返回值的抽象方法
+2. 供给型接口: `Supplier < T> T get()`, 定义了无参,有返回值的抽象方法
+3. 断定型接口: `Predicate<T> boolean test(T t)`, 定义了有参，但是返回值类型是固定的boolean
+4. 函数型接口: `Function<T,R> R apply(T t)`, 定义了有参,有返回值的抽象方法
+
+
+# 参考
+- [Java8-函数编程(lambda表达式)](https://pdai.tech/md/java/java8/java8-stream.html)
+- [java8-tutorial](https://github.com/aalansehaiyang/java8-tutorial)

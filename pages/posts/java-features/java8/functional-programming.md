@@ -48,7 +48,7 @@
     ```
 - Lambda表达式有个限制, 那就是只能操作 `final` 或 `final 局部变量`，这就是说**不能在Lambda内部修改定义在域外的变量(如果仅仅是访问的话是可以的)**
 
-  ```java
+  ```java {lines: '5'}
     List<Integer> primes = Arrays.asList(new Integer[] { 2, 3, 5, 7 });
     int factor = 2;
     // ERROR: Local variables referenced from a lambda expression must be final or effectively final

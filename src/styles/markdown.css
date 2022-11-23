@@ -229,3 +229,13 @@ html:not(.dark) .shiki-dark {
 .prose span.line {
   white-space: pre-wrap;
 }
+
+.prose .highlighted-line {
+  @apply bg-red-200;
+  @apply dark:bg-red-900 ;
+  transition: background-color .5s;
+  margin: 0 -24px;
+  padding: 0 24px;
+  width: calc(100% + 48px);
+  display: inline-block;
+}

@@ -142,7 +142,7 @@ onMounted(() => {
 
 .intro {
   @apply opacity-50 text-base font-400 inline-flex items-center;
-  @apply text-gray-400;
+  @apply text-dark-400;
   @apply dark:text-blue-300
 }
 </style>

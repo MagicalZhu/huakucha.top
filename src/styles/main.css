@@ -14,7 +14,7 @@ body,
 }
 
 html.dark {
-  @apply bg-dark-300;
+  @apply bg-dark-700;
   color-scheme: dark;
 }
 
@@ -52,9 +52,11 @@ html.dark {
 
 ::selection {
   background-color: #cce2ff;
-  color: rgba(0,0,0,.87);
 }
 
+.dark ::selection {
+  @apply text-dark-900;
+}
 
 #nprogress {
   @apply pointer-events-none;

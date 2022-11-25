@@ -30,7 +30,7 @@ watch(
 onMounted(() => {
   let script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = 'https://code.tidio.co/qwk9qte5egxnkdfihrkvnceibygjnwpf.js';
+  script.src = '//code.tidio.co/qwk9qte5egxnkdfihrkvnceibygjnwpf.js';
   document.head.appendChild(script);
 })
 

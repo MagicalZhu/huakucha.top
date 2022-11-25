@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Alert: typeof import('./components/Alert.vue')['default']
+    Badge: typeof import('./components/Badge.vue')['default']
     BlogList: typeof import('./components/BlogList.vue')['default']
     ButtonNav: typeof import('./components/ButtonNav.vue')['default']
     CategoryList: typeof import('./components/CategoryList.vue')['default']

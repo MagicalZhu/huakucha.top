@@ -6,6 +6,12 @@ const {addRouteMeta, getThemeConfig} = useConfigStore()
 
 
 useHead({
+  script() {
+    return [{
+      src: '//code.tidio.co/qwk9qte5egxnkdfihrkvnceibygjnwpf.js',
+      type: 'text/javascript'
+    }]
+  },
   title: getThemeConfig().authorName,
   link: [
     {rel: 'icon', href: 'img/avatar.jpg'}
@@ -19,7 +25,6 @@ useHead({
   ]
 });
 
-
 // Scroll to top after route change
 const route = useRoute();
 
@@ -27,12 +32,6 @@ watch(
   () => route.path,
   () => isClient && window.scrollTo({ top: 0 })
 );
-onMounted(() => {
-  let script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = '//code.tidio.co/qwk9qte5egxnkdfihrkvnceibygjnwpf.js';
-  document.body.appendChild(script);
-})
 
 const router = useRouter()
 const routes = router.getRoutes()

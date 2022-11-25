@@ -239,11 +239,6 @@ html:not(.dark) .shiki-dark {
   font-size: 24px;
 }
 
-.dark .prose h1 {
-  border-bottom: 1px dashed  #525c82;
-}
-
-
 .prose span.line {
   white-space: pre-wrap;
 }

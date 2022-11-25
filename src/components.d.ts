@@ -21,6 +21,7 @@ declare module '@vue/runtime-core' {
     Nutshell: typeof import('./components/Nutshell.vue')['default']
     Project: typeof import('./components/Project.vue')['default']
     ProjectList: typeof import('./components/ProjectList.vue')['default']
+    Right: typeof import('./components/icons/Right.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Section: typeof import('./components/Section.vue')['default']

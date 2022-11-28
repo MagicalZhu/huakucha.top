@@ -141,7 +141,7 @@ onMounted(() => {
 }
 
 .intro {
-  @apply opacity-50 text-base font-400 inline-flex items-center;
+  @apply opacity-50 text-sm font-400 inline-flex items-center;
   @apply text-dark-400;
   @apply dark:text-blue-300
 }

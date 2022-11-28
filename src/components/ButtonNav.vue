@@ -48,9 +48,9 @@ onMounted(() => {
       <div i="ri-sun-line dark:ri-moon-line"></div>
     </button>
 
-    <button class="box icon-btn mx-2">
+    <!-- <button class="box icon-btn mx-2">
       <div i-carbon:settings></div>
-    </button>
+    </button> -->
   </div>
 </template>
 

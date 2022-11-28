@@ -34,3 +34,7 @@ Optional<String> name = Optional.of("Sanaulla");
 //传入参数为null，抛出NullPointerException.
 Optional<String> someNull = Optional.of(null);
 ```
+
+
+## 参考资料 <Badge type="tip" text="Tip"/>
+[Java8 - Optional类深度解析](https://pdai.tech/md/java/java8/java8-optional.html)

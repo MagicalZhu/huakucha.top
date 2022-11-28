@@ -236,7 +236,6 @@ html:not(.dark) .shiki-dark {
   padding-bottom: 24px;
   letter-spacing: -0.02em;
   line-height: 32px;
-  font-size: 24px;
 }
 
 .prose span.line {

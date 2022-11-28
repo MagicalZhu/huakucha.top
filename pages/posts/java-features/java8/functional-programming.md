@@ -7,15 +7,15 @@
 ---
 [[toc]]
 
-<Alert>
-  <strong>面向对象编程是对数据(Data)进行抽象, 而函数式编程是对行为(Action)进行抽象</strong>
-</Alert>
-
+>
+> <mark><strong>面向对象编程是对数据(Data)进行抽象, 而函数式编程是对行为(Action)进行抽象</strong></mark>
+>
 > 在函数式编程的 **回调函数(Callback Function)** 和 **事件处理器(Event Handler)** ,不必再纠缠于匿名内部类的冗繁和可读性，函数式编程让事件处理系统变得更加简单。通过将函数方便地传递也让编写惰性代码变得容易，只有在真正需要的时候，才初始化变量的值
 >
 > **核心思想: 使用不可变值和函数，函数对一个值进行处理，映射成另一个值**
 >
 > 对核心类库的改进主要包括集合类的API和新引入的流Stream。流使程序员可以站在更高的抽象层次上对集合进行操作
+>
 
 # Lambda表达式
 
@@ -423,7 +423,6 @@ System.out.println(val);  // out:500
 2. 供给型接口: `Supplier < T> T get()`, 定义了无参,有返回值的抽象方法
 3. 断定型接口: `Predicate<T> boolean test(T t)`, 定义了有参，但是返回值类型是固定的boolean
 4. 函数型接口: `Function<T,R> R apply(T t)`, 定义了有参,有返回值的抽象方法
-
 
 # 参考
 - [Java8-函数编程(lambda表达式)](https://pdai.tech/md/java/java8/java8-stream.html)

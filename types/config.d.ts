@@ -51,6 +51,7 @@ declare module 'siteConfig' {
       isOpen: boolean,
       config: import('@giscus/vue').GiscusProps
     }
+    openChat: boolean,
     board?: Issues,
     showProject?: boolean,
     projects?: Project[],

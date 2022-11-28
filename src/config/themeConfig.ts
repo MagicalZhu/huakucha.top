@@ -5,6 +5,7 @@ import { siteConfig } from 'siteConfig'
  */
 export const ThemeConfig: siteConfig = {
   authorName: '花裤衩',
+  openChat: false,
   showProject: true,
   comments: {
     isOpen: true,
@@ -46,6 +47,6 @@ export const ThemeConfig: siteConfig = {
     author: '花裤衩',
     perPageSize: 10,
     rencentSize: 5,
-    showNextOrPrev: false
+    showNextOrPrev: true
   }
 }

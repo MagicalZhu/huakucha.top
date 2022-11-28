@@ -1,49 +1,65 @@
 <script setup lang="ts">
 defineProps<{
   text?: string
-  type?: 'info' | 'tip' | 'warning' | 'danger'
+  type?: 'info' | 'tip' | 'warning' | 'danger' | 'note'
 }>()
 </script>
 
 <template>
-  <span class="VPBadge" :class="type ?? 'tip'">
+  <span class="MBadge" :class="type ?? 'tip'">
     <slot>{{ text }}</slot>
   </span>
 </template>
 <style scoped>
-.VPBadge {
-  display: inline-block;
+.MBadge {
+  @apply text-white;
+  display: inline;
   margin-left: 2px;
   border: 1px solid transparent;
-  border-radius: 10px;
-  padding: 0 8px;
-  line-height: 18px;
-  font-size: 13px;
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 14px;
   font-weight: 600;
   transform: translateY(-2px);
+  vertical-align: top;
 }
-h2 .VPBadge {
-  border-radius: 11px;
-  line-height: 20px;
+
+h1 .MBadge {
+  line-height: 14px;
+  font-size: 16px;
 }
-.VPBadge.info {
-  border-color: var(--vb-badge-info-border);
-  color: var(--vb-badge-info-text);
-  background-color: var(--vb-badge-info-bg);
+h2 .MBadge {
+  line-height: 14px;
+  font-size: 15px;
 }
-.VPBadge.tip {
-  border-color: var(--vb-badge-tip-border);
-  color: var(--vb-badge-tip-text);
-  background-color: var(--vb-badge-tip-bg);
+
+h3 .MBadge {
+  line-height: 13px;
+  font-size: 14px;
 }
-.VPBadge.warning {
-  border-color: var(--vb-badge-warning-border);
-  color: var(--vb-badge-warning-text);
-  background-color: var(--vb-badge-warning-bg);
+
+h4 .MBadge {
+  line-height: 13px;
+  font-size: 13px;
 }
-.VPBadge.danger {
-  border-color: var(--vb-badge-danger-border);
-  color: var(--vb-badge-danger-text);
-  background-color: var(--vb-badge-danger-bg);
+h5 .MBadge {
+  line-height: 12px;
+  font-size: 12px;
+}
+
+.MBadge.note {
+  background-color: #3f69e8;
+}
+.MBadge.info {
+  background-color: #828282;
+}
+.MBadge.tip {
+  background-color: #4abf8a;
+}
+.MBadge.warning {
+  background-color: #f4cd00;
+}
+.MBadge.danger {
+  background-color: #f55;
 }
 </style>

@@ -5,13 +5,7 @@
 }
 
 .custom-block.info {
-  border-color: var(--vb-custom-block-info-border);
-  color: var(--vb-custom-block-info-text);
-  background-color: var(--vb-custom-block-info-bg);
-}
-
-.custom-block.info code {
-  background-color: var(--vb-custom-block-info-code-bg);
+  @apply text-blue-700 bg-blue-100  dark:bg-blue-200 dark:text-blue-800
 }
 
 .custom-block.tip {

@@ -27,12 +27,14 @@ watch(
   () => isClient && window.scrollTo({ top: 0 })
 );
 
-onMounted(() => {
-  let script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = '//code.tidio.co/qwk9qte5egxnkdfihrkvnceibygjnwpf.js';
-  document.head.appendChild(script);
-})
+if (getThemeConfig().openChat) {
+  onMounted(() => {
+    let script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//code.tidio.co/qwk9qte5egxnkdfihrkvnceibygjnwpf.js';
+    document.head.appendChild(script);
+  })
+}
 
 const router = useRouter()
 const routes = router.getRoutes()

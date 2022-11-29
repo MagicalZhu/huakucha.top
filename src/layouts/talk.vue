@@ -9,12 +9,14 @@ onBeforeMount(async () => {
   Array.from(await getIssuses()).forEach((item:any) => {
     contentData.value.push({
         title: item.title,
+        state: item.state,
         boardContent: item.body,
         author: item.user.login,
         time: item.updated_at,
         comments: item.comments,
         linkUrl: item.html_url,
-        authorHome: item.user.html_url
+        authorHome: item.user.html_url,
+        labels: item.labels
       })
     })
 })

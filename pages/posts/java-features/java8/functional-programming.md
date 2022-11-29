@@ -213,13 +213,13 @@ con2.accept("hua");
 > 通过 Filter 和 Predicate 对数据进行过滤与断言匹配。同时可以通过 Predicate 的逻辑连接符对将多个 Predicate 连接
 
 ```java
-
+// 准备数据
 List<String> data = Arrays.asList("A1", "A2", "A3","A11", "B1", "B2", "B11");
 // 定义断言
 Predicate<String> p1 = s -> s.startsWith("A");
 Predicate<String> p2 = s -> s.length() > 2;
 Predicate<String> pGroup = p1.and(p2);
-
+// 使用filter
 data.stream().filter(pGroup).forEach((name) -> {
   System.out.println(name + " ");
 });  // out: A11
@@ -262,15 +262,15 @@ public interface Predicate<T> {
 > Map 将集合类元素进行转换, Reduce 可以将所有值合并成一个
 
 ```java
-
 /**
  * 每个数据*2 后相加
  */
 List<Integer> numbers = Arrays.asList(100, 200, 300, 400, 500);
-
+// 定义多个Function函数式接口
 Function<Integer,Integer> addFn = (n) -> n * 2;
 Function<Integer,Integer> minusFn = (n) -> n - 1;
 Function<Integer,Integer> finalFn = addFn.andThen(minusFn);
+// 定义BinaryOperator函数式接口,用于消费数据并返回结果
 BinaryOperator<Integer> reduceFn = (m,n) -> m+n;
 
 Integer res = numbers.stream().map(finalFn).reduce(reduceFn).get();
@@ -419,10 +419,10 @@ System.out.println(val);  // out:500
 
 ## 内置四大函数接口
 
-1. 消费型接口: `Consumer< T> void accept(T t)`, 定义了有参数,无返回值的抽象方法
-2. 供给型接口: `Supplier < T> T get()`, 定义了无参,有返回值的抽象方法
-3. 断定型接口: `Predicate<T> boolean test(T t)`, 定义了有参，但是返回值类型是固定的boolean
-4. 函数型接口: `Function<T,R> R apply(T t)`, 定义了有参,有返回值的抽象方法
+1. 消费型接口: `Consumer<T>     void accept(T t)`, 定义了有参数,无返回值的抽象方法
+2. 供给型接口: `Supplier <T>    T get()`, 定义了无参,有返回值的抽象方法
+3. 断定型接口: `Predicate<T>    boolean test(T t)`, 定义了有参，但是返回值类型是固定的boolean
+4. 函数型接口: `Function<T,R>   R apply(T t)`, 定义了有参,有返回值的抽象方法
 
 # 参考
 - [Java8-函数编程(lambda表达式)](https://pdai.tech/md/java/java8/java8-stream.html)

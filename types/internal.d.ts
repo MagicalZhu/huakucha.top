@@ -12,6 +12,7 @@ declare module 'internal' {
 	}
   export interface Board {
 		title: string;
+		state: string
 		boardContent: string;
 		time: string;
 		labels?: string[];

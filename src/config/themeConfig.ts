@@ -26,7 +26,8 @@ export const ThemeConfig: siteConfig = {
     githubOwner: 'MagicalZhu',
     repo: 'vitesseDoc',
     auth: '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',
-    showTitle: false
+    showTitle: false,
+    labels: 'borad'
   },
   nav: {
     shell: 'Hi@YuLiang'

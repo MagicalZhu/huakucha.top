@@ -187,7 +187,6 @@ html:not(.dark) .shiki-dark {
 .prose table {
   width: 100%;
   table-layout: auto;
-  text-align: left;
   margin-top: 2em;
   margin-bottom: 2em;
   font-size: 16px;
@@ -204,6 +203,7 @@ html:not(.dark) .shiki-dark {
   padding-right: 0.5714286em;
   padding-bottom: 0.5714286em;
   padding-left: 0.5714286em;
+  border: 1px solid #dfe2e5;
 }
 .prose tbody tr {
   border-width: 1px;
@@ -212,6 +212,7 @@ html:not(.dark) .shiki-dark {
 .prose tbody td {
   vertical-align: top;
   padding: 1em;
+  border: 1px solid #dfe2e5;
 }
 
 

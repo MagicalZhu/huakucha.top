@@ -37,7 +37,8 @@ interface Issues {
   githubOwner: string,
   repo: string,
   auth?:string,
-  showTitle: boolean
+  showTitle: boolean,
+  labels?: string
 }
 
 

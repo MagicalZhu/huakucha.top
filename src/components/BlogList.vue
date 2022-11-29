@@ -47,13 +47,14 @@
         :key="blogItem.path"
         class="flex"
         items="center"
-        m="y-1 x-0.5">
+        m="y-1 x-0.5"
+        p="3px">
       <span class="w-14 h-6 leading-6 opacity-50"
             text="base"
             m="r-2">
         {{ formatDate(blogItem.date, false) }}
       </span>
-      <router-link class="flex-1 !text-c"
+      <router-link class="!text-c"
                   font="normal mono"
                   :to="blogItem.path"
                   style="text-decoration: none;">

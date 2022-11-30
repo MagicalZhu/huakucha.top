@@ -45,7 +45,6 @@ export const ThemeConfig: siteConfig = {
     perPageSize: 5
   },
   blog: {
-    author: '花裤衩',
     perPageSize: 10,
     rencentSize: 5,
     showNextOrPrev: true

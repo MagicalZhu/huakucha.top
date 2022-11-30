@@ -48,7 +48,7 @@ const boardConfig = computed(() => {
               <div class="mt-2 sm:flex sm:items-center sm:gap-2 min-w-full">
                 <div class="flex items-center text-gray-500">
                   <Discussion/>
-                  <p class="ml-1 text-xs">{{item.comments}} comments</p>
+                  <a class="ml-1 text-xs no-underline" :href="item.linkUrl" target="_blank">{{item.comments}} comments</a>
                 </div>
                 <div class="flex items-center text-gray-500  ml-2">
                   <TimeIcon />

@@ -1,6 +1,6 @@
 ---
   author: '花裤衩'
-  title: Optionanl类浅析
+  title: Optional类浅析
   tags:
     - Java
 
@@ -145,3 +145,4 @@ System.out.println(filterFail.orElse("dont startsWith g"));
 
 # 参考资料 <Badge type="tip" text="Tip"/>
 [Java8 - Optional类深度解析](https://pdai.tech/md/java/java8/java8-optional.html)
+

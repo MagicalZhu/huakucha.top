@@ -1,10 +1,11 @@
 .post a.header-anchor {
   @apply float-left opacity-0 text-c no-underline;
-  margin-top: 0.1em;
-  margin-left: -1.3em;
-  font-size: 0.75em;
+  margin-left: -1em;
+  padding-right: 8px;
 }
 
+.post h1:hover .header-anchor,
+.post h1:focus .header-anchor,
 .post h2:hover .header-anchor,
 .post h2:focus .header-anchor,
 .post h3:hover .header-anchor,
@@ -15,7 +16,7 @@
 .post h5:focus .header-anchor,
 .post h6:hover .header-anchor,
 .post h6:focus .header-anchor {
-  @apply opacity-50;
+  @apply opacity-100;
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6{
@@ -46,7 +47,7 @@
 }
 
 .table-of-contents > ul > li::before {
-  @apply content-[#] opacity-60 mr-1;
+  @apply content-[¶] opacity-60 mr-1;
 }
 
 .table-of-contents > ul > li > ul > li {

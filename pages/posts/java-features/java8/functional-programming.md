@@ -30,13 +30,13 @@
 - Lambda表达式中, **当且仅当该方法不修改Lambda表达式提供的参数时**还可以使用`方法引用`。但**如果对参数有任何修改,则不能使用方法引用,而需要完整的Lambda表达式**
 
   ```java
-    // ①.可以使用方法引用
-    list.forEach(n -> System.out.println(n));   // 没有使用方法引用
-    list.forEach(System.out::println);          // 等效于使用方法引用
+  // ①.可以使用方法引用
+  list.forEach(n -> System.out.println(n));   // 没有使用方法引用
+  list.forEach(System.out::println);          // 等效于使用方法引用
 
-    // ②.不能使用方法引用 => 由于在方法的参数上进行了"相关操作",所以无法使用"方法引用"
-    // 注意的是: 这里的参数类型 String 是可以省略的, 编译器可以从参数列表的类属性推测出来
-    list.forEach((String s) -> System.out.println("*" + s + "*"));
+  // ②.不能使用方法引用 => 由于在方法的参数上进行了"相关操作",所以无法使用"方法引用"
+  // 注意的是: 这里的参数类型 String 是可以省略的, 编译器可以从参数列表的类属性推测出来
+  list.forEach((String s) -> System.out.println("*" + s + "*"));
   ```
 
 - Lambda表达式内部可以使用`静态、非静态变量和局部变量,` 这称为Lambda内的**变量捕获**
@@ -44,22 +44,22 @@
   - 可以使用JDK中的 javap 工具来反编译class文件。使用 `javap -p` 或 `javap -c -v` 命令来看一看Lambda表达式生成的字节码。大致应该长这样:
 
     ```java
-      private static java.lang.Object lambda$0(java.lang.String);
+    private static java.lang.Object lambda$0(java.lang.String);
     ```
 - Lambda表达式有个限制, 那就是只能操作 `final` 或 `final 局部变量`，这就是说**不能在Lambda内部修改定义在域外的变量(如果仅仅是访问的话是可以的)**
 
   ```java {lines: '5'}
-    List<Integer> primes = Arrays.asList(new Integer[] { 2, 3, 5, 7 });
-    int factor = 2;
-    // ERROR: Local variables referenced from a lambda expression must be final or effectively final
-    primes.forEach((element) -> {
-      factor++;
-    });
+  List<Integer> primes = Arrays.asList(new Integer[] { 2, 3, 5, 7 });
+  int factor = 2;
+  // ERROR: Local variables referenced from a lambda expression must be final or effectively final
+  primes.forEach((element) -> {
+    factor++;
+  });
 
-    // 但如果是访问外部非final变量,而不是修改的话,则是允许的
-    primes.forEach((element) -> {
-      System.out.println(factor * element );
-    });
+  // 但如果是访问外部非final变量,而不是修改的话,则是允许的
+  primes.forEach((element) -> {
+    System.out.println(factor * element );
+  });
   ```
 
 # 分类

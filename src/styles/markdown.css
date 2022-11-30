@@ -111,25 +111,23 @@
   @apply underline-offset-5 underline-blue decoration-2 underline-dotted  text-c-active font-normal;
 }
 
+.prose a:hover  {
+  @apply  decoration-1.5px underline-blue underline-solid;
+}
+
 main:not(.post) a.header-anchor {
   @apply hidden;
 }
 
-.shiki-light,
-.shiki-dark {
-  @apply !bg-transparent border border-2;
-}
-
-
 /*
-  the border color for the dark or light theme
+  the background color for the dark or light theme
 */
-.shiki-light {
-  @apply border-gray-300;
-}
 
+.shiki-light {
+  background: #f8f8f8 !important;
+}
 .shiki-dark {
-  @apply border-gray-600;
+  background: #0e0e0e !important;
 }
 
 /*
@@ -146,7 +144,7 @@ html:not(.dark) .shiki-dark {
   @apply hidden;
 }
 
-/*
+  /*
   markdown table of contents
 */
 .prose .table-of-contents {
@@ -163,6 +161,12 @@ html:not(.dark) .shiki-dark {
   padding-right: 1.375rem;
   text-align: inherit;
   font-size: 14px;
+  transition: all .4s ease-out;
+  opacity: 1;
+}
+
+.prose .table-of-contents:hover {
+  opacity: 1;
 }
 
 .prose .table-of-contents  a:active {
@@ -179,6 +183,22 @@ html:not(.dark) .shiki-dark {
 */
 .prose .table-of-contents a {
   @apply no-underline;
+  font-weight: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(125, 125, 125, 0.3);
+  transition: border 0.3s ease-in-out;
+}
+
+.prose .table-of-contents a:hover {
+  border-bottom: 1px solid #000;
+}
+
+.dark  .prose .table-of-contents a {
+  border-bottom: 1px dotted rgb(150 150 157 / 64%);
+}
+
+.dark .prose .table-of-contents a:hover {
+  border-bottom: 1px solid rgb(175 176 248);
 }
 
 /*
@@ -267,4 +287,15 @@ mark {
   background-color: rgb(239 228 105);
   background-image: unset;
   padding: 4px 4px 2px 4px;
+}
+
+.octicon {
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.octicon-header {
+  vertical-align: middle;
 }

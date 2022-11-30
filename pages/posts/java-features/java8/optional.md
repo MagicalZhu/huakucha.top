@@ -75,7 +75,7 @@ if (of.isPresent()) {
 
 > 如果 Optional 有值则为其调用 Consumer 函数式接口，否则不做处理
 
-[使用示例](optionanl#ofnullable)
+[使用示例](optional#ofnullable)
 
 ## orElse
 

@@ -36,33 +36,33 @@
 
 <template>
   <!-- key is  year string -->
-  <div v-for="key in Object.keys(contentData)" :key="key">
-    <div class="relative h20 pointer-events-none">
-      <span text="8em"
-            class="absolute left-6 bottom-1 font-bold op10 top-1">
-        {{key}}
+  <div v-for="year in Object.keys(contentData)" :key="year">
+    <div class="relative pointer-events-none blogGroup">
+      <span class="blogYear">
+        {{year}}
       </span>
     </div>
-    <div v-for="blogItem in contentData[key]"
+    <article v-for="blogItem in contentData[year]"
         :key="blogItem.path"
-        class="flex"
-        items="center"
-        m="y-1 x-0.5"
-        p="3px">
-      <span class="w-14 h-6 leading-6 opacity-50"
-            text="base"
-            m="r-2">
-        {{ formatDate(blogItem.date, false) }}
-      </span>
-      <router-link class="!text-c"
-                  font="normal mono"
-                  :to="blogItem.path"
-                  style="text-decoration: none;">
-        {{ blogItem.title }}
+        class="blogItem">
+      <router-link class="itemLink block font-normal no-underline !text-c"
+                   font="normal mono"
+                  :to="blogItem.path">        
+        <div class="card">
+          <div>
+            <span class="blogTitle">{{ blogItem.title }}</span>
+          </div>
+          <div>
+            <span class="opacity-40 text-sm text-base">
+              {{ formatDate(blogItem.date) }}
+            </span>
+          </div>
+        </div>
       </router-link>
-    </div>
+    </article>
+    <blog-item/>
   </div>
-  <!-- page -->
+  <!-- TODO page -->
   <div class='mt-60 ml-10 mr-10'>
     <div class='prose prose-lg m-auto'>
       <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
@@ -87,3 +87,35 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+a.itemLink {
+  transition: .2s all ease-out;
+  text-decoration: none;
+  border-bottom: none!important;
+  width: fit-content;
+}
+
+.blogItem {
+  @apply relative block rounded-xl;
+  /*  border config*/
+  /*@apply border  border-gray-100 dark:border-gray-600;*/
+}
+
+.blogTitle {
+  @apply font-bold text-gray-600 font-mono;
+}
+
+.card {
+  @apply: text-gray-500;
+  padding: 8px;
+}
+
+.blogGroup {
+  height: 3em;
+}
+
+.blogYear {
+  @apply text-8em absolute bottom-1 font-bold op10 top--1rem left-18;
+}
+</style>

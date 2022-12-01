@@ -1,8 +1,11 @@
 import dayjs from "dayjs"
 import {BlogType as Blog} from 'internal';
 
-export function formatDate(date: string | Date, year = true) {
-  return year ? dayjs(date).format("YYYY-MM-DD") : dayjs(date).format("MM-DD")
+export function formatDate(d: string | Date) {
+  const date = dayjs(d)
+  if (date.year() === dayjs().year())
+    return date.format('MMM D')
+  return date.format('MMM D, YYYY')
 }
 
 /**

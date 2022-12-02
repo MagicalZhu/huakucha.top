@@ -21,6 +21,8 @@ export function getBlogs():Blog[] {
       (i: any): Blog => ({
         path: i.path,
         title: i.meta.frontmatter.title,
+        tags: i.meta.frontmatter.tags,
+        categories: i.meta.frontmatter.categories,
         date: i.meta.date
       })
     )

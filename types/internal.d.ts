@@ -3,6 +3,8 @@ declare module 'internal' {
 		path: string
 		title: string
 		date: string
+		tags: string[] | string
+		categories: string[] | string
 	}
 	export interface Social {
 		icon: string;

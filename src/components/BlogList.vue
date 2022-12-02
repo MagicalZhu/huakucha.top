@@ -53,11 +53,17 @@
             <span class="blogTitle">{{ blogItem.title }}</span>
           </div>
           <div>
-            <span class="opacity-40 text-sm text-base">
+            <span class="opacity-40 text-sm">
               {{ formatDate(blogItem.date) }}
             </span>
+            <div inline-block float-right>
+              <span class="tagName" v-for="tagName in blogItem.tags">
+                #{{tagName}}
+             </span>
+            </div>
           </div>
         </div>
+
       </router-link>
     </article>
     <blog-item/>
@@ -93,7 +99,7 @@ a.itemLink {
   transition: .2s all ease-out;
   text-decoration: none;
   border-bottom: none!important;
-  width: fit-content;
+  /*width: fit-content;*/
 }
 
 .blogItem {
@@ -101,6 +107,10 @@ a.itemLink {
   /*  border config*/
   /*@apply border  border-gray-100 dark:border-gray-600;*/
 }
+.blogItem:hover {
+  background-color: #c4c6d526;
+}
+
 
 .blogTitle {
   @apply font-bold text-gray-600 font-mono;
@@ -117,5 +127,14 @@ a.itemLink {
 
 .blogYear {
   @apply text-8em absolute bottom-1 font-bold op10 top--1rem left-18;
+}
+
+.tagName {
+  @apply inline  opacity-40 text-sm rounded-md  p-1.5 bg-gray-200 ml-2 mr-1;
+}
+
+.dark .tagName {
+  color: #97ec51;
+  background-color: #101011;
 }
 </style>

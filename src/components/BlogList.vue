@@ -70,25 +70,19 @@
   </div>
   <!-- TODO page -->
   <div class='mt-60 ml-10 mr-10'>
-    <div class='prose prose-lg m-auto'>
-      <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
-                    relative inline-flex text-base font-medium"
+    <div class='prose prose-lg m-auto justify-center flex'>
+      <button class=" border-gray-300 text-gray-300 border-2 rounded-lg p-1 border w-20
+                     text-base mr-4"
               v-if="prev"
               @click="--pageNum">
-        <div>
-          <span i-carbon:chevron-left class="text-sm"></span>
-          <span class="ml-1 pr-2">{{$t('theme.page.prev')}}</span>
-        </div>
+        <span class="ml-1 pr-2">{{$t('theme.page.prev')}}</span>
       </button>
 
-      <button class="bg-dark border-gray-300 text-white rounded-xl py-2 px-3
-                    relative inline-flex text-base font-medium float-right"
+      <button class="border-gray-300 text-gray-300 border-2 rounded-lg p-1 border w-20
+                     text-base"
               v-if="next"
               @click="++pageNum">
-        <div>
-          <span class="ml-1 pr-2">{{$t('theme.page.next')}}</span>
-          <span i-carbon:chevron-right class="text-sm"></span>
-        </div>
+        <span class="ml-1 pr-">{{$t('theme.page.next')}}</span>
       </button>
     </div>
   </div>

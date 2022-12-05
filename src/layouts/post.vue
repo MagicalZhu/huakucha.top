@@ -17,7 +17,7 @@
           <div i-carbon:user class="mr-1" v-if="blogConfig.author"/>
           {{blogConfig.author}}
           <div i-carbon:calendar class="mr-1" :class="[blogConfig.author && 'ml-4']"/>
-          {{ formatDate(date) }}
+          {{ formatDate(date, true) }}
           <div i-carbon:time class="ml-4 mr-1" />
           {{ readingTime }} {{$t('theme.blog.timeUnit')}}
         </span>

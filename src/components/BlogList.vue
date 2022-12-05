@@ -56,7 +56,7 @@
             <span class="opacity-40 text-sm">
               {{ formatDate(blogItem.date) }}
             </span>
-            <div inline-block float-right>
+            <div inline-flex float-right>
               <span class="tagName" v-for="tagName in blogItem.tags">
                 #{{tagName}}
              </span>
@@ -71,18 +71,18 @@
   <!-- TODO page -->
   <div class='mt-60 ml-10 mr-10'>
     <div class='prose prose-lg m-auto justify-center flex'>
-      <button class=" border-gray-300 text-gray-300 border-2 rounded-lg p-1 border w-20
-                     text-base mr-4"
+      <button class="border-gray-300 text-gray-300 border-2 rounded-lg p-1 border w-20
+                     text-base mr-4 cursor-pointer"
               v-if="prev"
               @click="--pageNum">
         <span class="ml-1 pr-2">{{$t('theme.page.prev')}}</span>
       </button>
 
       <button class="border-gray-300 text-gray-300 border-2 rounded-lg p-1 border w-20
-                     text-base"
+                     text-base cursor-pointer"
               v-if="next"
               @click="++pageNum">
-        <span class="ml-1 pr-">{{$t('theme.page.next')}}</span>
+        <span class="ml-1 pr-1">{{$t('theme.page.next')}}</span>
       </button>
     </div>
   </div>
@@ -102,7 +102,10 @@ a.itemLink {
   /*@apply border  border-gray-100 dark:border-gray-600;*/
 }
 .blogItem:hover {
-  background-color: #c4c6d526;
+  background-color: #e3e3e424;
+}
+.dark .blogItem:hover {
+  background-color: #40404024;
 }
 
 
@@ -124,7 +127,8 @@ a.itemLink {
 }
 
 .tagName {
-  @apply inline  opacity-40 text-sm rounded-md  p-1.5 bg-gray-200 ml-2 mr-1;
+  @apply inline  opacity-40 text-xs rounded-md  p-1 bg-gray-200 ml-2 mr-1;
+  margin-top: -10px;
 }
 
 .dark .tagName {

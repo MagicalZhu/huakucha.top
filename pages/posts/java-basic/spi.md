@@ -76,7 +76,7 @@ SPI整体机制图如下:
 
 可以看到输出结果：文件搜索 SearchByFS=>hello
 
-如果在com.cainiao.ys.spi.learn.Search文件里写上两个实现类,那最后的输出结果就是两行了。这就是因为 *ServiceLoader.load(Search.class)* 在加载某接口时, 会去 *META-INF/services* 下找接口的全限定名文件, 再根据里面的内容加载相应的实现类。
+如果在com.yoey.spiDemo.Search文件里写上两个实现类,那最后的输出结果就是两行了。这就是因为 *ServiceLoader.load(Search.class)* 在加载某接口时, 会去 *META-INF/services* 下找接口的全限定名文件, 再根据里面的内容加载相应的实现类。
 
 这就是spi的思想: <mark>接口的实现由provider实现, provider 只需要在提交的jar包里的 META-INF/services下根据平台定义的接口新建文件,并添加进相应的实现类的全限定名即可!</mark>
 

@@ -79,6 +79,7 @@
 .prose pre.shiki code {
   white-space: pre;
   background-color: unset;
+  font-size: 14px;
 }
 
 .prose pre code:before {

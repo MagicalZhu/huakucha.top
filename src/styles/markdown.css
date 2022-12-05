@@ -80,6 +80,7 @@
   white-space: pre;
   background-color: unset;
   font-size: 14px;
+  display: block;
 }
 
 .prose pre code:before {
@@ -110,7 +111,7 @@
 */
 .prose a  {
   @apply underline-offset-5 underline-blue decoration-2 underline-dotted  text-c-active font-normal;
-  
+
 }
 
 .prose a:hover  {

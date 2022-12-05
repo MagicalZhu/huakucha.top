@@ -111,7 +111,6 @@
 */
 .prose a  {
   @apply underline-offset-5 underline-blue decoration-2 underline-dotted  text-c-active font-normal;
-
 }
 
 .prose a:hover  {
@@ -166,6 +165,7 @@ html:not(.dark) .shiki-dark {
   font-size: 14px;
   transition: all .4s ease-out;
   opacity: 1;
+  height: 75%;
 }
 
 .prose .table-of-contents:hover {

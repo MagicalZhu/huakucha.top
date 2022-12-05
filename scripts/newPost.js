@@ -47,7 +47,7 @@ const askQuestions = () => {
       message: "Choose your tags?",
       choices: [
         "Spring", "Java", "JavaScript", "Vue", "React", "杂谈", "SpringCloud",
-        "SpringBoot"
+        "SpringBoot", "CS"
       ],
       pageSize: 5
     },

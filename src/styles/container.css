@@ -1,6 +1,6 @@
 
 .custom-block {
-  @apply border-2 rounded-md font-mono text-base p-15px;
+  @apply border-2 rounded-md font-mono text-base py-8px px-20px;
   line-height: 24px;
 }
 

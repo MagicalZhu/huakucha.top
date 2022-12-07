@@ -18,7 +18,7 @@ socials:
   <div>
     <div class="hidden md:flex flex items-start">
       <div class="mr-5 mt-10px shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-1 shadow-xl dark:bg-white/80">
-        <img class="my-0 h-14 w-20 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80" src="img/avatar.jpg" alt="avatar"
+        <img class="my-0 h-14 w-20 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80" src="/public/img/avatar.jpg" alt="avatar"
                     shadow="[inset_0_0_10px_#000000] slate-200 dark:slate-800"/>
       </div>
       <h1 class="noBorder">

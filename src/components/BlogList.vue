@@ -63,23 +63,20 @@
             </div>
           </div>
         </div>
-
       </router-link>
     </article>
     <blog-item/>
   </div>
-  <!-- TODO page -->
-  <div class='mt-60 ml-10 mr-10'>
+  <!--TODO use slot-->
+  <div class='ml-10 mr-10'>
     <div class='prose prose-lg m-auto justify-center flex'>
-      <button class="border-gray-300 text-gray-300 border-2 rounded-lg p-1 border w-20
-                     text-base mr-4 cursor-pointer"
+      <button class="border-gray-300 text-gray-300 border-2 rounded-lg border p-1 text-base cursor-pointer mr-4"
               v-if="prev"
               @click="--pageNum">
-        <span class="ml-1 pr-2">{{$t('theme.page.prev')}}</span>
+        <span class="ml-1 pr-1">{{$t('theme.page.prev')}}</span>
       </button>
 
-      <button class="border-gray-300 text-gray-300 border-2 rounded-lg p-1 border w-20
-                     text-base cursor-pointer"
+      <button class="border-gray-300 text-gray-300 border-2 rounded-lg border p-1 text-base cursor-pointer"
               v-if="next"
               @click="++pageNum">
         <span class="ml-1 pr-1">{{$t('theme.page.next')}}</span>
@@ -93,7 +90,6 @@ a.itemLink {
   transition: .2s all ease-out;
   text-decoration: none;
   border-bottom: none!important;
-  /*width: fit-content;*/
 }
 
 .blogItem {
@@ -107,7 +103,6 @@ a.itemLink {
 .dark .blogItem:hover {
   background-color: #40404024;
 }
-
 
 .blogTitle {
   @apply font-bold text-gray-600 font-mono;

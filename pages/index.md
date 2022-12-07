@@ -23,7 +23,7 @@ socials:
         YuLiang Zhu
         <!-- <span text-sm opacity-50 ml-2>朱玉良</span> -->
         <br/>
-        <span text-sm opacity-50 ml-2 font-normal>@花裤衩</span>
+        <span text-sm opacity-50 ml-2 font-normal>Do More</span>
       </h1>
     </div>
   </div>

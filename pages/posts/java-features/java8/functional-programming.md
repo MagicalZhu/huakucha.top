@@ -425,5 +425,5 @@ System.out.println(val);  // out:500
 4. 函数型接口: `Function<T,R>   R apply(T t)`, 定义了有参,有返回值的抽象方法
 
 # 参考
-- [Java8-函数编程(lambda表达式)](https://pdai.tech/md/java/java8/java8-stream.html)
-- [java8-tutorial](https://github.com/aalansehaiyang/java8-tutorial)
+1. <app-link to="https://pdai.tech/md/java/java8/java8-stream.html" class="sourceLink">Java8-函数编程(lambda表达式)</app-link>
+2. <app-link to="https://github.com/aalansehaiyang/java8-tutorial" class="sourceLink">java8-tutorial</app-link>

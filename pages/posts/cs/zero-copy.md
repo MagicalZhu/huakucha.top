@@ -148,6 +148,6 @@ SendFile方式中有一次CPU拷贝,可以使用 SendFile + DMA Gather Copy 将�
 
 # 参考
 
-[基础之零拷贝相关知识总结记录](https://cxis.me/2021/03/18/基础之零拷贝相关知识总结记录)
-[I/O 操作的那些事儿：轮询 ，中断 ， DMA ，通道](https://www.cnblogs.com/niuyourou/p/12588407.html)
-[图解零拷贝](https://www.cnblogs.com/xiaolincoding/p/13719610.html)
+1. <app-link to="https://cxis.me/2021/03/18/基础之零拷贝相关知识总结记录" class="sourceLink">基础之零拷贝相关知识总结记录</app-link>
+2. <app-link to="https://www.cnblogs.com/niuyourou/p/12588407.html" class="sourceLink">I/O 操作的那些事儿：轮询 ，中断 ， DMA ，通道</app-link>
+3. <app-link to="https://www.cnblogs.com/xiaolincoding/p/13719610.html" class="sourceLink">图解零拷贝</app-link>

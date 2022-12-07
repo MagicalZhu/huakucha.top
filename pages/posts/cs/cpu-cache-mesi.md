@@ -191,10 +191,11 @@ CPU遇到读屏障时，必须先将失效队列中的写事务全部处理完�
 
 # 参考
 
-- https://nextfe.com/memory-barrier/
-- https://nextfe.com/cpu-cache/
-- https://coolshell.cn/articles/20793.html
-- https://www.0xffffff.org/2017/02/21/40-atomic-variable-mutex-and-memory-barrier/
-- https://www.cnblogs.com/xiaoxiongcanguan/p/13184801.html
-- http://www.wowotech.net/kernel_synchronization/Why-Memory-Barriers.html
-- https://monkeysayhi.github.io/2017/12/28/%E4%B8%80%E6%96%87%E8%A7%A3%E5%86%B3%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/
+1. <app-link to="https://coolshell.cn/articles/20793.html" class="sourceLink">与程序员相关的CPU缓存知识</app-link>
+2. <app-link to="https://www.0xffffff.org/2017/02/21/40-atomic-variable-mutex-and-memory-barrier/" class="sourceLink">聊聊原子变量、锁、内存屏障那点事</app-link>
+3. <app-link to="https://www.cnblogs.com/xiaoxiongcanguan/p/13184801.html" class="sourceLink">高速缓存一致性协议MESI与内存屏障</app-link>
+4. <app-link to="http://www.wowotech.net/kernel_synchronization/Why-Memory-Barriers.html" class="sourceLink">Why Memory Barriers</app-link>
+5. <app-link to="https://monkeysayhi.github.io/2017/12/28/一文解决内存屏障" class="sourceLink">一文解决内存屏障</app-link>
+
+
+

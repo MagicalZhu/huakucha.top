@@ -35,7 +35,7 @@ name.ifPresent(x -> System.out.println(x));  // out:Sanaulla
 
 Optional<String>  someNull = Optional.of(null);
 //传入参数为null, 抛出NullPointerException.
-someNull.ifPresent(x -> System.out.println(x)); 
+someNull.ifPresent(x -> System.out.println(x));
 ```
 
 ## ofNullable
@@ -144,5 +144,7 @@ System.out.println(filterFail.orElse("dont startsWith g"));
 ```
 
 # 参考资料 <Badge type="tip" text="Tip"/>
-[Java8 - Optional类深度解析](https://pdai.tech/md/java/java8/java8-optional.html)
+
+<app-link to="https://pdai.tech/md/java/java8/java8-optional.html" class="sourceLink">Java8 - Optional类深度解析</app-link>
+
 

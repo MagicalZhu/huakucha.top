@@ -16,9 +16,11 @@ socials:
 
 <div >
   <div>
-    <div class="hidden md:flex">
-      <flip-image class="!w-24 border border-c p-1 mb-1 mr-4 rounded-md mr-10" src="img/avatar.jpg" alt="avatar" 
-                  shadow="[inset_0_0_10px_#000000] slate-200 dark:slate-800"/>
+    <div class="hidden md:flex flex items-start">
+      <div class="mr-5 mt-10px shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-1 shadow-xl dark:bg-white/80">
+        <img class="my-0 h-14 w-20 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80" src="img/avatar.jpg" alt="avatar"
+                    shadow="[inset_0_0_10px_#000000] slate-200 dark:slate-800"/>
+      </div>
       <h1 class="noBorder">
         YuLiang Zhu
         <!-- <span text-sm opacity-50 ml-2>朱玉良</span> -->
@@ -61,7 +63,8 @@ socials:
   Miscellaneous
 </h1>
 
-- 🚀 This personal website is built on [Vitesse](https://github.com/antfu/vitesse),thanks to [@antfu](https://antfu.me/) for the template&nbsp; <span font-700>(｀･ω･´)ゞ</span>
+- 🚀 This personal website is built on <app-link to="https://github.com/antfu/vitesse">Vitesse</app-link>,
+thanks to <app-link to="https://antfu.me/">@antfu</app-link> for the template&nbsp; <span font-700>(｀･ω･´)ゞ</span>
 - 🌈 Imagine having a Tinker Bell pocket &nbsp; <span font-700>(✧◡✧)</span>
 - 🌭 My dream: <em font-mono text-brand>while(sleeping){money++;}</em>&nbsp; <span font-700>( • ̀ω•́ )✧</span>
 

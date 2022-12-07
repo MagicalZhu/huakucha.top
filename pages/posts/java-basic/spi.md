@@ -563,6 +563,5 @@ public final class ServiceLoader<S>
 
 # 参考资料 <Badge type="tip" text="Tip"/>
 
-[Java常用机制 - SPI机制详解](https://pdai.tech/md/java/advanced/java-advanced-spi.html)
-
-[设计原则：小议 SPI 和 API](https://www.cnblogs.com/happyframework/archive/2013/09/17/3325560.html)
+1. <app-link to="https://pdai.tech/md/java/advanced/java-advanced-spi.html" class="sourceLink">Java常用机制 - SPI机制详解</app-link>
+2. <app-link to="https://www.cnblogs.com/happyframework/archive/2013/09/17/3325560.html" class="sourceLink">设计原则：小议 SPI 和 API</app-link>

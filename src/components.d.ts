@@ -8,13 +8,13 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Alert: typeof import('./components/Alert.vue')['default']
+    AppLink: typeof import('./components/AppLink.vue')['default']
     Badge: typeof import('./components/Badge.vue')['default']
     BlogList: typeof import('./components/BlogList.vue')['default']
     ButtonNav: typeof import('./components/ButtonNav.vue')['default']
     CategoryList: typeof import('./components/CategoryList.vue')['default']
     Comment: typeof import('./components/Comment.vue')['default']
     Discussion: typeof import('./components/icons/Discussion.vue')['default']
-    FlipImage: typeof import('./components/FlipImage.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Layout: typeof import('./components/Layout.vue')['default']
     Links: typeof import('./components/Links.vue')['default']

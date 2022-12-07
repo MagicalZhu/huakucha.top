@@ -313,3 +313,7 @@ mark {
 .octicon-header {
   vertical-align: middle;
 }
+
+.sourceLink {
+  @apply ml-3 no-underline;
+}

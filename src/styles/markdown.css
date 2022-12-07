@@ -36,7 +36,7 @@
 }
 
 .prose code:not(pre.shiki code) {
-  @apply py-3px rounded-md px-1px;
+  @apply py-4px rounded-md;
   white-space: normal;
   transition: color .5s,background-color .5s;
   font-weight: unset;

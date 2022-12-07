@@ -39,13 +39,13 @@ export const ThemeConfig: siteConfig = {
     isTocOpen: false,
   },
   tag: {
-    perPageSize: 6,
+    perPageSize: 10,
   },
   category: {
-    perPageSize: 6
+    perPageSize: 10
   },
   blog: {
-    perPageSize: 6,
+    perPageSize: 10,
     rencentSize: 5,
     showNextOrPrev: true
   }

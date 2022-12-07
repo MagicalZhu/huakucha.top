@@ -48,7 +48,7 @@
         <div i-ion:language-outline />
       </button> -->
 
-      <button nav-item title="Toggle dark" @click="toggleDark()">
+      <button nav-item title="Toggle dark" @click="toggleDark()" >
         <div i="carbon-sun dark:carbon-moon" />
       </button>
 

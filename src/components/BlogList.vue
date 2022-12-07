@@ -124,10 +124,11 @@ a.itemLink {
 .tagName {
   @apply inline  opacity-40 text-xs rounded-md  p-1 bg-gray-200 ml-2 mr-1;
   margin-top: -10px;
+  color: #1f1f29;
 }
 
 .dark .tagName {
-  color: #97ec51;
-  background-color: #101011;
+  color: #ffffff;
+  background-color: #303034;
 }
 </style>

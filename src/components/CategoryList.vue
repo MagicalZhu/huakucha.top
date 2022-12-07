@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { getPageCount,getPage } from '~/utils/page'
+  import { formatDate } from "~/utils"
 
   const {getFunc} = useConfigStore()
   // 获取 Category 元数据
@@ -55,22 +56,24 @@
       </span>
     </span>
   </div>
+  <!--
   <h4 class="hstack space-x-2 text-c-light hover:text-c-dark text-base font-mono"
       v-show="selectCategory">
     <div i-carbon:folder >
     </div>
     <span>{{ selectCategory }}</span>
   </h4>
+  -->
   <div
       v-for="(item, index) in contentData"
       :key="index"
-      class="my-1 mx-0.5 flex"
+      class="my-2 mx-0.5 flex"
     >
     <router-link class="flex-1 !text-c font-mono" :to="item.path" style="text-decoration: none;">
-      {{ item.frontmatter.title }}
+      <span font-bold text-gray-600 font-mono> {{ item.frontmatter.title }}</span>
     </router-link>
     <div class="leading-6 opacity-50 text-sm mr-2 mb-4 font-mono">
-      {{ item.date }}
+      {{ formatDate(item.date, true) }}
     </div>
   </div>
   <!-- page -->
@@ -101,13 +104,16 @@
 <style scoped>
   .tagout {
     @apply flex flex-wrap  space-x-4 mt-4 pb-5 justify-start;
-    @apply border-b-2 border-dashed  border-gray-300 dark:border-gray-500
+    @apply border-gray-300 dark:border-gray-500;
+    /*@apply border-b-2 border-dashed;*/
   }
 
   .tagContent {
-    @apply text-base text-gray-400  dark:text-gray-300 font-light  hover:text-c-dark font-mono;
+    @apply text-base text-gray-400  dark:text-gray-300 font-light  font-mono;
     @apply transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110;
     @apply cursor-pointer  leading-4 display-inline-block ;
+    padding: 7px;
+    padding-left: 12px;
   }
 
   .tagsCount {
@@ -116,6 +122,13 @@
   }
   .activetag {
     @apply text-dark dark:text-blue-4 font-500;
+    background-color: #e8e8e8;
+    border-radius: 6px;
+  }
+  
+  .dark .activetag {
+    background-color: #2e2e2e;
+    border-radius: 6px;
   }
 
   .btnPrevNext {

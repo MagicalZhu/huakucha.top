@@ -4,7 +4,7 @@
 -->
 <template>
   <Layout class="post">
-    <template v-if="isToc" #navbar>
+    <template v-if="isToc" #navbar class="lt-md:hidden">
       <button nav-item title="Toggle toc" @click="isTocOpen = !isTocOpen">
         <div i-fluent:sidebar-search-rtl-20-regular />
       </button>

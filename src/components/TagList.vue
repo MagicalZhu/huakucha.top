@@ -120,7 +120,7 @@
   }
   .activetag {
     @apply text-dark dark:text-blue-4 font-500;
-    background-color: #e8e8e8;
+    background-color: #f3f3f8;
     border-radius: 6px;
   }
 

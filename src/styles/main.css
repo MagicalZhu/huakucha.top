@@ -86,3 +86,10 @@ html.dark {
     opacity: 0;
   }
 }
+
+
+.text-c {
+  @apply  dark:text-gray-400;
+  color: #374151;
+}
+

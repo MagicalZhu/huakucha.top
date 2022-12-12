@@ -83,7 +83,7 @@
   font-weight: 400;
   white-space: pre;
   background-color: unset;
-  font-size: 14px;
+  font-size: 0.9em;
   display: block;
 }
 
@@ -114,15 +114,29 @@
   code a link
 */
 .prose a  {
-  @apply underline-offset-5 underline-blue decoration-2 underline-dotted  text-c-active font-normal;
+  /* @apply underline-offset-5 underline-blue decoration-2 underline-dotted  font-normal; */
+  border-bottom: 1px dashed #a1a1aa;
+  border-style: dashed;
+  color: inherit;
+  font-weight: 500;
+  padding-bottom: 2px;
+  text-decoration: none;
 }
 
 .prose a:hover  {
+  border-styles: solid;
+  color: #1a62ff;
+  border-bottom: 1px solid #1a62ff;
   @apply  decoration-1.5px underline-blue underline-solid;
+
 }
 
-main:not(.post) a.header-anchor {
-  @apply hidden;
+.post a.header-anchor {
+  border-bottom: none;
+}
+
+.post a.header-anchor:hover {
+  border-bottom: none;
 }
 
 /*

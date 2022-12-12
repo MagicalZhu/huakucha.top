@@ -1,7 +1,7 @@
 <template>
   <header
     ref="navbar"
-    class="z-40 w-full h-17 flex justify-between items-center font-ui dropFilter "
+    class="z-40 w-full h-17 flex justify-between items-center text-base"
     p="x-4 md:x-5"
     :class="[
       isFixed &&
@@ -93,10 +93,4 @@ if (isClient) {
 </script>
 
 <style scoped>
-.dropFilter {
-  /*backdrop-filter: saturate(180%) blur(20px);*/
-  @apply shadow shadow-gray-100 dark:shadow-dark-300;
-  @apply dark:bg-dark-700 bg-white;
-  
-}
 </style>

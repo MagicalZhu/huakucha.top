@@ -40,10 +40,11 @@ socials:
     <a
       v-for="(item, i) in frontmatter.socials"
       :key="`social-${i}-${item.icon}`"
-      class="px-2 mr-1 mb-1 rounded transition-colors decoration-none text-base !text-c aboutLink"
+      class="px-2 mr-1 mb-1 rounded transition-colors decoration-none text-base !text-c"
       :class="item.classList"
       :href="item.link"
       target="_blank"
+      style="border-bottom:none;"
     >
       <div :class="item.icon" class="w-5 h-5" />
       <!-- <div v-if="item.name">{{ item.name }}</div> -->
@@ -74,9 +75,6 @@ thanks to <app-link to="https://antfu.me/">@antfu</app-link> for the template&nb
     border-bottom-style:none;
     padding-bottom: unset;
     margin-top: 15px;
-  }
-  .aboutLink {
-    border-bottom: none;
   }
 </style>
 

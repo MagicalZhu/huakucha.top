@@ -19,7 +19,6 @@ export default defineConfig({
     ["border-c", "border-gray-200 dark:border-gray-600"],
     ["border-c-dark", "border-gray-300 dark:border-gray-500"],
     ["bg-c", "bg-white dark:bg-gray-700"],
-
     ["text-c-light", "text-gray-600 dark:text-gray-300"],
     ["text-c-lighter", "text-gray-400 dark:text-gray-500"],
     ["text-c-dark", "text-black dark:text-white"],

@@ -20,7 +20,7 @@
 
     <nav class="flex space-x-4">
       <router-link to="/talk" :title="$t('theme.nav.Talk')" class="nav-item">
-        <div i-carbon:user-profile class="md:hidden" />
+        <div i-carbon:chat class="md:hidden" />
         <span class="lt-md:hidden">{{$t('theme.nav.Talk')}}</span>
       </router-link>
 

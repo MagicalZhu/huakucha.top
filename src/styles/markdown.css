@@ -221,7 +221,6 @@ html:not(.dark) .shiki-dark {
 .dark .prose .table-of-contents a:hover {
   border-bottom: 1px solid rgb(175 176 248);
 }
-
 /*
   markdowm table
 */
@@ -248,12 +247,16 @@ html:not(.dark) .shiki-dark {
 }
 .prose tbody tr {
   border-width: 1px;
-  border-bottom-color: #e5e7eb;
+  border-bottom:1px dashed #d4d4d8;
+  border-top:1px dashed #d4d4d8;
 }
 .prose tbody td {
   vertical-align: top;
   padding: 1em;
-  border: 1px solid #dfe2e5;
+  border-left: 1px dashed #dfe2e5;
+  border-right: 1px dashed #dfe2e5;
+  border-bottom:1px dashed #d4d4d8;
+  border-top:1px dashed #d4d4d8;
 }
 
 

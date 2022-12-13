@@ -20,7 +20,7 @@ export const installMarkdownPlugins = async (md: MarkdownIt) => {
   */
   md.use(Shiki, {
     theme: {
-      light: 'min-light',
+      light: 'vitesse-light',
       dark: 'material-darker',
     }
   })

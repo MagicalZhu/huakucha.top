@@ -47,7 +47,7 @@
           v-for="tagName in tagData"
           :class="{ activetag: selectTag === tagName }"
           @click="toggleTag(tagName)">
-      {{tagName}}
+      #{{tagName}}
       <span class="tagsCount">
         {{tagsMetaInfo[tagName].length}}
       </span>
@@ -64,7 +64,7 @@
       :key="index"
       class="my-2 mx-0.5 flex"
     >
-    <router-link class="flex-1 !text-c font-mono" 
+    <router-link class="flex-1 !text-c font-mono"
                 :to="item.path"
                 style="border-bottom: none;">
       <span font-bold text-gray-600 font-mono> {{ item.frontmatter.title }}</span>
@@ -107,7 +107,7 @@
   }
 
   .tagContent {
-    @apply text-base text-gray-400  dark:text-gray-300 font-light  font-mono;
+    @apply text-gray-400  dark:text-gray-300 font-mono;
     @apply transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110;
     @apply cursor-pointer  leading-4 display-inline-block ;
     padding: 7px;

@@ -264,13 +264,13 @@ html:not(.dark) .shiki-dark {
   @apply pl-4 pt-2px pb-2px  border-l-3px text-base not-italic rounded;
   @apply border-gray-300;
   @apply bg-gray-50;
-  border-color: #8c98ff;
+  border-color: #b6c2fd;
   border-left-style: dashed;
 }
 
 .dark blockquote {
   background-color: #24272a;
-  border-color: #397b60;
+  border-color: #7372ee;
 }
 
 .prose :where(ul ):not(:where(.not-prose,.not-prose *)) ::marker {

@@ -1,4 +1,4 @@
-> 基于 Vitesse 构建的博客网站 ( 感谢[@antfu](https://github.com/antfu) 提供的模板 )
+> 基于 Vitesse 构建的博客网站
 >
 > 旨在用于记录一些边角料、零碎的知识以及一些瞎扯的胡言乱语:D
 
@@ -15,6 +15,10 @@
    ```
 4. 画面的布局存放在 src/layouts 目录下面
 
+# Thanks
+
+- 感谢[@antfu](https://github.com/antfu) 提供的模板
+- <a href="https://www.jetbrains.com/?from=vitesseDoc"><img src="/public/img/jetbrains.jpg" width="100px" alt="jetbrains">**感谢 JetBrains 提供的免费开源License**</a>
 
 # Active
 ![Alt](https://repobeats.axiom.co/api/embed/74e3dcacf0b80b12fd7561d96f92ae4878b42dc4.svg "Repobeats analytics image")

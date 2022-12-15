@@ -20,28 +20,23 @@
 
     <nav class="flex space-x-4">
       <router-link to="/talk" :title="$t('theme.nav.Talk')" class="nav-item">
-        <div i-carbon:chat class="md:hidden" />
-        <span class="lt-md:hidden">{{$t('theme.nav.Talk')}}</span>
+        <div i-uil:message/>
       </router-link>
 
       <!-- <router-link to="/projects" title="Projects" class="nav-item">
-        <div i-ph:rocket-launch-duotone class="md:hidden" />
-        <span class="lt-md:hidden">Projects</span>
+        <div i-ph:rocket-launch-duotone />
       </router-link> -->
 
       <router-link to="/posts" :title="$t('theme.nav.Blog')" class="nav-item">
-        <div i-majesticons:paper-fold-text-line class="md:hidden" />
-        <span class="lt-md:hidden">{{$t('theme.nav.Blog')}}</span>
+        <div i-carbon:blog/>
       </router-link>
 
       <router-link to="/categories" :title="$t('theme.nav.Category')" class="nav-item">
-        <div i-carbon:folder class="md:hidden" />
-        <span class="lt-md:hidden">{{$t('theme.nav.Category')}}</span>
+        <div i-carbon:folder/>
       </router-link>
 
       <router-link to="/tags" :title="$t('theme.nav.Tag')" class="nav-item">
-        <div i-carbon:tag-group class="md:hidden" />
-        <span class="lt-md:hidden">{{$t('theme.nav.Tag')}}</span>
+        <div i-carbon:tag-group />
       </router-link>
 
       <!-- <button nav-item title="Toggle Language" @click="toggleLanguage()">
@@ -49,7 +44,7 @@
       </button> -->
 
       <button nav-item title="Toggle dark" @click="toggleDark()" >
-        <div i="carbon-sun dark:carbon-moon" />
+        <div class="dark:i-akar-icons:moon-fill i-carbon:light-filled" />
       </button>
 
       <slot />

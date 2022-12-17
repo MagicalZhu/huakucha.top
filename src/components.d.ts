@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Alert: typeof import('./components/Alert.vue')['default']
     AppLink: typeof import('./components/AppLink.vue')['default']
+    Background: typeof import('./components/Background.vue')['default']
     Badge: typeof import('./components/Badge.vue')['default']
     BlogList: typeof import('./components/BlogList.vue')['default']
     ButtonNav: typeof import('./components/ButtonNav.vue')['default']
@@ -19,7 +20,6 @@ declare module '@vue/runtime-core' {
     Layout: typeof import('./components/Layout.vue')['default']
     Links: typeof import('./components/Links.vue')['default']
     Navbar: typeof import('./components/Navbar.vue')['default']
-    Nutshell: typeof import('./components/Nutshell.vue')['default']
     Project: typeof import('./components/Project.vue')['default']
     ProjectList: typeof import('./components/ProjectList.vue')['default']
     Right: typeof import('./components/icons/Right.vue')['default']

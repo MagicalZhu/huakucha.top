@@ -14,14 +14,14 @@ async function backToTop() {
 
 onMounted(() => {
   tippy('#goback', {
-    content: "返回顶部",
+    content: "Back To Top",
     arrow: true,
     placement: "left-start",
     animateFill: true,
     plugins: [animateFill]
   });
   tippy('#toggleDarkMode', {
-    content: "切换模式",
+    content: "Toggle Color Mode",
     arrow: true,
     placement: "left-start",
     animateFill: true,

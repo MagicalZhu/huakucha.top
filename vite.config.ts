@@ -23,6 +23,9 @@ export default defineConfig({
       '~/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
+  define: {
+    'import.meta.env.__BUILD_TIME__': JSON.stringify(new Date().toISOString()),
+  },
 
   plugins: [
     Vue({
@@ -105,7 +108,7 @@ export default defineConfig({
       markdownItOptions: {
         quotes: '""\'\'',
       },
-      wrapperClasses: 'prose prose-lg mx-auto text-left',
+      wrapperClasses: 'prose   mx-auto text-left',
       markdownItSetup: (md) => installMarkdownPlugins(md)
     }),
 

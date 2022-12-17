@@ -14,25 +14,22 @@ socials:
     classList: "!text-yellow-600 dark:!text-yellow-400"
 ---
 
-<div >
-  <div>
-    <div class="hidden md:flex flex items-start">
-      <div class="mr-5 mt-10px shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-1 shadow-xl dark:bg-white/80">
-        <img class="my-0 h-14 w-20 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80" src="/public/img/avatar.jpg" alt="avatar"
-                    shadow="[inset_0_0_10px_#000000] slate-200 dark:slate-800"/>
-      </div>
-      <h1 class="noBorder">
-        YuLiang Zhu
-        <!-- <span text-sm opacity-50 ml-2>朱玉良</span> -->
-        <br/>
-        <span text-sm opacity-50 ml-2 font-normal>Do More</span>
-      </h1>
-    </div>
+<div class="flex items-start text-base">
+  <div class="mr-5 mt-10px shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-1 shadow-xl dark:bg-white/80">
+    <img class="my-0 h-32 w-32 rounded-full !bg-black/5  dark:!bg-black/80"
+          src="/public/img/avatar.jpg"
+          alt="atu"/>
   </div>
+  <h1 class="noBorder ml-6">
+    Atu
+    <!-- <span text-sm opacity-50 ml-2>朱玉良</span> -->
+    <br/>
+    <span text-sm opacity-50 ml-2 font-normal>Do More</span>
+  </h1>
 </div>
 
-<p class="opacity-70 text-lg pt-5">
-  YuLiang Zhu is a java developer as well as a node full stack developer.
+<p class="opacity-70 text-base pt-5">
+  Atu is a java developer as well as a node full stack developer.
   <br/>
   He currently works for a Japanese company and uses node as his main development language.
   <br/>
@@ -74,7 +71,7 @@ thanks to <app-link to="https://antfu.me/">@antfu</app-link> for the template&nb
   .noBorder {
     border-bottom-style:none;
     padding-bottom: unset;
-    margin-top: 15px;
+    margin-top: 1em;
   }
 </style>
 

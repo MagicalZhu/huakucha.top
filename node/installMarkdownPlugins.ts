@@ -64,6 +64,6 @@ export const installMarkdownPlugins = async (md: MarkdownIt) => {
     slugify: uslugify,
     includeLevel: [1, 2, 3, 4, 5, 6],
     containerClass: 'table-of-contents',
-    containerHeaderHtml: '<div class="containerHeader">CONTENTS</div>'
+    containerHeaderHtml: '<div class="tocHeader">ON THIS PAGE</div>'
   })
 }

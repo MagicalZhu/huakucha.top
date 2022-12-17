@@ -4,13 +4,13 @@
 -->
 <template>
   <Layout class="post">
-    <template v-if="isToc" #navbar class="nav-item">
-      <button nav-item title="Toggle toc" @click="isTocOpen = !isTocOpen">
-        <div i-carbon:table-of-contents class="lt-md:hidden" />
+    <template v-if="isToc" #navbar>
+      <button nav-item title="Toggle toc" @click="isTocOpen = !isTocOpen" class="tocBtn">
+        <div i-carbon:table-of-contents />
       </button>
     </template>
 
-    <div class="prose-lg mt-6 mb-8 mx-auto">
+    <div class="prose mx-auto text-left mt-6 mb-8">
       <h1 class="text-4xl font-bold">{{ title }}</h1>
       <p class="mt-6 ml-2">
         <span class="intro">
@@ -30,15 +30,15 @@
     <Comment/>
     <div
       v-if="blogConfig.showNextOrPrev &&(prevBlog || nextBlog)"
-      class="prose-lg mx-auto grid md:grid-cols-2 pt-4 mt-16 border-t border-c"
+      class="prose mx-auto text-left grid md:grid-cols-2 pt-4 mt-16 border-t border-c"
     >
       <span class="prev">
-        <RouterLink v-if="prevBlog" hover:underline :to="prevBlog.path">
+        <RouterLink v-if="prevBlog" hover:no-underline :to="prevBlog.path" >
           {{ prevBlog.title }}
         </RouterLink>
       </span>
       <span class="next text-right">
-        <RouterLink v-if="nextBlog" hover:underline :to="nextBlog.path">
+        <RouterLink v-if="nextBlog" hover:no-underline :to="nextBlog.path" >
           {{ nextBlog.title }}
         </RouterLink>
       </span>
@@ -144,5 +144,11 @@ onMounted(() => {
   @apply opacity-50 text-sm font-400 inline-flex items-center;
   @apply text-dark-400;
   @apply dark:text-blue-300
+}
+
+@media (max-width: 1360px) {
+  .tocBtn {
+    display: none !important;
+  }
 }
 </style>

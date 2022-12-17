@@ -1,5 +1,6 @@
+@import "./prose.css";
 @import "./markdown.css";
-@import "./post.css";
+@import "./dank-mono.css";
 @import "./container.css";
 @import "./basic.css";
 @import 'tippy.js/dist/tippy.css';
@@ -10,7 +11,7 @@
 html,
 body,
 #app {
-  @apply h-full m-0 p-0;
+  @apply h-full m-0 p-0 font-mono;
 }
 
 html.dark {
@@ -23,7 +24,6 @@ html.dark {
   --c-scrollbar: #eee;
   --c-scrollbar-hover: #bbb;
 }
-
 
 html.dark {
   --c-bg: #050505;
@@ -86,10 +86,3 @@ html.dark {
     opacity: 0;
   }
 }
-
-
-.text-c {
-  @apply  dark:text-gray-400;
-  color: #374151;
-}
-

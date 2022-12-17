@@ -29,7 +29,7 @@ const isExternalLink = computed(() => {
 
 .appLinkeIcon {
   @apply inline;
-  vertical-align: text-top;
+  vertical-align: middle;
   margin-left: 5px;
 }
 </style>

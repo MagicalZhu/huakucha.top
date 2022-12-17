@@ -1,7 +1,6 @@
 import {
   defineConfig,
   presetAttributify,
-  presetWebFonts,
   presetIcons,
   presetTypography,
   presetUno,
@@ -27,10 +26,12 @@ export default defineConfig({
     [
       "btn",
       "hstack space-x-1 rounded transition-colors decoration-none text-sm !text-c bg-gray-100/90 dark:bg-gray-50/10 hover:(!bg-gray-500 !text-white !no-underline)"
-    ],
-    ["prose-lg", "max-w-content"],
+    ]
   ],
   theme: {
+    fontFamily: {
+      mono: 'dm,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+    },
     boxShadow: {
       nav: "0 1px 8px 0 rgba(27, 35, 47, .1)"
     },
@@ -61,25 +62,21 @@ export default defineConfig({
      *   </button>
      */
     presetAttributify(),
-    presetWebFonts({
-      fonts: {
-        sans: 'DM Sans',
-        serif: 'DM Serif Display',
-        mono: 'DM Mono',
-      },
-    }),
+    /**
+     * Web fonts
+      presetWebFonts({
+        fonts: {
+          sans: 'DM Sans',
+          serif: 'DM Serif Display',
+          mono: 'DM Mono',
+        },
+      }),
+     */
     presetIcons({
       scale: 1.2,
-      warn: true,
-      extraProperties: {
-        'display': 'inline-block',
-        'height': '1.2em',
-        'width': '1.2em',
-        'vertical-align': 'text-bottom',
-      }
     }),
     presetTypography(),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
-  safelist: "prose prose-lg mx-auto text-left".split(" ")
+  safelist: "prose   mx-auto text-left".split(" ")
 });

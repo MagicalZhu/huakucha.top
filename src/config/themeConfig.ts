@@ -4,7 +4,7 @@ import { siteConfig } from 'siteConfig'
  * 站点配置信息
  */
 export const ThemeConfig: siteConfig = {
-  authorName: '花裤衩',
+  authorName: 'atu',
   openChat: false,
   showProject: true,
   comments: {
@@ -30,10 +30,10 @@ export const ThemeConfig: siteConfig = {
     labels: 'borad'
   },
   nav: {
-    shell: 'Hi@YuLiang'
+    shell: 'atu'
   },
   footer: {
-    copyright: '© YuLiang Zhu 2022-Present <br />A Dragon Lost In Human World'
+    copyright: '© YuLiang Zhu 2022-Present & A Dragon Lost In Human World'
   },
   toc: {
     isTocOpen: false,

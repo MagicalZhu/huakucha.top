@@ -78,7 +78,7 @@
   </div>
   <!-- page -->
   <div class='mt-60 ml-10 mr-10'>
-    <div class='prose prose-lg m-auto'>
+    <div class='prose   mx-auto text-left'>
       <button class="btnPrevNext"
               v-if="prev"
               @click="--pageNum">
@@ -125,7 +125,7 @@
     background-color: #f3f3f8;
     border-radius: 6px;
   }
-  
+
   .dark .activetag {
     background-color: #2e2e2e;
     border-radius: 6px;

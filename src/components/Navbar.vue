@@ -11,10 +11,7 @@
     ]"
   >
     <router-link class="font-bold" un-text="c-light hover:c-dark" to="/">
-      <span class="font-500">{{navConfig.shell}}</span>
-      <div i-fa6-solid:angle-right
-          class="inline-block"
-          text="xs"/>
+      <span class="font-500 text-lg">{{navConfig.shell}}</span>
       <span class="blink">_</span>
     </router-link>
 
@@ -43,7 +40,7 @@
         <div i-ion:language-outline />
       </button> -->
 
-      <button nav-item title="Toggle dark" @click="toggleDark()" >
+      <button nav-item :title="toggleTip" @click="toggleDark()" >
         <div class="dark:i-akar-icons:moon-fill i-carbon:light-filled" />
       </button>
 
@@ -69,6 +66,8 @@ const navbar = ref<HTMLElement | null>(null);
 const isFixed = ref(true);
 const isVisible = ref(true);
 
+const toggleTip = computed(() => !isDark.value ? 'Toggle Dark' : 'Toggle Light')
+
 if (isClient) {
   const { y, directions } = useScroll(document);
   watch(y, () => {
@@ -86,6 +85,3 @@ if (isClient) {
   });
 }
 </script>
-
-<style scoped>
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div prose prose-lg mx-200>
+  <div prose mx-auto text-left mx-200>
     <div class="justify-center border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
         <div class="px-4 py-4 bg-white rounded-t-lg dark:bg-gray-800">
             <label for="comment" class="sr-only">Your comment</label>

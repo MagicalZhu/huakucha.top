@@ -2,14 +2,18 @@
 socials:
   - icon: i-carbon:email
     link: "mailto:18151271579@163.com"
+    name: Email
     classList: "!text-blue-600 dark:!text-blue-400"
   - icon: i-eva:github-outline
+    name: Github
     link: https://github.com/MagicalZhu
     classList: "!text-gray-600"
   - icon: i-carbon:book
+    name: Note
     link: https://www.huakucha.top
     classList: "!text-green-700 dark:!text-green-500"
   - icon: i-tabler:letter-j
+    name: Jike
     link: https://okjk.co/V3s0CF
     classList: "!text-yellow-600 dark:!text-yellow-400"
 ---
@@ -37,13 +41,14 @@ socials:
     <a
       v-for="(item, i) in frontmatter.socials"
       :key="`social-${i}-${item.icon}`"
-      class="px-2 mr-1 mb-1 rounded transition-colors decoration-none text-base !text-c"
+      class="rounded transition-colors decoration-none text-base !text-c"
       :class="item.classList"
       :href="item.link"
       target="_blank"
       style="border-bottom:none;"
     >
-      <div :class="item.icon" class="w-5 h-5" />
+      <div :class="item.icon" class="w-5 h-5"  style="display:inline;vertical-align: middle;">{{item.name}}
+      </div>
       <!-- <div v-if="item.name">{{ item.name }}</div> -->
     </a>
 </p>

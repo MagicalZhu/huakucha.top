@@ -8,7 +8,7 @@
   =================================================================
 */
 .prose .shiki {
-  font-family: "DM Mono", monospace;
+  @apply font-mono;
   font-size: 1.25em;
   line-height: 1.4;
 }

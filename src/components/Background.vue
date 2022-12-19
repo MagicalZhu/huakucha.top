@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const color = computed(() => isDark.value ? '#fff' : '#b7d2ff')
+const color = computed(() => isDark.value ? '#fff' : '#6d72ef')
 </script>
 
 <template>

@@ -59,6 +59,9 @@ const boardConfig = computed(() => {
                     {{item.author}}
                   </a>
                 </p>
+                <p class="hidden sm:block sm:text-xs sm:text-gray-500 ml-2" v-for="labelItem in item.labels">
+                  {{ labelItem.description ? '#' + labelItem.description  : ''  }}
+                </p>
               </div>
             </div>
           </div>

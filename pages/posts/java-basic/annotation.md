@@ -356,12 +356,93 @@ public @interface SuppressWarnings {
 - 它的作用是告诉编译器忽略指定的警告信息
 
 
-## 注解与反射接口
+## 注解与反射接口(AnnotatedElement)
 
-> 定义注解后,如何获取注解中的内容呢？反射包 `java.lang.reflect` 下的 `AnnotatedElement` 接口提供这些方法
+>  定义注解后,如何获取注解中的内容呢？反射包 `java.lang.reflect` 下的 `AnnotatedElement` 接口提供这些方法
 >
-> 这里注意：<mark>只有注解被定义为RUNTIME后,该注解才能是运行时可见,当 class 文件被装载时被保存在 class 文件中的 Annotation 才会被虚拟机读取。</mark>
+>  这里注意：<mark>只有注解被定义为RUNTIME后,该注解才能是运行时可见,当 class 文件被装载时被保存在 class 文件中的 Annotation 才会被虚拟机读取。</mark>
 
+**AnnotatedElement** 接口是所有程序元素(Class、Method和Constructor)的父接口,所以通过反射获取了某个类的 AnnotatedElement 对象之后,程序就可以调用 AnnotatedElement 的相关实现方法来访问 Annotation 信息。
+
+常见的方法如下:
+
+1. `boolean isAnnotationPresent(Class<?extends Annotation> annotationClass)`
+   - 判断该程序元素上是否包含指定类型的注解,存在则返回true,,否则返回false
+   - <mark>注意: 此方法会忽略注解对应的注解容器</mark>
+
+2. `<T extends Annotation> T getAnnotation(Class<T> annotationClass)`
+   - 返回该程序元素上存在的、指定类型的注解,如果该类型注解不存在,则返回null
+
+3. `Annotation[] getAnnotations()`
+   - 返回该程序元素上存在的所有注解,若没有注解,返回长度为0的数组
+
+4. `<T extends Annotation> T[] getAnnotationsByType(Class<T> annotationClass)`
+   - 返回该程序元素上存在的、指定类型的注解数组。没有注解对应类型的注解时,返回长度为0的数组
+   - 该方法的调用者可以随意修改返回的数组,而不会对其他调用者返回的数组产生任何影响
+   - 与 `getAnnotation` 的区别在于, *getAnnotationsByType* 会检测注解对应的重复注解容器,若程序元素为类,当前类上找不到注解,且该注解为可继承的,则会去父类上检测对应的注解
+
+5. `<T extends Annotation> T getDeclaredAnnotation(Class<T> annotationClass)`
+   - 返回直接存在于此元素上的所有注解
+   - 与此接口中的其他方法不同,该方法将忽略继承的注解。如果没有注解直接存在于此元素上,则返回null
+
+6. `<T extends Annotation> T[] getDeclaredAnnotationsByType(Class<T> annotationClass)`
+   - 返回直接存在于此元素上的所有注解
+   - 与此接口中的其他方法不同,该方法将忽略继承的注解
+
+7. `Annotation[] getDeclaredAnnotations()`
+   - 返回直接存在于此元素上的所有注解及注解对应的重复注解容器,如果没有注解直接存在于此元素上,则返回长度为零的一个数组
+   - 该方法的调用者可以随意修改返回的数组,而不会对其他调用者返回的数组产生任何影响
+   - 与此接口中的其他方法不同,**该方法将忽略继承的注解**
+
+下面用实际代码演示:
+
+```java
+// 自定义注解
+@Retention(RetentionPolicy.RUNTIME)
+@Target({
+  ElementType.METHOD,
+  ElementType.ANNOTATION_TYPE,
+  ElementType.TYPE,
+  ElementType.PARAMETER
+})
+@interface Info {
+  public String title() default "";
+  public String description() default "";
+}
+
+// 使用注解
+public class MyAnnotation {
+  @Override
+  @Info(title = "toStringMethod", description = "override toString method")
+  public String toString() {
+    return "Override toString method";
+  }
+
+  @Deprecated
+  @Info(title = "old static method", description = "deprecated old static method")
+  public static void oldMethod() {
+    System.out.println("old method, don't use it.");
+  }
+}
+
+// 测试
+public static void main(String[] args) {
+  Method[] methods = MyAnnotation.class.getMethods();
+  for (Method method : methods) {
+    // 方法上是否包含@Info 注解
+    if (method.isAnnotationPresent(Info.class)) {
+      Annotation[] declaredAnnotations = method.getDeclaredAnnotations();
+      // 输出方法、注解信息
+      for (Annotation annotation : declaredAnnotations) {
+        System.out.println(method + "' : " + annotation);
+      }
+      // 获取自定义注解对象
+      Info methodAnno = method.getAnnotation(Info.class);
+      System.out.println(methodAnno.title());
+    }
+  }
+}
+```
 
 # 参考资料
 - <app-link to="https://pdai.tech/md/java/basic/java-basic-x-annotation.html">注解机制详解</app-link>

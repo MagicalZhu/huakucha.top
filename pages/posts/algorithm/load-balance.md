@@ -65,7 +65,7 @@
 
 比如下面的配置:
 
-```sh
+```nginx
 upstream bakend {  
   server 192.168.0.14 weight=10;  
   server 192.168.0.15 weight=10;  
@@ -78,7 +78,7 @@ upstream bakend {
 
 比如下面的配置:
 
-```sh
+```nginx
 upstream bakend {  
   ip_hash;  
   server 192.168.0.14:88;  

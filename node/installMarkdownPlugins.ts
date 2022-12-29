@@ -8,6 +8,7 @@ import sup from 'markdown-it-sup'
 import mark from 'markdown-it-mark'
 import uslug from 'uslug'
 import { containerPlugin } from './markdown-plugin/container'
+import Checkbox from 'markdown-it-task-checkbox'
 // import { preWrapperPlugin } from './markdown-plugin/preWrapper'
 const uslugify = (s: string) => uslug(s)
 
@@ -23,6 +24,18 @@ export const installMarkdownPlugins = async (md: MarkdownIt) => {
       light: 'vitesse-light',
       dark: 'material-darker',
     }
+  })
+
+  /**
+   * 复选框
+   */
+  md.use(Checkbox, {
+    disabled: true,
+    divWrap: false,
+    divClass: 'checkbox',
+    idPrefix: 'cbx_',
+    ulClass: 'task-list',
+    liClass: 'task-list-item'
   })
 
   // 上标

@@ -52,6 +52,7 @@ import Clipboard from 'clipboard'
 <style scoped>
 .codeLang {
   @apply float-right text-gray-300 dark:text-gray-500 text-base items-baseline mr-2;
+  font-weight: normal;
 }
 .copyBtn {
   @apply float-right text-gray-300 dark:text-gray-500 text-base items-baseline cursor-pointer;

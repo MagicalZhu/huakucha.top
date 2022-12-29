@@ -83,7 +83,7 @@ const markdownTemplate = (filename, title, tags, category) => {
   }
 
 return `---
-  author: '花裤衩'
+  author: 'atu'
   title: ${title || filename}
   tags:
 ${getTags(tags)}

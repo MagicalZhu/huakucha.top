@@ -28,11 +28,11 @@ socials:
     Atu
     <!-- <span text-sm opacity-50 ml-2>朱玉良</span> -->
     <br/>
-    <span text-sm opacity-50 ml-2 font-normal>Do More</span>
+    <span text-sm opacity-80 ml-2 font-normal>Do More</span>
   </h1>
 </div>
 
-<p class="opacity-70 text-base pt-5">
+<p class="text-base pt-5">
   Atu is a java developer as well as a node full stack developer.
   <br/>
   He currently works for a Japanese company and uses node as his main development language.

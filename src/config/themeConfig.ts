@@ -29,9 +29,6 @@ export const ThemeConfig: siteConfig = {
     showTitle: false,
     labels: 'borad'
   },
-  nav: {
-    shell: 'atu'
-  },
   footer: {
     copyright: '© YuLiang Zhu 2022-Present & A Dragon Lost In Human World'
   },
@@ -46,7 +43,7 @@ export const ThemeConfig: siteConfig = {
   },
   blog: {
     perPageSize: 10,
-    rencentSize: 5,
+    recentPost: 5,
     showNextOrPrev: true
   }
 }

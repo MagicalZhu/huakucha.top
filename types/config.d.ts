@@ -1,7 +1,3 @@
-interface Nav {
-  shell?: string
-}
-
 interface Footer {
   copyright?: string
 }
@@ -9,7 +5,7 @@ interface Footer {
 interface Blog {
   perPageSize: number,
   // 最近发布文章
-  rencentSize: number,
+  recentPost: number,
   showNextOrPrev?: boolean,
   author?: string
 }
@@ -60,7 +56,6 @@ declare module 'siteConfig' {
     blog: Blog
     category: Category,
     tag: Tag,
-    nav: Nav,
     footer:Footer,
   }
 }

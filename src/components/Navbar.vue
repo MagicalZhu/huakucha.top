@@ -11,13 +11,13 @@
     ]"
   >
     <router-link class="font-bold" un-text="c-light hover:c-dark" to="/">
-      <span class="font-500 text-lg">{{navConfig.shell}}</span>
+      <span class="font-500 text-lg">{{authorName}}</span>
       <span class="blink">_</span>
     </router-link>
 
     <nav class="flex space-x-4">
       <router-link to="/talk" :title="$t('theme.nav.Talk')" class="nav-item">
-        <div i-uil:message/>
+        <div i-uil:message></div>
       </router-link>
 
       <!-- <router-link to="/projects" title="Projects" class="nav-item">
@@ -25,15 +25,15 @@
       </router-link> -->
 
       <router-link to="/posts" :title="$t('theme.nav.Blog')" class="nav-item">
-        <div i-carbon:blog/>
+        <div i-carbon:blog></div>
       </router-link>
 
       <router-link to="/categories" :title="$t('theme.nav.Category')" class="nav-item">
-        <div i-carbon:folder/>
+        <div i-carbon:folder></div>
       </router-link>
 
       <router-link to="/tags" :title="$t('theme.nav.Tag')" class="nav-item">
-        <div i-carbon:tag-group />
+        <div i-carbon:tag-group ></div>
       </router-link>
 
       <!-- <button nav-item title="Toggle Language" @click="toggleLanguage()">
@@ -41,10 +41,10 @@
       </button> -->
 
       <button nav-item :title="toggleTip" @click="toggleDark()" >
-        <div class="dark:i-akar-icons:moon-fill i-carbon:light-filled" />
+        <div class="dark:i-akar-icons:moon-fill i-carbon:light-filled" ></div>
       </button>
 
-      <slot />
+      <slot ></slot>
     </nav>
   </header>
 </template>
@@ -60,7 +60,7 @@ import { toggleDark } from "~/composables/dark";
 //   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 // }
 
-const navConfig = useConfigStore().getThemeConfig().nav
+const authorName = useConfigStore().getThemeConfig().authorName
 
 const navbar = ref<HTMLElement | null>(null);
 const isFixed = ref(true);

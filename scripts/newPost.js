@@ -76,8 +76,11 @@ const markdownTemplate = (filename, title, tags, category) => {
 
   let tagYaml = ''
   const getTags = (tags) => {
-    tags.forEach(tag => {
-      tagYaml += `    - ${tag}\r\n`
+    tags.forEach((tag, index) => {
+      tagYaml += `    - ${tag}`
+      if (index < tags.length - 1) {
+        tagYaml +='\r\n'
+      }
     })
     return tagYaml
   }
@@ -118,10 +121,16 @@ const success = (filepath) => {
 
 
 const run = async () => {
-  init();
-  const answers = await askQuestions()
-  const { PATH, FILENAME, TITLE, TAGS, CATEGORY } = answers
-  const filePath = createFile(PATH, FILENAME, TITLE, TAGS, CATEGORY)
-  success(filePath)
+  try {
+    init();
+    const answers = await askQuestions()
+    const { PATH, FILENAME, TITLE, TAGS, CATEGORY } = answers
+    const filePath = createFile(PATH, FILENAME, TITLE, TAGS, CATEGORY)
+    success(filePath)
+  } catch (error) {
+    console.log(
+      chalk.red.bgBlackBright.bold(`Process Stopped~`)
+    )
+  }
 }
 run()

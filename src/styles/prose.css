@@ -232,3 +232,7 @@ mark {
 .dark strong {
   color: #fff;
 }
+
+.prose input[id*=checkbox] {
+  margin-right: 10px;
+}

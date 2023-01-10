@@ -118,3 +118,68 @@ private void outputInfo(string info) {
   showMessage(formatInfo);
 }
 ```
+
+# 操作INI文件
+
+```c#
+//  windows API函数
+[DllImport("KERNEL32.DLL", CharSet = CharSet.Auto)]
+private static extern long GetPrivateProfileString(string section, string key, string defaultValue, StringBuilder returnValue, int size, string filePath);
+
+[DllImport("KERNEL32.DLL", CharSet = CharSet.Auto)]
+private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
+
+/// <summary>
+/// 读取ini文件内容
+/// </summary>
+/// <param name="section">节点名</param>
+/// <param name="key">键名</param>
+/// <param name="filePath">ini文件路径</param>
+/// <returns>读取到的结果</returns>
+public static string ReadIni(string section, string key, string filePath) {
+  if (string.IsNullOrWhiteSpace(filePath)) {
+    return String.Empty;
+  }
+
+  if (!".ini".Equals(Path.GetExtension(filePath).ToLower())) {
+    return String.Empty;
+  }
+
+  if (!File.Exists(filePath)) {
+    return String.Empty;
+  }
+
+  StringBuilder returnValue = new StringBuilder(512);
+  GetPrivateProfileString(section, key, string.Empty, returnValue, 512, filePath);
+  return returnValue.ToString();
+}
+
+/// <summary>
+/// ini文件的写入
+/// </summary>
+/// <param name="section">节点名</param>
+/// <param name="key">键名</param>
+/// <param name="value">设置的值</param>
+/// <param name="filePath">returns</param>
+/// <returns>是否写入成功</returns>
+public static bool WriteIni(string section, string key, string value, string filePath) {
+  if (string.IsNullOrWhiteSpace(filePath)) {
+    return false;
+  }
+
+  if (!".ini".Equals(Path.GetExtension(filePath).ToLower())) {
+    return false;
+  }
+
+  if (!File.Exists(filePath)) {
+    return false;
+  }
+
+  long ret = WritePrivateProfileString(section, key, value, filePath);
+  if (ret == 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+```

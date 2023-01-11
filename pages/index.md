@@ -1,31 +1,12 @@
----
-socials:
-  - icon: i-carbon:email
-    link: "mailto:18151271579@163.com"
-    name: Email
-    classList: "!text-blue-600 dark:!text-blue-400"
-  - icon: i-eva:github-outline
-    name: Github
-    link: https://github.com/MagicalZhu
-    classList: "!text-gray-600"
-  - icon: i-carbon:book
-    name: Note
-    link: https://www.huakucha.top
-    classList: "!text-green-700 dark:!text-green-500"
-  - icon: i-tabler:letter-j
-    name: Jike
-    link: https://okjk.co/V3s0CF
-    classList: "!text-yellow-600 dark:!text-yellow-400"
----
 
 <div class="flex items-start text-base">
   <div class="mr-5 mt-10px shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-1 shadow-xl dark:bg-white/80">
     <img class="my-0 h-32 w-32 rounded-full !bg-black/5  dark:!bg-black/80"
           src="/public/img/avatar.jpg"
-          alt="atu"/>
+          alt="athu"/>
   </div>
   <h1 class="noBorder ml-6">
-    Atu
+    Athu
     <!-- <span text-sm opacity-50 ml-2>朱玉良</span> -->
     <br/>
     <span text-sm opacity-80 ml-2 font-normal>Do More</span>
@@ -33,24 +14,41 @@ socials:
 </div>
 
 <p class="text-base pt-5">
-  Atu is a java developer as well as a node full stack developer.
+  Athu is a java developer as well as a node full stack developer.
   <br/>
   He currently works for a Japanese company and uses node as his main development language.
   <br/>
   You can find he on
-    <a
-      v-for="(item, i) in frontmatter.socials"
-      :key="`social-${i}-${item.icon}`"
-      class="rounded transition-colors decoration-none text-base !text-c"
-      :class="item.classList"
-      :href="item.link"
+    <a 
+      class="transition-colors social"
+      href="mailto:18151271579@163.com"
       target="_blank"
-      style="border-bottom:none;"
     >
-      <div :class="item.icon" class="w-5 h-5"  style="display:inline;vertical-align: middle;">{{item.name}}
-      </div>
-      <!-- <div v-if="item.name">{{ item.name }}</div> -->
-    </a>
+      Email
+    </a>,
+    <a 
+      class="transition-colors  social"
+      href="https://github.com/MagicalZhu"
+      target="_blank"
+    >
+      Github
+    </a>,
+    <a 
+      class="transition-colors  social"
+      href="hhttps://okjk.co/V3s0CF"
+      target="_blank"
+    >
+      即刻
+    </a>.
+    <br/>
+    Mail him at
+    <a 
+      class="transition-colors social"
+      href="https://github.com/MagicalZhu"
+      target="_blank"
+    >
+      Outlook
+    </a>.
 </p>
 
 <h1 class="noBorder">
@@ -77,6 +75,9 @@ thanks to <app-link to="https://antfu.me/">@antfu</app-link> for the template&nb
     border-bottom-style:none;
     padding-bottom: unset;
     margin-top: 1em;
+  }
+  .social {
+    color: #111
   }
 </style>
 

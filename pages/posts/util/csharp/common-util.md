@@ -1,5 +1,5 @@
 ---
-  author: 'atu'
+  author: 'athu'
   title: C#工具方法
   tags:
     - C#

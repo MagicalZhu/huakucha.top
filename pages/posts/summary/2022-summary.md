@@ -1,5 +1,5 @@
 ---
-  author: 'atu'
+  author: 'athu'
   title: 2022年度总结
   tags:
     - 杂谈

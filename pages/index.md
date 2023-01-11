@@ -18,14 +18,17 @@
   <br/>
   He currently works for a Japanese company and uses node as his main development language.
   <br/>
-  You can find he on
+  He uses
     <a 
-      class="transition-colors social"
-      href="mailto:18151271579@163.com"
+      class="transition-colors  social"
+      href="https://www.huakucha.top"
       target="_blank"
     >
-      Email
-    </a>,
+      Docusaurus
+    </a>
+    to manage notes.
+    <br/>
+    You can find he on
     <a 
       class="transition-colors  social"
       href="https://github.com/MagicalZhu"
@@ -39,9 +42,8 @@
       target="_blank"
     >
       即刻
-    </a>.
-    <br/>
-    Mail him at
+    </a>,
+    and also you can mail him by
     <a 
       class="transition-colors social"
       href="https://github.com/MagicalZhu"

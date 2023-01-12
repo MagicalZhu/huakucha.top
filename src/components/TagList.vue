@@ -39,6 +39,9 @@
     return getPage(tagsMetaInfo[selectTag], pageNum, 'tag')
   })
 
+  const title = useTitle()
+  title.value = 'athu | tag'
+
 </script>
 
 <template>

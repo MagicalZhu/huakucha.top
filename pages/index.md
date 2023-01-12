@@ -78,8 +78,8 @@ thanks to <app-link to="https://antfu.me/">@antfu</app-link> for the template&nb
     padding-bottom: unset;
     margin-top: 1em;
   }
-  .social {
-    color: #111
+   .social {
+    @apply text-black dark:text-current;
   }
 </style>
 

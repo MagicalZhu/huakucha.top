@@ -32,6 +32,9 @@
     return blogMap
   })
 
+const title = useTitle()
+title.value = 'athu | posts'
+
 </script>
 
 <template>

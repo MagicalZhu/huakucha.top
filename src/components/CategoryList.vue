@@ -42,6 +42,9 @@
     return getPage(categoryMetaInfo[selectCategory], pageNum, 'category')
   })
 
+  const title = useTitle()
+  title.value = 'athu | category'
+
 </script>
 
 <template>

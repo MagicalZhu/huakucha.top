@@ -23,6 +23,10 @@ onBeforeMount(async () => {
 const boardConfig = computed(() => {
   return useConfigStore().getThemeConfig().board
 })
+
+const title = useTitle()
+title.value = 'athu | talk'
+
 </script>
 
 <template>

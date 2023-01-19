@@ -45,7 +45,7 @@ onMounted(() => {
       <img src="/img/wx.png" alt="" class="dropdown__menu">
     </div> -->
     <button class="box icon-btn mx-2 !outline-none" @click="toggleDark()" id="toggleDarkMode">
-      <div i="ri-sun-line dark:ri-moon-line"></div>
+      <div class="dark:i-akar-icons:moon-fill i-carbon:light-filled"></div>
     </button>
 
     <!-- <button class="box icon-btn mx-2">
@@ -53,6 +53,7 @@ onMounted(() => {
     </button> -->
   </div>
 </template>
+
 
 <style scoped>
 .footer-tools {
@@ -69,14 +70,9 @@ onMounted(() => {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: #eee;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.dark .box {
-  background-color: #333;
 }
 .dropdown {
   position: relative;

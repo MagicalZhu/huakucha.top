@@ -1,6 +1,7 @@
 ---
   author: 'athu'
   title: 2022年度总结
+  lock: true
   tags:
     - 杂谈
   date: 2022-12-29 15:21:48

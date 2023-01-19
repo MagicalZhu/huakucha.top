@@ -3,6 +3,7 @@
   import {getBlogs} from '~/utils/index'
   import {getPageCount, getPage} from '~/utils/page'
   import { BlogType as Blog } from "internal";
+  import getVal from 'lodash/get'
 
   // all blogs
   const blogMetaInfo = computed(() => getBlogs())
@@ -21,19 +22,34 @@
   const next = computed(() => {
     return pageNum < pageCount.value
   })
-
+  
   const contentData = computed(() => {
     const blogMap: Record<string, Blog[]> = $ref({})
     const pageData = getPage(blogMetaInfo.value, pageNum, 'blog')
     for (const ele of pageData) {
-      const dateStr = ele.date.substring(0, 4)
+      const dateStr = 'date-' +ele.date.substring(0, 4)
       blogMap[dateStr] ? blogMap[dateStr].push(ele) : (blogMap[dateStr] = [ele])
     }
     return blogMap
   })
 
-const title = useTitle()
-title.value = 'athu | posts'
+  const authorName = useConfigStore().getThemeConfig().authorName
+  const title = useTitle()
+  title.value = `${authorName} | posts`
+
+  // TODO add lock
+  onBeforeRouteLeave((to, from) => {
+    if (getVal(to, 'meta.frontmatter.lock')) {
+      if (localStorage.getItem('allow')) return true
+      const sign = prompt("Enter the password")
+      if (sign == "zyl1995"){
+        useStorage('allow', true)
+        return true
+      }
+      return false
+    }
+    return true
+  })
 
 </script>
 
@@ -42,7 +58,7 @@ title.value = 'athu | posts'
   <div v-for="year in Object.keys(contentData)" :key="year">
     <div class="relative pointer-events-none blogGroup">
       <span class="blogYear">
-        {{year}}
+        {{year.replace('date-', '')}}
       </span>
     </div>
     <article v-for="blogItem in contentData[year]"
@@ -121,7 +137,13 @@ a.itemLink {
 }
 
 .blogYear {
-  @apply text-8em absolute bottom-1 font-bold op10 top--1rem left-18;
+  @apply top--1rem;
+  position: absolute;
+  bottom: 5.25rem;
+  left: 1.5rem;
+  font-size: 6em;
+  font-weight: 900;
+  opacity: 0.1;
 }
 
 .tagName {

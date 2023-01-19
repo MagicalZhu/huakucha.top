@@ -130,6 +130,7 @@ onMounted(() => {
     () => initToc()
   );
 });
+
 </script>
 
 <style scoped>

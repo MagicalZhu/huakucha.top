@@ -24,8 +24,9 @@ const boardConfig = computed(() => {
   return useConfigStore().getThemeConfig().board
 })
 
+const authorName = useConfigStore().getThemeConfig().authorName
 const title = useTitle()
-title.value = 'athu | talk'
+title.value = `${authorName} | talk`
 
 </script>
 

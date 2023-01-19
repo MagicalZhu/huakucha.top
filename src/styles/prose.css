@@ -121,7 +121,8 @@ mark {
 }
 
 .prose .table-of-contents  a:hover {
-  color: #000
+  color: #000;
+  border-bottom: 1px solid #000;
 }
 
 .prose .tocHeader {
@@ -153,15 +154,12 @@ mark {
   @apply opacity-50;
 }
 
-.prose .table-of-contents a:hover {
-  border-bottom: 1px solid #000;
-}
-
 .dark  .prose .table-of-contents a {
   border-bottom: 1px dotted rgb(150 150 157 / 64%);
 }
 
 .dark .prose .table-of-contents a:hover {
+  color: #b4c7ff;
   border-bottom: 1px solid rgb(175 176 248);
 }
 

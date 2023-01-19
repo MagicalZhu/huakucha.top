@@ -38,18 +38,18 @@
     </a>,
     <a 
       class="transition-colors  social"
-      href="hhttps://okjk.co/V3s0CF"
+      href="https://okjk.co/V3s0CF"
       target="_blank"
     >
       即刻
     </a>,
-    and also you can mail him by
+    and also you can him by 
     <a 
       class="transition-colors social"
-      href="https://github.com/MagicalZhu"
+      href="mailto:huakucha95@163.com"
       target="_blank"
     >
-      Outlook
+      email
     </a>.
 </p>
 

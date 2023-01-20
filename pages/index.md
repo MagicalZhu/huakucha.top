@@ -18,15 +18,14 @@
   <br/>
   He currently works for a Japanese company and uses node as his main development language.
   <br/>
-  He uses
+  He uses Docusaurus to manage
     <a 
       class="transition-colors  social"
       href="https://www.huakucha.top"
       target="_blank"
     >
-      Docusaurus
-    </a>
-    to manage notes.
+      notes
+    </a>.
     <br/>
     You can find he on
     <a 

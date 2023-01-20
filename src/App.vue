@@ -47,6 +47,8 @@ if(routes.length > 0) {
   })
 }
 
+// clear storage
+localStorage.removeItem('allow')
 customElements.define('copy-code', defineCustomElement(CopyCode))
 
 </script>

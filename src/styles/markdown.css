@@ -189,3 +189,44 @@ html:not(.dark) .shiki-dark {
 .sourceLink {
   @apply ml-3 no-underline;
 }
+
+/*
+.post .prose h1:before,
+             h2:before,
+             h3:before,
+             h4:before,
+             h5:before,
+             h6:before{
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 6px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.post .prose h1:before{
+  font-size: 0.5em;
+  content: 'H1';
+}
+.post .prose h2:before{
+  font-size: 0.45em;
+  content: 'H2';
+}
+.post .prose h3:before{
+  font-size: 0.4em;
+  content: 'H3';
+}
+.post .prose h4:before{
+  font-size: 0.35em;
+  content: 'H4';
+}
+.post .prose h5:before{
+  font-size: 0.3em;
+  content: 'H5';
+}
+.post .prose h6:before{
+  font-size: 0.1em;
+  content: 'H6';
+}
+*/

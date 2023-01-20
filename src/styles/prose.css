@@ -178,8 +178,7 @@ mark {
   @apply pl-4 pt-2px pb-2px  border-l-3px text-base not-italic rounded;
   @apply border-gray-300;
   @apply bg-gray-50;
-  border-color: #b6c2fd;
-  border-left-style: dashed;
+  border-left: .25em solid #d0d7de;
 }
 
 .dark blockquote {

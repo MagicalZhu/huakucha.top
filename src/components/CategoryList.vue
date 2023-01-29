@@ -107,7 +107,7 @@
 
 <style scoped>
   .tagout {
-    @apply flex flex-wrap  space-x-4 mt-4 pb-5 justify-start;
+    @apply flex flex-wrap  mr-4  mt-4 pb-5 justify-start;
     @apply border-gray-300 dark:border-gray-500;
     /*@apply border-b-2 border-dashed;*/
   }

@@ -22,7 +22,7 @@
   const next = computed(() => {
     return pageNum < pageCount.value
   })
-  
+
   const contentData = computed(() => {
     const blogMap: Record<string, Blog[]> = $ref({})
     const pageData = getPage(blogMetaInfo.value, pageNum, 'blog')
@@ -40,10 +40,11 @@
   // TODO add lock
   onBeforeRouteLeave((to, from) => {
     if (getVal(to, 'meta.frontmatter.lock')) {
-      if (localStorage.getItem('allow')) return true
-      const sign = prompt("Enter the password")
+      const allow = localStorage.getItem('allow')
+      if (allow && allow === 'true') return true
+      const sign = prompt("Enter the password...")
       if (sign == "zyl1995"){
-        useStorage('allow', true)
+        localStorage.setItem('allow', 'true')
         return true
       }
       return false
@@ -66,7 +67,7 @@
         class="blogItem">
       <router-link class="itemLink block font-normal no-underline !text-c"
                    font="normal mono"
-                  :to="blogItem.path">        
+                  :to="blogItem.path">
         <div class="card">
           <div>
             <span class="blogTitle">{{ blogItem.title }}</span>

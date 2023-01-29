@@ -19,37 +19,29 @@
   He currently works for a Japanese company and uses node as his main development language.
   <br/>
   He uses Docusaurus to manage
-    <a 
+    <a
       class="transition-colors  social"
       href="https://www.huakucha.top"
       target="_blank"
-    >
-      notes
-    </a>.
+    >notes</a>.
     <br/>
     You can find he on
-    <a 
+    <a
       class="transition-colors  social"
       href="https://github.com/MagicalZhu"
       target="_blank"
-    >
-      Github
-    </a>,
-    <a 
+    >Github</a>,
+    <a
       class="transition-colors  social"
       href="https://okjk.co/V3s0CF"
       target="_blank"
-    >
-      即刻
-    </a>,
-    and also you can him by 
-    <a 
+    >即刻</a>,
+    and also you can him by
+    <a
       class="transition-colors social"
       href="mailto:huakucha95@163.com"
       target="_blank"
-    >
-      email
-    </a>.
+    >email</a>.
 </p>
 
 <h1 class="noBorder">

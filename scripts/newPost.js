@@ -56,6 +56,21 @@ const askQuestions = () => {
       type: "input",
       message: "What is the category of the file?"
     },
+    {
+      name: 'FORWARD',
+      type: 'confirm',
+      message: 'Whether reprinted from others?',
+    },
+    {
+      name: 'LOCK',
+      type: 'confirm',
+      message: 'Is it a private article?',
+    },
+    {
+      name: 'FAV',
+      type: 'confirm',
+      message: 'Is it a favorite article?',
+    }
     // {
     //   name: "DATE",
     //   type: "date",
@@ -72,7 +87,7 @@ const askQuestions = () => {
   return inquirer.prompt(questions)
 };
 
-const markdownTemplate = (filename, title, tags, category) => {
+const markdownTemplate = (filename, title, tags, category, forward, lock, fav) => {
 
   let tagYaml = ''
   const getTags = (tags) => {
@@ -92,12 +107,15 @@ return `---
 ${getTags(tags)}
   date: ${dayjs().format('YYYY-MM-DD HH:mm:ss') }
   categories: ${category}
+  forward: ${forward || false}
+  lock: ${lock || false}
+  fav: ${fav || false}
 ---
   `
 }
 
 
-const createFile = (rootPath, filename, title, tags, category) => {
+const createFile = (rootPath, filename, title, tags, category, forward, lock, fav) => {
   if (!filename || !category || !tags || tags.length ===0) {
     console.log(
       chalk.red('Please enter the file name、tag and category of the file')
@@ -109,7 +127,7 @@ const createFile = (rootPath, filename, title, tags, category) => {
     fse.mkdirpSync(mkPath)
   }
   const fileName = path.join(mkPath, `${filename}.md`)
-  fs.writeFileSync(fileName, markdownTemplate(filename, title, tags, category))
+  fs.writeFileSync(fileName, markdownTemplate(filename, title, tags, category, forward, lock, fav))
   return fileName
 }
 
@@ -124,8 +142,8 @@ const run = async () => {
   try {
     init();
     const answers = await askQuestions()
-    const { PATH, FILENAME, TITLE, TAGS, CATEGORY } = answers
-    const filePath = createFile(PATH, FILENAME, TITLE, TAGS, CATEGORY)
+    const { PATH, FILENAME, TITLE, TAGS, CATEGORY, FORWARD, LOCK, FAV } = answers
+    const filePath = createFile(PATH, FILENAME, TITLE, TAGS, CATEGORY, FORWARD, LOCK, FAV)
     success(filePath)
   } catch (error) {
     console.log(

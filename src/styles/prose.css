@@ -10,6 +10,10 @@
   color: #C8CCD0;
 }
 
+.prose hr {
+  border: 1px solid #d4d4d696;
+}
+
 /**
  * list
  * -------------------------------------------------------------------------- */
@@ -143,7 +147,7 @@ mark {
 }
 
 .prose .table-of-contents > ul > li::before {
-  @apply content-[¶] opacity-90;
+  @apply content-[¶] opacity-90 pr-2;
 }
 
 .prose .table-of-contents ul {

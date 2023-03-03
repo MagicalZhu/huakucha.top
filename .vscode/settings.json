@@ -14,10 +14,13 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "node_modules/**": true
+    //"node_modules/**": true
   },
   "files.associations": {
     "*.css": "postcss"
   },
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "markdownlint.config": {
+    "MD024": false
+  }
 }

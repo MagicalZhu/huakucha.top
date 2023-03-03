@@ -4,6 +4,7 @@
     - Java
   date: 2022-11-01 14:39:27
   categories: Java8
+  fav: true
 ---
 [[toc]]
 

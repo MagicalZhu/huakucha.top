@@ -282,7 +282,140 @@ RUN apt-get update && apt-get install -y \
 
 ## ENV
 
-- 为了便于程序运行,你可以使用ENV来为容器中安装的程序更新PATH环境变量。例如,`ENV PATH /usr/local/nginx/bin:$PATH`将确保CMD ["nginx"]能正确运行。
+1. 为了便于新的程序运行,可以使用`ENV 指令` 来为容器中安装的程序更新PATH环境变量。例如, `ENV PATH /usr/local/nginx/bin:$PATH` 将确保 **CMD ["nginx"]** 能正确运行。
+2. `ENV 指令` 也可用于为**想要容器化的服务提供必要的环境变量**,比如 Postgres 需要的`PGDATA`
+3. `ENV 指令` 也能用于设置常见的版本号,以便维护 version bumps,参考下面的示例:
+
+    ```docker
+    ENV PG_MAJOR=9.3
+    ENV PG_VERSION=9.3.4
+    RUN curl -SL https://example.com/postgres-$PG_VERSION.tar.xz | tar -xJC /usr/src/postgres && …
+    ENV PATH=/usr/local/postgres-$PG_MAJOR/bin:$PATH
+    ```
+
+    这个类似于在代码中拥有常量变量,而不是硬编码值,通过这种方法**可以通过改变一个ENV指令来自动提升你容器中的软件版本**
+
+和 `RUN` 命令类似的,**每一个 ENV 指令都会创建一个中间层,这意味着,即使在后面的一个层中取消了环境变量,它仍然在这个层中持续存在,其值可以被转储**
+
+通过下面的示例可以得到验证:
+
+```docker
+# 首先定义 Dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+ENV ADMIN_USER="mark"
+RUN echo $ADMIN_USER > ./mark
+RUN unset ADMIN_USER
+
+# 构建完镜像之后,创建一个容器。可以看到虽然取消了 ADMIN_USER,但是值依然存在
+➜ docker run --rm 3583e70fcd75 sh -c 'echo $ADMIN_USER'
+= athu
+```
+
+为了真正取消环境变量,**使用RUN命令和shell命令,将变量的设置、使用和取消都放在一层,可以用";"或"&&"来分隔命令**
+
+- 还可以使用"\"作为Linux Dockerfiles 的换行符可以提高可读性
+- 也可以把所有的命令放到一个shell脚本中,让RUN命令直接运行这个shell脚本。
+
+  ```docker
+  # syntax=docker/dockerfile:1
+  FROM alpine
+  RUN export ADMIN_USER="mark" \
+      && echo $ADMIN_USER > ./mark \
+      && unset ADMIN_USER
+  CMD sh
+  ```
+
+## ADD or COPY
+
+尽管 `ADD指令` 和 `COPY 指令` 在功能上相似。**但一般来说,COPY是首选**,因为它比 ADD 指令更透明。
+
+- **COPY只支持将本地文件复制到容器中的基本功能**, 而ADD 有一些不是很明显的功能(比如只在本地提取tar和支持远程URL)
+- `ADD 指令`的最佳用途是**将本地tar文件自动提取到镜像中**,如 `ADD rootfs.tar.xz /`
+
+**如果 Dockerfile 有多个步骤需要使用上下文中不同的文件,请单独 COPY 每个文件,而不是一次性 COPY 完**。 这将保证每个步骤的构建缓存只在特定的文件变化时失效
+
+  ```docker
+  COPY requirements.txt /tmp/
+  RUN pip install --requirement /tmp/requirements.txt
+  # 如果将 COPY . /tmp/ 放置在RUN指令之前
+  # 只要.目录中任何一个文件变化,都会导致后续指令的缓存失效。
+  COPY . /tmp/
+  ```
+
+由于镜像的大小很重要,所以**强烈不建议使用ADD从远程URL获取包**, 而是应该使用 `curl` 或 `wget` 来代替。这样就可以在解压后删除不再需要的文件,而且也不必在的镜像中中再增加一层。
+
+比如应该避免做这样的事情:
+
+```docker
+# 应该避免用 ADD 获取远程资源
+ADD https://example.com/big.tar.xz /usr/src/things/
+RUN tar -xJf /usr/src/things/big.tar.xz -C /usr/src/things
+RUN make -C /usr/src/things all
+
+# 作为替代,应该使用 curl / wget 获取资源
+# 这里使用的是管道操作,所以没有中间文件需要删除
+RUN mkdir -p /usr/src/things \
+    && curl -SL https://example.com/big.tar.xz \
+    | tar -xJC /usr/src/things \
+    && make -C /usr/src/things all
+```
+
+:::tip 提示
+
+对于其他的,比如**文件和目录**, 不需要 ADD 指令的 tar 自动提取功能,**应该总是使用COPY**
+
+:::
+
+## ENTRYPOINT
+
+ENTRYPOINT 指令的**最佳用途是设置镜像的主命令,允许该镜像可以像该命令一样被运行,然后使用CMD作为默认标志**
+
+例如,下面的示例镜像提供了命令行工具 `s3cmd`:
+
+```docker
+# Dockerfile
+ENTRYPOINT ["s3cmd"]
+CMD ["--help"]
+
+# 如果该镜像直接这么运行,则会显示命令帮助
+docker run s3cmd
+
+# 或者也可以使用正确的参数去执行一个命令
+docker run s3cmd ls s3://mybucket
+```
+
+**ENTRYPOINT 指令也可以和SHELL脚本结合使用**,允许它以类似于上述命令的方式发挥作用,即使启动工具可能需要多于一个步骤。
+
+比如Postgres的官方镜像的 ENTRYPOINT 指令就是这么写的
+
+```docker
+# 将 sh 脚本拷贝到 bin 目录下面,设置为主命令
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
+```
+
+## VOLUME
+
+- `VOLUME 指令`应该被用来**暴露任何数据库存储区域、配置存储、或由 Docker 容器创建的文件和文件夹**。
+- 强烈建议你VOLUME用于镜像的任何可变或用户可服务的部分的组合
+
+## WORKDIR
+
+- 为了清晰和可靠,**应该始终使用绝对路径来表示你的WORKDIR**。
+- 应该使用 WORKDIR,而不是像 `RUN cd ... && do-something` 这样的指令,这样的指令很难被阅读、排除故障和维护
+
+## ONBUILD
+
+1. **ONBUILD 指令在当前 Dockerfile 构建完成后执行,它可以在任何从当前镜像衍生出来的子镜像中执行**。可以把 ONBUILD 指令看作是父Dockerfile给子Dockerfile的一个指令
+    - Docker构建时会在子 Dockerfile 的任何命令之前执行 ONBUILD 命令
+
+2. ONBUILD 对于要从一个给定的镜像中构建的镜像很有用
+    - 例如,你会对一个语言栈镜像使用 ONBUILD,在 Dockerfile 中构建用该语言编写的任意用户软件
+
+3. 用 ONBUILD 构建的镜像应该得到一个单独的标签
+    - 例如,ruby:1.9-onbuild 或 ruby:2.0-onbuild。
+4. 在 ONBUILD 中使用 ADD 或 COPY 时要格外小心。如果新的构建上下文中缺少对应的资源, "onbuild" 镜像会灾难性地失败,**建议添加一个单独的标签**
 
 # 参考资料 <Badge type="tip" text="Tip"/>
 

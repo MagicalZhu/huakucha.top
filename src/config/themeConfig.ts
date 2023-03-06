@@ -30,7 +30,7 @@ export const ThemeConfig: siteConfig = {
     labels: 'borad'
   },
   footer: {
-    copyright: '© YuLiang Zhu 2022-Present & A Dragon Lost In Human World'
+    copyright: `© YuLiang Zhu 2022-${new Date().getFullYear()} & All available have been priced.`
   },
   toc: {
     isTocOpen: false,

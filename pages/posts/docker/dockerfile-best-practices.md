@@ -189,13 +189,17 @@ RUN apt-get update && apt-get install -y \
 
 ## RUN
 
-将长的或复杂的RUN语句分成多行,用反斜线 "\" 隔开,使 Dockerfile 更容易阅读、理解和维护
+为了保持 Dockerfile 文件的可读性,可理解性,以及可维护性,建议将长的或复杂的 RUN 指令用反斜杠 "\\" 分割成多行
 
 ### apt-get
 
-RUN 最常见的使用情况可能是使用 apt-get。因为 RUN apt-get 命令会安装包,所以有几个问题需要注意:
+RUN 最常见的使用情况可能是使用 `apt-get`。因为 RUN apt-get 命令会安装包,所以有几个问题需要注意:
 
-1. 始终将`RUN apt-get update`与`apt-get install`结合在同一个RUN语句中
+1. 不要使用 `RUN apt-get upgrade` 或 `dist-upgrade`,因为许多基础镜像中的「必须」包不会在一个非特权容器中升级
+    - 如果基础镜像中的某个包过时了,应该联系镜像的维护者
+    - 如果确定某个特定的包升级,请使用 `apt-get install -y 包名`。比如 foo 需要升级,使用 apt-get install -y foo 就行,该指令会自动升级 foo 包
+
+2. 永远将`RUN apt-get update`与`apt-get install`结合在同一个RUN语句中
 
     ```docker
     RUN apt-get update && apt-get install -y \
@@ -205,7 +209,7 @@ RUN 最常见的使用情况可能是使用 apt-get。因为 RUN apt-get 命令�
         && rm -rf /var/lib/apt/lists/*
     ```
 
-2. **在 RUN 语句中单独使用 apt-get update会导致缓存问题,后续的apt-get安装指令会失败**。例如,该问题会发生在以下 Dockerfile 中:
+3. **在 RUN 语句中单独使用 apt-get update 会导致缓存问题,后续的 apt-get install 指令会失败**。例如,该问题会发生在以下 Dockerfile 中:
 
     ```docker
     # syntax=docker/dockerfile:1
@@ -223,10 +227,11 @@ RUN 最常见的使用情况可能是使用 apt-get。因为 RUN apt-get 命令�
     RUN apt-get install -y curl nginx
     ```
 
-    **Docker 认为初始指令和修改后的指令是相同的,并重用了之前步骤的缓存**。因此apt-get更新没有被执行,因为构建时使用的是缓存的版本。因为没有运行apt-get更新,你的构建可能会得到过时的 *curl* 和 *nginx* 的版本
+    **Docker 发现修改后的 *RUN apt-get update* 指令和之前的完全一样。所以,*apt-get update* 不会执行,而是使用之前的缓存镜像**。因为 apt-get update 没有运行,后面的 apt-get install 可能安装的是*过时的 curl 和 nginx 版本*
 
-3. 使用 `RUN apt-get update && apt-get install -y` 可以确保 Dockerfile 安装最新的软件包版本,而无需进一步编码或手动干预。这种技术被称为 **"缓存破坏"**
-    - **也可以通过指定一个软件包的版本来实现高速缓存的破坏**,这就是所谓的**版本锁定**
+4. 使用 `RUN apt-get update && apt-get install -y` 可以确保 Dockerfile 每次安装的都是**包的最新的版本**,而且这个过程不需要进一步的编码或额外干预。这项技术叫作 `cache busting (破坏缓存)`。
+    - 也可以**显示指定一个包的版本号来达到 cache-busting**, 也可以称之为**固定版本**
+    - **固定版本会迫使构建过程检索特定的版本,而不管缓存中有什么。这项技术也可以减少因所需包中未预料到的变化而导致的失败**
 
     ```docker
     RUN apt-get update && apt-get install -y \

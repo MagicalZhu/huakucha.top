@@ -17,9 +17,11 @@
 
     <nav class="flex space-x-4">
       
+      <!--
       <router-link to="/talk" :title="$t('theme.nav.Talk')" class="nav-item">
         <div i-uil:message></div>
       </router-link>
+      -->
     
       <!-- <router-link to="/projects" title="Projects" class="nav-item">
         <div i-ph:rocket-launch-duotone />

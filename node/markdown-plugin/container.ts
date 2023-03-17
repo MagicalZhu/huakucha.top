@@ -45,7 +45,7 @@ function createContainer(
           if (klass === 'details') {
             return `<details class="${klass} custom-block"><summary>${title}</summary>\n`
           }
-          return `<div class="${klass} custom-block"><span class="${iconClass}"/><span class="custom-block-title">${title}</span>\n`
+          return `<div class="${klass} custom-block"><div class="${iconClass}"/><span class="custom-block-title">${title}</span>\n`
         } else {
           return klass === 'details' ? `</details>\n` : `</div>\n`
         }

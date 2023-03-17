@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
-import { defineCustomElement } from "vue";
-import { GlobalThemeOverrides } from 'naive-ui'
-import CopyCode from "./composables/CodeCopy.ce.vue"
 
 const {addRouteMeta, getThemeConfig} = useConfigStore()
-
 
 useHead({
   title: getThemeConfig().authorName,
@@ -49,37 +45,13 @@ if(routes.length > 0) {
   })
 }
 
-// rewrite theme config
-const themeOverrides: GlobalThemeOverrides = {
-  Button: {
-    colorHover: '#000'
-  },
-  DataTable: {
-    paginationMargin: '40px 0 0 0',
-    peers: {
-      Empty: {
-        textColor: '#ccc'
-      },
-      Pagination: {
-        buttonColor: '#000',
-        itemTextColor: '#ccc'
-      }
-    }
-  }
-}
 
 // clear storage
 localStorage.removeItem('allow')
-customElements.define('copy-code', defineCustomElement(CopyCode))
 
 
 </script>
 
 <template>
-  <n-config-provider :theme-overrides="themeOverrides">
-    <n-global-style />
-    <n-message-provider>
-      <RouterView />
-    </n-message-provider>
-  </n-config-provider>
+  <RouterView />
 </template>

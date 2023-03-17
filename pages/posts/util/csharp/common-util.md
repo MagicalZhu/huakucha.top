@@ -17,8 +17,8 @@
 static void Main(string[] args) {
   Console.WriteLine("服务器运行！");
   IPAddress ip = new IPAddress(new byte[] { 192, 168, 220, 1 });
-  // ip为服务器IP地址,port为监听的端口    
-  TcpListener listener = new TcpListener(ip, 15025);         
+  // ip为服务器IP地址,port为监听的端口
+  TcpListener listener = new TcpListener(ip, 15025);
   listener.Server.ReceiveTimeout = Convert.ToInt32(0);
   listener.Start();
   Console.WriteLine("开始侦听。。");
@@ -26,18 +26,18 @@ static void Main(string[] args) {
   TcpClient remoteClient = listener.AcceptTcpClient();
   // 设置数组(缓存)
   byte[] buffer = new byte[remoteClient.ReceiveBufferSize];
-  //用于发送和接收数据 
+  //用于发送和接收数据
   NetworkStream streamToClient = remoteClient.GetStream();
   int bytesRead = 0;
-  while (remoteClient.Connected && 
+  while (remoteClient.Connected &&
         (bytesRead = streamToClient.Read(buffer, 0, buffer.Length) ) > 0
   ) {
-    Console.WriteLine("有客户端连接！ {0}<----{1}", 
-                      remoteClient.Client.LocalEndPoint, 
+    Console.WriteLine("有客户端连接！ {0}<----{1}",
+                      remoteClient.Client.LocalEndPoint,
                       remoteClient.Client.RemoteEndPoint
                     );
     Console.WriteLine("读取{0}字节", bytesRead);
-    // 将字节序列解码为字符串 
+    // 将字节序列解码为字符串
     string msg = Encoding.Default.GetString(buffer, 0, bytesRead);
     Console.WriteLine("收到：{0}", msg);
   }
@@ -60,7 +60,7 @@ static void Main(string[] args) {
     return;
   }
   Console.WriteLine("服务器已连接! {0}--->{1}",
-                    client.Client.LocalEndPoint, 
+                    client.Client.LocalEndPoint,
                     client.Client.RemoteEndPoint);
 
   string msg = "你好呀！服务器\n";

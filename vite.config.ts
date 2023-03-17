@@ -11,9 +11,9 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Unocss from 'unocss/vite'
 
-// import naive-ui
+// import elementui-plus
 import {
-  NaiveUiResolver
+  ElementPlusResolver
 } from 'unplugin-vue-components/resolvers'
 
 import {
@@ -35,12 +35,7 @@ export default defineConfig({
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
-      reactivityTransform: true,
-      template: {
-        compilerOptions: {
-          isCustomElement: tag => tag.startsWith('copy')
-        }
-      }
+      reactivityTransform: true
     }),
 
     /**
@@ -95,7 +90,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
       resolvers: [
-        NaiveUiResolver()
+        ElementPlusResolver()
       ],
     }),
 

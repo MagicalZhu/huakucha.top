@@ -23,7 +23,7 @@ async function handler(command, options, extOptions) {
       elements: {
         pre({ className, style, children }) {
           const startHtml = `<pre class="${className}" style="${style}">`
-          const copyButton = `<copy-code lang="${renderLang}"></copy-code>`
+          const copyButton = `<span style="float:right;">${renderLang}</span>`
           const endHtml = `${children }</pre>`
           return `${startHtml}${copyButton}${endHtml}`
         },

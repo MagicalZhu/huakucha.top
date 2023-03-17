@@ -38,7 +38,6 @@
     "markdown-it-container": "^3.0.0",
     "markdown-it-mark": "^3.0.1",
     "markdown-it-sup": "^1.0.0",
-    "naive-ui": "^2.34.3",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.17",
     "prettier": "^2.7.1",

@@ -16,17 +16,25 @@
     </router-link>
 
     <nav class="flex space-x-4">
+      
       <router-link to="/talk" :title="$t('theme.nav.Talk')" class="nav-item">
         <div i-uil:message></div>
       </router-link>
-
+    
       <!-- <router-link to="/projects" title="Projects" class="nav-item">
         <div i-ph:rocket-launch-duotone />
       </router-link> -->
 
+      
       <router-link to="/posts" :title="$t('theme.nav.Blog')" class="nav-item">
         <div i-carbon:blog></div>
       </router-link>
+
+      <!--
+      <router-link to="/bookmark" title="$t('theme.nav.Bookmark')" class="nav-item">
+        <div i-carbon:bookmark/>
+      </router-link>
+      -->
 
       <router-link to="/categories" :title="$t('theme.nav.Category')" class="nav-item">
         <div i-carbon:folder></div>

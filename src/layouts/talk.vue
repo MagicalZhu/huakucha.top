@@ -37,7 +37,7 @@ title.value = `${authorName} | talk`
         <slot name="navbar"></slot>
       </Navbar>
       <!-- issues -->
-      <div prose mx-auto text-left>
+      <div prose mx-auto text-left >
         <article class="rounded-xl border-2 mb-4 mt-4 dark:border-gray-6" v-for="item in contentData">
           <div class="flex items-start pt-2">
             <div class="ml-4">

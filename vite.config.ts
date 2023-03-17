@@ -11,6 +11,11 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Unocss from 'unocss/vite'
 
+// import naive-ui
+import {
+  NaiveUiResolver
+} from 'unplugin-vue-components/resolvers'
+
 import {
   resolveBlogFile,
   resolveBlogList,
@@ -89,6 +94,9 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
+      resolvers: [
+        NaiveUiResolver()
+      ],
     }),
 
     /**

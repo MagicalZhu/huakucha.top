@@ -6,7 +6,11 @@ const {addRouteMeta, getThemeConfig} = useConfigStore()
 useHead({
   title: getThemeConfig().authorName,
   link: [
-    {rel: 'icon', href: 'img/favicon.ico'}
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href: '/favicon.svg'
+    }
   ],
   meta: [
     { name: "description", content: "A dragon lost in human world." },

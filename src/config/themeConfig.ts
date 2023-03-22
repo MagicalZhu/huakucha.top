@@ -4,7 +4,7 @@ import { siteConfig } from 'siteConfig'
  * 站点配置信息
  */
 export const ThemeConfig: siteConfig = {
-  authorName: 'athu',
+  authorName: 'Athu',
   openChat: false,
   showProject: true,
   comments: {

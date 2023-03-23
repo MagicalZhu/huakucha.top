@@ -2,9 +2,10 @@
   author: 'athu'
   title: DockerFile 最佳实践
   tags:
+    - Docker
     - 云原生
   date: 2023-03-03 01:39:12
-  categories: Docker
+  categories: 云原生
   forward: false
   lock: false
   fav: false

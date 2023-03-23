@@ -7,8 +7,8 @@
         "allowed_elements": ["mark", "Badge", "app-link", "route"]
     },
     "line-length": {
-        "code_block_line_length": 200,
-        "line_length": 200
+        "code_block_line_length": 2000,
+        "line_length": 2000
     },
     "MD036":false,
     "MD025": false

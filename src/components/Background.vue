@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const color = computed(() => isDark.value ? '#fff' : '#6d72ef')
+const color = computed(() => isDark.value ? '#fff' : '#35d94f')
 </script>
 
 <template>
@@ -14,16 +14,16 @@ const color = computed(() => isDark.value ? '#fff' : '#6d72ef')
   >
     <div un-children="z--200 rounded-full pa" un-children-after="content-none rounded-md">
       <div
-        class="signup-bg-stars w-1px h-1px"
-        un-after="w-1px h-1px"
-      />
-      <div
-        class="signup-bg-stars-2 w-2px h-2px"
+        class="signup-bg-stars w-2px h-2px"
         un-after="w-2px h-2px"
       />
       <div
-        class="signup-bg-stars-3 w-3px h-3px"
+        class="signup-bg-stars-2 w-3px h-3px"
         un-after="w-3px h-3px"
+      />
+      <div
+        class="signup-bg-stars-3 w-4px h-4px"
+        un-after="w-4px h-4px"
       />
     </div>
   </div>

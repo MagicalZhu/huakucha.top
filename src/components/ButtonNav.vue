@@ -36,7 +36,7 @@ onMounted(() => {
     <Transition name="page-fade">
       <div v-show="shown">
         <button class="box icon-btn mx-2" @click="backToTop()" id="goback">
-          <div i="ri-arrow-up-line"></div>
+          <div class="i-cil:arrow-circle-top"></div>
         </button>
       </div>
     </Transition>
@@ -45,7 +45,7 @@ onMounted(() => {
       <img src="/img/wx.png" alt="" class="dropdown__menu">
     </div> -->
     <button class="box icon-btn mx-2 !outline-none" @click="toggleDark()" id="toggleDarkMode">
-      <div class="dark:i-akar-icons:moon-fill i-carbon:light-filled"></div>
+      <div class="dark:i-cil:moon i-cil:sun"></div>
     </button>
 
     <!-- <button class="box icon-btn mx-2">

@@ -30,7 +30,7 @@ export const ThemeConfig: siteConfig = {
     labels: 'borad'
   },
   footer: {
-    copyright: `© YuLiang Zhu 2022-${new Date().getFullYear()} & All available have been priced.`
+    copyright: `© YuLiang Zhu 2022-${new Date().getFullYear()} & 花开堪折直须折.`
   },
   toc: {
     isTocOpen: false,
@@ -44,6 +44,6 @@ export const ThemeConfig: siteConfig = {
   blog: {
     perPageSize: 10,
     recentPost: 5,
-    showNextOrPrev: true
+    showNextOrPrev: false
   }
 }

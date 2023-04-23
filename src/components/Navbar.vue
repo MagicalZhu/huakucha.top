@@ -45,7 +45,7 @@
       </button> -->
 
       <button nav-item :title="toggleTip" @click="toggleDark()" >
-        <div class="dark:i-akar-icons:moon-fill i-carbon:light-filled" ></div>
+        <div class="dark:i-cil:moon i-cil:sun" ></div>
       </button>
 
       <slot ></slot>

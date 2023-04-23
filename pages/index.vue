@@ -28,11 +28,6 @@
               target="_blank"
             >Github</a>,
             <a
-              class="transition-colors  social"
-              href="https://okjk.co/V3s0CF"
-              target="_blank"
-            >Jike</a>,
-            <a
               class="transition-colors social"
               href="mailto:huakucha95@163.com"
               target="_blank"

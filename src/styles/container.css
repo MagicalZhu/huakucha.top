@@ -52,6 +52,11 @@
   @apply ml-3.5 align-middle;
 }
 
+.custom-icon {
+  display: inline;
+  vertical-align: middle;
+}
+
 .custom-block p + p {
   margin: 8px 0;
 }

@@ -29,7 +29,8 @@ Spring是一个轻量级的JEE开源IOC(DI)和AOP容器框架,Spring的优良特
   - 在IOC和AOP的基础上可以整合各种企业应用的开源框架和优秀的第三方类库
   - 实际上Spring 自身也提供了表述层的SpringMVC和持久层的Spring JDBC
 
-![](https://cdn.staticaly.com/gh/MagicalZhu/image-host@master/spring/%E5%89%8D%E8%A8%80.webp)
+<AppImg src="https://cdn.staticaly.com/gh/MagicalZhu/image-host@master/spring/%E5%89%8D%E8%A8%80.webp"
+        intro="Spring 结构图"/>
 
 # Spring的使用
 
@@ -106,13 +107,15 @@ public class Hello {
 
 依赖拉取是最常见的 IOC 类型。在依赖拉取的过程中,根据需要`从注册表中获取依赖项`,流程如下:
 
-![image-20221113130034914](https://cdn.staticaly.com/gh/MagicalZhu/image-host@master/spring/%E4%BE%9D%E8%B5%96%E6%8B%89%E5%8F%96.webp)
+<AppImg src="https://cdn.staticaly.com/gh/MagicalZhu/image-host@master/spring/%E4%BE%9D%E8%B5%96%E6%8B%89%E5%8F%96.webp"
+        intro="依赖拉取"/>
 
 ### 上下文依赖查找
 
 这种查找方式与 DL 相似,但是这种上下文依赖查找直接作用于容器,**而不是注册表**
 
-![image-20221113131524537](https://cdn.staticaly.com/gh/MagicalZhu/image-host@master/spring/%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BE%9D%E8%B5%96%E6%9F%A5%E6%89%BE.webp)
+<AppImg src="https://cdn.staticaly.com/gh/MagicalZhu/image-host@master/spring/%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BE%9D%E8%B5%96%E6%9F%A5%E6%89%BE.webp"
+        intro="上下文依赖查找"/>
 
 我们可以看到**组件调用容器的查找方法查询依赖项,然后将依赖项设置到本身**
 

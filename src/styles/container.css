@@ -1,16 +1,19 @@
 .custom-block {
-  @apply border-2 rounded-md font-mono text-base py-8px px-20px;
+  @apply border-1px rounded-md  text-base py-8px px-20px shadow-lg border-gray-200;
   line-height: 24px;
+  border-left-width: 5px;
 }
 
 .custom-block.info {
-  @apply text-blue-700 bg-blue-100  dark:bg-blue-200 dark:text-blue-800
+  border-left-color: var(--hkc-custom-block-info-border);
+  color: var(--hkc-custom-block-info-text);
+  /* background-color: var(--hkc-custom-block-info-bg)*/;
 }
 
 .custom-block.tip {
-  border-color: var(--hkc-custom-block-tip-border);
+  border-left-color: var(--hkc-custom-block-tip-border);
   color: var(--hkc-custom-block-tip-text);
-  background-color: var(--hkc-custom-block-tip-bg);
+  /*background-color: var(--hkc-custom-block-tip-bg);*/
 }
 
 .custom-block.tip code {
@@ -18,9 +21,9 @@
 }
 
 .custom-block.warning {
-  border-color: var(--hkc-custom-block-warning-border);
+  border-left-color: var(--hkc-custom-block-warning-border);
   color: var(--hkc-custom-block-warning-text);
-  background-color: var(--hkc-custom-block-warning-bg);
+  /*background-color: var(--hkc-custom-block-warning-bg);*/
 }
 
 .custom-block.warning code {
@@ -28,9 +31,9 @@
 }
 
 .custom-block.danger {
-  border-color: var(--hkc-custom-block-danger-border);
+  border-left-color: var(--hkc-custom-block-danger-border);
   color: var(--hkc-custom-block-danger-text);
-  background-color: var(--hkc-custom-block-danger-bg);
+  /*background-color: var(--hkc-custom-block-danger-bg);*/
 }
 
 .custom-block.danger code {
@@ -38,9 +41,9 @@
 }
 
 .custom-block.details {
-  border-color: var(--hkc-custom-block-details-border);
+  border-left-color: var(--hkc-custom-block-details-border);
   color: var(--hkc-custom-block-details-text);
-  background-color: var(--hkc-custom-block-details-bg);
+  /*background-color: var(--hkc-custom-block-details-bg);*/
 }
 
 .custom-block.details code {

@@ -294,9 +294,9 @@
 :root {
   --hkc-custom-block-code-font-size: 13px;
 
-  --hkc-custom-block-info-border: var(--hkc-c-divider-light);
-  --hkc-custom-block-info-text: var(--hkc-c-text-2);
-  --hkc-custom-block-info-bg: var(--hkc-c-white-soft);
+  --hkc-custom-block-info-text: #535ceb;
+  --hkc-custom-block-info-border: #2944e9b5;
+  --hkc-custom-block-info-bg: rgba(219,234,254,1);
   --hkc-custom-block-info-code-bg: var(--hkc-c-gray-light-4);
 
   --hkc-custom-block-tip-border: var(--hkc-c-green-dimm-1);

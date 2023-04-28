@@ -44,9 +44,11 @@
         <div i-ion:language-outline />
       </button> -->
 
+      <!--
       <button nav-item :title="toggleTip" @click="toggleDark()" >
         <div class="dark:i-cil:moon i-cil:sun" ></div>
       </button>
+      -->
 
       <slot ></slot>
     </nav>

@@ -40,15 +40,9 @@
         <div i-carbon:tag-group ></div>
       </router-link>
 
-      <!-- <button nav-item title="Toggle Language" @click="toggleLanguage()">
-        <div i-ion:language-outline />
-      </button> -->
-
-      <!--
       <button nav-item :title="toggleTip" @click="toggleDark()" >
         <div class="dark:i-cil:moon i-cil:sun" ></div>
       </button>
-      -->
 
       <slot ></slot>
     </nav>
@@ -59,12 +53,6 @@
 import { isClient } from "@renovamen/utils";
 import { toggleDark } from "~/composables/dark";
 
-// const { availableLocales, locale } = useI18n()
-
-// const toggleLanguage = () => {
-//   const locales = availableLocales
-//   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-// }
 
 const authorName = useConfigStore().getThemeConfig().authorName
 

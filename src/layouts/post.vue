@@ -3,7 +3,7 @@
 
 -->
 <template>
-  <Layout class="post">
+  <Layout class="post slide-enter">
     <template v-if="isToc" #navbar>
       <button nav-item title="Toggle toc" @click="isTocOpen = !isTocOpen" class="tocBtn">
         <div i-carbon:table-of-contents />

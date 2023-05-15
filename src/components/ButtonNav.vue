@@ -37,8 +37,8 @@ onMounted(() => {
   <div class="footer-tools">
     <Transition name="page-fade">
       <div v-show="shown">
-        <button class="box icon-btn mx-2 text-2xl stroke-current text-gray-600" @click="backToTop()" id="goback">
-          <div class="i-cil:arrow-circle-top"></div>
+        <button class="box icon-btn mx-2 text-xl stroke-current text-gray-600" @click="backToTop()" id="goback">
+          <div class="i-carbon:up-to-top"></div>
         </button>
       </div>
     </Transition>
@@ -46,11 +46,9 @@ onMounted(() => {
       <div i="ri-wechat-line"></div>
       <img src="/img/wx.png" alt="" class="dropdown__menu">
     </div> -->
-    <!--
-    <button class="box icon-btn mx-2 !outline-none" @click="toggleDark()" id="toggleDarkMode">
+    <button class="box icon-btn mx-2 text-xl stroke-current text-gray-600 !outline-none" @click="toggleDark()" id="toggleDarkMode">
       <div class="dark:i-cil:moon i-cil:sun"></div>
     </button>
-    -->
 
     <!-- <button class="box icon-btn mx-2">
       <div i-carbon:settings></div>

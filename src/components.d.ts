@@ -37,6 +37,7 @@ declare module '@vue/runtime-core' {
     SendMessage: typeof import('./components/SendMessage.vue')['default']
     TagList: typeof import('./components/TagList.vue')['default']
     TimeIcon: typeof import('./components/icons/TimeIcon.vue')['default']
+    ToggleTheme: typeof import('./components/ToggleTheme.vue')['default']
     WelcomeMsg: typeof import('./components/WelcomeMsg.vue')['default']
   }
 }

@@ -28,6 +28,11 @@ export default defineConfig({
       "hstack space-x-1 rounded transition-colors decoration-none text-sm !text-c bg-gray-100/90 dark:bg-gray-50/10 hover:(!bg-gray-500 !text-white !no-underline)"
     ]
   ],
+  rules: [
+    [/^slide-enter-(\d+)$/, ([_, n]) => ({
+      '--enter-stage': n,
+    })],
+  ],
   theme: {
     fontFamily: {
       mono: 'dm,"LXGW WenKai Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',

@@ -14,7 +14,7 @@ async function backToTop() {
 
 onMounted(() => {
   tippy('#goback', {
-    content: "Back To Top",
+    content: "Scroll To Top",
     arrow: true,
     placement: "left-start",
     animateFill: true,
@@ -46,9 +46,9 @@ onMounted(() => {
       <div i="ri-wechat-line"></div>
       <img src="/img/wx.png" alt="" class="dropdown__menu">
     </div> -->
-    <button class="box icon-btn mx-2 text-xl stroke-current text-gray-600 !outline-none" @click="toggleDark()" id="toggleDarkMode">
+    <!-- <button class="box icon-btn mx-2 text-xl stroke-current text-gray-600 !outline-none" @click="toggleDark()" id="toggleDarkMode">
       <div class="dark:i-cil:moon i-cil:sun"></div>
-    </button>
+    </button> -->
 
     <!-- <button class="box icon-btn mx-2">
       <div i-carbon:settings></div>

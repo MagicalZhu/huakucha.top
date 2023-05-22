@@ -2,6 +2,8 @@
 @import "./markdown.css";
 @import "./dank-mono.css";
 /* @import 'lxgw-wenkai-webfont/style.css'; */
+@import '@fontsource/roboto/700.css';
+@import '@fontsource/roboto/500.css';
 @import "./container.css";
 @import "./basic.css";
 @import 'tippy.js/dist/tippy.css';
@@ -52,7 +54,7 @@ html.dark {
 }
 
 ::selection {
-  background-color: #cce2ff;
+  background-color: #eaebee;
 }
 
 .dark ::selection {

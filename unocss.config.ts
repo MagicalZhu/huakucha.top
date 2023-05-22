@@ -36,6 +36,7 @@ export default defineConfig({
   theme: {
     fontFamily: {
       mono: 'dm,"LXGW WenKai Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+      serif: 'Roboto'
     },
     boxShadow: {
       nav: "0 1px 8px 0 rgba(27, 35, 47, .1)"

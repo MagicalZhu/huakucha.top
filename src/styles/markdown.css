@@ -54,7 +54,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .prose code:not(pre.shiki code) {
-  @apply py-2px rounded-md;
+  @apply py-3px rounded-md;
   white-space: normal;
   transition: color .5s,background-color .5s;
   font-weight: unset;

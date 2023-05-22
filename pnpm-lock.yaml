@@ -7,6 +7,9 @@ dependencies:
   '@akiravoid/markdown-it-sup':
     specifier: ^1.0.2
     version: registry.npmmirror.com/@akiravoid/markdown-it-sup@1.0.2
+  '@iconify-json/simple-icons':
+    specifier: ^1.1.54
+    version: 1.1.54
   '@renovamen/utils':
     specifier: ^0.1.0
     version: registry.npmmirror.com/@renovamen/utils@0.1.0
@@ -1394,6 +1397,15 @@ packages:
     os: [linux]
     requiresBuild: true
     optional: true
+
+  /@iconify-json/simple-icons@1.1.54:
+    resolution: {integrity: sha512-7g2yUYJgaYGLfGuO5j/XG1pu2c7p3svre1Nl2bLe68mPecit17EoCjDIJg2kK91Gfk3NwM4+U6P1QOfsFwlVkA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify/types@2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
   /@intlify/message-compiler@9.2.2:
     resolution: {integrity: sha512-IUrQW7byAKN2fMBe8z6sK6riG1pue95e5jfokn8hA5Q3Bqy4MBJ5lJAofUsawQJYHeoPJ7svMDyBaVJ4d0GTtA==}
@@ -3086,7 +3098,7 @@ packages:
     dependencies:
       '@antfu/install-pkg': registry.npmmirror.com/@antfu/install-pkg@0.1.1
       '@antfu/utils': registry.npmmirror.com/@antfu/utils@0.5.2
-      '@iconify/types': registry.npmmirror.com/@iconify/types@2.0.0
+      '@iconify/types': 2.0.0
       debug: registry.npmmirror.com/debug@4.3.4
       kolorist: registry.npmmirror.com/kolorist@1.6.0
       local-pkg: registry.npmmirror.com/local-pkg@0.4.2
@@ -4003,7 +4015,7 @@ packages:
       '@babel/parser': registry.npmmirror.com/@babel/parser@7.20.3
       '@vue/shared': registry.npmmirror.com/@vue/shared@3.2.45
       estree-walker: registry.npmmirror.com/estree-walker@2.0.2
-      source-map: registry.npmmirror.com/source-map@0.6.1
+      source-map: 0.6.1
 
   registry.npmmirror.com/@vue/compiler-dom@3.2.45:
     resolution: {integrity: sha512-tyYeUEuKqqZO137WrZkpwfPCdiiIeXYCcJ8L4gWz9vqaxzIQRccTSwSWZ/Axx5YR2z+LvpUbmPNXxuBU45lyRw==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@vue/compiler-dom/-/compiler-dom-3.2.45.tgz}

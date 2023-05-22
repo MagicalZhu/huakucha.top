@@ -1,81 +1,122 @@
+<script setup lang="ts">
 
+const authorName = useConfigStore().getThemeConfig().authorName
+
+</script>
 <template>
-  <main class="flex flex-col min-h-full text-c">
-    <div class="mb-6">
-      <Navbar>
-        <slot name="navbar"></slot>
-      </Navbar>
-      <div class="prose mx-auto">
-        <div class="flex flex-col items-center min-h-[calc(10vh-44px)] justify-center">
-          <div i-carbon:fingerprint-recognition inline-block text-red-200 dark:text-indigo-300 text-5em/>
-          <h1 class="noBorder">
-            <span>Athu</span>
-            <span text-base opacity-60 ml-3 font-mono>Do More</span>
-          </h1>
-        </div>
+  <main class="not-prose">
+    <section flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32>
+      <div i-carbon:fingerprint-recognition inline-block text-red-200 text-2em mr-15px/>
+      <p class="font-extrabold font-mono text-xl">Athu</p>
+    </section>
 
-        <p class="text-base font-600">
-          Front-end & Back-end developer.
-        </p>
-        <p class="text-base font-600">
-          Currently working at a Japanese company.
-        </p>
-        <p class="text-base font-600">
-          You can find me on
-          <a
-              class="transition-colors  social"
-              href="https://github.com/MagicalZhu"
-              target="_blank"
-            >Github</a>,
-            <a
-              class="transition-colors social"
-              href="mailto:huakucha95@163.com"
-              target="_blank"
-            >Mail</a> is also possible.
-        </p>
+    <section>
+      <p class="font-mono pt-6">
+        Hey! I'm {{authorName}}, a FE & BE developer.Currently working at a Japanese company.
+      </p>
+    </section>
+    <!--block-->
+    <div grid grid-cols-3 gap-1>
+      <!--Posts-->
+      <section animate-delay-300 mt-15px>
+        <a href="/posts"
+          class="flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32"
+        >
+        <p id="blockTitle">Posts</p><div text-sm class="i-ph-arrow-up-right"></div>
+        </a>
+      </section>
 
-        <h1 class="noBorder">
-          Interests
-        </h1>
+      <!--projects-->
+      <section animate-delay-300 mt-15px>
+        <a href="/posts"
+          class="flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32"
+        >
+        <p id="blockTitle">Projects</p><div text-sm class="i-ph-arrow-up-right"></div>
+        </a>
+      </section>
 
-        <ul>
-          <li>Web Development</li>
-          <li> Watching Movies(Especially science fiction, suspense and action)</li>
-          <li><s>Games</s></li>
-          <li><s>Sleeping and Eating</s></li>
-        </ul>
+      <!--projects-->
+      <section animate-delay-300 mt-15px>
+        <span
+          class="flex items-center gap-1 decoration-none border-none hover:opacity-30 w-32"
+        >
+        <p id="blockTitle">Building</p>
+        </span>
+      </section>
 
-        <h1 class="noBorder">
-          Miscellaneous
-        </h1>
-
-        <ul>
-          <li>
-            🚀 This personal website is built on <app-link to="https://github.com/antfu/vitesse">Vitesse</app-link>,
-            thanks to <app-link to="https://antfu.me/">@antfu</app-link>
-            for the template&nbsp; <span font-700>(｀･ω･´)ゞ</span>
-          </li>
-          <li>
-            🌈 Imagine having a Tinker Bell pocket &nbsp; <span font-700>(✧◡✧)</span>
-          </li>
-          <li>
-            🌭 My dream: <em font-mono text-brand>while(sleeping){money++;}</em>&nbsp; <span font-700>( • ̀ω•́ )✧</span>
-          </li>
-        </ul>
-      </div>
     </div>
-    <!-- <Links :links="socials" class="justify-center"/> -->
-    <WelcomeMsg/>
+    <!-- detail -->
+    <div grid grid-cols-3 gap-1>
+      <!--building-->
+      <section animate-delay-300 mt-15px>
+      </section>
+    </div>
+    <!--About-->
+    <section animate-delay-600 mt-15px>
+      <p id="blockTitle">Now</p>
+      <p class="font-mono">
+        The programming languages I currently use regularly are Javascript and java.And i have recently been learning more about the Spring Framework and computer networking.
+      </p>
+      <p class="font-mono" mt-2em>
+        Outside of programming, I also watch movies, especially science fiction and action movies, such as the Marvel series and the DC series.      </p>
+    </section>
+    <hr mt-15px/>
+    <section animate-delay-600 mt-15px>
+      <p id="blockTitle">Connect</p>
+      <div grid grid-cols-8 gap-2>
+        <div>
+          <a class="connectItem"
+            target="_blank"
+            href="mailto:huakucha95@163.com"
+          > 
+            <div class="i-carbon:email-new"></div>
+            <p>Email</p>
+          </a>
+        </div>
+        <div>
+          <a class="connectItem"
+            target="_blank"
+            href="https://github.com/MagicalZhu"
+          >
+            <div  class="i-carbon:logo-github"></div>
+            <p>Github</p>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
-<style scoped>
-  .noBorder {
-    border-bottom-style:none;
-    padding-bottom: unset;
-    margin-top: 15px;
+<route lang="yaml">
+  meta:
+    layout: about
+</route>
+
+<style>
+  #blockTitle {
+    @apply md:text-base font-extrabold italic mb-8px;
   }
-  .social {
-    @apply text-black dark:text-current;
+  #blockTitle::before {
+    content: ":: ";
   }
+
+  .normalStyle {
+    @apply opacity8  animate-fill-both font-sans font-medium mt-8;
+  }
+
+  .not-prose {
+    color: var(--un-prose-body);
+    max-width: 80ch;
+    @apply mx-auto text-dark;
+  }
+
+  hr {
+    width: 50px;
+    margin: 2em auto !important;
+  }
+
+  .connectItem {
+    @apply flex items-center gap-1 cursor-pointer hover:opacity-30 w-32 text-base;
+  }
+  
 </style>

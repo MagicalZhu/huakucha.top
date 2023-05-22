@@ -1,16 +1,14 @@
 <!--
-  layout for about page: about 画面的 layout
+  layout for about index
 -->
 <template>
-  <main class="flex flex-col min-h-full text-c" p="x-4 t-24 b-3">
+  <main class="flex flex-col min-h-full text-c slide-enter" px-4 pt-5em pb-3>
     <div class="flex-1 mb-6">
       <Navbar>
         <slot name="navbar"></slot>
       </Navbar>
       <RouterView />
     </div>
-    <!-- <Links :links="socials" class="justify-center"/> -->
     <Footer></Footer>
-    <WelcomeMsg/>
   </main>
 </template>

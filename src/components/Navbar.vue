@@ -40,9 +40,12 @@
         <div i-carbon:tag-group ></div>
       </router-link>
 
+      <!--
       <button nav-item :title="toggleTip" @click="toggleDark()" >
         <div class="dark:i-cil:moon i-cil:sun" ></div>
       </button>
+
+      -->
 
       <slot ></slot>
     </nav>
@@ -51,7 +54,7 @@
 
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
-import { toggleDark } from "~/composables/dark";
+// import { toggleDark } from "~/composables/dark";
 
 
 const authorName = useConfigStore().getThemeConfig().authorName
@@ -60,7 +63,7 @@ const navbar = ref<HTMLElement | null>(null);
 const isFixed = ref(true);
 const isVisible = ref(true);
 
-const toggleTip = computed(() => !isDark.value ? 'Toggle Dark' : 'Toggle Light')
+// const toggleTip = computed(() => !isDark.value ? 'Toggle Dark' : 'Toggle Light')
 
 if (isClient) {
   const { y, directions } = useScroll(document);

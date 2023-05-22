@@ -64,7 +64,7 @@
     <!--About-->
     <section animate-delay-600 pt-2em>
       <p id="blockTitle" font-serif>Now</p>
-      <p class="font-mono">
+      <p class="font-mono" mt-8px>
         The programming languages I currently use regularly are Javascript and java.And i have recently been learning more about the Spring Framework and computer networking.
       </p>
       <p class="font-mono" pt-2em>
@@ -73,7 +73,7 @@
     <hr mt-15px/>
     <section animate-delay-600>
       <span id="blockTitle" font-serif>Contact</span>
-      <div grid grid-cols-3 gap-1>
+      <div grid grid-cols-3 gap-1 mt-8px>
         <div>
           <a class="connectItem"
             target="_blank"

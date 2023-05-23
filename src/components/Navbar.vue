@@ -23,11 +23,6 @@
       </router-link>
       -->
 
-      <!-- <router-link to="/projects" title="Projects" class="nav-item">
-        <div i-ph:rocket-launch-duotone />
-      </router-link> -->
-
-
       <router-link to="/posts" :title="$t('theme.nav.Blog')" class="nav-item">
         <div i-carbon:blog></div>
       </router-link>
@@ -38,6 +33,10 @@
 
       <router-link to="/tags" :title="$t('theme.nav.Tag')" class="nav-item">
         <div i-carbon:tag-group ></div>
+      </router-link>
+
+      <router-link to="/projects" :title="$t('theme.nav.Projects')" class="nav-item">
+        <div i-carbon:terminal />
       </router-link>
 
       <!--

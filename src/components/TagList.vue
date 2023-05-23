@@ -39,9 +39,8 @@
     return getPage(tagsMetaInfo[selectTag], pageNum, 'tag')
   })
 
-  const authorName = useConfigStore().getThemeConfig().authorName
   const title = useTitle()
-  title.value = `${authorName} | tag`
+  title.value = `Tag`
 
 </script>
 

@@ -34,7 +34,7 @@
 
       <!--projects-->
       <section class="blockSection">
-        <a href="/posts"
+        <a href="/projects"
           class="flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32"
         >
         <p id="blockTitle" font-serif>Projects</p><div text-base class="i-ph-arrow-up-right"></div>
@@ -57,7 +57,22 @@
 
       <!-- projects -->
       <section animate-delay-300 mt-8px>
-        Working...
+        <div mt-2 ml-2>
+          <span>0.</span>
+          <router-link to="https://github.com/MagicalZhu/NoteLib"
+                        decoration-black underline underline-offset-8	decoration-1
+                        decoration-zinc-300 hover:decoration-black>
+            <span  mt-2>NoteLib</span>
+          </router-link>
+        </div>
+        <div mt-2 ml-2>
+          <span>1.</span>
+          <router-link to="https://github.com/MagicalZhu/vitesseDoc"
+                        decoration-black underline underline-offset-8	decoration-1
+                        decoration-zinc-300 hover:decoration-black>
+            <span  mt-2>Blog</span>
+          </router-link>
+        </div>
       </section>
     </div>
 
@@ -114,13 +129,8 @@
     @apply animate-delay-300 mt-15px font-serif font-medium;
   }
 
-  .normalStyle {
-    @apply opacity8  animate-fill-both font-sans font-medium mt-8;
-  }
-
   .not-prose {
-    color: var(--un-prose-body);
-    max-width: 80ch;
+    max-width: 70ch;
     @apply mx-auto text-dark;
   }
 

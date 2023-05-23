@@ -23,4 +23,12 @@ declare module 'internal' {
     author: string,
     authorHome: string
 	}
+
+	export interface Project {
+		name: string;
+		desc?: string;
+		icon?: string;
+		home?: string;
+		repo?: string;
+	}
 }

@@ -42,9 +42,8 @@
     return getPage(categoryMetaInfo[selectCategory], pageNum, 'category')
   })
 
-  const authorName = useConfigStore().getThemeConfig().authorName
   const title = useTitle()
-  title.value = `${authorName} | category`
+  title.value = `Category`
 
 </script>
 

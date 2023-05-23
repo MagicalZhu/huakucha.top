@@ -17,42 +17,40 @@
           :style="{ '--enter-stage': index + 1 }"
     >
       <h1 :id="slug(key)"
-          mt-8 mb-2 font-black text-center font-serif text-2xl
+          mt-8 pb-4 font-black text-center font-serif text-2xl
           class="projectTitle">
         {{ key }}
       </h1>
       <div
-        class="project-grid py-2 max-w-200 w-max mx-auto h-max"
-        grid="~ cols-1 md:cols-2 lg:cols-3 gap-2"
+        class="project-grid py-8px max-w-200 w-max"
+        grid="~ cols-1 md:cols-2 lg:cols-3 gap-1"
         :class="projects[key].length === 1 ? 'flex' : ''"
-      >
+        >
         <a v-for="item, idx in projects[key]"
           :key="idx"
-          class="item relative flex items-center opacity-50 hover:opacity-100 transition-opacity"
+          class="item flex-auto items-center opacity-50 hover:opacity-100 transition-opacity"
           :href="item.repo"
           target="_blank"
           :title="item.name"
         >
-          <div class="block  transition-opacity">
-            <div font-serif text-dark flex-inline>
-              <span block> {{ item.name }}</span>
+          <template class="block transition-opacity">
+            <template font-serif text-dark flex>
+              <span> {{ item.name }}</span>
                 <a
                   target="_blank"
                   title="Git"
                   :href=item.repo
-                  font-bold text-sm opacity-50 hover:opacity-100 i-ph:git-branch block transition-opacity
-                  ml-3 mt-3px
+                  class="linkIcon i-ph:git-branch"
                 ></a>
                 <a
                   target="_blank"
                   title="Home"
+                  class="linkIcon i-ph-link"
                   :href=item.home
-                  font-bold text-sm opacity-50 hover:opacity-100 i-ph-link block transition-opacity
-                  ml-1 mt-3px
                 ></a>
-            </div>
-            <div text-sm text-dark-1 v-html="item.desc" />
-          </div>
+            </template>
+            <div text-sm text-dark-1>{{ item.desc }}</div>
+          </template>
         </a>
       </div>
     </div>
@@ -76,7 +74,10 @@
 .project-grid a.item {
   background: transparent;
   width: 350px;
-  max-width: 100%;
+}
+
+.linkIcon {
+  @apply font-bold text-sm opacity-50 hover:opacity-100 block transition-opacity ml-3 mt-3px;
 }
 
 

@@ -117,7 +117,7 @@
     layout: about
 </route>
 
-<style>
+<style scoped>
   #blockTitle {
     @apply md:text-base font-extrabold italic;
   }

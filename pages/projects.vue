@@ -9,7 +9,7 @@
     'Current Focus': [
       {
         name: 'NoteBook',
-        desc: 'Record My Learning Process',
+        desc: 'My Note Platform',
         icon: 'i-carbon:wikis saturate-0',
         repo: 'https://github.com/MagicalZhu/NoteLib',
         home: 'https://wiki.huakucha.top'
@@ -20,7 +20,7 @@
         icon: 'i-carbon:wikis saturate-0',
         repo: 'https://github.com/MagicalZhu/vitesseDoc',
         home: 'https://blog.huakucha.top'
-      },
+      }
     ]
   }
 </script>
@@ -29,6 +29,13 @@
     <ProjectList :projects="projects"/>
   </main>
 </template>
+
+<style scoped>
+  .not-prose {
+    max-width: 70ch;
+    @apply mx-auto text-dark;
+  }
+</style>
 
 <route lang="yaml">
   meta:

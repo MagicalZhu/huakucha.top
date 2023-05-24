@@ -21,7 +21,8 @@
         Hey! I'm {{authorName}}, a FE & BE developer.Currently working at a Japanese company.
       </p>
     </section>
-    <!--block-->
+
+    <!-- Post and project intro -->
     <div grid grid-cols-2 gap-1 pt-2em>
       <!--Posts-->
       <section class="blockSection">
@@ -41,7 +42,6 @@
         </a>
       </section>
     </div>
-    <!-- detail -->
     <div grid grid-cols-2 gap-1 mt-1.5em>
       <!--Posts-->
       <section animate-delay-300 mt-8px>
@@ -76,7 +76,20 @@
       </section>
     </div>
 
-    <!--About-->
+    <!-- Favorites intro -->
+    <section animate-delay-600 pt-2em>
+      <p id="blockTitle" font-serif>Fav</p>
+      <p class="font-mono" mt-8px>
+        I will bookmark some great blogs and follow some great bloggers
+        <router-link to="/share/favorites"
+                        decoration-black underline underline-offset-8	decoration-1
+                        decoration-zinc-300 hover:decoration-black>
+          here
+        </router-link>
+      </p>
+    </section>
+
+    <!--Now-->
     <section animate-delay-600 pt-2em>
       <p id="blockTitle" font-serif>Now</p>
       <p class="font-mono" mt-8px>
@@ -86,6 +99,7 @@
         Outside of programming, I also watch movies, especially science fiction and action movies, such as the Marvel series and the DC series.      </p>
     </section>
     <hr mt-15px/>
+    <!-- Contact -->
     <section animate-delay-600>
       <span id="blockTitle" font-serif>Contact</span>
       <div grid grid-cols-3 gap-1 mt-8px>

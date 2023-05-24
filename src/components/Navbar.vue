@@ -38,7 +38,7 @@
       <router-link to="/projects" :title="$t('theme.nav.Projects')" class="nav-item">
         <div i-carbon:terminal />
       </router-link>
-      <router-link to="/favorites" :title="$t('theme.nav.Favorite')" class="nav-item">
+      <router-link to="/share/favorites" :title="$t('theme.nav.Favorite')" class="nav-item">
         <div i-carbon:favorite />
       </router-link>
 

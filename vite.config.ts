@@ -44,7 +44,9 @@ export default defineConfig({
      */
     Pages({
       dirs: [
+        // blog list
         { dir: 'pages', baseRoute: '' },
+        { dir: 'share', baseRoute: 'share' },
       ],
       extensions: ["vue", "md", "js", "ts"],
       // A function that takes a route and optionally returns a modified route

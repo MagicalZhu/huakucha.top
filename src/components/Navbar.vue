@@ -38,6 +38,9 @@
       <router-link to="/projects" :title="$t('theme.nav.Projects')" class="nav-item">
         <div i-carbon:terminal />
       </router-link>
+      <a href="https://www.travellings.cn/go.html" :title="$t('theme.nav.Travelling')" class="nav-item">
+        <div i-carbon:bus />
+      </a>
       <router-link to="/share/favorites" :title="$t('theme.nav.Favorite')" class="nav-item">
         <div i-carbon:favorite />
       </router-link>

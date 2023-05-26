@@ -37,7 +37,7 @@
   const title = useTitle()
   title.value = `${authorName} | posts`
 
-  // TODO add lock
+  // TODO global
   onBeforeRouteLeave((to, from) => {
     if (getVal(to, 'meta.frontmatter.lock')) {
       const allow = localStorage.getItem('allow')
@@ -55,54 +55,56 @@
 </script>
 
 <template>
-  <!-- key is  year string -->
-  <div v-for="year in Object.keys(contentData)" :key="year">
-    <div class="relative pointer-events-none blogGroup">
-      <span class="blogYear">
-        {{year.replace('date-', '')}}
-      </span>
-    </div>
-    <article v-for="blogItem in contentData[year]"
-        :key="blogItem.path"
-        class="blogItem">
-      <router-link class="itemLink block font-normal no-underline !text-c"
-                   font="normal mono"
-                  :to="blogItem.path">
-        <div class="card">
-          <div>
-            <span class="blogTitle">{{ blogItem.title }}</span>
-          </div>
-          <div>
-            <span class="opacity-40 text-sm">
-              {{ formatDate(blogItem.date) }}
-            </span>
-            <div inline-flex float-right>
-              <span class="tagName" v-for="tagName in blogItem.tags">
-                #{{tagName}}
-             </span>
+  <main class="not-prose">
+    <!-- key is  year string -->
+    <div v-for="year in Object.keys(contentData)" :key="year">
+      <div class="relative pointer-events-none blogGroup">
+        <span class="blogYear">
+          {{year.replace('date-', '')}}
+        </span>
+      </div>
+      <article v-for="blogItem in contentData[year]"
+          :key="blogItem.path"
+          class="blogItem">
+        <router-link class="itemLink block font-normal no-underline !text-c"
+                    font="normal mono"
+                    :to="blogItem.path">
+          <div class="card">
+            <div>
+              <span class="blogTitle">{{ blogItem.title }}</span>
+            </div>
+            <div>
+              <span class="opacity-40 text-sm">
+                {{ formatDate(blogItem.date) }}
+              </span>
+              <div inline-flex float-right>
+                <span class="tagName" v-for="tagName in blogItem.tags">
+                  #{{tagName}}
+              </span>
+              </div>
             </div>
           </div>
-        </div>
-      </router-link>
-    </article>
-    <blog-item/>
-  </div>
-  <!--TODO use slot-->
-  <div class='ml-10 mr-10'>
-    <div class='prose prose-lg m-auto justify-center flex'>
-      <button class="border-gray-300 text-gray-300 border-2 rounded-lg border p-1 text-base cursor-pointer mr-4"
-              v-if="prev"
-              @click="--pageNum">
-        <span class="ml-1 pr-1">{{$t('theme.page.prev')}}</span>
-      </button>
-
-      <button class="border-gray-300 text-gray-300 border-2 rounded-lg border p-1 text-base cursor-pointer"
-              v-if="next"
-              @click="++pageNum">
-        <span class="ml-1 pr-1">{{$t('theme.page.next')}}</span>
-      </button>
+        </router-link>
+      </article>
+      <blog-item/>
     </div>
-  </div>
+    <!--TODO use slot-->
+    <div class='ml-10 mr-10'>
+      <div class='prose prose-lg m-auto justify-center flex'>
+        <button class="border-gray-300 text-gray-300 border-2 rounded-lg border p-1 text-base cursor-pointer mr-4"
+                v-if="prev"
+                @click="--pageNum">
+          <span class="ml-1 pr-1">{{$t('theme.page.prev')}}</span>
+        </button>
+
+        <button class="border-gray-300 text-gray-300 border-2 rounded-lg border p-1 text-base cursor-pointer"
+                v-if="next"
+                @click="++pageNum">
+          <span class="ml-1 pr-1">{{$t('theme.page.next')}}</span>
+        </button>
+      </div>
+    </div>
+  </main>
 </template>
 
 <style scoped>
@@ -157,4 +159,5 @@ a.itemLink {
   color: #ffffff;
   background-color: #303034;
 }
+
 </style>

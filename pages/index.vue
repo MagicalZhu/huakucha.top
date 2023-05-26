@@ -121,6 +121,15 @@
             <p>Github</p>
           </a>
         </div>
+        <div>
+          <a class="connectItem"
+            target="_blank"
+            href="https://m.cmx.im/@athu"
+          >
+            <div class="i-mdi:mastodon" ></div>
+            <p>Mastodon</p>
+          </a>
+        </div>
       </div>
     </section>
   </main>

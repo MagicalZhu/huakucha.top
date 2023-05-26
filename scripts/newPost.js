@@ -8,6 +8,8 @@ import path from 'path'
 import dayjs from 'dayjs'
 import fse from 'fs-extra'
 
+import { tags } from './data.js'
+
 
 const init = () => {
   console.log(
@@ -45,10 +47,7 @@ const askQuestions = () => {
       name: "TAGS",
       type: "checkbox",
       message: "Choose your tags?",
-      choices: [
-        "Spring", "Java", "JavaScript", "Vue", "React", "杂谈", "SpringCloud",
-        "SpringBoot", "CS", "算法", "分布式", "面试", "云原生"
-      ],
+      choices: tags,
       pageSize: 5
     },
     {

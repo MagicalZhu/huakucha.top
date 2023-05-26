@@ -2,7 +2,7 @@
   author: 'athu'
   title: C#工具方法
   tags:
-    - C#
+    - C-Sharp
   date: 2023-01-06 01:10:20
   categories: 工具库
 ---

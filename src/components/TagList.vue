@@ -45,7 +45,8 @@
 </script>
 
 <template>
-  <div class="tagout">
+  <main class="not-prose">
+    <div class="tagout">
     <span class="tagContent"
           v-for="tagName in tagData"
           :class="{ activetag: selectTag === tagName }"
@@ -55,61 +56,55 @@
         {{tagsMetaInfo[tagName].length}}
       </span>
     </span>
-  </div>
-  <!--
-  <h4 class="hstack space-x-2 text-c-light hover:text-c-dark" v-show="selectTag">
-    <div i-carbon:tag-group />
-    <span class="ml-3 font-mono">{{ selectTag }}</span>
-  </h4>
-  -->
-  <div
-      v-for="(item, index) in contentData"
-      :key="index"
-      class="my-2 mx-0.5 flex"
-    >
-    <router-link class="flex-1 !text-c font-mono"
-                :to="item.path"
-                style="border-bottom: none;">
-      <span font-bold text-gray-600 font-mono> {{ item.frontmatter.title }}</span>
-    </router-link>
-    <div class="leading-6 opacity-50 text-sm mr-2 mb-4">
-      {{ formatDate(item.date, true) }}
     </div>
-  </div>
-  <!-- page -->
-  <div class='mt-60 ml-10 mr-10'>
-    <div class='prose mx-auto text-left'>
-      <button class="btnPrevNext"
-              v-if="prev"
-              @click="--pageNum">
-        <div>
-          <span i-carbon:chevron-left class="text-sm"></span>
-          <span class="ml-1 pr-2">{{$t('theme.page.prev')}}</span>
-        </div>
-      </button>
+    <div
+        v-for="(item, index) in contentData"
+        :key="index"
+        class="my-2 mx-0.5 flex"
+      >
+      <router-link class="flex-1 !text-c font-mono"
+                  :to="item.path"
+                  style="border-bottom: none;">
+        <span font-bold text-gray-600 font-mono> {{ item.frontmatter.title }}</span>
+      </router-link>
+      <div class="leading-6 opacity-50 text-sm mr-2 mb-4">
+        {{ formatDate(item.date, true) }}
+      </div>
+    </div>
+    <!-- page -->
+    <div class='mt-60 ml-10 mr-10'>
+      <div class='prose mx-auto text-left'>
+        <button class="btnPrevNext"
+                v-if="prev"
+                @click="--pageNum">
+          <div>
+            <span i-carbon:chevron-left class="text-sm"></span>
+            <span class="ml-1 pr-2">{{$t('theme.page.prev')}}</span>
+          </div>
+        </button>
 
-      <button class="btnPrevNext float-right"
-              v-if="next"
-              @click="++pageNum">
-        <div>
-          <span class="ml-1 pr-2">{{$t('theme.page.next')}}</span>
-          <span i-carbon:chevron-right class="text-sm"></span>
-        </div>
-      </button>
+        <button class="btnPrevNext float-right"
+                v-if="next"
+                @click="++pageNum">
+          <div>
+            <span class="ml-1 pr-2">{{$t('theme.page.next')}}</span>
+            <span i-carbon:chevron-right class="text-sm"></span>
+          </div>
+        </button>
+      </div>
     </div>
-  </div>
+  </main>
 </template>
 
 
 <style scoped>
   .tagout {
     @apply flex flex-wrap  mr-4 mt-4 pb-5 justify-start;
-    @apply  border-gray-300 dark:border-gray-500;
-    /*@apply border-b-2 border-dashed ;*/
+    @apply  border-gray-300;
   }
 
   .tagContent {
-    @apply text-gray-400  dark:text-gray-300 font-mono;
+    @apply text-gray-400;
     @apply transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110;
     @apply cursor-pointer  leading-4 display-inline-block ;
     padding: 7px;
@@ -118,10 +113,10 @@
 
   .tagsCount {
     @apply relative text-base -top-2 -left-1;
-    @apply text-indigo-600 dark:text-green-5
+    @apply text-gray-300;
   }
   .activetag {
-    @apply text-dark dark:text-blue-4 font-500;
+    @apply text-dark font-500;
     background-color: #f3f3f8;
     border-radius: 6px;
   }

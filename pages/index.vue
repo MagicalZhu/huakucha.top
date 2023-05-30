@@ -62,7 +62,7 @@
           <router-link to="https://github.com/MagicalZhu/NoteLib"
                         decoration-black underline underline-offset-8	decoration-1
                         decoration-zinc-300 hover:decoration-black>
-            <span  mt-2>NoteLib</span>
+            <span mt-2>NoteLib</span>
           </router-link>
         </div>
         <div mt-2 ml-2>
@@ -70,7 +70,7 @@
           <router-link to="https://github.com/MagicalZhu/vitesseDoc"
                         decoration-black underline underline-offset-8	decoration-1
                         decoration-zinc-300 hover:decoration-black>
-            <span  mt-2>Blog</span>
+            <span mt-2>Blog</span>
           </router-link>
         </div>
       </section>
@@ -81,7 +81,7 @@
       <p id="blockTitle" font-serif>Fav</p>
       <p class="font-mono" mt-8px>
         I will bookmark some great blogs and follow some great bloggers
-        <router-link to="/share/favorites"
+        <router-link to="/share"
                         decoration-black underline underline-offset-8	decoration-1
                         decoration-zinc-300 hover:decoration-black>
           here

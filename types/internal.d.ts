@@ -22,7 +22,7 @@ declare module 'internal' {
 	/**
 	 * 留言板模块
 	 */
-  	export interface Board {
+  export interface Board {
 		title: string;
 		state: string
 		boardContent: string;

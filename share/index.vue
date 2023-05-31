@@ -7,16 +7,16 @@
   }
   const data:shareCategories[] = [
     {
-      name: 'Bloggers',
-      url: '/share/bloggers',
-      desc: 'Here are some bloggers I follow.',
-      icon: 'i-carbon:user-multiple'
-    },
-    {
       name: 'Articles',
       url: '/share/articles',
       desc: "I'll bookmark my favourite article blogs here.",
       icon: 'i-carbon:document-sentiment'
+    },
+    {
+      name: 'Bloggers',
+      url: '/share/bloggers',
+      desc: 'Here are some bloggers I follow.',
+      icon: 'i-carbon:user-multiple'
     },
     {
       name: 'Websites',
@@ -30,7 +30,7 @@
   <main class="not-prose">
     <ul role="list"  divide-gray-100 pt-2em>
       <li v-for="item in data" class="liItem">
-        <div class="flex gap-x-4">
+        <div class="flex gap-x-4" >
           <div class="shareDetailIcon" :class="item.icon"></div>
           <div class="min-w-0 flex-auto">
             <router-link :to="item.url"

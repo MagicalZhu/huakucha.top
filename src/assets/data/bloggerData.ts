@@ -7,7 +7,7 @@ export const Bloggers: Blogger[] = [
     website: 'https://antfu.me',
     github: 'https://github.com/antfu',
     avatar: 'https://antfu.me/logo.svg',
-    techLangs: 'Js'
+    techLangs: 'Js',
   },
   {
     name: '云游君',

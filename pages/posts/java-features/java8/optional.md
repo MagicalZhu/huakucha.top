@@ -143,7 +143,7 @@ System.out.println(filterSuccess.orElse("dont startsWith f"));
 System.out.println(filterFail.orElse("dont startsWith g"));
 ```
 
-# 参考资料 <Badge type="tip" text="Tip"/>
+# 参考资料
 
 <app-link to="https://pdai.tech/md/java/java8/java8-optional.html" class="sourceLink">Java8 - Optional类深度解析</app-link>
 

@@ -423,6 +423,6 @@ ENTRYPOINT ["docker-entrypoint.sh"]
     - 例如,ruby:1.9-onbuild 或 ruby:2.0-onbuild。
 4. 在 ONBUILD 中使用 ADD 或 COPY 时要格外小心。如果新的构建上下文中缺少对应的资源, "onbuild" 镜像会灾难性地失败,**建议添加一个单独的标签**
 
-# 参考资料 <Badge type="tip" text="Tip"/>
+# 参考资料
 
 1. <app-link to="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" class="sourceLink">Dockerfile最佳实践[官方文档]</app-link>

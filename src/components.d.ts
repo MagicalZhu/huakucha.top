@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Alert: typeof import('./components/Alert.vue')['default']
     AppImg: typeof import('./components/AppImg.vue')['default']
     AppLink: typeof import('./components/AppLink.vue')['default']
     Background: typeof import('./components/Background.vue')['default']
@@ -21,13 +20,6 @@ declare module '@vue/runtime-core' {
     Layout: typeof import('./components/Layout.vue')['default']
     Links: typeof import('./components/Links.vue')['default']
     Navbar: typeof import('./components/Navbar.vue')['default']
-    NButton: typeof import('naive-ui')['NButton']
-    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
-    NDataTable: typeof import('naive-ui')['NDataTable']
-    NGlobalStyle: typeof import('naive-ui')['NGlobalStyle']
-    NMessageProvider: typeof import('naive-ui')['NMessageProvider']
-    NSpace: typeof import('naive-ui')['NSpace']
-    NTable: typeof import('naive-ui')['NTable']
     Project: typeof import('./components/Project.vue')['default']
     ProjectList: typeof import('./components/ProjectList.vue')['default']
     Right: typeof import('./components/icons/Right.vue')['default']

@@ -23,7 +23,7 @@
       url: '/share/websites',
       desc: "Here are some interesting web sites.",
       icon: 'i-carbon:dns-services'
-    }
+    },
   ]
 </script>
 <template>
@@ -56,6 +56,7 @@
   .liItem {
     @apply flex justify-between gap-x-6 py-5;
   }
+
   .not-prose {
     @apply mx-auto text-dark font-mono text-base;
     max-width: 70ch;
@@ -64,5 +65,5 @@
 
 <route lang="yaml">
   meta:
-    layout: about
+    layout: fav
 </route>

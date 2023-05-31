@@ -9,11 +9,18 @@
         <div class="p-1.5 min-w-full inline-block align-middle">
           <div class="border rounded-lg divide-y divide-gray-200">
             <div class="py-3 px-4">
-              <div class="relative max-w-xs">
+              <div class="inline-flex max-w-xs">
                 <input type="text" 
-                      p-2 pl-3 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500
-                      placeholder="Search for items">
-              </div>
+                      class="queryBox"
+                      p-2 pl-3 w-full rounded-md text-sm  outline outline-2 outline-gray-200 focus:outline-blue-200
+                      placeholder="Search...">
+                  <button type="button"
+                          ml-1 px-2 pt-1 justify-center items-center  rounded-md border-transparent font-semibold
+                          hover:bg-gray-100
+                          transition-all text-sm>
+                    <div class="i-carbon:search"></div>
+                  </button>
+                </div>
             </div>
             <div class="overflow-hidden">
               <table class="min-w-full divide-y divide-gray-200">
@@ -27,8 +34,9 @@
                       </div>
                       <span pl-4>{{ item.name }}</span>
                     </td>
-                    <td class="pl-4 pr-1 pt-4 whitespace-nowrap text-base font-medium text-gray-800 flex float-right">
+                    <td class="pl-4 pr-1 py-2 whitespace-nowrap text-sm font-medium text-gray-800">
                       <Badge text="Js" type="yellow"/>
+                      <Badge text="Vue" type="green"/>
                     </td>
                     <td class="pl-4 pr-1 pt-4 whitespace-nowrap text-base font-medium text-gray-800 flex float-right">
                       <a v-if="item.website" :href="item.website" target="_blank" pr-4>

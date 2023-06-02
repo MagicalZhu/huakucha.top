@@ -299,13 +299,13 @@
   --hkc-custom-block-info-bg: rgba(219,234,254,1);
   --hkc-custom-block-info-code-bg: var(--hkc-c-gray-light-4);
 
-  --hkc-custom-block-tip-border: var(--hkc-c-green-dimm-1);
-  --hkc-custom-block-tip-text: var(--hkc-c-green-darker);
+  --hkc-custom-block-tip-border: rgb(7 120 38);
+  --hkc-custom-block-tip-text: #00502c;
   --hkc-custom-block-tip-bg: var(--hkc-c-green-dimm-3);
   --hkc-custom-block-tip-code-bg: var(--hkc-custom-block-tip-bg);
 
-  --hkc-custom-block-warning-border: var(--hkc-c-yellow-dimm-1);
-  --hkc-custom-block-warning-text: var(--hkc-c-yellow-darker);
+  --hkc-custom-block-warning-border: rgb(191 142 54);
+  --hkc-custom-block-warning-text: #8b6903;
   --hkc-custom-block-warning-bg: var(--hkc-c-yellow-dimm-3);
   --hkc-custom-block-warning-code-bg: var(--hkc-custom-block-warning-bg);
 

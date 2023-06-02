@@ -3,5 +3,5 @@
 
 <route lang="yaml">
 meta:
-  layout: showBlogs
+  layout: blogs
 </route>

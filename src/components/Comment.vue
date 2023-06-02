@@ -2,7 +2,7 @@
 <!-- Comment Component -->
 <template>
   <div class="prose mx-auto text-left mt-6 mb-8">
-  <giscus-widget v-show="CommentConfig.isOpen"
+    <giscus-widget v-show="CommentConfig.isOpen"
       :id="CommentConfig.config.id"
       :repo="CommentConfig.config.repo"
       :repoId="CommentConfig.config.repoId"

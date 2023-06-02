@@ -1,5 +1,5 @@
 .custom-block {
-  @apply border-1px rounded-md  text-base py-8px px-20px shadow-lg border-gray-200;
+  @apply border-1px rounded-md  text-base py-8px px-20px shadow-lg border-gray-200 my-20px;
   @apply dark:border-dark-3;
   line-height: 24px;
   border-left-width: 5px;

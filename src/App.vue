@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
+import getVal from 'lodash/get'
 
 const {addRouteMeta, getThemeConfig} = useConfigStore()
 
@@ -29,6 +30,7 @@ watch(
   () => isClient && window.scrollTo({ top: 0 })
 );
 
+
 if (getThemeConfig().openChat) {
   onMounted(() => {
     let script = document.createElement('script');
@@ -39,6 +41,21 @@ if (getThemeConfig().openChat) {
 }
 
 const router = useRouter()
+
+router.beforeEach(async (to, from) => {
+  if (getVal(to, 'meta.frontmatter.lock')) {
+      const allow = localStorage.getItem('allow')
+      if (allow && allow === 'true') return true
+      const sign = prompt("Enter the password...")
+      if (sign == "zyl1995"){
+        localStorage.setItem('allow', 'true')
+        return true
+      }
+      return false
+    }
+    return true
+})
+
 const routes = router.getRoutes()
 
 if(routes.length > 0) {

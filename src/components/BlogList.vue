@@ -3,7 +3,6 @@
   import {getBlogs} from '~/utils/index'
   import {getPageCount, getPage} from '~/utils/page'
   import { BlogType as Blog } from "internal";
-  import getVal from 'lodash/get'
 
   // all blogs
   const blogMetaInfo = computed(() => getBlogs())
@@ -33,24 +32,7 @@
     return blogMap
   })
 
-  const authorName = useConfigStore().getThemeConfig().authorName
-  const title = useTitle()
-  title.value = `${authorName} | posts`
-
-  // TODO global
-  onBeforeRouteLeave((to, from) => {
-    if (getVal(to, 'meta.frontmatter.lock')) {
-      const allow = localStorage.getItem('allow')
-      if (allow && allow === 'true') return true
-      const sign = prompt("Enter the password...")
-      if (sign == "zyl1995"){
-        localStorage.setItem('allow', 'true')
-        return true
-      }
-      return false
-    }
-    return true
-  })
+  useCustomTitle('Posts')
 
 </script>
 

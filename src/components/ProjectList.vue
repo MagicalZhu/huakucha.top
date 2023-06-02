@@ -2,8 +2,7 @@
   import { Project } from "internal";
   defineProps<{ projects: Record<string, Project[]> }>();
 
-  const title = useTitle()
-  title.value = `Projects`
+  useCustomTitle('Projects')
 
   function slug(name: string) {
     return name.toLowerCase().replace(/[\s\\\/]+/g, '-')

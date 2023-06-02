@@ -25,6 +25,8 @@
       icon: 'i-carbon:dns-services'
     },
   ]
+
+  useCustomTitle('Share')
 </script>
 <template>
   <main class="not-prose">

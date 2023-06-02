@@ -1,8 +1,7 @@
 <script setup lang="ts">
   import { Project } from "internal";
   // set title
-  const title = useTitle()
-  title.value = `Category`
+  useCustomTitle('Projects')
 
 
   const projects: Record<string, Project[]>  = {

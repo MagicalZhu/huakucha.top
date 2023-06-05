@@ -9,7 +9,7 @@ const colorMap: {[propsName:string]:string} = {
   green: 'bg-green-100 text-green-800',
   yellow: 'bg-yellow-100 text-yellow-800',
   red: 'bg-red-100 text-red-800',
-  gray: 'bg-gray-100 text-gray-800',
+  gray: 'bg-gray-200 text-gray-800',
   indigo: 'bg-indigo-100 text-indigo-800',
   purple: 'bg-purple-100 text-purple-800',
 }
@@ -20,8 +20,13 @@ const colorClass:string = props.type && colorMap[props.type]  ?  colorMap[props.
 
 <template>
   <span class="inline-flex items-center  py-1 px-2  mr-1 rounded-md text-sm font-medium"
-        :class="colorClass">
-    <slot>{{ text }}</slot>
+        :class="colorClass"
+        v-bind="$attrs">
+    <slot v-if="text">
+      {{ text }}
+    </slot>
+    <slot name="content" v-else>
+    </slot>
   </span>
 </template>
 <style scoped>

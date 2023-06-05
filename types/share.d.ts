@@ -24,18 +24,24 @@ type WebsiteType = 'Dev' | 'Weekly' | 'Tool' | 'Soft'
 
 type ArticleType = 'Tech' | 'Tool' | 'Life'
 
+type CollectionName = 'CS基础' | '云原生' | 'Java' | 'Spring'
+
 /**
  * 技术类型
  */
 type TechLang = 'Js' | 'Java' | 'Rust' | 'Go' | 'Python' | 'C#' | 'Cloud' | 'Middleware'
 
-
 declare module 'share' {
+  /**
+   * 社交信息
+   */
   export interface Social {
-    icon: string;
-    link: string;
-    name?: string;
-    size?: string;
+    Personal?: string,
+    Github?: string,
+    Juejin?:string,
+    InfoQ?:string,
+    Cnblogs?:string,
+    CSDN?:string
   }
 
   /**
@@ -44,7 +50,7 @@ declare module 'share' {
 	export interface Blogger {
 		name: string
     // 社交平台信息
-    social?: Social[],
+    social?: Social,
     // github 地址
 		github?: string,
     website?: string,
@@ -53,9 +59,9 @@ declare module 'share' {
     // 头像
     avatar?: string,
     // 标签
-		blogTypes: BloggerType[] | BloggerType,
+		blogTypes: BloggerType[],
     // 技术类型
-    techLangs?: TechLang[] | TechLang
+    techLangs?: TechLang[]
 	}
 
   /**
@@ -81,10 +87,10 @@ declare module 'share' {
     // 地址
     url: string,
     // 作者
-    author: Blogger,
+    author: string,
     // 标签
-		articleTypes: WebsiteType[] | WebsiteType,
+		articleTypes: WebsiteType[],
     // 技术类型
-    techLangs?: TechLang[] | TechLang
+    techLangs?: TechLang[]
   }
 }

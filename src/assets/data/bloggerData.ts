@@ -4,25 +4,35 @@ export const Bloggers: Blogger[] = [
   {
     name: 'Anthony Fu',
     blogTypes: 'Tech',
-    website: 'https://antfu.me',
-    github: 'https://github.com/antfu',
     avatar: 'https://antfu.me/logo.svg',
-    techLangs: 'Js',
+    social: {
+      Personal: 'https://antfu.me',
+      Github: 'https://github.com/antfu',
+    }
   },
   {
     name: '云游君',
     blogTypes: 'Tech',
-    website: 'https://www.yunyoujun.cn',
-    github: 'https://github.com/YunYouJun',
     avatar: 'https://www.yunyoujun.cn/images/avatar.jpg',
-    techLangs: 'Js'
+    social: {
+      Personal: 'https://www.yunyoujun.cn',
+      Github: 'https://github.com/YunYouJun',
+    }
   },
   {
     name: 'Paco Coursey',
     blogTypes: 'Tech',
-    website: 'https://paco.me/',
-    github: 'https://github.com/pacocoursey',
     avatar: 'https://paco.me/favicon.ico',
-    techLangs: 'Js'
+    social: {
+      Personal: 'https://paco.me/',
+      Github: 'https://github.com/pacocoursey',
+    }
+  }, {
+    name: '一颗剽悍的种子',
+    blogTypes: 'Tech',
+    avatar: 'https://p3-passport.byteimg.com/img/user-avatar/7784d68d9a02660260eb9e0a222afdd2~180x180.awebp',
+    social: {
+      Juejin: 'https://juejin.cn/user/3571630350551789',
+    }
   }
 ]

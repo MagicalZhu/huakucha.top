@@ -1,12 +1,10 @@
 <script setup lang="ts">
   import { Project } from "internal";
+  import { slug } from '~/utils/index'
   defineProps<{ projects: Record<string, Project[]> }>();
 
   useCustomTitle('Projects')
 
-  function slug(name: string) {
-    return name.toLowerCase().replace(/[\s\\\/]+/g, '-')
-  }
 </script>
 <template>
   <div class="max-w-300 mx-auto">
@@ -79,39 +77,6 @@
   @apply font-bold text-sm opacity-50 hover:opacity-100 block transition-opacity ml-3 mt-3px;
 }
 
-
-@media (max-width: 1200px) {
-  .not-prose .table-of-contents{
-    display: none;
-  }
-}
-
-.not-prose .table-of-contents {
-  position: fixed;
-  top: 80px;
-  padding-top: 70px;
-  font-size: 0.8em;
-  right: 10px;
-  width: 150px;
-  bottom: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  opacity: 0;
-  transition: all .4s ease-out;
-}
-
-.not-prose .table-of-contents:hover {
-  opacity: 1.0;
-}
-
-.not-prose .table-of-contents ul > li::before {
-  display: none;
-}
-
-.not-prose .table-of-contents ul > li {
-  padding-left: 0.8rem;
-}
 </style>
 
 

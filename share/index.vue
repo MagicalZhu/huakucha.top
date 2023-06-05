@@ -1,67 +1,66 @@
 <script setup lang="ts">
-  export interface shareCategories {
-    name: string,
-    url: string,
-    desc: string,
-    icon: string
-  }
-  const data:shareCategories[] = [
-    {
-      name: 'Articles',
-      url: '/share/articles',
-      desc: "I'll bookmark my favourite article blogs here.",
-      icon: 'i-carbon:document-sentiment'
-    },
-    {
-      name: 'Bloggers',
-      url: '/share/bloggers',
-      desc: 'Here are some bloggers I follow.',
-      icon: 'i-carbon:user-multiple'
-    },
-    {
-      name: 'Websites',
-      url: '/share/websites',
-      desc: "Here are some interesting web sites.",
-      icon: 'i-carbon:dns-services'
-    },
-  ]
+  import bloggers from '~/components/share/bloggers.vue'
+  import articles from '~/components/share/articles.vue'
+  import websites from '~/components/share/websites.vue'
 
+  const currentTab = ref('articles')
+  const searchKey = ref('')
+
+  const tabs = {
+    articles,
+    bloggers,
+    websites
+  }
+  const changeTab = (selectTab:string) => {
+    searchKey.value = ''
+    currentTab.value = selectTab
+  }
   useCustomTitle('Share')
+  const clear = () => {
+    searchKey.value = ''
+  }
 </script>
 <template>
   <main class="not-prose">
-    <ul role="list"  divide-gray-100 pt-2em>
-      <li v-for="item in data" class="liItem">
-        <div class="flex gap-x-4" >
-          <div class="shareDetailIcon" :class="item.icon"></div>
-          <div class="min-w-0 flex-auto">
-            <router-link :to="item.url"
-                        decoration-black underline underline-offset-8	decoration-1
-                        decoration-zinc-300 hover:decoration-black
-                        >
-              {{ item.name }}
-            </router-link>
-            <p class="mt-1 ml-1 truncate text-xs leading-5 text-gray-500">{{ item.desc }}</p>
-          </div>
+    <nav class="-mb-0.5 flex justify-center space-x-5">
+      <button
+          v-for="(_, tab) in tabs"
+          :key="tab"
+          :class="['tab', { active: currentTab === tab }]"
+          @click="changeTab(tab)"
+        >
+          {{ $t(`theme.fav.${tab}`) }}
+      </button>
+    </nav>
+    <div>
+      <div class="relative mx-auto w-4/5 mb-8 mt-2">
+        <input type="text"
+              v-model="searchKey"
+              class="py-2 px-4 pl-11 block w-full w-full rounded-md text-sm  outline outline-2 outline-gray-200 focus:outline-blue-200"
+              :placeholder="`Search  ${currentTab}...`">
+        <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none z-20 pl-4">
+          <span i-carbon-search text-gray-400></span>
         </div>
-        <!-- <p class="mt-4 text-xs leading-5 text-gray-500">Last update <time datetime="2023-01-23T13:23Z">3h ago</time></p> -->
-      </li>
-    </ul>
+        <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none z-20 pr-4">
+          <button  @click="clear"
+                  :class="searchKey !== '' ? 'i-carbon:close-outline text-gray-400 cursor-pointer pointer-events-auto' : ''">
+          </button>
+        </div>
+      </div>
+    </div>
+    <KeepAlive>
+      <component :is="tabs[currentTab]" :searchKey="searchKey"></component>
+    </KeepAlive>
   </main>
 </template>
 
-
 <style scoped>
-  .shareDetailIcon {
-    @apply bg-gray-8 h-13 w-8 flex-none rounded-full;
+  .tab {
+    @apply py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent  whitespace-nowrap;
+    @apply opacity-50 hover:opacity-100 transition-opacity font-extrabold text-sm;
   }
-  .liItem {
-    @apply flex justify-between gap-x-6 py-5;
-  }
-
-  .not-prose {
-    @apply mx-auto text-dark font-mono text-base;
-    max-width: 70ch;
+  .tab.active {
+    @apply opacity-100;
   }
 </style>
 

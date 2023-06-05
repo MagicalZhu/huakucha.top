@@ -14,3 +14,7 @@ theme:
     Projects: Projects
     Favorite: Favorite
     Travelling: Travelling
+  fav:
+    articles: Articles
+    bloggers: Bloggers
+    websites: Websites

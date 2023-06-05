@@ -9,6 +9,16 @@ export function formatDate(d: string | Date, hasYear: boolean = false) {
   return date.format('MMM D , YYYY')
 }
 
+export function queryInStringArray(ary: string[] , key:string) {
+  return ary.filter((item) => {
+    return item.toLowerCase().indexOf(key.toLowerCase()) > -1
+  })
+}
+
+export function slug(name: string) {
+  return name.toLowerCase().replace(/[\s\\\/]+/g, '-')
+}
+
 /**
  * @description 获取所有的博客信息
  * TODO 移动到全局变量

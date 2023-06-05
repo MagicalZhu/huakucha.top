@@ -10,8 +10,10 @@ declare module '@vue/runtime-core' {
     AppImg: typeof import('./components/AppImg.vue')['default']
     AppLink: typeof import('./components/AppLink.vue')['default']
     Archive: typeof import('./components/Archive.vue')['default']
+    Articles: typeof import('./components/share/articles.vue')['default']
     Background: typeof import('./components/Background.vue')['default']
     Badge: typeof import('./components/Badge.vue')['default']
+    Bloggers: typeof import('./components/share/bloggers.vue')['default']
     BlogList: typeof import('./components/BlogList.vue')['default']
     ButtonNav: typeof import('./components/ButtonNav.vue')['default']
     Comment: typeof import('./components/Comment.vue')['default']
@@ -28,6 +30,7 @@ declare module '@vue/runtime-core' {
     SendMessage: typeof import('./components/SendMessage.vue')['default']
     TimeIcon: typeof import('./components/icons/TimeIcon.vue')['default']
     ToggleTheme: typeof import('./components/ToggleTheme.vue')['default']
+    Websites: typeof import('./components/share/websites.vue')['default']
     WelcomeMsg: typeof import('./components/WelcomeMsg.vue')['default']
   }
 }

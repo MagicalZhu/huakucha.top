@@ -14,3 +14,10 @@ theme:
     Projects: 项目
     Favorite: 收藏
     Travelling: 开往
+  fav:
+    articles: 文章
+    bloggers: 博主
+    websites: 网站
+    CS_Basic: CS 基础
+    FE_Tech: 前端技术
+

@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import  { Bloggers }  from '~/assets/data/bloggerData'
   import  { Blogger } from 'share'
+  import { getColor } from '~/utils/badgeUtil'
+  import { queryInStringArray } from '~/utils/index'
   import filter from 'lodash/filter'
   import debounce from 'lodash/debounce'
   const BloggerData = ref(Bloggers || [])
@@ -29,56 +31,56 @@
       BloggerData.value = Bloggers
     } else {
       BloggerData.value = filter(Bloggers, (item: Blogger) => {
-        if(item.name.toLowerCase().indexOf(props.searchKey.toLowerCase()) > -1) {
+        if(item.name.toLowerCase().indexOf(props.searchKey.toLowerCase()) > -1 ||
+          queryInStringArray(item.blogTypes, props.searchKey).length > 0 ||
+          queryInStringArray(item.techLangs ?? [], props.searchKey).length > 0) {
           return true
         }
         return false
       })
     }
   }, 300)
+
 </script>
 <template>
   <div class="overflow-hidden mx-auto w-4/5">
-    <template v-if="BloggerData.length!==0">
-      <table class="min-w-full divide-y divide-gray-200">
-        <tbody>
-          <tr v-for="item in BloggerData">
-            <td class="pl-2 pr-1 py-2 whitespace-nowrap text-sm font-medium text-gray-800">
-              <div class="relative inline-block">
-                <img class="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-gray-100"
-                    :src="item.avatar" alt="Image Description">
-                <!-- <span class="absolute bottom-0 right-0 block h-2 w-2 rounded-full ring-2 ring-white bg-green-300"></span> -->
-              </div>
-              <span pl-4>{{ item.name }}</span>
-            </td>
-            <!-- <td class="pl-4 pr-1 py-2 whitespace-nowrap text-sm font-medium text-gray-800">
-              <Badge text="Js" type="yellow"/>
-              <Badge text="Vue" type="green"/>
-            </td> -->
-            <td class="pl-4 pr-1 pt-4 whitespace-nowrap text-base font-medium text-gray-800 flex float-right">
-              <a v-for="(url, name) in item.social" :href="url" target="_blank" pr-4 :title="name">
+    <template v-if="BloggerData.length !==0">
+      <div class="maxHeight overflow-y-auto">
+        <ul class="divide-y divide-gray-100">
+          <li class="flex justify-between gap-x-6 py-5"  v-for="item in BloggerData">
+            <div class="flex gap-x-4">
+              <img class="h-12 w-12 flex-none rounded-full bg-gray-50" 
+                    :src="item.avatar"
+                    alt="">
+              <div class="min-w-0 flex-auto">
+                <p class="text-sm font-semibold leading-6 text-gray-900">{{ item.name }}</p>
+                <div class="mt-1 truncate text-base leading-5 text-gray-500 flex">
+                  <a v-for="(url, name) in item.social" :href="url" pr-3 target="_blank"  :title="name">
                     <div :class="socicalMap[name]"></div>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center" >
+              <Badge :text="tagItem" :type="getColor(tagItem)" v-for="tagItem in item.blogTypes.concat(item.techLangs ?? [])"/>
+            </div>
+          </li>
+        </ul>
+      </div>
     </template>
     <template v-else>
-      <table class="min-w-full divide-y divide-gray-200">
-        <tbody>
-          <tr>
-            <td class="pl-4 pr-1 py-4 whitespace-nowrap text-sm font-medium text-gray-800 text-center">
-              No Data....
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="pl-4 pr-1 py-4 whitespace-nowrap text-sm font-medium text-gray-800 text-center">
+        No Data....
+      </div>
     </template>
   </div>
 </template>
 
 <style scoped>
+
+  .maxHeight {
+    max-height: 60vh;
+  }
   .not-prose {
     @apply mx-auto text-dark font-mono text-base;
     max-width: 70ch;

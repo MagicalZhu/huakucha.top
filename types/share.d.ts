@@ -3,7 +3,7 @@
  *    Tech: 技术
  *    Share: 分享
  */
-type BloggerType = 'Tech' | 'Share'
+type BloggerType = 'Tech' | 'Share' | 'Fun'
 
 /**
  * 定义有趣的网站的类型
@@ -29,7 +29,7 @@ type CollectionName = 'CS基础' | '云原生' | 'Java' | 'Spring'
 /**
  * 技术类型
  */
-type TechLang = 'Js' | 'Java' | 'Rust' | 'Go' | 'Python' | 'C#' | 'Cloud' | 'Middleware'
+type TechLang = 'Js' | 'Java' | 'Rust' | 'Go' | 'Python' | 'C#' | 'Cloud' | 'Middleware' | 'Swift'
 
 declare module 'share' {
   /**

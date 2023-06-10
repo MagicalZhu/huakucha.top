@@ -19,15 +19,16 @@
 </script>
 
 <template>
-  <footer font="mono"
-          text="sm center c-lighter"
-          bottom-2>
-      <span>
-          {{ weekMap.get(time.getDay()) }}, <time :datetime="time.toISOString()" :title="time.toISOString()">{{ time.toLocaleTimeString('en-US', { hour12: false }) }}</time>
+  <footer>
+    <ul font-mono text-sm text-c-lighter bottom-2 text-center>
+      <li class="inline-block relative pr-8"
+          v-html="getThemeConfig().footer.copyright">
+      </li>
+      <li class="right-10px inline-block absolute">
+        {{ weekMap.get(time.getDay()) }}, <time :datetime="time.toISOString()" :title="time.toISOString()">{{ time.toLocaleTimeString('en-US', { hour12: false }) }}</time>
           · Built <time :datetime="buildTime" :title="buildTime">{{ buildTimeAgo }}</time>
-      </span>
-      <br/>
-      <span v-html="getThemeConfig().footer.copyright"></span>
+      </li>
+    </ul>
   </footer>
   <Background/>
 </template>

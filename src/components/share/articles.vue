@@ -55,7 +55,7 @@
         </div>
         <div v-for="articleItem in ArticleData[item]" class="mx-auto w-4/5 ">
           <div class="grid grid-flow-col auto-cols-auto mb-3">
-            <div whitespace-nowrap overflow-hidden text-ellipsis text-center mx-auto>
+            <div whitespace-nowrap overflow-hidden text-ellipsis text-center md:mx-auto sm:mx-4>
               <a :href="articleItem.url"
                   target="_blank"
                  class="border-none cursor-pointer hover:opacity-30"
@@ -76,7 +76,7 @@
       <!--toc-->
       <div class="table-of-contents">
         <ul>
-          <li v-for="key of Object.keys(ArticleData)" :key="key">
+          <li v-for="key of Object.keys(ArticleData)" :key="key" opacity-50 hover:opacity-100>
             <a font-mono text-sm :href="`#${slug(key)}`">{{ $t(`theme.fav.${key}`) }} </a>
           </li>
         </ul>
@@ -96,7 +96,7 @@
   }
 
   .not-prose .table-of-contents {
-    @apply opacity-50 hover:opacity-100;
+    @apply opacity-50;
   }
 
 </style>

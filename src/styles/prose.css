@@ -115,6 +115,7 @@ mark {
   transition: all .4s ease-out;
   opacity: 1;
   height: 75%;
+  word-break: break-all;
 }
 
 .prose .table-of-contents:hover {

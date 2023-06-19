@@ -13,11 +13,11 @@
 
 [[TOC]]
 
-我们知道,Bean 的实例化方式有很多种, 比如构造器、Setter、静态工厂方法(factory-method)、实例工厂方法(factory-method + factory-bean),初次之外还有 FactoryBean
+我们知道,Bean 的实例化方式有很多种, 比如构造器、Setter、静态工厂方法(factory-method)、实例工厂方法(factory-method + factory-bean),除此之外还有 FactoryBean
 
 # 示例代码
 
-为了测试,首先定义一个 pojo 对象 *User*
+为了测试,首先定义一个 pojo 对象 **User**
 
 ```java
 /**

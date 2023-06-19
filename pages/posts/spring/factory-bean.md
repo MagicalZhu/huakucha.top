@@ -222,11 +222,11 @@ private String[] doGetBeanNamesForType(ResolvableType type,
 需要留意下面几点:
 
 1. `transformedBeanName()`
-    - 这个方法很简单,用于转换 beanName,基本的思路: 如果 beanName 以`&` 开始,则返回 & 之后的字符串,否则直接返回 beanName
+    - 这个方法很简单,用于转换 "beanName"
+    - 基本的思路: 如果依赖查找使用的 name 以 `&` 开始,则返回 & 之后的字符串作为 beanName,否则直接返回 name 作为 beanName
 2. `getSingleton(beanName, () -> {...})`
     - 这个方法主要用于通过 beanName 和 RootBeanDefinition 创建 bean 对象
     - 方法中的函数式接口是 `ObjectFactory<?> singletonFactory`
-
 3. `getObjectForBeanInstance`
     - 这个方法主要是获取 Bean 对象
 
@@ -283,6 +283,78 @@ protected <T> T doGetBean(final String name,
 
 ### getObjectForBeanInstance
 
-# 总结
+> 此时,根据 beanName 已经创建好了 bean 对象,但是还需要一些额外的操作,因为对于 FactoryBean 和 非 FactoryBean 会有不同的处理
 
-1. Spring 框架定义了FactoryBean 的前缀符(Prefix) 是 `&`
+首先需要关注的是方法参数列表:
+
+1. `sharedInstance`
+    - 由 *createBean* 创建 bean 对象
+2. `name`
+    - 依赖查找时传入的 beanName
+3. `beanName`
+    - 经过 *transformedBeanName* 转换后的 beanName
+    - 即如果传入的 beanName 包含 **&** 的话, name 会将其截掉
+4. `mbd`
+    - bean 的 BeanDefinition 信息
+
+其次,我们需要关注几个方法:
+
+1. `isFactoryDereference`
+    - 该方法判断是否是 FactoryBean 间接引用
+    - 判断的思路是: 依赖查询使用的 beanName 是否以 `&` 开始
+
+2. `getObjectFromFactoryBean`
+    - 该方法就是利用 FactoryBean 创建一个 bean,比如这里就是利用 UserFactory 创建 User
+    - 实际上是调用 FactoryBean#getObject 方法
+
+```java {lines: '7,31'}
+protected Object getObjectForBeanInstance(Object beanInstance, 
+            String name,
+            String beanName,
+            @Nullable RootBeanDefinition mbd) {
+
+  // 判断是否直接使用 FactoryBean 对象
+  if (BeanFactoryUtils.isFactoryDereference(name)) {
+    // ...
+    return beanInstance;
+  }
+  // 如果不需要直接使用 FactoryBean 对象
+
+  if (!(beanInstance instanceof FactoryBean)) {
+    // 如果 bean 不是 FactoryBean,直接返回
+    return beanInstance;
+  }
+
+  // 如果是 FactoryBean,则利用 FactoryBean 创建 bean 对象
+  Object object = null;
+  if (mbd != null) {
+    mbd.isFactoryBean = true;
+  }
+  else {
+    object = getCachedObjectForFactoryBean(beanName);
+  }
+  if (object == null) {
+    // 将 bean 转为 FactoryBean
+    FactoryBean<?> factory = (FactoryBean<?>) beanInstance;
+    // cache 处理 ...
+    // 利用 FactoryBean 创建 bean 对象
+    object = getObjectFromFactoryBean(factory, beanName, !synthetic);
+  }
+  return object;
+}
+```
+
+到这里我们知道了大致流程:
+
+1. 根据类型进行依赖查找的时候,会找到与类型匹配的 beanName,如果存在 FactoryBean,则会判断 FactoryBean#getObjectType 与 类型是否匹配
+2. 利用找到的 beanName 进行 getBean 操作(getBean 的时候还会进行createBean),在getBean 时会判断 传入的 beanName 是否以 & 开始
+    - 如果是,就直接返回创建的对象
+    - 如果不是,再判断创建的对象是否是 FactoryBean 类型
+      - 如果是, 则将创建的对象转为 FactoryBean ,并调用 getObject 并返回
+      - 如果不是,则直接返回创建的对象
+
+到这里,我们明白了问题 1、2、3,并且问题 4 的答案页呼之欲出,调用 `beanFactory.getBean("&userFactory");` 可以获取 userFactory 的 bean 对象
+
+:::tip 提示
+Spring 框架定义了FactoryBean 的前缀符(Prefix) 是 `&`
+:::

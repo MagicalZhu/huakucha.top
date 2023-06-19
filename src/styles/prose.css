@@ -112,9 +112,8 @@ mark {
   padding-right: 1.375rem;
   text-align: inherit;
   font-size: 14px;
-  transition: all .4s ease-out;
+  transition: all .6s ease-out;
   opacity: 1;
-  height: 75%;
   word-break: break-all;
 }
 

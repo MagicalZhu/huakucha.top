@@ -112,6 +112,9 @@ export default defineConfig({
       headEnabled: true,
       markdownItOptions: {
         quotes: '""\'\'',
+        html: true,
+        linkify: true,
+        typographer: true,
       },
       wrapperClasses: 'prose   mx-auto text-left slide-enter-content',
       markdownItSetup: (md) => installMarkdownPlugins(md)

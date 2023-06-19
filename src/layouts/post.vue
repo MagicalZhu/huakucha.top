@@ -103,6 +103,19 @@ onMounted(() => {
     }
   };
 
+  const handleScroll = () => {
+    if (isToc.value) {
+      const toc = document.querySelector(".table-of-contents");
+      const { y } = useWindowScroll()
+      if (y.value === 0) {
+        toc.style.top ='5em'
+      } else {
+        toc.style.top = y.value + 'px'
+      }
+    }
+  }
+
+  useEventListener(window, "scroll", handleScroll);
   useEventListener(window, "hashchange", navigate);
   useEventListener(content.value!, "click", handleAnchors, { passive: false });
   navigate();
@@ -119,6 +132,7 @@ onMounted(() => {
     nextTick(() => {
       if (isClient) {
         const toc = document.querySelector(".table-of-contents");
+        toc.style.top = '5em'
         isToc.value = toc ? true : false;
       }
     });

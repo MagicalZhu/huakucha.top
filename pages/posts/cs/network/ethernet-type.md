@@ -28,7 +28,7 @@
 |0x0000 - 0x05DC  | IEEE 802.3 长度 |
 |0x0101 - 0x01FF  | 实验 |
 |0x0600           | XEROX NS IDP |
-|0x0660 - 0x0661 |        |  DLOG |
+|0x0660 - 0x0661  | DLOG |
 |`0x0800`        | `网际协议( IP)`|
 |0x0801          | X.75 Internet|
 |0x0802          | NBS Internet|

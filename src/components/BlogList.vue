@@ -73,13 +73,13 @@
     <!--TODO use slot-->
     <div class='ml-10 mr-10'>
       <div class='prose prose-lg m-auto justify-center flex'>
-        <button class="border-gray-300 text-gray-300 border-2 rounded-lg border p-1 text-base cursor-pointer mr-4"
+        <button class="btn mr-4"
                 v-if="prev"
                 @click="--pageNum">
           <span class="ml-1 pr-1">{{$t('theme.page.prev')}}</span>
         </button>
 
-        <button class="border-gray-300 text-gray-300 border-2 rounded-lg border p-1 text-base cursor-pointer"
+        <button class="btn"
                 v-if="next"
                 @click="++pageNum">
           <span class="ml-1 pr-1">{{$t('theme.page.next')}}</span>
@@ -109,7 +109,7 @@ a.itemLink {
 }
 
 .blogTitle {
-  @apply font-bold text-gray-600 font-mono;
+  @apply font-bold text-dark-900 font-mono;
 }
 
 .card {
@@ -140,6 +140,16 @@ a.itemLink {
 .dark .tagName {
   color: #ffffff;
   background-color: #303034;
+}
+
+.btn {
+  @apply border-gray-300 text-dark-900 border  border-1 rounded-lg  p-2 px-3 font-500 text-base cursor-pointer bg-c font-serif;
+  @apply hover:border-dark-900;
+}
+
+.btn:hover{
+  background-color: #fff !important;
+  color: #000 !important;
 }
 
 </style>

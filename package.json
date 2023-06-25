@@ -17,7 +17,7 @@
   "dependencies": {
     "@akiravoid/markdown-it-mark": "^1.0.2",
     "@akiravoid/markdown-it-sup": "^1.0.2",
-    "@fontsource/roboto": "^5.0.0",
+    "@iconify-json/prime": "^1.1.5",
     "@iconify-json/simple-icons": "^1.1.54",
     "@renovamen/utils": "^0.1.0",
     "@types/lodash": "^4.14.186",

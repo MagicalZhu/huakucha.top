@@ -4,7 +4,7 @@
 }
 
 .text-c {
-  color: #6F6F6F;
+  color: #6B7280;
 }
 .dark .text-c {
   color: #C8CCD0;
@@ -181,9 +181,14 @@ mark {
 
 .prose blockquote {
   @apply pl-4 pt-2px pb-2px  border-l-3px text-base not-italic rounded;
-  @apply border-gray-300;
-  @apply bg-gray-50;
-  border-left: .25em solid #000;
+
+  border-left-width: 0.25rem;
+  border-left-color: #e5e7eb;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  margin-left: 10px;
+  padding-left: 1em;
+  opacity: .8;
 }
 
 .dark blockquote {
@@ -239,4 +244,9 @@ mark {
 
 .prose input[id*=checkbox] {
   margin-right: 10px;
+}
+
+.prose em {
+  margin-left: 5px;
+  margin-right: 3px;
 }

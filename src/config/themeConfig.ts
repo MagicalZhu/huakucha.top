@@ -30,7 +30,7 @@ export const ThemeConfig: siteConfig = {
     labels: 'borad'
   },
   footer: {
-    copyright: `© YuLiang Zhu 2022-${new Date().getFullYear()} & Its only a test,see what happens.`
+    copyright: `YuLiang Zhu © ${new Date().getFullYear()} & Its only a test,see what happens.`
   },
   toc: {
     isTocOpen: false,

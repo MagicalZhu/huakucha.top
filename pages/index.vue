@@ -17,7 +17,7 @@
     </section>
 
     <section>
-      <p class="font-mono pt-5">
+      <p class="font-mono pt-5" text-base>
         Hey! I'm {{authorName}}, a FE & BE developer.Currently working at a Japanese company.
       </p>
     </section>
@@ -50,7 +50,7 @@
           <router-link :to="article.path"
                         decoration-black underline underline-offset-8	decoration-1
                         decoration-zinc-300 hover:decoration-black>
-            <span  mt-2>{{ article.title }}</span>
+            <em  mt-2>{{ article.title }}</em>
           </router-link>
         </div>
       </section>
@@ -62,7 +62,7 @@
           <router-link to="https://github.com/MagicalZhu/NoteLib"
                         decoration-black underline underline-offset-8	decoration-1
                         decoration-zinc-300 hover:decoration-black>
-            <span mt-2>NoteLib</span>
+            <em mt-2>NoteLib</em>
           </router-link>
         </div>
         <div mt-2 ml-2>
@@ -70,7 +70,7 @@
           <router-link to="https://github.com/MagicalZhu/vitesseDoc"
                         decoration-black underline underline-offset-8	decoration-1
                         decoration-zinc-300 hover:decoration-black>
-            <span mt-2>Blog</span>
+            <em mt-2>Blog</em>
           </router-link>
         </div>
       </section>
@@ -83,8 +83,9 @@
         I will bookmark some great blogs and follow some great bloggers
         <router-link to="/share"
                         decoration-black underline underline-offset-8	decoration-1
+                        underline-dashed
                         decoration-zinc-300 hover:decoration-black>
-          here
+          <em>here</em>
         </router-link>
       </p>
     </section>
@@ -142,14 +143,14 @@
 
 <style scoped>
   #blockTitle {
-    @apply md:text-base font-extrabold italic;
+    @apply md:text-base font-600 italic;
   }
   #blockTitle::before {
-    content: ":: ";
+    content: "::: ";
   }
 
   .blockSection {
-    @apply animate-delay-300 mt-15px font-serif font-medium;
+    @apply animate-delay-300 mt-15px font-serif;
   }
 
   .not-prose {

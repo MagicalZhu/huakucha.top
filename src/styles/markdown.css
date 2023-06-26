@@ -68,7 +68,6 @@ html:not(.dark) .shiki-dark {
   */
   color: #047857;
   background-color: #d1fae5;
-  font-weight: 600;
 }
 
 .dark .prose code:not(pre.shiki code) {

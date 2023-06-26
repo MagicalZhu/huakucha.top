@@ -7,8 +7,8 @@ defineProps<{
 
 
 <template>
-  <figure>
+  <figure w-fit m-auto>
     <img :src="src"/>
-    <figcaption text-gray-400 text-sm text-center select-none>{{intro}}</figcaption>
+    <figcaption text-gray-400 text-sm text-center  pt-3>{{intro}}</figcaption>
   </figure>
 </template>

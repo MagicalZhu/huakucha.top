@@ -109,7 +109,7 @@ a.itemLink {
 }
 
 .blogTitle {
-  @apply font-bold text-dark-900 font-mono;
+  @apply font-bold text-dark-900 font-mono text-lg;
 }
 
 .card {

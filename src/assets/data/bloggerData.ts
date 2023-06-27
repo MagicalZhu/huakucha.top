@@ -164,5 +164,13 @@ export const Bloggers: Blogger[] = [
       Github: 'https://github.com/ddiu8081'
     },
     techLangs: ['Js']
+  },{
+    name: 'zhaoolee',
+    blogTypes: ['Share'],
+    avatar: 'https://avatars.githubusercontent.com/u/15868458?v=4',
+    social: {
+      Personal: 'https://www.v2fy.com',
+      Github: 'https://github.com/zhaoolee'
+    }
   }
 ]

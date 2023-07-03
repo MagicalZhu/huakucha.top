@@ -172,5 +172,13 @@ export const Bloggers: Blogger[] = [
       Personal: 'https://www.v2fy.com',
       Github: 'https://github.com/zhaoolee'
     }
+  },{
+    name: '徐靖峰',
+    blogTypes: ['Tech'],
+    avatar: 'https://www.cnkirito.moe/img/avatar.png',
+    social: {
+      Personal: 'https://www.cnkirito.moe/',
+      Github: 'https://github.com/lexburner'
+    }
   }
 ]

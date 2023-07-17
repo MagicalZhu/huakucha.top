@@ -83,7 +83,7 @@
         I will bookmark some great blogs and follow some great bloggers
         <router-link to="/share"
                         decoration-black underline underline-offset-8	decoration-1
-                        underline-dashed
+                        underline-solid
                         decoration-zinc-300 hover:decoration-black>
           <em>here</em>
         </router-link>

@@ -10,7 +10,7 @@
       </button>
     </template>
 
-    <div class="prose mx-auto text-left mt-6 mb-8">
+    <div class="prose mx-auto text-center mt-6 mb-8">
       <h1 class="text-4xl font-bold">{{ title }}</h1>
       <p class="mt-6 ml-2">
         <span class="intro">

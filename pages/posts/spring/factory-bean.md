@@ -103,7 +103,7 @@ public class FactoryBeanDemo {
 
 我们看下测试结果:
 
-<AppImg src="https://cdn.staticaly.com/gh/MagicalZhu/image-host@master/spring/测试1.webp"
+<AppImg src="https://jsd.cdn.zzko.cn/gh/MagicalZhu/image-host@master/spring/测试1.webp"
         intro="测试1"/>
 
 现在有 4 个问题:

@@ -21,5 +21,5 @@
 - <a href="https://www.jetbrains.com/?from=huakucha.top"><img src="/public/img/jetbrains.jpg" width="100px" alt="jetbrains">**感谢 JetBrains 提供的免费开源 License**</a>
 
 # Active
-![Alt](https://repobeats.axiom.co/api/embed/74e3dcacf0b80b12fd7561d96f92ae4878b42dc4.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/5c6b08adb7589d4509b1f017c48c86c034c43222.svg "Repobeats analytics image")
 

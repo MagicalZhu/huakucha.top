@@ -41,6 +41,9 @@
       <a href="https://www.travellings.cn/go.html" :title="$t('theme.nav.Travelling')" class="nav-item">
         <div i-carbon:bus />
       </a>
+      <router-link to="/rss" :title="$t('theme.nav.Rss')" class="nav-item">
+        <div i-carbon:rss />
+      </router-link>
       <router-link to="/share" :title="$t('theme.nav.Favorite')" class="nav-item">
         <div i-carbon:favorite />
       </router-link>

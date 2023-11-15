@@ -1,56 +1,40 @@
 <script setup lang="ts">
+  import { formatDate } from "~/utils"
+import { Amazon } from '~/api/blog'
 
-import Blog from '~/api/blog/index'
-const data = await Blog.Amazon.aws()
-console.log(data)
+const AmazonBlog = ref([])
 
-const people = [
-  {
-    name: '',
-    email: 'dries.vincent@example.com',
-    role: 'Business Relations',
-    imageUrl:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    lastSeen: null,
-  },
-  {
-    name: 'Lindsay Walton',
-    email: 'lindsay.walton@example.com',
-    role: 'Front-end Developer',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z',
-  },
-]
+Amazon.aws().then((response) => {
+  AmazonBlog.value = response.data.items || []
+})
+
 </script>
+
 <template>
   <main class="not-prose">
     <head class="-mb-0.5 flex justify-center space-x-5">
-      <h1 class="font-extrabold text-[4em]">RssSub</h1>
+      <h1 class="font-extrabold text-[4em]">RssHub</h1>
     </head>
     <hr class="mt-[2em]"/>
-    <ul role="list" class="divide-y divide-gray-100">
-      <li v-for="person in people" :key="person.email" class="flex justify-between gap-x-6 py-5">
-        <div class="flex min-w-0 gap-x-4">
-          <img class="h-12 w-12 flex-none rounded-full bg-gray-50" :src="person.imageUrl" alt="" />
-          <div class="min-w-0 flex-auto">
-            <p class="text-sm font-semibold leading-6 text-gray-900">{{ person.name }}</p>
-            <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{ person.email }}</p>
-          </div>
-        </div>
-        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-          <p class="text-sm leading-6 text-gray-900">{{ person.role }}</p>
-          <p v-if="person.lastSeen" class="mt-1 text-xs leading-5 text-gray-500">
-            Last seen <time :datetime="person.lastSeenDateTime">{{ person.lastSeen }}</time>
+    <ul>
+      <li v-for="blog in AmazonBlog" :key="blog.id" class="flex justify-between gap-x-6 py-3">
+        <a :href="blog.url" target="_blank">
+          <p class="mt-1 truncate leading-5 text-gray-500 max-w-sm md:max-w-lg">{{ blog.title }}</p>
+        </a>
+        <span class="mt-1  leading-5 text-gray-500">
+            {{ formatDate(blog.date_published, true)  }}
+        </span>
+        <!-- <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+          <p class="mt-1  leading-5 text-gray-500">
+            {{ formatDate(blog.date_published, true)  }}
           </p>
-          <div v-else class="mt-1 flex items-center gap-x-1.5">
+          <div class="mt-1 flex items-center gap-x-1.5">
             <div class="flex-none rounded-full bg-emerald-500/20 p-1">
               <div class="h-1.5 w-1.5 rounded-full bg-emerald-500" />
             </div>
             <p class="text-xs leading-5 text-gray-500">Online</p>
           </div>
-        </div>
+        </div> -->
       </li>
     </ul>
   </main>

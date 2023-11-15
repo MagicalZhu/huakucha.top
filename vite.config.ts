@@ -10,7 +10,6 @@ import Markdown from 'vite-plugin-vue-markdown'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Unocss from 'unocss/vite'
-import commonjs from 'vite-plugin-commonjs'
 
 // import elementui-plus
 import {
@@ -135,8 +134,6 @@ export default defineConfig({
      * @see https://github.com/antfu/vite-plugin-inspect
      */
     Inspect(),
-    commonjs({
-    }),
   ],
 
 

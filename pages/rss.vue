@@ -1,5 +1,9 @@
 <script setup lang="ts">
 
+import Blog from '~/api/blog/index'
+const data = await Blog.Amazon.aws()
+console.log(data)
+
 const people = [
   {
     name: '',

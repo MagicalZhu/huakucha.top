@@ -7,6 +7,13 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Accordion: typeof import('./components/ui/accordion/Accordion.vue')['default']
+    AccordionContent: typeof import('./components/ui/accordion/AccordionContent.vue')['default']
+    AccordionItem: typeof import('./components/ui/accordion/AccordionItem.vue')['default']
+    AccordionTrigger: typeof import('./components/ui/accordion/AccordionTrigger.vue')['default']
+    Alert: typeof import('./components/ui/alert/Alert.vue')['default']
+    AlertDescription: typeof import('./components/ui/alert/AlertDescription.vue')['default']
+    AlertTitle: typeof import('./components/ui/alert/AlertTitle.vue')['default']
     AppImg: typeof import('./components/AppImg.vue')['default']
     AppLink: typeof import('./components/AppLink.vue')['default']
     Archive: typeof import('./components/Archive.vue')['default']
@@ -15,6 +22,7 @@ declare module '@vue/runtime-core' {
     Badge: typeof import('./components/Badge.vue')['default']
     Bloggers: typeof import('./components/share/bloggers.vue')['default']
     BlogList: typeof import('./components/BlogList.vue')['default']
+    Button: typeof import('./components/ui/button/Button.vue')['default']
     ButtonNav: typeof import('./components/ButtonNav.vue')['default']
     Comment: typeof import('./components/Comment.vue')['default']
     Discussion: typeof import('./components/icons/Discussion.vue')['default']

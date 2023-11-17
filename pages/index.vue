@@ -8,22 +8,24 @@
 </script>
 <template>
   <main class="not-prose">
-    <section flex items-center gap-1 decoration-none border-none>
+    <section class="flex items-center gap-1 decoration-none border-none">
       <!-- <div i-carbon:fingerprint-recognition inline-block text-red-200 text-2em mr-10px/> -->
-      <div font-mono font-italic text-2xl>
+      <div class="font-mono font-italic text-2xl">
         Athu
-        <span text-sm align-text-bottom text-gray-4>do More</span>
+        <span class="text-sm align-text-bottom text-gray-4">do More</span>
       </div>
     </section>
 
+    <Button>Button</Button>
+
     <section>
-      <p class="font-mono pt-5" text-base>
+      <p class="font-mono pt-5 text-base">
         Hey! I'm {{authorName}}, a FE & BE developer.Currently working at a Japanese company.
       </p>
     </section>
 
     <!-- Post and project intro -->
-    <div grid grid-cols-2 gap-1 pt-2em>
+    <div class="grid grid-cols-2 gap-1 pt-[2em]">
       <!--Posts-->
       <section class="blockSection">
         <a href="/posts"
@@ -42,10 +44,10 @@
         </a>
       </section>
     </div>
-    <div grid grid-cols-2 gap-1 mt-1.5em>
+    <div class="grid grid-cols-2 gap-1 mt-[1.5em]">
       <!--Posts-->
-      <section animate-delay-300 mt-8px>
-        <div v-for="(article, index) in latestPost" mt-2 ml-2>
+      <section class="animate-delay-300 mt-[8px]">
+        <div v-for="(article, index) in latestPost" class="mt-2 ml-2">
           {{ `${index}.` }}
           <router-link :to="article.path"
                         decoration-black underline underline-offset-8	decoration-1
@@ -56,54 +58,50 @@
       </section>
 
       <!-- projects -->
-      <section animate-delay-300 mt-8px>
-        <div mt-2 ml-2>
+      <section class="animate-delay-300 mt-[8px]">
+        <div class="mt-2 ml-2">
           <span>0.</span>
           <router-link to="https://github.com/MagicalZhu/NoteLib"
-                        decoration-black underline underline-offset-8	decoration-1
-                        decoration-zinc-300 hover:decoration-black>
+                    class="decoration-black underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
             <em mt-2>NoteLib</em>
           </router-link>
         </div>
-        <div mt-2 ml-2>
+        <div class="mt-2 ml-2">
           <span>1.</span>
           <router-link to="https://github.com/MagicalZhu/vitesseDoc"
-                        decoration-black underline underline-offset-8	decoration-1
-                        decoration-zinc-300 hover:decoration-black>
-            <em mt-2>Blog</em>
+                       class="decoration-black underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
+            <em class="mt-2">Blog</em>
           </router-link>
         </div>
       </section>
     </div>
 
     <!-- Favorites intro -->
-    <section animate-delay-600 pt-2em>
-      <p id="blockTitle" font-serif>Fav</p>
-      <p class="font-mono" mt-8px>
+    <section class=" animate-delay-600 pt-[2em]">
+      <p id="blockTitle font-serif">Fav</p>
+      <p class="font-mono mt-[8px]">
         I will bookmark some great blogs and follow some great bloggers
         <router-link to="/share"
-                        decoration-black underline underline-offset-8	decoration-1
-                        underline-solid
-                        decoration-zinc-300 hover:decoration-black>
+                  class="decoration-black underline underline-offset-8	decoration-1 underline-solid decoration-zinc-300 hover:decoration-black">
           <em>here</em>
         </router-link>
       </p>
     </section>
 
     <!--Now-->
-    <section animate-delay-600 pt-2em>
-      <p id="blockTitle" font-serif>Now</p>
-      <p class="font-mono" mt-8px>
+    <section class="animate-delay-600 pt-[2em]">
+      <p id="blockTitle font-serif">Now</p>
+      <p class="font-mono mt-[8px]">
         The programming languages I currently use regularly are Javascript and java.And i have recently been learning more about the Spring Framework and computer networking.
       </p>
-      <p class="font-mono" pt-2em>
+      <p class="font-mono pt-[2em]">
         Outside of programming, I also watch movies, especially science fiction and action movies, such as the Marvel series and the DC series.      </p>
     </section>
-    <hr mt-15px/>
+    <hr class="mt-15px"/>
     <!-- Contact -->
-    <section animate-delay-600>
-      <span id="blockTitle" font-serif>Contact</span>
-      <div grid grid-cols-3 gap-1 mt-8px>
+    <section class="animate-delay-600">
+      <span id="blockTitle font-serif">Contact</span>
+      <div class="grid grid-cols-3 gap-1 mt-[8px]">
         <div>
           <a class="connectItem"
             target="_blank"
@@ -133,6 +131,7 @@
         </div>
       </div>
     </section>
+
   </main>
 </template>
 
@@ -142,31 +141,5 @@
 </route>
 
 <style scoped>
-  #blockTitle {
-    @apply md:text-base font-600 italic;
-  }
-  #blockTitle::before {
-    content: "::: ";
-  }
 
-  .blockSection {
-    @apply animate-delay-300 mt-15px font-serif;
-  }
-
-  .not-prose {
-    max-width: 70ch;
-    @apply mx-auto text-dark;
-  }
-
-  hr {
-    width: 50px;
-    margin-top: 2em !important;
-    margin-bottom: 1em !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .connectItem {
-    @apply flex items-center gap-1 cursor-pointer hover:opacity-30 w-32 text-base;
-  }
 </style>

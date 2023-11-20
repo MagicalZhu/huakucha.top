@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html,
+  body,
+  #app {
+    @apply h-full m-0 p-0 font-mono;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar:horizontal {
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+    background: #fff;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #eee;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+  }
+
+  @keyframes slide-enter {
+    0% {
+      transform: translateY(10px);
+      opacity: 0
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 100
+    }
+  }
+
+  @media (prefers-reduced-motion:no-preference) {
+    [slide-enter],
+    .slide-enter,
+    .slide-enter-content > * {
+      --enter-stage: 0;
+      --enter-step: 90ms;
+      --enter-initial: 0ms;
+      animation: slide-enter 1s both 1;
+      animation-delay: calc(var(--enter-initial) + var(--enter-stage) * var(--enter-step));
+    }
+
+    .slide-enter-content > *:nth-child(1) { --enter-stage: 1; }
+    .slide-enter-content > *:nth-child(2) { --enter-stage: 2; }
+    .slide-enter-content > *:nth-child(3) { --enter-stage: 3; }
+    .slide-enter-content > *:nth-child(4) { --enter-stage: 4; }
+    .slide-enter-content > *:nth-child(5) { --enter-stage: 5; }
+    .slide-enter-content > *:nth-child(6) { --enter-stage: 6; }
+    .slide-enter-content > *:nth-child(7) { --enter-stage: 7; }
+    .slide-enter-content > *:nth-child(8) { --enter-stage: 8; }
+    .slide-enter-content > *:nth-child(9) { --enter-stage: 9; }
+    .slide-enter-content > *:nth-child(10) { --enter-stage: 10; }
+    .slide-enter-content > *:nth-child(11) { --enter-stage: 11; }
+    .slide-enter-content > *:nth-child(12) { --enter-stage: 12; }
+    .slide-enter-content > *:nth-child(13) { --enter-stage: 13; }
+    .slide-enter-content > *:nth-child(14) { --enter-stage: 14; }
+    .slide-enter-content > *:nth-child(15) { --enter-stage: 15; }
+    .slide-enter-content > *:nth-child(16) { --enter-stage: 16; }
+    .slide-enter-content > *:nth-child(17) { --enter-stage: 17; }
+    .slide-enter-content > *:nth-child(18) { --enter-stage: 18; }
+    .slide-enter-content > *:nth-child(19) { --enter-stage: 19; }
+    .slide-enter-content > *:nth-child(20) { --enter-stage: 20; }
+  }
+
+}
+
+@layer components {
+
+  #nprogress {
+    @apply pointer-events-none;
+  }
+
+  #nprogress .bar {
+    @apply fixed opacity-75 top-0 left-0 w-full h-[0.5] z-50 bg-emerald-400
+  }
+
+  .connectItem {
+    @apply flex items-center gap-1 cursor-pointer hover:opacity-30 w-32 text-base;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+}
+

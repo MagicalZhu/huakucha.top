@@ -10,13 +10,11 @@
   <main class="not-prose">
     <section class="flex items-center gap-1 decoration-none border-none">
       <!-- <div i-carbon:fingerprint-recognition inline-block text-red-200 text-2em mr-10px/> -->
-      <div class="font-mono font-italic text-2xl">
+      <div class="font-mono text-2xl italic">
         Athu
-        <span class="text-sm align-text-bottom text-gray-4">do More</span>
+        <span class="text-sm align-text-bottom text-muted-foreground">do More</span>
       </div>
     </section>
-
-    <Button>Button</Button>
 
     <section>
       <p class="font-mono pt-5 text-base">
@@ -27,31 +25,32 @@
     <!-- Post and project intro -->
     <div class="grid grid-cols-2 gap-1 pt-[2em]">
       <!--Posts-->
-      <section class="blockSection">
+      <section class="indexSection">
         <a href="/posts"
           class="flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32"
         >
-        <span id="blockTitle" font-serif>Posts</span><div text-base class="i-ph-arrow-up-right"></div>
+        <span class="indexBlock">Posts</span>
+        <icon-ph:arrow-up-right/>
         </a>
       </section>
 
       <!--projects-->
-      <section class="blockSection">
+      <section class="indexSection">
         <a href="/projects"
           class="flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32"
         >
-        <p id="blockTitle" font-serif>Projects</p><div text-base class="i-ph-arrow-up-right"></div>
+        <p class="indexBlock">Projects</p>
+        <icon-ph:arrow-up-right/>
         </a>
       </section>
     </div>
-    <div class="grid grid-cols-2 gap-1 mt-[1.5em]">
+    <div class="grid grid-cols-2 gap-1">
       <!--Posts-->
       <section class="animate-delay-300 mt-[8px]">
         <div v-for="(article, index) in latestPost" class="mt-2 ml-2">
           {{ `${index}.` }}
           <router-link :to="article.path"
-                        decoration-black underline underline-offset-8	decoration-1
-                        decoration-zinc-300 hover:decoration-black>
+                    class="underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
             <em  mt-2>{{ article.title }}</em>
           </router-link>
         </div>
@@ -62,14 +61,14 @@
         <div class="mt-2 ml-2">
           <span>0.</span>
           <router-link to="https://github.com/MagicalZhu/NoteLib"
-                    class="decoration-black underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
+                    class="underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
             <em mt-2>NoteLib</em>
           </router-link>
         </div>
         <div class="mt-2 ml-2">
           <span>1.</span>
           <router-link to="https://github.com/MagicalZhu/vitesseDoc"
-                       class="decoration-black underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
+                      class=" underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
             <em class="mt-2">Blog</em>
           </router-link>
         </div>
@@ -78,11 +77,11 @@
 
     <!-- Favorites intro -->
     <section class=" animate-delay-600 pt-[2em]">
-      <p id="blockTitle font-serif">Fav</p>
+      <p class="indexBlock">Fav</p>
       <p class="font-mono mt-[8px]">
         I will bookmark some great blogs and follow some great bloggers
         <router-link to="/share"
-                  class="decoration-black underline underline-offset-8	decoration-1 underline-solid decoration-zinc-300 hover:decoration-black">
+                  class="underline underline-offset-8	decoration-1 underline-solid decoration-zinc-300 hover:decoration-black">
           <em>here</em>
         </router-link>
       </p>
@@ -90,24 +89,24 @@
 
     <!--Now-->
     <section class="animate-delay-600 pt-[2em]">
-      <p id="blockTitle font-serif">Now</p>
+      <p class="indexBlock">Now</p>
       <p class="font-mono mt-[8px]">
         The programming languages I currently use regularly are Javascript and java.And i have recently been learning more about the Spring Framework and computer networking.
       </p>
       <p class="font-mono pt-[2em]">
         Outside of programming, I also watch movies, especially science fiction and action movies, such as the Marvel series and the DC series.      </p>
     </section>
-    <hr class="mt-15px"/>
+    <hr class="indexHr mt-15px"/>
     <!-- Contact -->
     <section class="animate-delay-600">
-      <span id="blockTitle font-serif">Contact</span>
+      <span class="indexBlock">Contact</span>
       <div class="grid grid-cols-3 gap-1 mt-[8px]">
         <div>
           <a class="connectItem"
             target="_blank"
             href="mailto:huakucha95@163.com"
           >
-            <div class="i-carbon:email-new"></div>
+            <icon-carbon:email-new />
             <p>Email</p>
           </a>
         </div>
@@ -116,7 +115,7 @@
             target="_blank"
             href="https://github.com/MagicalZhu"
           >
-            <div  class="i-carbon:logo-github"></div>
+            <icon-carbon:logo-github />
             <p>Github</p>
           </a>
         </div>
@@ -125,7 +124,7 @@
             target="_blank"
             href="https://m.cmx.im/@athu"
           >
-            <div class="i-mdi:mastodon" ></div>
+            <icon-mdi:mastodon />
             <p>Mastodon</p>
           </a>
         </div>
@@ -139,7 +138,3 @@
   meta:
     layout: about
 </route>
-
-<style scoped>
-
-</style>

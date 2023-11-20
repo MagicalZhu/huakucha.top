@@ -1,6 +1,6 @@
 <!-- 画面默认的 layout -->
 <template>
-  <Layout slide-enter>
+  <Layout class="slide-enter">
     <RouterView />
   </Layout>
 </template>

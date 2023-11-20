@@ -1,5 +1,21 @@
 const animate = require("tailwindcss-animate")
-const plugin = require('tailwindcss/plugin')
+const typography = require('@tailwindcss/typography')
+
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, '$1')
+    .replace(/\.0$/, '')
+const rem = (px) => `${round(px / 16)}rem`
+const em = (px, base) => `${round(px / base)}em`
+const hexToRgb = (hex) => {
+  hex = hex.replace('#', '')
+  hex = hex.length === 3 ? hex.replace(/./g, '$&$&') : hex
+  const r = parseInt(hex.substring(0, 2), 16)
+  const g = parseInt(hex.substring(2, 4), 16)
+  const b = parseInt(hex.substring(4, 6), 16)
+  return `${r} ${g} ${b}`
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -23,9 +39,28 @@ module.exports = {
     },
     fontFamily: {
       mono: ['IBM Plex Mono'],
-      serif: ['Hubot Sans']
+      serif: ['Hubot Sans'],
+      'display': ['IBM Plex Mono']
     },
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            // color
+            '--tw-prose-body': theme('colors.gray[500]'),
+            '--tw-prose-pre-bg': 'unset',
+            // markdown max width
+            maxWidth: '98ch',
+            p: {
+              marginBottom: '5px',
+            },
+            pre: {
+              marginTop: 'unset',
+              marginBottom: 'unset',
+            }
+          },
+        },
+      }),
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -83,6 +118,7 @@ module.exports = {
     },
   },
   plugins: [
-    animate
+    animate,
+    typography
   ],
 }

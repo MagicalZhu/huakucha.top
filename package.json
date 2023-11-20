@@ -20,6 +20,7 @@
     "@iconify-json/prime": "^1.1.5",
     "@iconify-json/simple-icons": "^1.1.54",
     "@renovamen/utils": "^0.1.0",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/lodash": "^4.14.186",
     "@types/markdown-it-container": "^2.0.5",
     "@types/uslug": "^1.0.1",

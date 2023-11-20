@@ -59,7 +59,7 @@
               <span class="opacity-40 text-sm">
                 {{ formatDate(blogItem.date) }}
               </span>
-              <div inline-flex float-right>
+              <div class="inline-flex float-right">
                 <span class="tagName" v-for="tagName in blogItem.tags">
                   #{{tagName}}
               </span>
@@ -88,68 +88,3 @@
     </div>
   </main>
 </template>
-
-<style scoped>
-a.itemLink {
-  transition: .2s all ease-out;
-  text-decoration: none;
-  border-bottom: none!important;
-}
-
-.blogItem {
-  @apply relative block rounded-xl;
-  /*  border config*/
-  /*@apply border  border-gray-100 dark:border-gray-600;*/
-}
-.blogItem:hover {
-  background-color: #e3e3e424;
-}
-.dark .blogItem:hover {
-  background-color: #40404024;
-}
-
-.blogTitle {
-  @apply font-bold text-dark-900 font-mono text-lg;
-}
-
-.card {
-  @apply: text-gray-500;
-  padding: 8px;
-}
-
-.blogGroup {
-  height: 3em;
-}
-
-.blogYear {
-  @apply top--1rem;
-  position: absolute;
-  bottom: 5.25rem;
-  left: 1.5rem;
-  font-size: 6em;
-  font-weight: 900;
-  opacity: 0.1;
-}
-
-.tagName {
-  @apply inline  opacity-40 text-xs rounded-md  p-1 bg-gray-200 ml-2 mr-1;
-  margin-top: -10px;
-  color: #1f1f29;
-}
-
-.dark .tagName {
-  color: #ffffff;
-  background-color: #303034;
-}
-
-.btn {
-  @apply border-gray-300 text-dark-900 border  border-1 rounded-lg  p-2 px-3 font-500 text-base cursor-pointer bg-c font-serif;
-  @apply hover:border-dark-900;
-}
-
-.btn:hover{
-  background-color: #fff !important;
-  color: #000 !important;
-}
-
-</style>

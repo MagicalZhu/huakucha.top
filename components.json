@@ -3,7 +3,7 @@
   "typescript": true,
   "tailwind": {
     "config": "tailwind.config.js",
-    "css": "src/styles/index.css",
+    "css": "src/styles/tailwind.css",
     "baseColor": "zinc",
     "cssVariables": true
   },

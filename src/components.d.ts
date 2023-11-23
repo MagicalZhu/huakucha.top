@@ -20,7 +20,6 @@ declare module '@vue/runtime-core' {
     Articles: typeof import('./components/share/articles.vue')['default']
     Background: typeof import('./components/Background.vue')['default']
     Badge: typeof import('./components/Badge.vue')['default']
-    Bloggers: typeof import('./components/share/bloggers.vue')['default']
     BlogList: typeof import('./components/BlogList.vue')['default']
     Button: typeof import('./components/ui/button/Button.vue')['default']
     ButtonNav: typeof import('./components/ButtonNav.vue')['default']
@@ -54,7 +53,6 @@ declare module '@vue/runtime-core' {
     Section: typeof import('./components/Section.vue')['default']
     SendMessage: typeof import('./components/SendMessage.vue')['default']
     TimeIcon: typeof import('./components/icons/TimeIcon.vue')['default']
-    Websites: typeof import('./components/share/websites.vue')['default']
     WelcomeMsg: typeof import('./components/WelcomeMsg.vue')['default']
   }
 }

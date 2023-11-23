@@ -92,7 +92,7 @@ useCustomTitle('Talk')
   /* common style */
   @apply  p-4 m-6 fixed bottom-8 right-12 rounded-full text-sm border;
   /* light mode */
-  @apply bg-white text-dark  hover:bg-gray-50 border-transparent ;
+  @apply bg-white text-black  hover:bg-gray-50 border-transparent ;
   /* dark mode */
   @apply dark:bg-yellow-400  dark:hover:bg-yellow-300 dark:border-none dark:shadow-none;
 

@@ -44,12 +44,12 @@ html:not(.dark) .shiki-dark {
   code display
 */
 .prose code:before {
-  @apply font-800 mr-2 text-dark;
+  @apply font-800 mr-2 text-black;
   content: '';
 }
 
 .prose code:after{
-  @apply font-800 ml-2 text-dark;
+  @apply font-800 ml-2 text-black;
   content: '';
 }
 

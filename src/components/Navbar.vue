@@ -44,9 +44,11 @@
       <router-link to="/rss" :title="$t('theme.nav.Rss')" class="nav-item">
         <icon-carbon:rss/>
       </router-link>
+       <!--
       <router-link to="/share" :title="$t('theme.nav.Favorite')" class="nav-item">
         <icon-carbon:favorite/>
       </router-link>
+      -->
 
       <!--
       <button nav-item :title="toggleTip" @click="toggleDark()" >

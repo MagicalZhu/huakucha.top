@@ -63,7 +63,7 @@
 
 <style scoped>
   .not-prose {
-    @apply mx-auto text-dark font-mono text-base;
+    @apply mx-auto text-black font-mono text-base;
     max-width: 70ch;
   }
 

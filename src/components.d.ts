@@ -54,7 +54,6 @@ declare module '@vue/runtime-core' {
     Section: typeof import('./components/Section.vue')['default']
     SendMessage: typeof import('./components/SendMessage.vue')['default']
     TimeIcon: typeof import('./components/icons/TimeIcon.vue')['default']
-    ToggleTheme: typeof import('./components/ToggleTheme.vue')['default']
     Websites: typeof import('./components/share/websites.vue')['default']
     WelcomeMsg: typeof import('./components/WelcomeMsg.vue')['default']
   }

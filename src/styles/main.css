@@ -56,7 +56,7 @@ html.dark {
 }
 
 .dark ::selection {
-  @apply text-dark-900;
+  @apply text-black-900;
 }
 
 #nprogress {

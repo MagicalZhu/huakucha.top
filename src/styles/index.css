@@ -2,4 +2,5 @@
 @import './tailwind.css';
 @import './not-prose.css';
 @import './my-prose.css';
-@import './my-markdown.css'
+@import './my-markdown.css';
+@import './container.css';

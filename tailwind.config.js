@@ -1,6 +1,7 @@
 const animate = require("tailwindcss-animate")
 const typography = require('@tailwindcss/typography')
 
+/**  @tailwindcss/typography */
 const round = (num) =>
   num
     .toFixed(7)
@@ -16,6 +17,56 @@ const hexToRgb = (hex) => {
   const b = parseInt(hex.substring(4, 6), 16)
   return `${r} ${g} ${b}`
 }
+
+const css = (theme) => {
+  return {
+    // color
+    '--tw-prose-body': theme('colors.gray[500]'),
+    '--tw-prose-pre-bg': 'unset',
+    // markdown max width
+    fontSize: rem(15),
+    maxWidth: '98ch',
+    p: {
+      marginBottom: '5px',
+    },
+    a: {
+      color: 'var(--tw-prose-links)',
+      textDecoration: 'underline',
+      fontWeight: '500',
+    },
+    pre: {
+      marginTop: 'unset',
+      marginBottom: 'unset',
+    },
+    blockquote: {
+      fontStyle: 'italic',
+      color: theme('colors.gray[500]'),
+      borderLeftWidth: '0.25rem',
+      borderLeftColor: 'var(--tw-prose-quote-borders)',
+      quotes: '"\\201C""\\201D""\\2018""\\2019"',
+    },
+    h1: {
+      fontSize: em(36, 16),
+      marginTop: '0',
+      marginBottom: em(32, 36),
+    },
+    h2: {
+      fontSize: em(24, 16),
+      marginTop: em(24, 24),
+      marginBottom: em(24, 24),
+    },
+    h3: {
+      fontSize: em(20, 16),
+      marginTop: em(12, 20),
+      marginBottom: em(12, 20),
+    },
+    h4: {
+      marginTop: em(8, 16),
+      marginBottom: em(8, 16),
+    },
+  }
+}
+
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -40,25 +91,12 @@ module.exports = {
     fontFamily: {
       mono: ['IBM Plex Mono'],
       serif: ['Hubot Sans'],
-      'display': ['IBM Plex Mono']
+      display: ['IBM Plex Mono']
     },
     extend: {
       typography: (theme) => ({
         DEFAULT: {
-          css: {
-            // color
-            '--tw-prose-body': theme('colors.gray[500]'),
-            '--tw-prose-pre-bg': 'unset',
-            // markdown max width
-            maxWidth: '98ch',
-            p: {
-              marginBottom: '5px',
-            },
-            pre: {
-              marginTop: 'unset',
-              marginBottom: 'unset',
-            }
-          },
+          css: css(theme)
         },
       }),
       colors: {

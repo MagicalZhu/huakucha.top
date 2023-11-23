@@ -10,7 +10,7 @@
       </button>
     </template>
 
-    <div class="prose mx-auto text-center mt-6 mb-8 pt-[5em]">
+    <div class="prose mx-auto text-center mt-6 mb-8 pt-[5em] text-muted-foreground">
       <h1 class="text-4xl font-bold">{{ title }}</h1>
       <p class="mt-6 ml-2">
         <span class="intro">
@@ -136,9 +136,12 @@ onMounted(() => {
   const initToc = () =>
     nextTick(() => {
       if (isClient) {
-        const toc = document.querySelector(".table-of-contents");
-        toc.style.top = '5em'
-        isToc.value = toc ? true : false;
+        const toc = document.querySelector(".table-of-contents")
+        if (toc && toc.style) {
+          toc.style.top = '5em'
+          isToc.value = toc ? true : false;
+        }
+        isToc.value = false
       }
     });
 

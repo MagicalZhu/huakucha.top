@@ -101,7 +101,7 @@
   }
 
   .blogTitle {
-    @apply font-bold text-black font-mono text-lg;
+    @apply font-bold text-black font-mono;
   }
 
   .card {

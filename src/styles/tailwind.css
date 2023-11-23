@@ -34,6 +34,28 @@
     --ring: 240 10% 3.9%;
 
     --radius: 0.5rem;
+
+    --hkc-custom-block-code-font-size: 13px;
+    --hkc-custom-block-info-text: #535ceb;
+    --hkc-custom-block-info-border: #2944e9b5;
+    --hkc-custom-block-info-bg: rgba(219,234,254,1);
+    --hkc-custom-block-info-code-bg: var(--hkc-c-gray-light-4);
+    --hkc-custom-block-tip-border: rgb(7 120 38);
+    --hkc-custom-block-tip-text: #00502c;
+    --hkc-custom-block-tip-bg: var(--hkc-c-green-dimm-3);
+    --hkc-custom-block-tip-code-bg: var(--hkc-custom-block-tip-bg);
+    --hkc-custom-block-warning-border: rgb(191 142 54);
+    --hkc-custom-block-warning-text: #8b6903;
+    --hkc-custom-block-warning-bg: var(--hkc-c-yellow-dimm-3);
+    --hkc-custom-block-warning-code-bg: var(--hkc-custom-block-warning-bg);
+    --hkc-custom-block-danger-border: var(--hkc-c-red-dimm-1);
+    --hkc-custom-block-danger-text: var(--hkc-c-red-darker);
+    --hkc-custom-block-danger-bg: var(--hkc-c-red-dimm-3);
+    --hkc-custom-block-danger-code-bg: var(--hkc-custom-block-danger-bg);
+    --hkc-custom-block-details-border: var(--hkc-custom-block-info-border);
+    --hkc-custom-block-details-text: var(--hkc-custom-block-info-text);
+    --hkc-custom-block-details-bg: var(--hkc-custom-block-info-bg);
+    --hkc-custom-block-details-code-bg: var(--hkc-custom-block-details-bg);
   }
 
   .dark {
@@ -65,6 +87,16 @@
     --destructive-foreground: 0 0% 98%;
 
     --ring: 240 4.9% 83.9%;
+
+    --hkc-custom-block-info-border: var(--hkc-c-divider-light);
+    --hkc-custom-block-info-bg: var(--hkc-c-black-mute);
+    --hkc-custom-block-info-code-bg: var(--hkc-c-gray-dark-4);
+    --hkc-custom-block-tip-border: var(--hkc-c-green-dimm-2);
+    --hkc-custom-block-tip-text: var(--hkc-c-green-light);
+    --hkc-custom-block-warning-border: var(--hkc-c-yellow-dimm-2);
+    --hkc-custom-block-warning-text: var(--hkc-c-yellow-light);
+    --hkc-custom-block-danger-border: var(--hkc-c-red-dimm-2);
+    --hkc-custom-block-danger-text: var(--hkc-c-red-light);
   }
 }
 

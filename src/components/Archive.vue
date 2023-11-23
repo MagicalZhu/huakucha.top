@@ -89,7 +89,7 @@ useCustomTitle(upperFirst(props.pageType))
     </div>
     <!-- page -->
     <div class='mt-60 ml-10 mr-10'>
-      <div class='prose   mx-auto text-left'>
+      <div class='prose mx-auto text-left'>
         <button class="btnPrevNext" v-if="prev" @click="--pageNum">
           <div>
             <span i-carbon:chevron-left class="text-sm"></span>

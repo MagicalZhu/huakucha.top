@@ -11,13 +11,13 @@
     <section class="flex items-center gap-1 decoration-none border-none">
       <!-- <div i-carbon:fingerprint-recognition inline-block text-red-200 text-2em mr-10px/> -->
       <div class="font-mono text-2xl italic">
-        Athu
-        <span class="text-sm align-text-bottom text-muted-foreground">do More</span>
+        <span class="font-extrabold">Athu</span>
+        <span class="text-sm align-text-bottom text-muted-foreground ml-2">do more</span>
       </div>
     </section>
 
     <section>
-      <p class="font-mono pt-5 text-base">
+      <p class="font-mono pt-5">
         Hey! I'm {{authorName}}, a FE & BE developer.Currently working at a Japanese company.
       </p>
     </section>
@@ -51,7 +51,7 @@
           {{ `${index}.` }}
           <router-link :to="article.path"
                     class="underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
-            <em  mt-2>{{ article.title }}</em>
+            <span class="mt-2">{{ article.title }}</span>
           </router-link>
         </div>
       </section>
@@ -62,14 +62,14 @@
           <span>0.</span>
           <router-link to="https://github.com/MagicalZhu/NoteLib"
                     class="underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
-            <em mt-2>NoteLib</em>
+            <span class="mt-2">Notes</span>
           </router-link>
         </div>
         <div class="mt-2 ml-2">
           <span>1.</span>
           <router-link to="https://github.com/MagicalZhu/vitesseDoc"
                       class=" underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
-            <em class="mt-2">Blog</em>
+            <span class="mt-2">Blog</span>
           </router-link>
         </div>
       </section>

@@ -56,7 +56,7 @@
               <span class="blogTitle">{{ blogItem.title }}</span>
             </div>
             <div>
-              <span class="opacity-40 text-sm">
+              <span class="opacity-40 text-xs">
                 {{ formatDate(blogItem.date) }}
               </span>
               <div class="inline-flex float-right">
@@ -73,17 +73,18 @@
     <!--TODO use slot-->
     <div class='ml-10 mr-10'>
       <div class='prose prose-lg m-auto justify-center flex'>
-        <button class="btn mr-4"
+        <Button class="mr-4"
                 v-if="prev"
                 @click="--pageNum">
+            <icon-carbon:chevron-left/>
           <span class="ml-1 pr-1">{{$t('theme.page.prev')}}</span>
-        </button>
+        </Button>
 
-        <button class="btn"
-                v-if="next"
+        <Button v-if="next"
                 @click="++pageNum">
           <span class="ml-1 pr-1">{{$t('theme.page.next')}}</span>
-        </button>
+          <icon-carbon:chevron-right/>
+        </Button>
       </div>
     </div>
   </main>

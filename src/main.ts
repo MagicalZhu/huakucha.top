@@ -5,9 +5,7 @@ import type { UserModule } from './types'
 import generatedRoutes from '~pages'
 import NProgress from 'nprogress'
 
-import '@unocss/reset/tailwind.css'
-import './styles/main.css'
-import 'uno.css'
+import './styles/index.css'
 
 const routes = setupLayouts(generatedRoutes)
 

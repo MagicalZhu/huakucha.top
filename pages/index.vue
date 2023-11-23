@@ -8,108 +8,105 @@
 </script>
 <template>
   <main class="not-prose">
-    <section flex items-center gap-1 decoration-none border-none>
+    <section class="flex items-center gap-1 decoration-none border-none">
       <!-- <div i-carbon:fingerprint-recognition inline-block text-red-200 text-2em mr-10px/> -->
-      <div font-mono font-italic text-2xl>
-        Athu
-        <span text-sm align-text-bottom text-gray-4>do More</span>
+      <div class="font-mono text-2xl italic">
+        <span class="font-extrabold">Athu</span>
+        <span class="text-sm align-text-bottom text-muted-foreground ml-2">do more</span>
       </div>
     </section>
 
     <section>
-      <p class="font-mono pt-5" text-base>
+      <p class="font-mono pt-5">
         Hey! I'm {{authorName}}, a FE & BE developer.Currently working at a Japanese company.
       </p>
     </section>
 
     <!-- Post and project intro -->
-    <div grid grid-cols-2 gap-1 pt-2em>
+    <div class="grid grid-cols-2 gap-1 pt-[2em]">
       <!--Posts-->
-      <section class="blockSection">
+      <section class="indexSection">
         <a href="/posts"
           class="flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32"
         >
-        <span id="blockTitle" font-serif>Posts</span><div text-base class="i-ph-arrow-up-right"></div>
+        <span class="indexBlock">Posts</span>
+        <icon-ph:arrow-up-right/>
         </a>
       </section>
 
       <!--projects-->
-      <section class="blockSection">
+      <section class="indexSection">
         <a href="/projects"
           class="flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32"
         >
-        <p id="blockTitle" font-serif>Projects</p><div text-base class="i-ph-arrow-up-right"></div>
+        <p class="indexBlock">Projects</p>
+        <icon-ph:arrow-up-right/>
         </a>
       </section>
     </div>
-    <div grid grid-cols-2 gap-1 mt-1.5em>
+    <div class="grid grid-cols-2 gap-1">
       <!--Posts-->
-      <section animate-delay-300 mt-8px>
-        <div v-for="(article, index) in latestPost" mt-2 ml-2>
+      <section class="animate-delay-300 mt-[8px]">
+        <div v-for="(article, index) in latestPost" class="mt-2 ml-2">
           {{ `${index}.` }}
           <router-link :to="article.path"
-                        decoration-black underline underline-offset-8	decoration-1
-                        decoration-zinc-300 hover:decoration-black>
-            <em  mt-2>{{ article.title }}</em>
+                    class="underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
+            <span class="mt-2">{{ article.title }}</span>
           </router-link>
         </div>
       </section>
 
       <!-- projects -->
-      <section animate-delay-300 mt-8px>
-        <div mt-2 ml-2>
+      <section class="animate-delay-300 mt-[8px]">
+        <div class="mt-2 ml-2">
           <span>0.</span>
           <router-link to="https://github.com/MagicalZhu/NoteLib"
-                        decoration-black underline underline-offset-8	decoration-1
-                        decoration-zinc-300 hover:decoration-black>
-            <em mt-2>NoteLib</em>
+                    class="underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
+            <span class="mt-2">Notes</span>
           </router-link>
         </div>
-        <div mt-2 ml-2>
+        <div class="mt-2 ml-2">
           <span>1.</span>
           <router-link to="https://github.com/MagicalZhu/vitesseDoc"
-                        decoration-black underline underline-offset-8	decoration-1
-                        decoration-zinc-300 hover:decoration-black>
-            <em mt-2>Blog</em>
+                      class=" underline underline-offset-8	decoration-1 decoration-zinc-300 hover:decoration-black">
+            <span class="mt-2">Blog</span>
           </router-link>
         </div>
       </section>
     </div>
 
     <!-- Favorites intro -->
-    <section animate-delay-600 pt-2em>
-      <p id="blockTitle" font-serif>Fav</p>
-      <p class="font-mono" mt-8px>
+    <section class=" animate-delay-600 pt-[2em]">
+      <p class="indexBlock">Fav</p>
+      <p class="font-mono mt-[8px]">
         I will bookmark some great blogs and follow some great bloggers
         <router-link to="/share"
-                        decoration-black underline underline-offset-8	decoration-1
-                        underline-solid
-                        decoration-zinc-300 hover:decoration-black>
+                  class="underline underline-offset-8	decoration-1 underline-solid decoration-zinc-300 hover:decoration-black">
           <em>here</em>
         </router-link>
       </p>
     </section>
 
     <!--Now-->
-    <section animate-delay-600 pt-2em>
-      <p id="blockTitle" font-serif>Now</p>
-      <p class="font-mono" mt-8px>
+    <section class="animate-delay-600 pt-[2em]">
+      <p class="indexBlock">Now</p>
+      <p class="font-mono mt-[8px]">
         The programming languages I currently use regularly are Javascript and java.And i have recently been learning more about the Spring Framework and computer networking.
       </p>
-      <p class="font-mono" pt-2em>
+      <p class="font-mono pt-[2em]">
         Outside of programming, I also watch movies, especially science fiction and action movies, such as the Marvel series and the DC series.      </p>
     </section>
-    <hr mt-15px/>
+    <hr class="indexHr mt-15px"/>
     <!-- Contact -->
-    <section animate-delay-600>
-      <span id="blockTitle" font-serif>Contact</span>
-      <div grid grid-cols-3 gap-1 mt-8px>
+    <section class="animate-delay-600">
+      <span class="indexBlock">Contact</span>
+      <div class="grid grid-cols-3 gap-1 mt-[8px]">
         <div>
           <a class="connectItem"
             target="_blank"
             href="mailto:huakucha95@163.com"
           >
-            <div class="i-carbon:email-new"></div>
+            <icon-carbon:email-new />
             <p>Email</p>
           </a>
         </div>
@@ -118,7 +115,7 @@
             target="_blank"
             href="https://github.com/MagicalZhu"
           >
-            <div  class="i-carbon:logo-github"></div>
+            <icon-carbon:logo-github />
             <p>Github</p>
           </a>
         </div>
@@ -127,12 +124,13 @@
             target="_blank"
             href="https://m.cmx.im/@athu"
           >
-            <div class="i-mdi:mastodon" ></div>
+            <icon-mdi:mastodon />
             <p>Mastodon</p>
           </a>
         </div>
       </div>
     </section>
+
   </main>
 </template>
 
@@ -140,33 +138,3 @@
   meta:
     layout: about
 </route>
-
-<style scoped>
-  #blockTitle {
-    @apply md:text-base font-600 italic;
-  }
-  #blockTitle::before {
-    content: "::: ";
-  }
-
-  .blockSection {
-    @apply animate-delay-300 mt-15px font-serif;
-  }
-
-  .not-prose {
-    max-width: 70ch;
-    @apply mx-auto text-dark;
-  }
-
-  hr {
-    width: 50px;
-    margin-top: 2em !important;
-    margin-bottom: 1em !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .connectItem {
-    @apply flex items-center gap-1 cursor-pointer hover:opacity-30 w-32 text-base;
-  }
-</style>

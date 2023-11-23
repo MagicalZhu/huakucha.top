@@ -3,22 +3,26 @@
 
 -->
 <template>
-  <Layout class="post slide-enter">
+  <Layout class="slide-enter">
     <template v-if="isToc" #navbar>
-      <button nav-item title="TOC" @click="isTocOpen = !isTocOpen" class="tocBtn">
-        <div i-carbon:table-of-contents />
+      <button title="TOC" @click="isTocOpen = !isTocOpen" class="tocBtn nav-item">
+        <icon-carbon:table-of-contents/>
       </button>
     </template>
 
-    <div class="prose mx-auto text-center mt-6 mb-8">
+    <div class="prose mx-auto text-center mt-6 mb-8 pt-[5em] text-muted-foreground">
       <h1 class="text-4xl font-bold">{{ title }}</h1>
       <p class="mt-6 ml-2">
         <span class="intro">
           <div i-carbon:user class="mr-1" v-if="blogConfig.author"/>
           {{blogConfig.author}}
-          <div i-carbon:calendar class="mr-1" :class="[blogConfig.author && 'ml-4']"/>
+          <icon-carbon:calendar :class="cn(
+            'mr-1',
+            blogConfig.author && 'ml-4'
+          )"/>
           {{ formatDate(date, true) }}
-          <div i-carbon:time class="ml-4 mr-1" />
+
+          <icon-carbon:time class="ml-4 mr-1"/>
           {{ readingTime }} {{$t('theme.blog.timeUnit')}}
         </span>
       </p>
@@ -33,12 +37,12 @@
       class="prose mx-auto text-left grid md:grid-cols-2 pt-4 mt-16 border-t border-c"
     >
       <span class="prev">
-        <RouterLink v-if="prevBlog" hover:no-underline :to="prevBlog.path" >
+        <RouterLink v-if="prevBlog" class="hover:no-underline" :to="prevBlog.path" >
           {{ prevBlog.title }}
         </RouterLink>
       </span>
       <span class="next text-right">
-        <RouterLink v-if="nextBlog" hover:no-underline :to="nextBlog.path" >
+        <RouterLink v-if="nextBlog" class="hover:no-underline" :to="nextBlog.path" >
           {{ nextBlog.title }}
         </RouterLink>
       </span>
@@ -50,6 +54,7 @@
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
 import { formatDate } from "~/utils";
+import { cn } from '@/lib/utils'
 
 const blogConfig = useConfigStore().getThemeConfig().blog
 const router = useRouter();
@@ -131,9 +136,12 @@ onMounted(() => {
   const initToc = () =>
     nextTick(() => {
       if (isClient) {
-        const toc = document.querySelector(".table-of-contents");
-        toc.style.top = '5em'
-        isToc.value = toc ? true : false;
+        const toc = document.querySelector(".table-of-contents")
+        if (toc && toc.style) {
+          toc.style.top = '5em'
+          isToc.value = toc ? true : false;
+        }
+        isToc.value = false
       }
     });
 
@@ -147,23 +155,3 @@ onMounted(() => {
 
 </script>
 
-<style scoped>
-.prev a::before {
-  content: "← ";
-}
-.next a::after {
-  content: " →";
-}
-
-.intro {
-  @apply opacity-50 text-sm font-400 inline-flex items-center;
-  @apply text-dark-400;
-  @apply dark:text-blue-300
-}
-
-@media (max-width: 1360px) {
-  .tocBtn {
-    display: none !important;
-  }
-}
-</style>

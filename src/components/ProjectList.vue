@@ -10,12 +10,11 @@
   <div class="max-w-300 mx-auto">
     <div  v-for="key, index in Object.keys(projects)"
           :key="key"
-          slide-enter
+          class="slide-enter"
           :style="{ '--enter-stage': index + 1 }"
     >
       <h1 :id="slug(key)"
-          mt-8 pb-4 font-black text-center font-serif text-2xl
-          class="projectTitle">
+          class="mt-8 pb-4 font-black text-center font-serif text-2xl text-black">
         {{ key }}
       </h1>
       <div
@@ -31,7 +30,7 @@
           :title="item.name"
         >
           <template class="block transition-opacity">
-            <template font-serif text-dark flex>
+            <template class="font-serif text-black flex">
               <span> {{ item.name }}</span>
                 <a
                   target="_blank"
@@ -46,7 +45,7 @@
                   :href=item.home
                 ></a>
             </template>
-            <div text-sm text-dark-1>{{ item.desc }}</div>
+            <div class="text-sm text-muted-foreground">{{ item.desc }}</div>
           </template>
         </a>
       </div>
@@ -56,28 +55,11 @@
   <div class="table-of-contents">
     <ul>
       <li v-for="key of Object.keys(projects)" :key="key">
-        <a font-mono text-sm :href="`#${slug(key)}`">{{ key }} </a>
+        <a class="font-mono text-sm" :href="`#${slug(key)}`">{{ key }} </a>
       </li>
     </ul>
   </div>
 </template>
-
-<style scoped>
-
-.projectTitle {
-  color: #000 !important;
-}
-
-.project-grid a.item {
-  background: transparent;
-  width: 350px;
-}
-
-.linkIcon {
-  @apply font-bold text-sm opacity-50 hover:opacity-100 block transition-opacity ml-3 mt-3px;
-}
-
-</style>
 
 
 <route lang="yaml">

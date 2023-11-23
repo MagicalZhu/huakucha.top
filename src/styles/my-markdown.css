@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .intro {
+    @apply opacity-80 text-sm font-[400] inline-flex items-center;
+    @apply text-zinc-400;
+    @apply dark:text-blue-300
+  }
+
+  @media (max-width: 1360px) {
+    .tocBtn {
+      display: none !important;
+    }
+  }
+
+  /* TODO */
+
+  /*
+    =================================================================
+              Shiki  Color Config
+    =================================================================
+  */
+
+  .prose .shiki {
+    @apply font-mono tracking-wide;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .prose .shiki-light {
+    background-color: #f8f8f8 !important;
+  }
+  .prose .shiki-dark {
+    background: #0e0e0e !important;
+  }
+
+  html.dark .prose .shiki-light {
+    @apply hidden;
+  }
+  html:not(.dark) .prose .shiki-dark {
+    @apply hidden;
+  }
+
+
+  /* code line number */
+  .prose pre.shiki {
+    counter-reset: step;
+    counter-increment: step 0;
+  }
+
+  .prose code span.line:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 1rem;
+    margin-right: 1.5rem;
+    display: inline-block;
+    text-align: right;
+    color: rgba(115,138,148,.4)
+  }
+
+    /* code lang */
+  .prose .displayArea {
+    @apply flex flex-row-reverse hover:text-gray-500 text-gray-300;
+  }
+
+  /* highlight-line */
+  .prose .highlighted-line {
+    @apply bg-red-200;
+    @apply dark:bg-red-900;
+    transition: background-color .5s;
+    margin: 0 -24px;
+    padding: 0 24px;
+    width: calc(100% + 48px);
+    display: inline-block;
+  }
+
+  /* heading */
+  .prose .octicon {
+    display: inline-block;
+    overflow: visible !important;
+    vertical-align: text-bottom;
+    fill: currentColor;
+  }
+  .prose .octicon-header {
+    vertical-align: middle;
+  }
+  .prose .sourceLink {
+    @apply mr-[5px] no-underline;
+  }
+
+  .prose a {
+    @apply underline-offset-4 decoration-dashed decoration-current decoration-1;
+    @apply hover:decoration-solid hover:opacity-60;
+  }
+
+  /**
+  * table of contents
+  * -------------------------------------------------------------------------- */
+
+  .prose .table-of-contents {
+    position: fixed;
+    top: 5rem;
+    right: 0rem;
+    bottom: 0rem;
+    display: none;
+    width: 15%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    padding-top: 4.5rem;
+    padding-right: 1.375rem;
+    text-align: inherit;
+    font-size: 14px;
+    transition: all .6s ease-out;
+    opacity: 1;
+    word-break: break-all;
+  }
+
+  .prose .table-of-contents:hover {
+    opacity: 50;
+  }
+
+  .prose .table-of-contents  a:active {
+    @apply: text-blue-500;
+  }
+
+  .prose .table-of-contents  a:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+
+  .prose .tocHeader {
+    @apply text-gray-300 ml-8 mb-2;
+  }
+
+  .prose .table-of-contents a {
+    @apply no-underline;
+    font-weight: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(125, 125, 125, 0.3);
+    transition: border 0.3s ease-in-out;
+  }
+
+  .toc-open .table-of-contents {
+    @apply block;
+  }
+
+  .prose .table-of-contents > ul > li::before {
+    @apply content-[¶] opacity-90 pr-2;
+  }
+
+  .prose .table-of-contents ul {
+    @apply !list-none !m-0;
+  }
+
+  .prose .table-of-contents > ul > li > ul > li {
+    @apply opacity-50;
+  }
+
+  .dark  .prose .table-of-contents a {
+    border-bottom: 1px dotted rgb(150 150 157 / 64%);
+  }
+
+  .dark .prose .table-of-contents a:hover {
+    color: #b4c7ff;
+    border-bottom: 1px solid rgb(175 176 248);
+  }
+
+  @media (max-width: 1360px) {
+    .table-of-contents {
+      display: none !important;
+    }
+  }
+
+}

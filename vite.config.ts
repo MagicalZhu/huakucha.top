@@ -9,12 +9,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-vue-markdown'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
-import Unocss from 'unocss/vite'
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
 
-// import elementui-plus
-import {
-  ElementPlusResolver
-} from 'unplugin-vue-components/resolvers'
 
 import {
   resolveBlogFile,
@@ -26,6 +23,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   define: {
@@ -92,15 +90,20 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
       resolvers: [
-        ElementPlusResolver()
-      ],
+				IconsResolver({
+					prefix: 'icon',
+				}),
+			],
     }),
+    Icons({
+			compiler: 'vue3',
+		}),
 
     /**
      * @description 高性能且极具灵活性的即时原子化 CSS 引擎, see unocss.config.ts for config
      * @see  https://github.com/antfu/unocss
      */
-    Unocss(),
+    /** Unocss(),  */
 
     /**
      * @description

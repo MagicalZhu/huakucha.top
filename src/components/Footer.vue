@@ -19,12 +19,12 @@
 </script>
 
 <template>
-  <footer>
-    <ul font-mono text-sm text-c-lighter bottom-2 text-center>
+  <footer class="bottom-[2em]">
+    <ul class="font-mono text-sm text-muted-foreground text-center">
       <li class="inline-block relative pr-8"
           v-html="getThemeConfig().footer.copyright">
       </li>
-      <li class="right-8em inline-block absolute">
+      <li class="md:inline-block md:absolute hidden right-[2em]">
         {{ weekMap.get(time.getDay()) }}, <time :datetime="time.toISOString()" :title="time.toISOString()">{{ time.toLocaleTimeString('en-US', { hour12: false }) }}</time>
           · Built <time :datetime="buildTime" :title="buildTime">{{ buildTimeAgo }}</time>
       </li>

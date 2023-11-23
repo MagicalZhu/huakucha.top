@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import tippy, {animateFill} from 'tippy.js';
+// import tippy, {animateFill} from 'tippy.js';
 const { y } = useWindowScroll()
 
 
@@ -13,6 +13,7 @@ async function backToTop() {
 
 
 onMounted(() => {
+  /*
   tippy('#goback', {
     content: "Scroll To Top",
     arrow: true,
@@ -20,7 +21,7 @@ onMounted(() => {
     animateFill: true,
     plugins: [animateFill]
   });
-  /*
+
   tippy('#toggleDarkMode', {
     content: "Toggle Color Mode",
     arrow: true,
@@ -34,11 +35,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="footer-tools">
+  <div class="flex fixed bottom-[2.5em] right-[15px] flex-col z-[5] gap-[0.5rem]">
     <Transition name="page-fade">
       <div v-show="shown">
-        <button class="box icon-btn mx-2 text-xl stroke-current text-gray-600" @click="backToTop()" id="goback">
-          <div class="i-prime:arrow-up"></div>
+        <button class="box icon-btn mx-2 text-xl stroke-current text-gray-600" @click="backToTop()">
+          <icon-prime:arrow-up/>
         </button>
       </div>
     </Transition>
@@ -58,15 +59,6 @@ onMounted(() => {
 
 
 <style scoped>
-.footer-tools {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  z-index: 5;
-}
 
 .box {
   width: 2rem;

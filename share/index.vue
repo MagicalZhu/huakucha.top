@@ -1,15 +1,15 @@
 <script setup lang="ts">
-  import bloggers from '~/components/share/bloggers.vue'
   import articles from '~/components/share/articles.vue'
+  /*
+  import blogger from '~/components/share/blogger.vue'
   import websites from '~/components/share/websites.vue'
+  */
 
   const currentTab = ref('articles')
   const searchKey = ref('')
 
   const tabs = {
     articles,
-    bloggers,
-    websites
   }
   const changeTab = (selectTab:string) => {
     searchKey.value = ''
@@ -53,16 +53,6 @@
     </KeepAlive>
   </main>
 </template>
-
-<style scoped>
-  .tab {
-    @apply py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent  whitespace-nowrap;
-    @apply opacity-50 hover:opacity-100 transition-opacity font-extrabold text-sm;
-  }
-  .tab.active {
-    @apply opacity-100;
-  }
-</style>
 
 <route lang="yaml">
   meta:

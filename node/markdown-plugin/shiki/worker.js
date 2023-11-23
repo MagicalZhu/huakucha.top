@@ -22,17 +22,19 @@ async function handler(command, options, extOptions) {
       // pre / code / line / token are available here
       elements: {
         pre({ className, style, children }) {
-          const startHtml = `<pre class="${className}" style="${style}">`
-          const copyButton = `<span style="float:right;">${renderLang}</span>`
+          const startHtml = `<pre class="${className}">`
+          const displayArea = `<span class="displayArea">${renderLang}</span>`
           const endHtml = `${children }</pre>`
-          return `${startHtml}${copyButton}${endHtml}`
+          return `${startHtml}${displayArea}${endHtml}`
         },
         // customize line to add highlighpot lines
         line({ className, index, children }) {
           if (extOptions && extOptions.highlines && extOptions.highlines.includes(index + 1)) {
             return `<span class="${ className } ${extOptions.highlighLineClass || 'highlighted-line' }">${ children }</span>`
           }
-          return `<span class="${ className }">${ children }</span>`
+          if(children !== '') {
+            return `<span class="${ className }">${ children }</span>`
+          }
         },
       }
     })

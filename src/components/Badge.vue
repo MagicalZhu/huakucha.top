@@ -37,16 +37,3 @@ const colorClass:string = props.type && colorMap[props.type]  ?  colorMap[props.
     </slot>
   </span>
 </template>
-<style scoped>
-
-.badgeClass {
-  align-items: center;
-  padding:12px;
-  border-radius: 5px;
-  height: 18px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 120%;
-}
-</style>

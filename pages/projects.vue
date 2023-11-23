@@ -3,7 +3,6 @@
   // set title
   useCustomTitle('Projects')
 
-
   const projects: Record<string, Project[]>  = {
     'Current Focus': [
       {
@@ -29,12 +28,6 @@
   </main>
 </template>
 
-<style scoped>
-  .not-prose {
-    max-width: 70ch;
-    @apply mx-auto text-dark;
-  }
-</style>
 
 <route lang="yaml">
   meta:

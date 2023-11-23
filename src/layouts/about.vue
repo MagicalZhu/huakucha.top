@@ -2,12 +2,12 @@
   layout for about index
 -->
 <template>
-  <main class="flex flex-col min-h-full text-c slide-enter" px-4 pt-5em pb-3>
-    <div class="flex-1 mb-6">
+  <main class="flex flex-col min-h-full slide-enter px-4 pb-3">
+    <div class="flex-1">
       <Navbar>
         <slot name="navbar"></slot>
       </Navbar>
-      <RouterView />
+      <RouterView class="pt-[5em]"/>
     </div>
     <Footer></Footer>
   </main>

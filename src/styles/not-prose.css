@@ -1,26 +1,56 @@
-.not-prose .table-of-contents {
-  position: fixed;
-  top: 80px;
-  padding-top: 70px;
-  font-size: 0.8em;
-  right: 10px;
-  width: 150px;
-  bottom: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  opacity: 0;
-  transition: all .4s ease-out;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.not-prose .table-of-contents:hover {
-  opacity: 1.0;
-}
+@layer components {
+  .not-prose {
+    @apply max-w-[98ch]  mx-auto text-black;
+  }
 
-.not-prose .table-of-contents ul > li::before {
-  display: none;
-}
+  .not-prose .table-of-contents {
+      position: fixed;
+      top: 80px;
+      padding-top: 70px;
+      font-size: 0.8em;
+      right: 10px;
+      width: 150px;
+      bottom: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      opacity: 0;
+      transition: all .4s ease-out;
+    }
 
-.not-prose .table-of-contents ul > li {
-  padding-left: 0.8rem;
+    .not-prose .table-of-contents:hover {
+      opacity: 1.0;
+    }
+
+    .not-prose .table-of-contents ul > li::before {
+      display: none;
+    }
+
+    .not-prose .table-of-contents ul > li {
+      padding-left: 0.8rem;
+    }
+
+    .badgeClass {
+      align-items: center;
+      padding:12px;
+      border-radius: 5px;
+      height: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 120%;
+    }
+
+    .tab {
+      @apply py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent  whitespace-nowrap;
+      @apply opacity-50 hover:opacity-100 transition-opacity font-extrabold text-sm;
+    }
+    .tab.active {
+      @apply opacity-100;
+    }
+
 }

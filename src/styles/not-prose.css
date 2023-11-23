@@ -34,4 +34,23 @@
       padding-left: 0.8rem;
     }
 
+    .badgeClass {
+      align-items: center;
+      padding:12px;
+      border-radius: 5px;
+      height: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 120%;
+    }
+
+    .tab {
+      @apply py-4 px-1 inline-flex items-center gap-2 border-b-[3px] border-transparent  whitespace-nowrap;
+      @apply opacity-50 hover:opacity-100 transition-opacity font-extrabold text-sm;
+    }
+    .tab.active {
+      @apply opacity-100;
+    }
+
 }

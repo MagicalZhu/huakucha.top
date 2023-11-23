@@ -49,24 +49,24 @@
           <!-- <h1 font-extrabold text-base>{{ item }}</h1> -->
           <Badge type="gray">
             <template #content>
-              <span font-extrabold>{{ $t(`theme.fav.${item}`) }}</span>
+              <span class="font-extrabold">{{ $t(`theme.fav.${item}`) }}</span>
             </template>
           </Badge>
         </div>
         <div v-for="articleItem in ArticleData[item]" class="mx-auto w-4/5 ">
           <div class="grid grid-flow-col auto-cols-auto mb-3">
-            <div whitespace-nowrap overflow-hidden text-ellipsis text-center md:mx-auto sm:mx-4>
+            <div class="whitespace-nowrap overflow-hidden text-ellipsis text-center md:mx-auto sm:mx-4">
               <a :href="articleItem.url"
                   target="_blank"
-                 class="border-none cursor-pointer hover:opacity-30"
-                 decoration-gray underline underline-dashed hover:underline-solid underline-offset-6 decoration-1
+                 class="border-none cursor-pointer hover:opacity-30 decoration-gray underline
+                        underline-dashed hover:underline-solid underline-offset-6 decoration-1"
                 >{{ articleItem.title }}
               </a>
             </div>
             <div v-for="articleType in articleItem.articleTypes" pl-4 flex float-right>
               <Badge type="indigo">
                 <template #content>
-                  <span font-extrabold>{{ articleType }}</span>
+                  <span class="font-extrabold">{{ articleType }}</span>
                 </template>
               </Badge>
             </div>
@@ -76,8 +76,8 @@
       <!--toc-->
       <div class="table-of-contents">
         <ul>
-          <li v-for="key of Object.keys(ArticleData)" :key="key" opacity-50 hover:opacity-100>
-            <a font-mono text-sm :href="`#${slug(key)}`">{{ $t(`theme.fav.${key}`) }} </a>
+          <li v-for="key of Object.keys(ArticleData)" :key="key" class="opacity-50 hover:opacity-100">
+            <a class="font-mono text-sm" :href="`#${slug(key)}`">{{ $t(`theme.fav.${key}`) }} </a>
           </li>
         </ul>
       </div>
@@ -89,17 +89,6 @@
     </template>
   </div>
 </template>
-
-<style scoped>
-  .not-prose {
-    max-width: 70ch;
-  }
-
-  .not-prose .table-of-contents {
-    @apply opacity-50;
-  }
-
-</style>
 
 <route lang="yaml">
   meta:

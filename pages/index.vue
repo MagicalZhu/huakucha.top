@@ -75,7 +75,7 @@
       </section>
     </div>
 
-    <!-- TODO Favorites intro
+    <!-- Favorites intro -->
     <section class=" animate-delay-600 pt-[2em]">
       <p class="indexBlock">Fav</p>
       <p class="font-mono mt-[8px]">
@@ -86,7 +86,6 @@
         </router-link>
       </p>
     </section>
-     -->
 
     <!--Now-->
     <section class="animate-delay-600 pt-[2em]">

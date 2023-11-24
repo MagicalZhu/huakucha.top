@@ -4,7 +4,7 @@
       <Navbar>
         <slot name="navbar"></slot>
       </Navbar>
-      <RouterView class="pt-[5em]"/>
+      <RouterView class="mt-12"/>
     </div>
   </main>
 </template>

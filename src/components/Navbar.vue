@@ -3,25 +3,24 @@
     ref="navbar"
     :class="
       cn(
-        'z-40 w-full flex justify-between items-center text-base px-4 md:px-5',
+        'z-40 w-full  text-base px-4 md:px-5',
         isFixed && 'fixed -top-17 left-0 transition duration-300 ',
         isVisible && 'translate-y-full',
         !isFixed && !isVisible && 'absolute top-0 left-0'
       )
     "
   >
-    <router-link class="font-bold" un-text="c-light hover:c-dark" to="/">
-      <span class="font-500 text-lg">{{authorName}}</span>
-      <span class="blink">_</span>
-    </router-link>
 
-    <nav class="flex space-x-4">
+    <nav class="space-x-2 float-right flex">
 
       <!--
       <router-link to="/talk" :title="$t('theme.nav.Talk')" class="nav-item">
         <div i-uil:message></div>
       </router-link>
       -->
+      <router-link to="/" :title="$t('theme.nav.Me')" class="nav-item">
+        <icon-carbon:account/>
+      </router-link>
 
       <router-link to="/posts" :title="$t('theme.nav.Blog')" class="nav-item">
         <icon-carbon:blog/>
@@ -48,6 +47,40 @@
         <icon-carbon:favorite/>
       </router-link>
 
+      <button :title="$t('theme.nav.Favorite')" class="nav-item">
+        <icon-carbon:mac-command/>
+      </button>
+
+      <CommandDialog :open="open" :on-open-change="handleOpenChange">
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList class="font-mono font-600">
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Suggestions">
+            <CommandItem value="calendar">
+              Calendar
+            </CommandItem>
+            <CommandItem value="search-emoji">
+              Search Emoji
+            </CommandItem>
+            <CommandItem value="calculator">
+              Calculator
+            </CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Settings">
+            <CommandItem value="profile">
+              Profile
+            </CommandItem>
+            <CommandItem value="billing">
+              Billing
+            </CommandItem>
+            <CommandItem value="settings">
+              Settings
+            </CommandItem>
+          </CommandGroup>
+        </CommandList>
+      </CommandDialog>
+
       <!--
       <button nav-item :title="toggleTip" @click="toggleDark()" >
         <div class="dark:i-cil:moon i-cil:sun" ></div>
@@ -65,8 +98,11 @@ import { isClient } from "@renovamen/utils";
 import { cn } from '@/lib/utils'
 // import { toggleDark } from "~/composables/dark";
 
+const open = ref(false)
+function handleOpenChange() {
+  open.value = !open.value
+}
 
-const authorName = useConfigStore().getThemeConfig().authorName
 
 const navbar = ref<HTMLElement | null>(null);
 const isFixed = ref(true);

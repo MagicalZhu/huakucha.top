@@ -20,7 +20,7 @@
 
 <template>
   <footer class="bottom-[2em]">
-    <ul class="font-mono text-sm text-muted-foreground text-center">
+    <ul class="font-mono text-xs text-muted-foreground text-center">
       <li class="inline-block relative pr-8"
           v-html="getThemeConfig().footer.copyright">
       </li>

@@ -23,20 +23,10 @@
     margin-right: auto !important;
   }
 
-  .blink {
-    animation: blinker 1.5s none infinite;
-  }
-
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  }
-
   /* navbar */
 
   .nav-item {
-    @apply flex items-center space-x-1 pr-3 hover:text-black text-muted-foreground
+    @apply flex items-center space-x-1 pr-2 hover:text-black text-muted-foreground
   }
 
   /* projects */

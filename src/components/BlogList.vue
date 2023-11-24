@@ -76,14 +76,14 @@
         <Button class="mr-4"
                 v-if="prev"
                 @click="--pageNum">
-            <icon-carbon:chevron-left/>
-          <span class="ml-1 pr-1">{{$t('theme.page.prev')}}</span>
+          <icon-carbon:arrow-left  class="font-bold"/>
+          <span class="pl-2 font-bold">{{$t('theme.page.prev')}}</span>
         </Button>
 
         <Button v-if="next"
                 @click="++pageNum">
-          <span class="ml-1 pr-1">{{$t('theme.page.next')}}</span>
-          <icon-carbon:chevron-right/>
+          <span class="pr-2 font-bold">{{$t('theme.page.next')}}</span>
+          <icon-carbon:arrow-right class="font-bold"/>
         </Button>
       </div>
     </div>

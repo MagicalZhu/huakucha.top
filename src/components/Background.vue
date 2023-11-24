@@ -3,27 +3,13 @@
 </script>
 
 <template>
-  <div
-    z--1
-    fixed
-    top-0
-    left-0
-    overflow-hidden
-    h-screen
-    w-screen
-  >
-    <div un-children="z--200 rounded-full pa" un-children-after="content-none rounded-md">
-      <div
-        class="signup-bg-stars w-2px h-2px"
-        un-after="w-2px h-2px"
+  <div class="-z-[1] fixed top-0 top-0 left-0 overflow-hidden h-screen w-screen">
+    <div>
+      <div class="signup-bg-stars w-[2px] h-[2px] rounded-full"
       />
-      <div
-        class="signup-bg-stars-2 w-3px h-3px"
-        un-after="w-3px h-3px"
+      <div class="signup-bg-stars-2 w-[3px] h-[3px] rounded-full"
       />
-      <div
-        class="signup-bg-stars-3 w-4px h-4px"
-        un-after="w-4px h-4px"
+      <div class="signup-bg-stars-3 w-[4px] h-[4px] rounded-full"
       />
     </div>
   </div>

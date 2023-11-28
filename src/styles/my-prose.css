@@ -12,7 +12,7 @@
   }
 
   .indexSection {
-    @apply mt-[15px] font-serif font-[600];
+    @apply mt-[15px] font-serif font-extrabold;
   }
 
   .indexHr {

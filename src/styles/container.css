@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .custom-block.info {
+  .prose .custom-block-info {
     @apply border-[1px] rounded-md  text-base py-[8px] px-[20px] shadow-lg border-gray-200 my-[20px];
     line-height: 24px;
     border-left-width: 5px;
@@ -11,7 +11,7 @@
     color: var(--hkc-custom-block-info-text);
   }
 
-  .custom-block.tip {
+  .prose .custom-block-tip {
     @apply border-[1px] rounded-md  text-base py-[8px] px-[20px] shadow-lg border-gray-200 my-[20px];
     line-height: 24px;
     border-left-width: 5px;
@@ -19,11 +19,11 @@
     color: var(--hkc-custom-block-tip-text);
   }
 
-  .custom-block.tip code {
+  .prose .custom-block-tip code {
     background-color: var(--hkc-custom-block-tip-code-bg);
   }
 
-  .custom-block.warning {
+  .prose .custom-block-warning {
     @apply border-[1px] rounded-md  text-base py-[8px] px-[20px] shadow-lg border-gray-200 my-[20px] ;
     line-height: 24px;
     border-left-width: 5px;
@@ -31,11 +31,11 @@
     color: var(--hkc-custom-block-warning-text);
   }
 
-  .custom-block.warning code {
+  .prose .custom-block-warning code {
     background-color: var(--hkc-custom-block-warning-code-bg);
   }
 
-  .custom-block.danger {
+  .prose .custom-block-danger {
     @apply border-[1px] rounded-md  text-base py-[8px] px-[20px] shadow-lg border-gray-200 my-[20px] ;
     line-height: 24px;
     border-left-width: 5px;
@@ -43,11 +43,11 @@
     color: var(--hkc-custom-block-danger-text);
   }
 
-  .custom-block.danger code {
+  .prose .custom-block-danger code {
     background-color: var(--hkc-custom-block-danger-code-bg);
   }
 
-  .custom-block.details {
+  .prose .custom-block-details {
     @apply border-[1px] rounded-md  text-base py-[8px] px-[20px] shadow-lg border-gray-200 my-[20px] ;
     line-height: 24px;
     border-left-width: 5px;
@@ -55,45 +55,27 @@
     color: var(--hkc-custom-block-details-text);
   }
 
-  .custom-block.details code {
+  .prose .custom-block-details code {
     background-color: var(--hkc-custom-block-details-code-bg);
   }
 
-  .custom-block-title {
+  .prose .custom-block-title {
     font-weight: 700;
     @apply ml-3.5 align-middle;
   }
 
-  .custom-icon {
+  .prose .custom-icon {
     display: inline;
     vertical-align: middle;
   }
 
-  .custom-block p + p {
-    margin: 8px 0;
-  }
-
-  .custom-block.details summary {
+  .prose .custom-block-details summary {
     margin: 0 0 8px;
     font-weight: 700;
   }
 
-  .custom-block.details summary + p {
+  .prose .custom-block-details summary + p {
     margin: 8px 0;
   }
 
-  .custom-block a {
-    color: inherit;
-    font-weight: 600;
-    text-decoration: underline;
-    transition: opacity 0.25s;
-  }
-
-  .custom-block a:hover {
-    opacity: 0.6;
-  }
-
-  .custom-block code {
-    font-size: var(--hkc-custom-block-code-font-size);
-  }
 }

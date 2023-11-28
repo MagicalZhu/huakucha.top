@@ -1,5 +1,5 @@
 ---
-  author: 'athu'
+  author: 'ant'
   title: 关于 FactoryBean
   tags:
     - Java
@@ -308,7 +308,7 @@ protected <T> T doGetBean(final String name,
     - 实际上是调用 FactoryBean#getObject 方法
 
 ```java {lines: '7,31'}
-protected Object getObjectForBeanInstance(Object beanInstance, 
+protected Object getObjectForBeanInstance(Object beanInstance,
             String name,
             String beanName,
             @Nullable RootBeanDefinition mbd) {

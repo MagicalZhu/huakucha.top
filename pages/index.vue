@@ -10,9 +10,9 @@
   <main class="not-prose">
     <section class="flex items-center gap-1 decoration-none border-none">
       <!-- <div i-carbon:fingerprint-recognition inline-block text-red-200 text-2em mr-10px/> -->
-      <div class="font-mono text-2xl italic">
-        <span class="font-extrabold">Athu</span>
-        <span class="text-sm align-text-bottom text-muted-foreground ml-2">do more</span>
+      <div class="font-mono text-2xl">
+        <span class="font-extrabold">Ant</span>
+        <!-- <span class="text-sm align-text-bottom text-muted-foreground ml-2">do more</span> -->
       </div>
     </section>
 

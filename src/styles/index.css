@@ -1,4 +1,5 @@
 @import './font.css';
+@import '@fontsource/poppins';
 @import './tailwind.css';
 @import './not-prose.css';
 @import './my-prose.css';

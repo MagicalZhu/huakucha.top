@@ -91,7 +91,7 @@ module.exports = {
     fontFamily: {
       mono: ['IBM Plex Mono'],
       serif: ['Hubot Sans'],
-      display: ['IBM Plex Mono']
+      display: ['poppins']
     },
     extend: {
       typography: (theme) => ({

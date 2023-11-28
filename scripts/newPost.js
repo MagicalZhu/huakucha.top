@@ -100,7 +100,7 @@ const markdownTemplate = (filename, title, tags, category, forward, lock, fav) =
   }
 
 return `---
-  author: 'athu'
+  author: 'ant'
   title: ${title || filename}
   tags:
 ${getTags(tags)}

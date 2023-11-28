@@ -1,5 +1,5 @@
 ---
-  author: 'athu'
+  author: 'ant'
   title: 长毛象 Mastodon 食用指南
   tags:
     - 杂谈
@@ -79,4 +79,3 @@ Mastodon不存在认证用户，所有用户名后面的符号都是自己加上
   - <app-link to="https://github.com/mastodon/mastodon" class="sourceLink">Mastodon</app-link>
   - <app-link to="https://github.com/elk-zone/elk" class="sourceLink">A nimble Mastodon web client</app-link>
   - <app-link to="https://github.com/shuiRong/Gakki" class="sourceLink">A React Native App for Mastodon</app-link>
-  

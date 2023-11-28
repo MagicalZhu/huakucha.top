@@ -1,5 +1,5 @@
 ---
-  author: 'athu'
+  author: 'ant'
   title: Spring 注解处理
   tags:
     - Java
@@ -55,7 +55,7 @@ Spring 官方给出了[注解编程模型](https://github.com/spring-projects/sp
   @Inherited
   @SpringBootConfiguration
   @EnableAutoConfiguration
-  @ComponentScan(excludeFilters = { 
+  @ComponentScan(excludeFilters = {
     @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),
     @Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) }) {
     // ...

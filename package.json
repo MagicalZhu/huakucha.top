@@ -17,6 +17,7 @@
   "dependencies": {
     "@akiravoid/markdown-it-mark": "^1.0.2",
     "@akiravoid/markdown-it-sup": "^1.0.2",
+    "@egoist/tailwindcss-icons": "^1.4.0",
     "@fontsource-variable/fira-code": "^5.0.15",
     "@fontsource/poppins": "^5.0.8",
     "@iconify-json/prime": "^1.1.5",
@@ -59,7 +60,6 @@
     "tailwindcss": "^3.3.5",
     "tailwindcss-animate": "^1.0.7",
     "tippy.js": "^6.3.7",
-    "unplugin-icons": "^0.17.4",
     "uslug": "^1.0.4",
     "vee-validate": "^4.11.8",
     "vite-plugin-pages": "^0.27.1",

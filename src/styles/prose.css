@@ -130,9 +130,6 @@ mark {
   border-bottom: 1px solid #000;
 }
 
-.prose .tocHeader {
-  @apply text-gray-300 ml-8 mb-2;
-}
 
 
 .prose .table-of-contents a {

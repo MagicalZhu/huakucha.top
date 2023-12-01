@@ -11,6 +11,8 @@
   fav: false
 ---
 
+[[TOC]]
+
 > 我们可以通过 XML 的方式对 Spring 进行配置，但是注解驱动的方式会更符合现代 java 的编程思维，尤其是在 SpringBoot、SpringCloud 中，注解的能力得到了进一步的发挥,这里阐述了注解驱动编程的基本逻辑。
 
 ## XML 驱动

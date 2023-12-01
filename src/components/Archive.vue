@@ -83,7 +83,7 @@ useCustomTitle(upperFirst(props.pageType))
       <router-link class="flex-1 font-mono" :to="item.path" style="border-bottom: none;">
         <span class="font-bold text-gray-600 font-mono"> {{ item.frontmatter.title }}</span>
       </router-link>
-      <div class="leading-6 opacity-50 text-sm mr-2 mb-4 font-mono">
+      <div class="leading-6 opacity-50 text-xs mr-2 mb-4 font-mono">
         {{ formatDate(item.date, true) }}
       </div>
     </div>

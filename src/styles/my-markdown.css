@@ -62,7 +62,15 @@
 
     /* code lang */
   .prose .displayArea {
-    @apply flex flex-row-reverse hover:text-gray-500 text-gray-300 pb-2;
+    @apply flex flex-1 flex-row-reverse hover:text-gray-500 text-gray-300 pb-2;
+  }
+
+  .prose .displayAreaTitle {
+    @apply  flex-none  hover:text-gray-500 text-gray-300 pb-2;
+  }
+
+  .prose span.line {
+    font-size: 13px;
   }
 
   /* highlight-line */
@@ -75,7 +83,8 @@
     display: inline-block;
     padding-left: 12px;
     border-left-width: 12px;
-    border-left-color: #5b76e8;
+    border-left-color: #628bff;
+    line-height: 1.8;
   }
 
   /* heading */
@@ -134,7 +143,7 @@
   }
 
   .prose .tocHeader {
-    @apply text-gray-300 ml-8 mb-2;
+    @apply text-gray-500 ml-8 mb-2 text-xs;
   }
 
   .prose .table-of-contents a {

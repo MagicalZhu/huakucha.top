@@ -23,7 +23,11 @@ async function handler(command, options, extOptions) {
       elements: {
         pre({ className, style, children }) {
           const startHtml = `<pre class="${className}">`
-          const displayArea = `<span class="displayArea">${renderLang}</span>`
+          let displayAreaTitle = ''
+          if (extOptions && extOptions.title) {
+            displayAreaTitle = `<span class="displayAreaTitle">${extOptions.title}</span>`
+          }
+          const displayArea = `<div style="display:flex;">${displayAreaTitle}<span class="displayArea">${renderLang}</span></div>`
           const endHtml = `${children }</pre>`
           return `${startHtml}${displayArea}${endHtml}`
         },

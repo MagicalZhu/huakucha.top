@@ -1,5 +1,6 @@
 const animate = require("tailwindcss-animate")
 const typography = require('@tailwindcss/typography')
+const { iconsPlugin, getIconCollections } = require("@egoist/tailwindcss-icons")
 
 /**  @tailwindcss/typography */
 const round = (num) =>
@@ -157,6 +158,10 @@ module.exports = {
   },
   plugins: [
     animate,
-    typography
+    typography,
+    iconsPlugin({
+      collections: getIconCollections(["mdi","ph","prime", "carbon"]),
+      scale: 1.2
+    }),
   ],
 }

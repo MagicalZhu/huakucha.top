@@ -6,7 +6,7 @@
   <Layout class="slide-enter">
     <template v-if="isToc" #navbar>
       <button title="TOC" @click="isTocOpen = !isTocOpen" class="tocBtn nav-item">
-        <icon-carbon:table-of-contents/>
+        <span class="i-carbon-table-of-contents"></span>
       </button>
     </template>
 
@@ -14,15 +14,14 @@
       <h1 class="text-4xl font-bold">{{ title }}</h1>
       <p class="mt-6 ml-2">
         <span class="intro">
-          <div i-carbon:user class="mr-1" v-if="blogConfig.author"/>
+
+          <div class="i-carbon-user mr-1" v-if="blogConfig.author"/>
           {{blogConfig.author}}
-          <icon-carbon:calendar :class="cn(
-            'mr-1',
-            blogConfig.author && 'ml-4'
-          )"/>
+
+          <span class="i-carbon-calendar mr-1 ml-4"/>
           {{ formatDate(date, true) }}
 
-          <icon-carbon:time class="ml-4 mr-1"/>
+          <span class="i-carbon-time ml-4 mr-1"></span>
           {{ readingTime }} {{$t('theme.blog.timeUnit')}}
         </span>
       </p>
@@ -111,6 +110,7 @@ onMounted(() => {
   const handleScroll = () => {
     if (isToc.value) {
       const toc = document.querySelector(".table-of-contents");
+      console.log(toc)
       const { y } = useWindowScroll()
       if (y.value === 0) {
         toc.style.top ='5em'
@@ -137,11 +137,11 @@ onMounted(() => {
     nextTick(() => {
       if (isClient) {
         const toc = document.querySelector(".table-of-contents")
+        isToc.value = false
         if (toc && toc.style) {
           toc.style.top = '5em'
           isToc.value = toc ? true : false;
         }
-        isToc.value = false
       }
     });
 

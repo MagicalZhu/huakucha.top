@@ -30,7 +30,7 @@
           class="flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32"
         >
         <span class="indexBlock">Posts</span>
-        <icon-ph:arrow-up-right/>
+        <span class="i-ph-arrow-up-right"/>
         </a>
       </section>
 
@@ -40,7 +40,7 @@
           class="flex items-center gap-1 decoration-none border-none cursor-pointer hover:opacity-30 w-32"
         >
         <p class="indexBlock">Projects</p>
-        <icon-ph:arrow-up-right/>
+        <span class="i-ph-arrow-up-right"/>
         </a>
       </section>
     </div>
@@ -106,7 +106,7 @@
             target="_blank"
             href="mailto:huakucha95@163.com"
           >
-            <icon-carbon:email-new />
+            <span class="i-carbon-email-new"/>
             <p>Email</p>
           </a>
         </div>
@@ -115,7 +115,7 @@
             target="_blank"
             href="https://github.com/MagicalZhu"
           >
-            <icon-carbon:logo-github />
+            <span class="i-carbon-logo-github"/>
             <p>Github</p>
           </a>
         </div>
@@ -124,7 +124,7 @@
             target="_blank"
             href="https://m.cmx.im/@athu"
           >
-            <icon-mdi:mastodon />
+            <span class="i-mdi-mastodon"/>
             <p>Mastodon</p>
           </a>
         </div>

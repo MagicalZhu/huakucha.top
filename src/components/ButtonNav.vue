@@ -39,7 +39,7 @@ onMounted(() => {
     <Transition name="page-fade">
       <div v-show="shown">
         <button class="box icon-btn mx-2 text-xl stroke-current text-gray-600" @click="backToTop()">
-          <icon-prime:arrow-up/>
+          <span class="i-prime-arrow-up font-bold"></span>
         </button>
       </div>
     </Transition>

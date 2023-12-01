@@ -20,36 +20,33 @@
         </router-link>
         -->
         <router-link to="/" :title="$t('theme.nav.Me')" class="nav-item">
-          <icon-carbon:account/>
+          <span class="i-carbon-account"></span>
         </router-link>
 
         <router-link to="/posts" :title="$t('theme.nav.Blog')" class="nav-item">
-          <icon-carbon:blog/>
+          <span class="i-carbon-blog"></span>
         </router-link>
 
         <router-link to="/categories" :title="$t('theme.nav.Category')" class="nav-item">
-          <icon-carbon:folders class="saturate-0"/>
+          <span class="i-carbon-folders"></span>
         </router-link>
 
         <router-link to="/tags" :title="$t('theme.nav.Tag')" class="nav-item">
-          <icon-carbon:tag-group/>
+          <span class="i-carbon-tag-group"></span>
         </router-link>
 
-        <router-link to="/projects" :title="$t('theme.nav.Projects')" class="nav-item">
-          <icon-carbon:terminal/>
-        </router-link>
         <a href="https://www.travellings.cn/go.html" :title="$t('theme.nav.Travelling')" class="nav-item">
-          <icon-carbon:bus/>
+          <span class="i-carbon-bus"></span>
         </a>
         <router-link to="/rss" :title="$t('theme.nav.Rss')" class="nav-item">
-          <icon-carbon:rss/>
+          <span class="i-carbon-rss"></span>
         </router-link>
         <router-link to="/share" :title="$t('theme.nav.Favorite')" class="nav-item">
-          <icon-carbon:favorite/>
+          <span class="i-carbon-favorite"></span>
         </router-link>
 
-        <button :title="$t('theme.nav.Favorite')" class="nav-item" @click="isOpen = true">
-          <icon-carbon:mac-command/>
+        <button class="nav-item" @click="isOpen = true">
+          <span class="i-carbon-mac-command"></span>K
         </button>
 
         <!--
@@ -62,34 +59,25 @@
       </nav>
     </header>
     <Dialog v-model:open="isOpen">
-      <DialogContent>
+      <DialogContent class="font-display rounded-lg border shadow-md">
         <Command>
           <CommandInput placeholder="Type a command or search..." />
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandList class="font-display"
-                    @escape-key-down="isOpen = false">
+          <CommandList @escape-key-down="isOpen = false">
             <CommandGroup heading="Suggestions">
-              <CommandItem value="calendar">
-                Calendar
+            <router-link  v-for="(item, index) in Suggestions"
+                          :to="item.href">
+              <CommandItem
+                :key="index"
+                :value="item.name"
+                @select="(ev) => {
+                    isOpen = false
+                  }"
+               >
+                <span :class="item.class"/>
+                <span>{{item.name}}</span>
               </CommandItem>
-              <CommandItem value="search-emoji">
-                Search Emoji
-              </CommandItem>
-              <CommandItem value="calculator">
-                Calculator
-              </CommandItem>
-            </CommandGroup>
-            <CommandSeparator />
-            <CommandGroup heading="Settings">
-              <CommandItem value="profile">
-                Profile
-              </CommandItem>
-              <CommandItem value="billing">
-                Billing
-              </CommandItem>
-              <CommandItem value="settings">
-                Settings
-              </CommandItem>
+            </router-link>
             </CommandGroup>
           </CommandList>
         </Command>
@@ -101,6 +89,7 @@
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
 import { cn } from '@/lib/utils'
+import { menuConfig } from 'menuConfig'
 // import { toggleDark } from "~/composables/dark";
 
 const isOpen = ref(false)
@@ -108,6 +97,45 @@ const isOpen = ref(false)
 const navbar = ref<HTMLElement | null>(null);
 const isFixed = ref(true);
 const isVisible = ref(true);
+const keys = useMagicKeys()
+const CmdK = keys['Cmd+k', 'option+k']
+
+watch(CmdK, (v) => {
+  if (v) {
+    isOpen.value = true
+  }
+})
+
+
+const Suggestions: Array<menuConfig> = [
+  {
+    name: 'About',
+    class: 'i-carbon-account mr-3',
+    href: '/'
+  },
+  {
+    name: 'Posts',
+    class: 'i-carbon-blog mr-3',
+    href: '/posts'
+  },
+  {
+    name: 'Category',
+    class: 'i-carbon-folders mr-3',
+    href: '/categories'
+  },
+  {
+    name: 'Tag',
+    class: 'i-carbon-tag-group mr-3',
+    href: '/tags'
+  },
+  {
+    name: 'Rss',
+    class: 'i-carbon-rss mr-3',
+    href: '/rss'
+  }
+]
+
+
 
 // const toggleTip = computed(() => !isDark.value ? 'Toggle Dark' : 'Toggle Light')
 

@@ -38,6 +38,7 @@ interface Issues {
 }
 
 
+
 /**
  * @description theme perference config
  */
@@ -57,6 +58,17 @@ declare module 'siteConfig' {
     category: Category,
     tag: Tag,
     footer:Footer,
+  }
+}
+
+/**
+ * @description theme perference config
+ */
+declare module 'menuConfig' {
+  export interface menuConfig {
+    name: string,
+    class: string,
+    href: string
   }
 }
 

@@ -53,7 +53,6 @@
 <script setup lang="ts">
 import { isClient } from "@renovamen/utils";
 import { formatDate } from "~/utils";
-import { cn } from '@/lib/utils'
 
 const blogConfig = useConfigStore().getThemeConfig().blog
 const router = useRouter();

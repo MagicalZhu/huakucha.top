@@ -38,16 +38,30 @@
         <a href="https://www.travellings.cn/go.html" :title="$t('theme.nav.Travelling')" class="nav-item">
           <span class="i-carbon-bus"></span>
         </a>
-        <router-link to="/rss" :title="$t('theme.nav.Rss')" class="nav-item">
-          <span class="i-carbon-rss"></span>
-        </router-link>
-        <router-link to="/share" :title="$t('theme.nav.Favorite')" class="nav-item">
-          <span class="i-carbon-favorite"></span>
-        </router-link>
 
-        <button class="nav-item" @click="isOpen = true">
-          <span class="i-carbon-mac-command"></span>K
-        </button>
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <span class="i-carbon-crossroads nav-item"></span>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent  class="font-display">
+            <DropdownMenuItem
+              @select="() => {
+                router.push('/rss')
+              }">
+              <span>RssDash</span>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem @select="() => {
+              router.push('/share')
+            }">
+              <span>Share</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem @select="()=> { isOpen = true }">
+              <span>CMD</span>
+              <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         <!--
         <button nav-item :title="toggleTip" @click="toggleDark()" >
@@ -58,6 +72,7 @@
         <slot ></slot>
       </nav>
     </header>
+
     <Dialog v-model:open="isOpen">
       <DialogContent class="font-display rounded-lg border shadow-md">
         <Command>
@@ -99,6 +114,7 @@ const isFixed = ref(true);
 const isVisible = ref(true);
 const keys = useMagicKeys()
 const CmdK = keys['Cmd+k', 'option+k']
+const router = useRouter()
 
 watch(CmdK, (v) => {
   if (v) {

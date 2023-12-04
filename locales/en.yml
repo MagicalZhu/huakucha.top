@@ -7,7 +7,7 @@ theme:
     timeUnit: min
   nav:
     Talk: Talk
-    Blog: Blog
+    Blog: Posts
     Category: Category
     Tag: Tag
     Bookmark: Bookmark

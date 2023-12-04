@@ -5,7 +5,7 @@
 @layer components {
   /* index */
   .indexBlock {
-    @apply md:text-base italic font-[600] font-serif;
+    @apply italic font-[600] font-serif;
   }
   .indexBlock::before {
     content: "::: ";

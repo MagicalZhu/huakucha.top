@@ -189,7 +189,7 @@
   }
 
   .connectItem {
-    @apply flex items-center gap-1 cursor-pointer hover:opacity-30 w-32 text-base;
+    @apply flex items-center gap-1 cursor-pointer hover:opacity-30 w-32;
   }
 
   .flex-center {

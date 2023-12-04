@@ -96,7 +96,7 @@
       <p class="font-mono pt-[2em]">
         Outside of programming, I also watch movies, especially science fiction and action movies, such as the Marvel series and the DC series.      </p>
     </section>
-    <hr class="indexHr mt-15px"/>
+    <hr class="indexHr mt-[15px]"/>
     <!-- Contact -->
     <section class="animate-delay-600">
       <span class="indexBlock">Contact</span>

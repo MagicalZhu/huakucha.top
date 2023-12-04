@@ -5,6 +5,7 @@
 @layer components {
   .not-prose {
     @apply max-w-[98ch]  mx-auto text-black;
+    font-size: 0.9375rem;
   }
 
   .not-prose .table-of-contents {

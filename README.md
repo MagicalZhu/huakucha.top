@@ -1,3 +1,5 @@
+> 基于 vue 的个人日志、工具站点
+>
 > 旨在用于记录一些边角料、零碎的知识以及一些瞎扯的胡言乱语:D
 
 
@@ -12,6 +14,13 @@
     </route>
    ```
 4. 画面的布局存放在 src/layouts 目录下面
+
+# History
+
+- [x] 使用 radix-vue 为站点添加组件
+- [x] 使用 tailwind.css 代替默认的 unocss
+- [ ] 添加 rss 管理功能
+- [ ] 与 supabase 整合,或者使用 sqllite
 
 # Thanks
 

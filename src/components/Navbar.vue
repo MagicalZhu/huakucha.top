@@ -56,6 +56,7 @@
             }">
               <span>Share</span>
             </DropdownMenuItem>
+            <CommandSeparator />
             <DropdownMenuItem @select="()=> { isOpen = true }">
               <span>CMD</span>
               <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>

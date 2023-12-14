@@ -23,6 +23,9 @@ dependencies:
   '@fontsource/poppins':
     specifier: ^5.0.8
     version: 5.0.8
+  '@iconify-json/fluent-emoji':
+    specifier: ^1.1.18
+    version: 1.1.18
   '@iconify-json/prime':
     specifier: ^1.1.5
     version: 1.1.6
@@ -1626,6 +1629,12 @@ packages:
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
+
+  /@iconify-json/fluent-emoji@1.1.18:
+    resolution: {integrity: sha512-LLXbamtfQctodGAOlBEKuXyLs2TrwY/EI0EvNmttuf128V/Bkb872bNmlsKzVrescix3NOvqr0EMhyW/L/Upww==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
 
   /@iconify-json/prime@1.1.6:
     resolution: {integrity: sha512-L3YGVBuvYRu9qc0buOXRUl1IyXG0wvN7qx6WIx0ivfSQvb0mS0N1pOvCtNpPdCm33swR1UaU9B9fYtna5WDSmg==}

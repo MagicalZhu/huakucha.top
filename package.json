@@ -20,6 +20,7 @@
     "@egoist/tailwindcss-icons": "^1.4.0",
     "@fontsource-variable/fira-code": "^5.0.15",
     "@fontsource/poppins": "^5.0.8",
+    "@iconify-json/fluent-emoji": "^1.1.18",
     "@iconify-json/prime": "^1.1.5",
     "@iconify-json/simple-icons": "^1.1.54",
     "@renovamen/utils": "^0.1.0",

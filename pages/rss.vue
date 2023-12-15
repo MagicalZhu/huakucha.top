@@ -11,22 +11,27 @@ Amazon.aws().then((response) => {
 </script>
 
 <template>
-  <main class="not-prose mt-[4em]">
-    <Tabs default-value="BLOG">
+  <main class="not-prose mt-[4em] max-w-[80%]">
+    <Tabs default-value="rss-hub-blog">
 
       <!--Tabs Item-->
-      <TabsList class="grid w-full grid-cols-1">
-        <TabsTrigger value="BLOG">
+      <TabsList class="grid w-full grid-cols-2">
+        <TabsTrigger value="rss-hub-blog">
+          RssHub-博客
+        </TabsTrigger>
+
+        <TabsTrigger value="rss-blog">
           RSS-博客
         </TabsTrigger>
       </TabsList>
 
+
       <!--Tabs Content-->
-      <TabsContent value="BLOG">
+      <TabsContent value="rss-hub-blog">
         <Card>
           <CardHeader>
             <CardDescription>
-              这里是订阅的一些博客文章...
+              这里是通过 RssHub 订阅的一些博客文章...
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
@@ -62,6 +67,28 @@ Amazon.aws().then((response) => {
                   </div> -->
                 </li>
               </ul>
+            </div>
+          </CardContent>
+        </Card>
+      </TabsContent>
+
+      <TabsContent value="rss-blog">
+        <Card>
+          <CardHeader>
+            <CardDescription>
+              这里是订阅的一些周刊、文章...
+            </CardDescription>
+          </CardHeader>
+          <CardContent class="space-y-2">
+            <div v-if="AmazonBlog.length === 0">
+              <div class="flex items-center space-x-4">
+                <Skeleton class="h-12 w-12 rounded-full" />
+                <div class="space-y-2">
+                  <Skeleton class="h-4 w-[250px]" />
+                  <Skeleton class="h-4 w-[200px]" />
+                  <Skeleton class="h-4 w-[120px]" />
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>

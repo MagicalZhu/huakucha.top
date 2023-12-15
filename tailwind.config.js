@@ -160,7 +160,7 @@ module.exports = {
     animate,
     typography,
     iconsPlugin({
-      collections: getIconCollections(["mdi","ph","prime", "carbon"]),
+      collections: getIconCollections(["mdi","ph","prime", "carbon","fluent-emoji"]),
       scale: 1.2
     }),
   ],

@@ -113,10 +113,16 @@ const navbar = ref<HTMLElement | null>(null);
 const isFixed = ref(true);
 const isVisible = ref(true);
 const keys = useMagicKeys()
-const CmdK = keys['Cmd+k', 'option+k']
+const CmdK = keys['option+k']
+const CmdK_Mac = keys['Meta+k']
 const router = useRouter()
 
 watch(CmdK, (v) => {
+  if (v) {
+    isOpen.value = true
+  }
+})
+watch(CmdK_Mac, (v) => {
   if (v) {
     isOpen.value = true
   }

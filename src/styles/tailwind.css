@@ -100,6 +100,14 @@
 }
 
 @layer base {
+  #nprogress {
+    @apply pointer-events-none;
+  }
+
+  #nprogress .bar {
+    @apply fixed opacity-75 top-0 left-0 w-full h-[0.5] z-50 bg-emerald-400
+  }
+
   * {
     @apply border-border;
   }
@@ -180,20 +188,10 @@
 
 @layer components {
 
-  #nprogress {
-    @apply pointer-events-none;
-  }
-
-  #nprogress .bar {
-    @apply fixed opacity-75 top-0 left-0 w-full h-[0.5] z-50 bg-emerald-400
-  }
 
   .connectItem {
     @apply flex items-center gap-1 cursor-pointer hover:opacity-30 w-32;
   }
 
-  .flex-center {
-    @apply flex items-center justify-center;
-  }
 }
 

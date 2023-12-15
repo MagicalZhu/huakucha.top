@@ -54,6 +54,7 @@
     "postcss": "^8.4.31",
     "prettier": "^2.7.1",
     "radix-vue": "^1.2.1",
+    "rss-parser": "^3.13.0",
     "shiki": "^0.11.1",
     "shiki-processor": "^0.1.1",
     "synckit": "^0.8.4",

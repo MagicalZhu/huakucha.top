@@ -1,12 +1,12 @@
 <script setup lang="ts">
   import { formatDate } from "~/utils"
-import { Amazon } from '~/api/blog'
+  import { Blog } from '~/api/blog'
 
-const AmazonBlog = ref([])
+  const Blogs = ref([])
 
-Amazon.aws().then((response) => {
-  AmazonBlog.value = response.data.items || []
-})
+  Blog.antfu().then((response) => {
+    Blogs.value = response.data.items || []
+  })
 
 </script>
 
@@ -35,7 +35,7 @@ Amazon.aws().then((response) => {
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
-            <div v-if="AmazonBlog.length === 0">
+            <div v-if="Blogs.length === 0">
               <div class="flex items-center space-x-4">
                 <Skeleton class="h-12 w-12 rounded-full" />
                 <div class="space-y-2">
@@ -47,7 +47,7 @@ Amazon.aws().then((response) => {
             </div>
             <div v-else>
               <ul>
-                <li v-for="blog in AmazonBlog" :key="blog.id" class="flex justify-between gap-x-6 py-3">
+                <li v-for="blog in Blogs" :key="blog.id" class="flex justify-between gap-x-6 py-3">
                   <a :href="blog.url" target="_blank">
                     <p class="mt-1 truncate leading-5 text-gray-500 max-w-sm md:max-w-lg">{{ blog.title }}</p>
                   </a>
@@ -80,7 +80,7 @@ Amazon.aws().then((response) => {
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
-            <div v-if="AmazonBlog.length === 0">
+            <div v-if="Blogs.length === 0">
               <div class="flex items-center space-x-4">
                 <Skeleton class="h-12 w-12 rounded-full" />
                 <div class="space-y-2">

@@ -72,6 +72,23 @@ declare module 'menuConfig' {
   }
 }
 
+declare module 'RssData' {
+  export interface RssDataItem {
+    content_html: string,
+    date_published: string,
+    id: string,
+    title:string,
+    url:string
+  }
+  export interface RssData  {
+    description: string,
+    home_page_url?: string,
+    language?:string,
+    title: string,
+    items: RssDataItem[]
+  }
+}
+
 /**
  * 标签/类别详细
  */
@@ -90,4 +107,5 @@ declare module 'archiveConfig' {
     [propsName:string]: detail[]
   }
 }
+
 

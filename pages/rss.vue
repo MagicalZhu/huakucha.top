@@ -11,7 +11,7 @@
 </script>
 
 <template>
-  <main class="not-prose mt-[4em] max-w-[80%]">
+  <main class="not-prose mt-[4em]">
     <Tabs default-value="rss-hub-blog">
 
       <!--Tabs Item-->
@@ -80,14 +80,49 @@
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
-            <div v-if="Blogs.length === 0">
+            <div class="cursor-pointer  rounded-md
+                        border-neutral-400 p-2 transition-all
+                          duration-300 hover:-translate-y-2 hover:border-neutral-700">
               <div class="flex items-center space-x-4">
                 <Skeleton class="h-12 w-12 rounded-full" />
-                <div class="space-y-2">
-                  <Skeleton class="h-4 w-[250px]" />
-                  <Skeleton class="h-4 w-[200px]" />
-                  <Skeleton class="h-4 w-[120px]" />
+                <div class="mr-5">
+                  <p class=" font-bold">阮一峰的网络日志</p>
+                  科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走
                 </div>
+                <p class=" text-xs pt-5">
+                  <span class="opacity-40 mr-4">最近更新: 2023/1/1</span>
+                  <span class="md:i-carbon-caret-sort-up flex flex-row items-center gap-4 text-muted-foreground"/>
+                </p>
+              </div>
+            </div>
+            <div class="cursor-pointer  rounded-md
+                        border-neutral-400 p-2 transition-all
+                          duration-300 hover:-translate-y-2 hover:border-neutral-700">
+              <div class="flex items-center space-x-4">
+                <Skeleton class="h-12 w-12 rounded-full" />
+                <div class="mr-5">
+                  <p class=" font-bold">Antfu</p>
+                  科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走
+                </div>
+                <p class=" text-xs pt-5">
+                  <span class="opacity-40 mr-4">最近更新: 2023/1/1</span>
+                  <span class="md:i-carbon-caret-sort-up flex flex-row items-center gap-4 text-muted-foreground"/>
+                </p>
+              </div>
+            </div>
+            <div class="cursor-pointer  rounded-md
+                        border-neutral-400 p-2 transition-all
+                          duration-300 hover:-translate-y-2 hover:border-neutral-700">
+              <div class="flex items-center space-x-4">
+                <Skeleton class="h-12 w-12 rounded-full" />
+                <div class="mr-5">
+                  <p class=" font-bold">Awazon</p>
+                  科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走
+                </div>
+                <p class=" text-xs pt-5">
+                  <span class="opacity-40 mr-4">最近更新: 2023/1/1</span>
+                  <span class="md:i-carbon-caret-sort-up flex flex-row items-center gap-4 text-muted-foreground"/>
+                </p>
               </div>
             </div>
           </CardContent>

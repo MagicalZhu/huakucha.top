@@ -38,7 +38,7 @@
       </section>
       <section class="mt-[15px]">
         <a href="/posts"
-          class="flex float-right gap-1 border-none cursor-pointer hover:opacity-30 w-32 duration-700
+          class="flex  gap-1 border-none cursor-pointer hover:opacity-30 w-32 duration-700 float-right
                 underline underline-offset-4 decoration-dashed decoration-[0.08em] decoration-zinc-400 hover:decoration-solid"
         >
           <p class="text-sm">See all posts</p>
@@ -46,8 +46,8 @@
       </section>
     </div>
     <section class="grid grid-cols-2 gap-1 md:flex-row md:flex-wrap pt-4">
-      <div v-for="(article) in latestPost" class="mt-2 ml-2">
-        <router-link class="group flex max-w-sm cursor-pointer flex-col gap-2 rounded-md border
+      <div v-for="(article) in latestPost" class="mt-2">
+        <router-link class="group flex cursor-pointer flex-col gap-2 rounded-md border
                           border-neutral-400 p-4 transition-all
                             duration-300 hover:-translate-y-2 hover:border-neutral-700"
                   :to="article.path" >
@@ -56,12 +56,12 @@
             <p class="opacity-40 text-xs">
               {{ formatDate(article.date, true) }}
             </p>
-            <div class="i-carbon-arrow-up-right flex flex-row items-center gap-4 text-muted-foreground"/>
+            <div class="md:i-carbon-arrow-up-right flex flex-row items-center gap-4 text-muted-foreground"/>
 
           </div>
-          <p>
+          <p class="flex">
             <span class="tagName" v-for="tagName in article.tags">
-                  #{{tagName}}
+              #{{tagName}}
             </span>
           </p>
         </router-link>

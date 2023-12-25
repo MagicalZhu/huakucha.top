@@ -15,7 +15,7 @@
     <section class="flex items-center gap-1 decoration-none border-none">
       <div>
         <p class="text-2xl font-extrabold">
-          Bonjour, Here is {{authorName}}
+          Bonjour, Here's {{authorName}} Space
           <span class="i-fluent-emoji-hugging-face align-text-bottom"></span>
         </p>
       </div>

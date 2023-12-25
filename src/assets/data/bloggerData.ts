@@ -1,6 +1,5 @@
-import { Blogger } from 'share'
 
-export const Bloggers: Blogger[] = [
+export const Bloggers = [
   {
     name: 'Anthony Fu',
     blogTypes: ['Tech'],

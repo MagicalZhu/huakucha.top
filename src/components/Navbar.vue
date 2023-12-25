@@ -41,7 +41,7 @@
 
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <span class="i-carbon-crossroads nav-item"></span>
+            <span class="i-prime-ellipsis-h nav-item"></span>
           </DropdownMenuTrigger>
           <DropdownMenuContent  class="font-display">
             <DropdownMenuItem
@@ -51,11 +51,6 @@
               <span>RssDash</span>
             </DropdownMenuItem>
 
-            <DropdownMenuItem @select="() => {
-              router.push('/share')
-            }">
-              <span>Share</span>
-            </DropdownMenuItem>
             <CommandSeparator />
             <DropdownMenuItem @select="()=> { isOpen = true }">
               <span>CMD</span>

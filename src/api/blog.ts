@@ -1,13 +1,8 @@
-import  request from '~/utils/request'
+import request from '~/utils/request'
 
-async function aws () {
-  const url = '/amazon/awsblogs.json'
-  return await request({
-    url,
-    method: 'get',
-  })
-}
-
+/**
+ * 订阅的博客
+ */
 async function ruanyifeng () {
   const url = '/blogs/ruanyifeng.json'
   return await request({
@@ -25,7 +20,6 @@ async function antfu () {
 }
 
 export const  Blog = {
-  aws,
   ruanyifeng,
   antfu
 }

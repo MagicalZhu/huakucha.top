@@ -8,6 +8,7 @@
   forward: false
   lock: false
   fav: false
+  draft: false
 ---
 
 # 前言

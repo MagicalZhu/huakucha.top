@@ -59,7 +59,7 @@
             <div class="md:i-carbon-arrow-up-right flex flex-row items-center gap-4 text-muted-foreground"/>
 
           </div>
-          <p class="flex">
+          <p class="flex mt-[4px]">
             <span class="tagName" v-for="tagName in article.tags">
               #{{tagName}}
             </span>

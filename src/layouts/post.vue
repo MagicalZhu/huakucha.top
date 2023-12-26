@@ -4,11 +4,6 @@
 -->
 <template>
   <Layout class="slide-enter">
-    <template v-if="isToc" #navbar>
-      <button title="TOC" @click="isTocOpen = !isTocOpen" class="tocBtn nav-item">
-        <span class="i-carbon-table-of-contents"></span>
-      </button>
-    </template>
 
     <div class="prose mx-auto text-center mt-6 mb-8 mt-8 text-muted-foreground">
       <h1 class="text-4xl font-bold">{{ title }}</h1>
@@ -27,7 +22,7 @@
       </p>
     </div>
 
-    <article ref="content" :class="isTocOpen && 'toc-open'">
+    <article ref="content" class="toc-open">
       <RouterView />
     </article>
     <Comment/>
@@ -126,9 +121,6 @@ onMounted(() => {
   setTimeout(navigate, 500);
 });
 
-const toc = useConfigStore().getThemeConfig().toc
-
-const isTocOpen = ref(toc.isTocOpen);
 const isToc = ref(true);
 
 onMounted(() => {

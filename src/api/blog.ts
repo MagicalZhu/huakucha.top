@@ -1,5 +1,9 @@
 import request from '~/utils/request'
 
+const jjUserMap = {
+  why:'3702810893364350'
+}
+
 /**
  * 订阅的博客
  */
@@ -19,7 +23,16 @@ async function antfu () {
   })
 }
 
+async function why () {
+  const url = `/juejin/posts/${jjUserMap.why}.json`
+  return await request({
+    url,
+    method: 'get',
+  })
+}
+
 export const  Blog = {
   ruanyifeng,
-  antfu
+  antfu,
+  why
 }

@@ -19,9 +19,6 @@ interface Tag {
   perPageSize: number,
 }
 
-interface Toc {
-  isTocOpen?: boolean
-}
 
 interface Project {
   projectName: string,
@@ -53,7 +50,6 @@ declare module 'siteConfig' {
     board?: Issues,
     showProject?: boolean,
     projects?: Project[],
-    toc: Toc
     blog: Blog
     category: Category,
     tag: Tag,
@@ -85,7 +81,8 @@ declare module 'RssData' {
     home_page_url?: string,
     language?:string,
     title: string,
-    items: RssDataItem[]
+    items: RssDataItem[],
+    count?:Number
   }
 }
 

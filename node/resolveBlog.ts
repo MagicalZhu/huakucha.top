@@ -30,7 +30,7 @@ export const resolveBlogFile = (route: any) => {
  */
 export const resolveBlogList = (routes: any[]) => {
   const blogs = routes
-    .filter((item: any) => item.meta?.layout === 'post')
+    .filter((item: any) => item.meta?.layout === 'post' && !item.meta.frontmatter.draft)
     .map((item: any) => ({
       path: item.path,
       title: item.meta.frontmatter.title,

@@ -9,6 +9,7 @@
   forward: true
   lock: false
   fav: false
+  draft: false
 ---
 
 > 以太网类型(EtherType) 是以太帧里的一个字段，用来**指明应用于帧数据字段的协议**

@@ -6,6 +6,7 @@
     - 分布式
   date: 2022-12-27 08:06:44
   categories: 算法
+  draft: false
 ---
 
 [[TOC]]
@@ -66,9 +67,9 @@
 比如下面的配置:
 
 ```nginx
-upstream bakend {  
-  server 192.168.0.14 weight=10;  
-  server 192.168.0.15 weight=10;  
+upstream bakend {
+  server 192.168.0.14 weight=10;
+  server 192.168.0.15 weight=10;
 }
 ```
 
@@ -79,10 +80,10 @@ upstream bakend {
 比如下面的配置:
 
 ```nginx
-upstream bakend {  
-  ip_hash;  
-  server 192.168.0.14:88;  
-  server 192.168.0.15:80;  
+upstream bakend {
+  ip_hash;
+  server 192.168.0.14:88;
+  server 192.168.0.15:80;
 }
 ```
 

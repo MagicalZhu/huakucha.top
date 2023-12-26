@@ -145,6 +145,7 @@ declare module '@vue/runtime-core' {
     Right: typeof import('./components/icons/Right.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    RssCard: typeof import('./components/RssCard.vue')['default']
     ScrollArea: typeof import('./components/ui/scroll-area/ScrollArea.vue')['default']
     ScrollBar: typeof import('./components/ui/scroll-area/ScrollBar.vue')['default']
     Section: typeof import('./components/Section.vue')['default']

@@ -8,6 +8,7 @@
   forward: true
   lock: false
   fav: true
+  draft: false
 ---
 [[TOC]]
 

@@ -69,6 +69,11 @@ const askQuestions = () => {
       name: 'FAV',
       type: 'confirm',
       message: 'Is it a favorite article?',
+    },
+    {
+      name: 'DRAFT',
+      type: 'confirm',
+      message: 'Is it a draft article?',
     }
     // {
     //   name: "DATE",
@@ -86,7 +91,7 @@ const askQuestions = () => {
   return inquirer.prompt(questions)
 };
 
-const markdownTemplate = (filename, title, tags, category, forward, lock, fav) => {
+const markdownTemplate = (filename, title, tags, category, forward, lock, fav, draft) => {
 
   let tagYaml = ''
   const getTags = (tags) => {
@@ -109,12 +114,13 @@ ${getTags(tags)}
   forward: ${forward || false}
   lock: ${lock || false}
   fav: ${fav || false}
+  draft: ${draft || false}
 ---
   `
 }
 
 
-const createFile = (rootPath, filename, title, tags, category, forward, lock, fav) => {
+const createFile = (rootPath, filename, title, tags, category, forward, lock, fav, draft) => {
   if (!filename || !category || !tags || tags.length ===0) {
     console.log(
       chalk.red('Please enter the file name、tag and category of the file')
@@ -126,7 +132,7 @@ const createFile = (rootPath, filename, title, tags, category, forward, lock, fa
     fse.mkdirpSync(mkPath)
   }
   const fileName = path.join(mkPath, `${filename}.md`)
-  fs.writeFileSync(fileName, markdownTemplate(filename, title, tags, category, forward, lock, fav))
+  fs.writeFileSync(fileName, markdownTemplate(filename, title, tags, category, forward, lock, fav, draft))
   return fileName
 }
 
@@ -142,7 +148,7 @@ const run = async () => {
     init();
     const answers = await askQuestions()
     const { PATH, FILENAME, TITLE, TAGS, CATEGORY, FORWARD, LOCK, FAV } = answers
-    const filePath = createFile(PATH, FILENAME, TITLE, TAGS, CATEGORY, FORWARD, LOCK, FAV)
+    const filePath = createFile(PATH, FILENAME, TITLE, TAGS, CATEGORY, FORWARD, LOCK, FAV, DRAFT)
     success(filePath)
   } catch (error) {
     console.log(

@@ -25,7 +25,7 @@
     <article ref="content" class="toc-open">
       <RouterView />
     </article>
-    <Comment/>
+    <!-- <Comment/> -->
     <div
       v-if="blogConfig.showNextOrPrev &&(prevBlog || nextBlog)"
       class="prose mx-auto text-left grid md:grid-cols-2 pt-4 mt-16 border-t border-c"

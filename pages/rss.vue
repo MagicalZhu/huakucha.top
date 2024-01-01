@@ -1,85 +1,30 @@
 <script setup lang="ts">
-  // import { Blog } from '~/api/blog'
+  import { Blog } from '~/api/blog'
   import { RssData } from 'RssData'
 
   useCustomTitle('RssM')
 
   const Blogs = ref<Array<RssData>>([])
 
-    /*
-    Object.values(Blog).forEach((fn) => {
-      fn().then((response) => {
-        if(response.data) {
-          const data = response.data
-          if (data.items.length > 3) {
-            data.items = data.items.splice(0,3)
-          }
-          Blogs.value.push({
-            ...response.data,
-            count: data.items.length
-          })
+  /**
+   * TODO add order
+   */
+  Object.values(Blog).forEach((fn) => {
+    fn().then((response) => {
+      if(response.data) {
+        const data = response.data
+        const count = data.items.length
+        if (count > 3) {
+          data.items = data.items.splice(0,3)
         }
-      })
-    })
-    */
-
-  Blogs.value.push({
-    description: '阮一峰的网络日志',
-    title: '阮一峰的网络日志',
-    items: [
-      {
-        content_html: 'string',
-        date_published: '2023/1/1',
-        id: '科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        title:'科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        url:'https://www.ruanyifeng.com/blog/2023/12/weekly-issue-283.html'
-      },
-      {
-        content_html: 'string',
-        date_published: '2023/1/1',
-        id: '科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        title:'科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        url:'https://www.ruanyifeng.com/blog/2023/12/weekly-issue-283.html'
-      },
-      {
-        content_html: 'string',
-        date_published: '2023/1/1',
-        id: '科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        title:'科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        url:'https://www.ruanyifeng.com/blog/2023/12/weekly-issue-283.html'
-      },
-      {
-        content_html: 'string',
-        date_published: '2023/1/1',
-        id: '科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        title:'科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        url:'https://www.ruanyifeng.com/blog/2023/12/weekly-issue-283.html'
-      },
-    ],
-    count: 4
-  })
-
-  Blogs.value.push({
-    description: '阮一峰的网络日志',
-    title: '阮一峰的网络日志',
-    items: [
-      {
-        content_html: 'string',
-        date_published: '2023/1/1',
-        id: '科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        title:'科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        url:'https://www.ruanyifeng.com/blog/2023/12/weekly-issue-283.html'
-      },
-      {
-        content_html: 'string',
-        date_published: '2023/1/1',
-        id: '科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        title:'科技爱好者周刊（第 283 期）：[年终感想] 没有目的地，向前走',
-        url:'https://www.ruanyifeng.com/blog/2023/12/weekly-issue-283.html'
+        Blogs.value.push({
+          ...response.data,
+          count
+        })
       }
-    ],
-    count: 2
+    })
   })
+
 
 </script>
 

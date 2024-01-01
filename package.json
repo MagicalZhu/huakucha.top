@@ -18,7 +18,7 @@
     "@akiravoid/markdown-it-mark": "^1.0.2",
     "@akiravoid/markdown-it-sup": "^1.0.2",
     "@egoist/tailwindcss-icons": "^1.4.0",
-    "@fontsource-variable/fira-code": "^5.0.15",
+    "@fontsource-variable/inter": "^5.0.16",
     "@fontsource/poppins": "^5.0.8",
     "@iconify-json/fluent-emoji": "^1.1.18",
     "@iconify-json/prime": "^1.1.5",

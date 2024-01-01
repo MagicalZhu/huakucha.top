@@ -82,7 +82,7 @@ declare module 'RssData' {
     language?:string,
     title: string,
     items: RssDataItem[],
-    count?:Number
+    count?: number
   }
 }
 

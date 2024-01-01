@@ -34,7 +34,7 @@
       <template v-else>
         No Data...
       </template>
-      <div class="float-right mr-8" v-if="pageInfo.items.length > 3">
+      <div class="float-right mr-8" v-if="pageInfo.count && pageInfo.count > 3">
         <router-link to="/" title="more articles...">
           <span class="text-sm text-muted-foreground opacity-40 underline decoration-gray-400 underline-offset-2 decoration-dashed">more</span>
         </router-link>
